@@ -47,22 +47,22 @@
 
 :root {
   --background: #fcfbf8;
-  --foreground: #161e1b;
+  --foreground: #1c1917;
   --card: #ffffff;
-  --card-foreground: #161e1b;
+  --card-foreground: #1c1917;
   --popover: #ffffff;
-  --popover-foreground: #161e1b;
-  --primary: #143e30;
-  --primary-foreground: #fcfbf8;
+  --popover-foreground: #1c1917;
+  --primary: #e87042;
+  --primary-foreground: #ffffff;
   --secondary: #ede7db;
-  --secondary-foreground: #161e1b;
+  --secondary-foreground: #1c1917;
   --accent: #c25e38;
   --accent-foreground: #ffffff;
-  --gold: #be9740;
+  --gold: #d97706;
   --gold-foreground: #ffffff;
   --border: #e6dfd1;
   --input: #e6dfd1;
-  --ring: #143e30;
+  --ring: #e87042;
 }
 
 html {

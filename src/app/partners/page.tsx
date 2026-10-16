@@ -25,25 +25,39 @@ export default function PartnersPage() {
   return (
     <div className="w-full">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-b from-[#081a14] via-[#0d281e] to-[#081a14] text-[#fcfbf8] py-16 sm:py-24 border-b border-[#1b5341]/60 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#256f57]/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c25e38]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
+        {/* Topic-matching Dedicated Static Hero Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <Image
+            src="/images/summit-partners-expo.jpg"
+            alt="International Partners Expo Pavilion and Delegates"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-[center_35%] brightness-95"
+          />
+          {/* Obsidian-Peach scrim & vignette */}
+          <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+        </div>
 
-        <Container size="default" className="relative z-10 text-center">
-          <Badge variant="gold" size="md" className="mb-4">
-            Institutional Leadership & Conveners
-          </Badge>
-
-          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight">
-            Organizers & Partner Coalition
+        <Container size="default" className="relative z-20 text-center">
+          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
+            Organizers &amp; Partner Coalition
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#c8d1cd] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+            Global Enterprise Foundations, Premier Academic Campus &amp; Grassroots Ecosystems.
+          </p>
+
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
             Convened through the shared vision of global enterprise foundations, an accredited academic university campus, and grassroots acceleration platforms.
           </p>
 
-          <div className="mt-8 inline-flex items-center gap-2 p-2.5 rounded-xl bg-[#081a14]/80 border border-[#256f57]/50 text-xs sm:text-sm text-[#dfd6c4]">
-            <ShieldCheck className="w-4 h-4 text-[#d6b25e]" />
+          <div className="mt-8 inline-flex items-center gap-2 p-2.5 rounded-xl bg-[#141620]/80 border border-white/10 text-xs sm:text-sm text-white backdrop-blur-md">
+            <ShieldCheck className="w-4 h-4 text-[#e87042]" />
             <span>
               <strong>Accredited Triad:</strong> ISF (Organizer) • GIET University (Host) • IncubateX (Associated Foundation)
             </span>
@@ -55,7 +69,6 @@ export default function PartnersPage() {
       <section className="py-20 sm:py-24 bg-[#fcfbf8] border-b border-[#e6dfd1]">
         <Container size="default">
           <SectionHeading
-            eyebrow="The Organizing Core"
             title="Convening Institutions & Verified Mandates"
             subtitle="Accurate institutional roles representing the event organizer, host academic campus, and associated innovation accelerator."
           />
@@ -162,7 +175,6 @@ export default function PartnersPage() {
       <section className="py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
         <Container size="default">
           <SectionHeading
-            eyebrow="Ecosystem Collaboration"
             title="Partner With Startup Jathara 2026"
             subtitle="We invite venture funds, industry consortiums, philanthropic foundations, and government departments to partner with us."
           />
@@ -206,8 +218,8 @@ export default function PartnersPage() {
           </div>
 
           <div className="mt-12 p-8 rounded-3xl bg-[#ffffff] border border-[#e6dfd1] text-center max-w-xl mx-auto space-y-4 shadow-xs">
-            <h3 className="font-serif font-bold text-xl text-[#103327]">
-              Request Partnership Proposal
+            <h3 className="font-serif font-black text-xl sm:text-2xl text-[#1c1917] tracking-tight">
+              Request Partnership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Proposal</span>
             </h3>
             <p className="text-xs sm:text-sm text-[#4a5752] leading-relaxed">
               Formal sponsor brochures, roundtable lead frameworks, and bilateral collaboration agreements can be requested through our secretariat desk.
@@ -223,3 +235,4 @@ export default function PartnersPage() {
     </div>
   );
 }
+

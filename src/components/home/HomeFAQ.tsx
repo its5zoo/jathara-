@@ -13,7 +13,6 @@ export function HomeFAQ() {
     <section className="py-14 sm:py-20 bg-[#faf7f2] border-b border-[#e8dfd3]">
       <Container size="default">
         <SectionHeading
-          eyebrow="Quick Help"
           title="Frequently Asked Questions"
           subtitle="Simple answers to common questions about attending, registering, and reaching the venue."
         />

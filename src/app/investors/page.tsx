@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { 
   Briefcase, 
   Globe2, 
@@ -23,29 +25,51 @@ export default function InvestorsPage() {
   return (
     <div className="w-full">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-b from-[#0d281e] via-[#103327] to-[#081a14] text-[#fcfbf8] py-16 sm:py-24 border-b border-[#1b5341]/60 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#256f57]/20 rounded-full blur-3xl pointer-events-none" />
-        <Container size="default" className="relative z-10 text-center">
-          <Badge variant="gold" size="md" className="mb-4">
-            Investor & Delegate Delegation
-          </Badge>
+      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
+        {/* Topic-matching Dedicated Static Hero Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <Image
+            src="/images/summit-investors-lounge.jpg"
+            alt="Investors and VCs in Private Dealmaking Lounge"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-[center_35%] brightness-95"
+          />
+          {/* Obsidian-Peach scrim & vignette */}
+          <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+        </div>
 
-          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight">
+        <Container size="default" className="relative z-20 text-center">
+          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
             Discover Uncrowded Dealflow in Frontier India
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#c8d1cd] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+            High-Moat Grassroots Startups with Untapped National Scale.
+          </p>
+
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
             Connect with early-stage inventors, tribal agro-tech enterprises, and grassroots healthcare pioneers at the intersection of capital, technology, and regional impact.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Button href="/register?category=investor-fund" variant="gold" size="lg" className="font-bold">
+            <Link 
+              href="/register?category=investor-fund" 
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
+            >
               <span>Register as Investor / Fund Delegate</span>
-              <ArrowRight className="w-4 h-4 ml-1.5" />
-            </Button>
-            <Button href="/programme" variant="outline" size="lg" className="text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#143e30]">
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Link>
+            <Link 
+              href="/programme" 
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#141620]/80 hover:bg-[#1f2230] text-white border border-white/20 font-bold text-sm backdrop-blur-md transition-all"
+            >
               <span>Roundtable Timings</span>
-            </Button>
+            </Link>
           </div>
         </Container>
       </section>
@@ -54,7 +78,6 @@ export default function InvestorsPage() {
       <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
         <Container size="default">
           <SectionHeading
-            eyebrow="The Investment Thesis"
             title="Why Leading Angels & VCs Are Travelling to Dandakaranya"
             subtitle="Moving beyond saturated tier-1 city valuations to discover resilient, cost-efficient businesses with deep regional competitive moats."
           />
@@ -145,7 +168,6 @@ export default function InvestorsPage() {
       <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
         <Container size="default">
           <SectionHeading
-            eyebrow="VIP Delegation Experience"
             title="Comprehensive Hospitality & Transit Support"
             subtitle="GIET University and ISF provide dedicated concierge logistics for visiting investors and international delegates."
           />
@@ -216,3 +238,4 @@ export default function InvestorsPage() {
     </div>
   );
 }
+

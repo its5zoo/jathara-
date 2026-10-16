@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Image from "next/image";
 import { 
   Calendar, 
   Clock, 
@@ -54,24 +55,40 @@ export function ProgrammeClient() {
   return (
     <div className="w-full">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-b from-[#0d281e] via-[#103327] to-[#081a14] text-[#fcfbf8] py-16 sm:py-20 border-b border-[#1b5341]/60 relative overflow-hidden">
-        <Container size="wide" className="relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-amber-800/60 text-xs text-amber-300 font-semibold mb-4">
-            <AlertCircle className="w-3.5 h-3.5" />
-            <span>Official Brochure Schedule — Draft Status</span>
-          </div>
+      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
+        {/* Topic-matching Dedicated Static Hero Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <Image
+            src="/images/summit-timetable-display.jpg"
+            alt="Summit Programme & Timetable Display Screen with Attendees"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-[center_35%] brightness-95"
+          />
+          {/* Obsidian-Peach scrim & vignette */}
+          <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+        </div>
 
-          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight">
-            Summit Programme & Timetable
+        <Container size="wide" className="relative z-20 text-center">
+          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
+            Summit Programme &amp; Timetable
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-[#c8d1cd] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+            Three Days of Venture Dealmaking, Deep Exploration &amp; Grassroots Scale.
+          </p>
+
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
             Interactive schedule for 18–20 December 2026 at GIET University, Gunupur. Session timings reflect the draft planning brochure.
           </p>
 
           {/* Pre-Summit Welcome Dinner Callout */}
-          <div className="mt-8 max-w-xl mx-auto p-3.5 rounded-xl bg-[#081a14]/80 border border-[#256f57]/50 text-xs sm:text-sm text-[#dfd6c4] flex items-center justify-center gap-2">
-            <Utensils className="w-4 h-4 text-[#d6b25e] flex-shrink-0" />
+          <div className="mt-8 max-w-xl mx-auto p-3.5 rounded-xl bg-[#141620]/80 border border-white/10 text-xs sm:text-sm text-white flex items-center justify-center gap-2 backdrop-blur-md">
+            <Utensils className="w-4 h-4 text-[#e87042] flex-shrink-0" />
             <span>
               <strong>Pre-Event Welcome Dinner:</strong> Thursday evening, 17 December 2026 for early arriving dignitaries and delegates.
             </span>
@@ -82,6 +99,21 @@ export function ProgrammeClient() {
       {/* Interactive Main Area */}
       <section className="py-12 sm:py-16 bg-[#fcfbf8]">
         <Container size="wide">
+          {/* Centered Section Heading */}
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl lg:text-[2.65rem] text-[#1c1917] tracking-tight leading-[1.15]">
+              Explore the 3-Day <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Summit Timetable</span>
+            </h2>
+            <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
+              Plenary ceremonies, deep-tech panels, venture pitches, and regional cultural immersions across all three days.
+            </p>
+            <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
+              <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
+              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
+              <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
+            </div>
+          </div>
+
           {/* Draft Notice Alert */}
           <div className="mb-8 p-4.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 flex flex-col sm:flex-row items-start gap-3 shadow-xs">
             <AlertCircle className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />

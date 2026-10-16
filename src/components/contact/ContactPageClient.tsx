@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { 
   Mail, 
   Phone, 
@@ -47,18 +48,32 @@ export function ContactPageClient() {
   return (
     <div className="w-full">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-b from-[#0d281e] via-[#103327] to-[#081a14] text-[#fcfbf8] py-16 sm:py-24 border-b border-[#1b5341]/60 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#256f57]/20 rounded-full blur-3xl pointer-events-none" />
-        <Container size="default" className="relative z-10 text-center">
-          <Badge variant="gold" size="md" className="mb-4">
-            Secretariat & Helplines
-          </Badge>
+      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
+        {/* Background Image: giet-school-of-engineering.jpg */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <Image
+            src="/images/giet-school-of-engineering.jpg"
+            alt="GIET University Secretariat Campus, Gunupur"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-[center_35%] brightness-95"
+          />
+          <div className="absolute inset-0 bg-black/45 sm:bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none" />
+        </div>
 
-          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight">
-            Contact & Secretariat Helpdesk
+        <Container size="default" className="relative z-10 text-center px-4 sm:px-6">
+          <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight max-w-4xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
+            Contact &amp; Secretariat{" "}
+            <span className="bg-gradient-to-r from-[#e87042] via-[#f7c89f] to-[#e87042] bg-clip-text text-transparent">
+              Helpdesk
+            </span>
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#c8d1cd] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#dfd6c4] max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
             Get in touch for institutional delegations, speaker confirmations, academic partnerships, and travel coordination for December 2026.
           </p>
         </Container>
@@ -67,16 +82,26 @@ export function ContactPageClient() {
       {/* Main Content */}
       <section className="py-20 bg-[#fcfbf8]">
         <Container size="wide">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#1c1917] tracking-tight leading-[1.15]">
+              Get in Touch with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Summit Secretariat</span>
+            </h2>
+            <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
+              Official coordination offices across the International Startup Foundation and GIET University Gunupur campus.
+            </p>
+            <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
+              <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
+              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
+              <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Contact Details Column */}
             <div className="lg:col-span-5 space-y-6">
-              <Badge variant="terracotta" size="sm">
-                Official Channels
-              </Badge>
-
-              <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#103327]">
-                Official Secretariat Information
-              </h2>
+              <h3 className="font-serif font-bold text-2xl text-[#1c1917]">
+                Secretariat Channels &amp; Helpdesk
+              </h3>
 
               <p className="text-sm text-[#4a5752] leading-relaxed">
                 Contact the summit coordination offices across the International Startup Foundation and GIET University Gunupur campus.
@@ -84,17 +109,17 @@ export function ContactPageClient() {
 
               <div className="space-y-4 pt-2">
                 <div className="p-5 rounded-2xl bg-[#ffffff] border border-[#e6dfd1] shadow-xs flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-[#f7f4ec] text-[#143e30] border border-[#dfd6c4] flex-shrink-0">
+                  <div className="p-3 rounded-xl bg-[#f7f4ec] text-[#e87042] border border-[#dfd6c4] flex-shrink-0">
                     <Mail className="w-5 h-5 text-[#c25e38]" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-base text-[#103327]">
+                    <h3 className="font-serif font-bold text-base text-[#1c1917]">
                       Email Secretariat
                     </h3>
                     <p className="text-xs text-[#7e8d87] mt-0.5">Primary channel for delegations & queries</p>
                     <a
                       href={`mailto:${EVENT_METADATA.contactEmail}`}
-                      className="text-sm font-semibold text-[#143e30] hover:text-[#c25e38] transition-colors mt-1 inline-block focus-visible:outline-none focus-visible:underline"
+                      className="text-sm font-semibold text-[#e87042] hover:text-[#c25e38] transition-colors mt-1 inline-block focus-visible:outline-none focus-visible:underline"
                     >
                       {EVENT_METADATA.contactEmail}
                     </a>
@@ -102,17 +127,17 @@ export function ContactPageClient() {
                 </div>
 
                 <div className="p-5 rounded-2xl bg-[#ffffff] border border-[#e6dfd1] shadow-xs flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-[#f7f4ec] text-[#143e30] border border-[#dfd6c4] flex-shrink-0">
-                    <Phone className="w-5 h-5 text-[#256f57]" />
+                  <div className="p-3 rounded-xl bg-[#f7f4ec] text-[#e87042] border border-[#dfd6c4] flex-shrink-0">
+                    <Phone className="w-5 h-5 text-[#e87042]" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-base text-[#103327]">
+                    <h3 className="font-serif font-bold text-base text-[#1c1917]">
                       Campus Helpline
                     </h3>
                     <p className="text-xs text-[#7e8d87] mt-0.5">GIET University reception desk</p>
                     <a
                       href={`tel:${EVENT_METADATA.helplinePhone.replace(/\s+/g, "")}`}
-                      className="text-sm font-semibold text-[#143e30] hover:text-[#c25e38] transition-colors mt-1 inline-block focus-visible:outline-none focus-visible:underline"
+                      className="text-sm font-semibold text-[#e87042] hover:text-[#c25e38] transition-colors mt-1 inline-block focus-visible:outline-none focus-visible:underline"
                     >
                       {EVENT_METADATA.helplinePhone}
                     </a>
@@ -120,11 +145,11 @@ export function ContactPageClient() {
                 </div>
 
                 <div className="p-5 rounded-2xl bg-[#ffffff] border border-[#e6dfd1] shadow-xs flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-[#f7f4ec] text-[#143e30] border border-[#dfd6c4] flex-shrink-0">
+                  <div className="p-3 rounded-xl bg-[#f7f4ec] text-[#e87042] border border-[#dfd6c4] flex-shrink-0">
                     <MapPin className="w-5 h-5 text-[#be9740]" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-base text-[#103327]">
+                    <h3 className="font-serif font-bold text-base text-[#1c1917]">
                       Summit Campus Address
                     </h3>
                     <p className="text-xs sm:text-sm text-[#4a5752] mt-1 leading-relaxed">
@@ -134,11 +159,11 @@ export function ContactPageClient() {
                 </div>
 
                 <div className="p-5 rounded-2xl bg-[#ffffff] border border-[#e6dfd1] shadow-xs flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-[#f7f4ec] text-[#143e30] border border-[#dfd6c4] flex-shrink-0">
-                    <Clock className="w-5 h-5 text-[#143e30]" />
+                  <div className="p-3 rounded-xl bg-[#f7f4ec] text-[#e87042] border border-[#dfd6c4] flex-shrink-0">
+                    <Clock className="w-5 h-5 text-[#e87042]" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-base text-[#103327]">
+                    <h3 className="font-serif font-bold text-base text-[#1c1917]">
                       Secretariat Hours
                     </h3>
                     <p className="text-xs sm:text-sm text-[#4a5752] mt-1">
@@ -153,7 +178,7 @@ export function ContactPageClient() {
             <div className="lg:col-span-7">
               <div className="bg-[#ffffff] rounded-3xl p-8 sm:p-10 border border-[#e6dfd1] shadow-xs space-y-6">
                 <div>
-                  <h3 className="font-serif font-bold text-2xl text-[#103327]">
+                  <h3 className="font-serif font-bold text-2xl text-[#1c1917]">
                     Send an Inquiry to the Organizing Team
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4a5752] mt-1">
@@ -202,7 +227,7 @@ export function ContactPageClient() {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="Dr. / Mr. / Ms. Name"
-                          className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#143e30]"
+                          className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#e87042]"
                         />
                       </div>
 
@@ -217,7 +242,7 @@ export function ContactPageClient() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="name@organization.org"
-                          className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#143e30]"
+                          className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#e87042]"
                         />
                       </div>
                     </div>
@@ -233,7 +258,7 @@ export function ContactPageClient() {
                           value={formData.organization}
                           onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                           placeholder="Company, University or Fund"
-                          className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#143e30]"
+                          className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#e87042]"
                         />
                       </div>
 
@@ -245,7 +270,7 @@ export function ContactPageClient() {
                           id="contact-subject"
                           value={formData.subject}
                           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                          className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#143e30]"
+                          className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#e87042]"
                         >
                           <option value="General Summit Enquiry">General Summit Enquiry</option>
                           <option value="Startup Pitch & Exhibition">Startup Pitch & Exhibition</option>
@@ -268,7 +293,7 @@ export function ContactPageClient() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Please describe your enquiry, delegation size, or questions..."
-                        className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#143e30]"
+                        className="w-full px-4 py-2.5 bg-[#fcfbf8] border border-[#e6dfd1] rounded-xl text-xs sm:text-sm text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#e87042]"
                       />
                     </div>
 
@@ -296,3 +321,4 @@ export function ContactPageClient() {
     </div>
   );
 }
+

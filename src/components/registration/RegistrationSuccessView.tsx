@@ -40,7 +40,7 @@ export function RegistrationSuccessView({ registration, onReset }: RegistrationS
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
                 Status: {registration.status}
               </span>
-              <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#103327] mt-1.5">
+              <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#1c1917] mt-1.5">
                 Registration Confirmed
               </h2>
             </div>
@@ -61,13 +61,13 @@ export function RegistrationSuccessView({ registration, onReset }: RegistrationS
 
         {/* Mandatory Exact Confirmation Paragraph */}
         <div className="p-5 sm:p-6 rounded-2xl bg-[#f7f4ec] border border-[#dfd6c4] text-[#161e1b] text-sm sm:text-base leading-relaxed">
-          <p className="font-medium text-[#103327]">
+          <p className="font-medium text-[#1c1917]">
             Thank you for registering for ISF Startup Jathara 2026 — Startup Jathara @ Dandakaranya. Your registration has been received successfully. Our team will review your details and contact you regarding the next steps. Please save your registration reference for future communication.
           </p>
         </div>
 
         {/* Prominent Reference ID Box with Copy Action */}
-        <div className="bg-gradient-to-br from-[#0d281e] to-[#103327] rounded-2xl p-6 sm:p-8 text-[#fcfbf8] shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="bg-gradient-to-br from-[#0c0d12] via-[#141620] to-[#090a0e] border border-[#232733] rounded-2xl p-6 sm:p-8 text-[#fcfbf8] shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <span className="text-xs uppercase tracking-widest text-[#be9740] font-bold block mb-1">
               Official Registration Reference
@@ -102,14 +102,14 @@ export function RegistrationSuccessView({ registration, onReset }: RegistrationS
 
         {/* Registration Summary Card */}
         <div className="rounded-2xl border border-[#e6dfd1] p-5 sm:p-6 space-y-4">
-          <h3 className="font-serif font-bold text-lg text-[#103327] border-b border-[#ede7db] pb-3">
+          <h3 className="font-serif font-bold text-lg text-[#1c1917] border-b border-[#ede7db] pb-3">
             Summary of Submitted Details
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
             <div>
               <span className="text-[#7e8d87] block font-medium">Participant Name:</span>
-              <strong className="text-[#103327]">{registration.fullName}</strong>
+              <strong className="text-[#1c1917]">{registration.fullName}</strong>
             </div>
 
             <div>
@@ -149,7 +149,7 @@ export function RegistrationSuccessView({ registration, onReset }: RegistrationS
             {registration.teamName && (
               <div className="sm:col-span-2 p-3 rounded-xl bg-[#f7f4ec] border border-[#ede7db]">
                 <span className="text-[#7e8d87] block text-xs">Team Registration:</span>
-                <strong className="text-[#103327] text-sm">{registration.teamName}</strong>
+                <strong className="text-[#1c1917] text-sm">{registration.teamName}</strong>
                 {registration.teamMembers && registration.teamMembers.length > 0 && (
                   <span className="text-xs text-[#4a5752] ml-2">
                     ({registration.teamMembers.length + 1} members total including leader)
@@ -161,7 +161,7 @@ export function RegistrationSuccessView({ registration, onReset }: RegistrationS
             {registration.projectName && (
               <div className="sm:col-span-2 p-3 rounded-xl bg-[#f7f4ec] border border-[#ede7db]">
                 <span className="text-[#7e8d87] block text-xs">Innovation / Startup:</span>
-                <strong className="text-[#103327] text-sm">{registration.projectName}</strong>
+                <strong className="text-[#1c1917] text-sm">{registration.projectName}</strong>
                 {registration.developmentStage && (
                   <span className="text-xs text-[#8c671b] block mt-0.5">
                     Stage: {registration.developmentStage}
@@ -265,3 +265,4 @@ export function RegistrationSuccessView({ registration, onReset }: RegistrationS
     </div>
   );
 }
+

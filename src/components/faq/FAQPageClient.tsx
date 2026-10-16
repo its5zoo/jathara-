@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Image from "next/image";
 import { Search, HelpCircle, Mail } from "lucide-react";
 import { FAQ_ITEMS } from "@/data/eventData";
 import { Container } from "@/components/common/Container";
@@ -39,18 +40,32 @@ export function FAQPageClient() {
   return (
     <div className="w-full">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-b from-[#0d281e] via-[#103327] to-[#081a14] text-[#fcfbf8] py-16 sm:py-24 border-b border-[#1b5341]/60 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#256f57]/20 rounded-full blur-3xl pointer-events-none" />
-        <Container size="default" className="relative z-10 text-center">
-          <Badge variant="gold" size="md" className="mb-4">
-            Knowledge Repository
-          </Badge>
+      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
+        {/* Background Image: summit-timetable-display.jpg */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <Image
+            src="/images/summit-timetable-display.jpg"
+            alt="Startup Jathara Knowledge & Information Hub"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-center brightness-95"
+          />
+          <div className="absolute inset-0 bg-black/45 sm:bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none" />
+        </div>
 
-          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight">
-            Frequently Asked Questions
+        <Container size="default" className="relative z-10 text-center px-4 sm:px-6">
+          <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight max-w-4xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
+            Frequently Asked{" "}
+            <span className="bg-gradient-to-r from-[#e87042] via-[#f7c89f] to-[#e87042] bg-clip-text text-transparent">
+              Questions
+            </span>
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#c8d1cd] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#dfd6c4] max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
             Everything you need to know about the Dandakaranya summit schedule, participation, transit hubs, and registration.
           </p>
         </Container>
@@ -68,7 +83,7 @@ export function FAQPageClient() {
                 placeholder="Search across all questions and answers..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 bg-[#ffffff] border border-[#e6dfd1] rounded-2xl text-sm sm:text-base text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#143e30] shadow-xs"
+                className="w-full pl-11 pr-4 py-3 bg-[#ffffff] border border-[#e6dfd1] rounded-2xl text-sm sm:text-base text-[#161e1b] focus:outline-none focus:ring-2 focus:ring-[#e87042] shadow-xs"
               />
             </div>
 
@@ -82,7 +97,7 @@ export function FAQPageClient() {
                   className={cn(
                     "px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer border",
                     selectedCategory === cat
-                      ? "bg-[#143e30] text-[#fcfbf8] border-[#143e30]"
+                      ? "bg-[#e87042] text-white border-[#e87042] shadow-xs"
                       : "bg-[#ffffff] text-[#4a5752] border-[#e6dfd1] hover:bg-[#ede7db]"
                   )}
                 >
@@ -97,7 +112,7 @@ export function FAQPageClient() {
             {filteredFaqs.length === 0 ? (
               <div className="bg-[#ffffff] rounded-2xl p-10 text-center border border-[#e6dfd1]">
                 <HelpCircle className="w-10 h-10 text-[#7e8d87] mx-auto mb-3" />
-                <h3 className="font-serif font-bold text-lg text-[#103327]">
+                <h3 className="font-serif font-bold text-lg text-[#1c1917]">
                   No matching questions found
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4a5752] mt-1 mb-4">
@@ -121,7 +136,7 @@ export function FAQPageClient() {
             {/* Assistance Card */}
             <div className="mt-14 p-8 rounded-3xl bg-[#f7f4ec] border border-[#ede7db] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
               <div>
-                <h3 className="font-serif font-bold text-lg sm:text-xl text-[#103327]">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-[#1c1917]">
                   Still have questions?
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4a5752] mt-1">
@@ -140,3 +155,4 @@ export function FAQPageClient() {
     </div>
   );
 }
+

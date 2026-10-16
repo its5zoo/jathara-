@@ -62,7 +62,7 @@ export function HeroSection() {
                 priority={index === 0}
                 unoptimized
                 sizes="100vw"
-                className={`object-cover object-[center_38%] brightness-90 transition-transform duration-[6000ms] ease-out ${
+                className={`object-cover object-[center_38%] brightness-95 transition-transform duration-[6000ms] ease-out ${
                   isActive ? "scale-105" : "scale-100"
                 }`}
               />
@@ -70,9 +70,9 @@ export function HeroSection() {
           );
         })}
 
-        {/* Cinematic Scrim & Vignette so typography remains 100% crisp and readable across all scenes */}
-        <div className="absolute inset-0 z-20 bg-black/60 sm:bg-black/55" />
-        <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/50 to-[#0c0d12]/75" />
+        {/* Balanced scrim & vignette so photos are clearly visible while text remains crisp */}
+        <div className="absolute inset-0 z-20 bg-black/40 sm:bg-black/35" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
         
         {/* Ambient warm peach-cream lighting glow */}
         <div 

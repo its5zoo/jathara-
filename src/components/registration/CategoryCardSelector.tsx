@@ -30,8 +30,8 @@ export function CategoryCardSelector({
             className={cn(
               "bg-[#ffffff] rounded-3xl p-6 sm:p-8 border transition-all flex flex-col justify-between shadow-xs relative group",
               isSelected
-                ? "border-[#143e30] ring-2 ring-[#143e30]/30 shadow-md bg-[#fafdfb]"
-                : "border-[#e6dfd1] hover:border-[#143e30]/40 hover:shadow-sm"
+                ? "border-[#e87042] ring-2 ring-[#e87042]/30 shadow-md bg-[#fafdfb]"
+                : "border-[#e6dfd1] hover:border-[#e87042]/40 hover:shadow-sm"
             )}
           >
             <div>
@@ -52,7 +52,7 @@ export function CategoryCardSelector({
                 </span>
               </div>
 
-              <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#103327] group-hover:text-[#1b5341] transition-colors">
+              <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1c1917] group-hover:text-[#e87042] transition-colors">
                 {cat.title}
               </h3>
 
@@ -71,7 +71,7 @@ export function CategoryCardSelector({
                 <ul className="space-y-1.5 text-xs text-[#333e3a]">
                   {cat.highlights.map((h, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#256f57] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#e87042] flex-shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
                   ))}
@@ -81,7 +81,7 @@ export function CategoryCardSelector({
 
             <div className="mt-8 pt-4 border-t border-[#ede7db] space-y-3">
               <div className="p-2.5 rounded-xl bg-[#f7f4ec] text-[11px] text-[#4a5752]">
-                <span className="font-semibold block text-[#103327]">Participation Status:</span>
+                <span className="font-semibold block text-[#1c1917]">Participation Status:</span>
                 {cat.statusText}
               </div>
 
@@ -102,3 +102,4 @@ export function CategoryCardSelector({
     </div>
   );
 }
+

@@ -68,13 +68,18 @@ export function GunupurHotelsSection() {
     <div className="mt-14 pt-12 border-t border-[#dfd6c4]/70">
 
       {/* ── SECTION HEADER (CENTERED) ── */}
-      <div className="text-center max-w-2xl mx-auto mb-7">
-        <h3 className="font-serif font-black text-[1.75rem] sm:text-[2.2rem] text-[#0f2e22] tracking-tight leading-tight">
-          Verified Partner Hotels &amp; Stays
+      <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+        <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight leading-tight">
+          Verified Partner Hotels &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Stays</span>
         </h3>
-        <p className="mt-2 text-xs sm:text-sm text-[#4a5752] leading-relaxed">
+        <p className="mt-3 text-sm sm:text-base text-[#57534e] leading-relaxed">
           Curated, verified accommodations within 7–9 minutes of the GIET University summit arena.
         </p>
+        <div className="mt-4 flex items-center justify-center gap-2" aria-hidden="true">
+          <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
+          <div className="h-1 w-10 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
+          <div className="h-0.5 w-6 rounded-full bg-[#d68c45]/25" />
+        </div>
       </div>
 
       {/* ── 2-ROW INTERACTIVE MASTER CONTAINER (PAUSES ON HOVER) ── */}

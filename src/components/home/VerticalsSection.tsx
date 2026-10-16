@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { OFFICIAL_TRACKS, SummitTrack } from "@/lib/config/tracks";
 import { Container } from "../common/Container";
-import { SectionHeading } from "../common/SectionHeading";
 import { Button } from "../common/Button";
 import { cn } from "@/lib/utils";
 
@@ -44,10 +43,31 @@ export function VerticalsSection() {
       />
 
       <Container size="wide" className="relative z-10">
-        <SectionHeading
-          title="Eight Focus Sectors"
-          subtitle="Explore the 8 tracks tailored to rural innovation and high-growth national markets."
-        />
+        {/* Bespoke Editorial Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          {/* Eyebrow Pill */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e87042]/10 border border-[#e87042]/25 text-[#c25022] text-xs font-bold tracking-widest uppercase mb-4 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#e87042]" />
+            <span>Summit Focus Tracks</span>
+          </div>
+
+          {/* Main Title with Gradient Accent */}
+          <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#1c1917] tracking-tight leading-[1.12]">
+            Eight Focus <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Sectors</span>
+          </h2>
+
+          {/* Subtitle */}
+          <p className="mt-3.5 text-sm sm:text-base text-[#57534e] max-w-2xl mx-auto leading-relaxed font-normal">
+            Dedicated showcase arenas, investor roundtables, and growth tracks tailored for grassroots innovation and high-growth venture scale.
+          </p>
+
+          {/* Decorative Divider */}
+          <div className="mt-5 flex items-center justify-center gap-2">
+            <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
+            <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
+            <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
+          </div>
+        </div>
 
         {/* Canonical Eight-Track Grid - Premium, Tactile & Elevated */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

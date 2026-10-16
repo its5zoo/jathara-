@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { 
   Sparkles, 
@@ -47,29 +48,51 @@ export default function StartupsPage() {
   return (
     <div className="w-full">
       {/* Header Banner */}
-      <section className="bg-gradient-to-b from-[#0d281e] via-[#103327] to-[#081a14] text-[#fcfbf8] py-16 sm:py-24 border-b border-[#1b5341]/60 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#256f57]/20 rounded-full blur-3xl pointer-events-none" />
-        <Container size="default" className="relative z-10 text-center">
-          <Badge variant="gold" size="md" className="mb-4">
-            Startup & Junicorn Pavilion
-          </Badge>
+      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
+        {/* Topic-matching Dedicated Static Hero Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <Image
+            src="/images/summit-pitch-stage.jpg"
+            alt="Founders Pitching on Stage to Investor Jury"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-[center_35%] brightness-95"
+          />
+          {/* Obsidian-Peach scrim & vignette */}
+          <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+        </div>
 
-          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight">
-            Nurturing Rural & Tribal Innovators
+        <Container size="default" className="relative z-20 text-center">
+          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
+            Nurturing Rural &amp; Tribal Innovators
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#c8d1cd] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+            Bridging Grassroots Founders directly with Top Venture Capital.
+          </p>
+
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
             The platform where collegiate makers, grassroots problem solvers, and early-stage enterprises connect with national venture capital and industry mentors.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Button href="/register?category=startup-founder" variant="gold" size="lg" className="font-bold">
+            <Link 
+              href="/register?category=startup-founder" 
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
+            >
               <span>Founder Registration Gateway</span>
-              <ArrowRight className="w-4 h-4 ml-1.5" />
-            </Button>
-            <Button href="/programme" variant="outline" size="lg" className="text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#143e30]">
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Link>
+            <Link 
+              href="/programme" 
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#141620]/80 hover:bg-[#1f2230] text-white border border-white/20 font-bold text-sm backdrop-blur-md transition-all"
+            >
               <span>Check Pitch Day Timing</span>
-            </Button>
+            </Link>
           </div>
         </Container>
       </section>
@@ -77,16 +100,22 @@ export default function StartupsPage() {
       {/* Junicorn Initiative Spotlight */}
       <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
         <Container size="default">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#1c1917] tracking-tight leading-[1.12]">
+              The Junicorn Initiative: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">From Classroom to Enterprise</span>
+            </h2>
+            <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
+              Empowering young student innovators, school inventors, and grassroots youth across Odisha and neighboring states.
+            </p>
+            <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
+              <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
+              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
+              <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <Badge variant="terracotta" size="sm">
-                Grassroots Youth Focus
-              </Badge>
-
-              <h2 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-[#103327] tracking-tight leading-snug">
-                The Junicorn Initiative: From Classroom to Enterprise
-              </h2>
-
               <p className="text-base text-[#4a5752] leading-relaxed">
                 The <strong>Junicorn Initiative</strong> is a nationwide movement pioneered by ISF to cultivate &apos;Junior Unicorns&apos; — young student innovators, school inventors, and rural youth who demonstrate ingenuity in solving everyday challenges in their local communities.
               </p>
@@ -156,7 +185,6 @@ export default function StartupsPage() {
       <section className="py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
         <Container size="wide">
           <SectionHeading
-            eyebrow="Official Summit Tracks"
             title="Thematic Sectors for Showcases & Roundtables"
             subtitle="Startups with active prototypes, MVPs, or operational traction in these eight official domains are invited to exhibit."
           />
@@ -225,7 +253,6 @@ export default function StartupsPage() {
       <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
         <Container size="default">
           <SectionHeading
-            eyebrow="Exhibition Floor"
             title="The Startup Showcase Arena"
             subtitle="An energetic, purpose-built exhibition arena inside the GIET campus where founders present physical prototypes, software demonstrations, and native produce."
           />
@@ -300,3 +327,4 @@ export default function StartupsPage() {
     </div>
   );
 }
+

@@ -24,13 +24,13 @@ export function Button({
   const baseStyles = "inline-flex items-center justify-center font-sans font-medium rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer select-none";
 
   const variantStyles = {
-    primary: "bg-[#143e30] text-[#fcfbf8] hover:bg-[#0d281e] focus-visible:ring-[#143e30] shadow-sm shadow-[#143e30]/10",
-    forest: "bg-[#143e30] text-[#fcfbf8] hover:bg-[#0d281e] focus-visible:ring-[#143e30] shadow-sm shadow-[#143e30]/10",
-    secondary: "bg-[#ede7db] text-[#161e1b] hover:bg-[#dfd6c4] focus-visible:ring-[#143e30] border border-[#dfd6c4]",
-    outline: "bg-transparent text-[#143e30] border-2 border-[#143e30] hover:bg-[#143e30] hover:text-[#fcfbf8] focus-visible:ring-[#143e30]",
-    terracotta: "bg-[#c25e38] text-white hover:bg-[#a74e2d] focus-visible:ring-[#c25e38] shadow-sm shadow-[#c25e38]/20",
-    gold: "bg-[#be9740] text-white hover:bg-[#9e792c] focus-visible:ring-[#be9740] shadow-sm shadow-[#be9740]/20",
-    ghost: "bg-transparent text-[#222b27] hover:bg-[#ede7db]/50 focus-visible:ring-[#143e30]",
+    primary: "bg-[#e87042] text-white hover:bg-[#d95d2c] focus-visible:ring-[#e87042] shadow-sm shadow-[#e87042]/20 font-semibold",
+    forest: "bg-[#e87042] text-white hover:bg-[#d95d2c] focus-visible:ring-[#e87042] shadow-sm shadow-[#e87042]/20 font-semibold",
+    secondary: "bg-[#ede7db] text-[#1c1917] hover:bg-[#dfd6c4] focus-visible:ring-[#e87042] border border-[#dfd6c4]",
+    outline: "bg-transparent text-[#e87042] border-2 border-[#e87042] hover:bg-[#e87042] hover:text-white focus-visible:ring-[#e87042] font-semibold",
+    terracotta: "bg-[#c25e38] text-white hover:bg-[#a74e2d] focus-visible:ring-[#c25e38] shadow-sm shadow-[#c25e38]/20 font-semibold",
+    gold: "bg-[#be9740] text-white hover:bg-[#9e792c] focus-visible:ring-[#be9740] shadow-sm shadow-[#be9740]/20 font-semibold",
+    ghost: "bg-transparent text-[#222b27] hover:bg-[#ede7db]/50 focus-visible:ring-[#e87042]",
   };
 
   const sizeStyles = {

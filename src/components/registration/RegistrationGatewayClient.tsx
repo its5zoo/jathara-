@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { 
   MapPin, 
@@ -73,38 +74,49 @@ export function RegistrationGatewayClient() {
   return (
     <div className="w-full">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-b from-[#0d281e] via-[#103327] to-[#081a14] text-[#fcfbf8] py-16 sm:py-24 border-b border-[#1b5341]/60 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#256f57]/20 rounded-full blur-3xl pointer-events-none" />
-        <Container size="default" className="relative z-10 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
-            <Badge variant="gold" size="md">
-              Registration Portal
-            </Badge>
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-500/40">
-              100% Free Delegate Entry
-            </span>
-          </div>
+      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
+        {/* Topic-matching Dedicated Static Hero Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <Image
+            src="/images/summit-registration-backdrop.jpg"
+            alt="Summit Registration Check-In Desk and Delegates"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-[center_35%] brightness-95"
+          />
+          {/* Obsidian-Peach scrim & vignette */}
+          <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+        </div>
 
-          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight">
+        <Container size="default" className="relative z-20 text-center">
+          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
             ISF Startup Jathara 2026 Registration
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg md:text-xl text-[#c8d1cd] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+            Join 2,000+ Founders, Investors &amp; Leaders at GIET University.
+          </p>
+
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
             Startup Jathara @ Dandakaranya welcomes startup founders, student makers, venture capitalists, corporate delegates, and domain mentors to GIET University, Gunupur, Odisha.
           </p>
 
           {/* Summit Facts Strip */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-[#fcfbf8]/90">
-            <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
-              <Calendar className="w-4 h-4 text-[#be9740]" />
-              <span>18–20 December 2026 (Welcome Dinner 17 Dec)</span>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-white">
+            <div className="flex items-center gap-2 bg-[#141620]/80 border border-white/10 px-3.5 py-1.5 rounded-xl backdrop-blur-md">
+              <Calendar className="w-4 h-4 text-[#e87042]" />
+              <span>18–20 December 2026</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
-              <MapPin className="w-4 h-4 text-[#b24e2b]" />
+            <div className="flex items-center gap-2 bg-[#141620]/80 border border-white/10 px-3.5 py-1.5 rounded-xl backdrop-blur-md">
+              <MapPin className="w-4 h-4 text-[#e87042]" />
               <span>GIET University, Gunupur, Odisha</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <div className="flex items-center gap-2 bg-[#141620]/80 border border-white/10 px-3.5 py-1.5 rounded-xl backdrop-blur-md">
+              <ShieldCheck className="w-4 h-4 text-[#e87042]" />
               <span>No Registration Fees</span>
             </div>
           </div>
@@ -136,7 +148,6 @@ export function RegistrationGatewayClient() {
           <section className="py-16 sm:py-20">
             <Container size="wide">
               <SectionHeading
-                eyebrow="Participant Tracks"
                 title="Choose Your Delegation Profile"
                 subtitle="Select your participation track below to complete your registration. Individual, team, and corporate delegation intakes are open and free of charge."
               />
