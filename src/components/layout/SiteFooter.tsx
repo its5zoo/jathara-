@@ -6,11 +6,9 @@ import {
   Calendar, 
   Mail, 
   Phone, 
-  AlertTriangle,
-  Users 
+  AlertTriangle 
 } from "lucide-react";
 import { EVENT_METADATA } from "@/data/eventData";
-import { STUDENT_COORDINATORS } from "@/data/coordinatorsData";
 import { Container } from "../common/Container";
 import { InstitutionalLogos } from "../common/InstitutionalLogos";
 import { CopyrightYear } from "./CopyrightYear";
@@ -99,9 +97,8 @@ export function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/programme" className="hover:text-[#fcfbf8] transition-colors flex items-center gap-1.5">
-                    <span>3-Day Schedule</span>
-                    <span className="text-[10px] bg-amber-900/60 text-amber-300 px-1.5 py-0.5 rounded border border-amber-700/50">Draft</span>
+                  <Link href="/programme" className="hover:text-[#fcfbf8] transition-colors">
+                    3-Day Schedule
                   </Link>
                 </li>
                 <li>
@@ -212,48 +209,19 @@ export function SiteFooter() {
             </div>
           </div>
 
-          {/* Student Coordinators (Compact Institutional Band) */}
-          <div className="mt-12 pt-8 border-t border-[#1b5341]/60">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-[#c25e38]" />
-                <h4 className="text-xs uppercase tracking-wider text-[#d6b25e] font-bold">
-                  Student Coordinators
-                </h4>
-              </div>
-              <span className="text-[11px] text-[#8c9c94] font-medium">
-                GIET University Organising Team
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
-              {STUDENT_COORDINATORS.map((coordinator) => (
-                <div
-                  key={coordinator.id}
-                  className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-[#103327]/60 border border-[#1b5341]/60 text-xs text-[#fcfbf8] hover:border-[#be9740]/50 transition-colors"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#d6b25e] shrink-0" />
-                  <span className="font-semibold text-[#fcfbf8] tracking-tight">
-                    {coordinator.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Legal, Copyright and Disclaimer Bar */}
-          <div className="mt-8 pt-6 border-t border-[#1b5341]/40 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-4 text-xs text-[#7e8d87]">
+          <div className="mt-12 pt-6 border-t border-[#1b5341]/40 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-4 text-xs text-[#7e8d87]">
             <p>
               © <CopyrightYear /> {EVENT_METADATA.name}. Organized by International Startup Foundation (ISF) in collaboration with GIET University &amp; IncubateX.
             </p>
 
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-3 sm:gap-4">
               <Link href="/privacy" className="hover:text-[#ede7db] transition-colors">
-                Draft Privacy Policy
+                Privacy Policy
               </Link>
               <span>•</span>
               <Link href="/terms" className="hover:text-[#ede7db] transition-colors">
-                Draft Terms of Attendance
+                Terms of Attendance
               </Link>
               <span>•</span>
               <Link href="/contact" className="hover:text-[#ede7db] transition-colors">

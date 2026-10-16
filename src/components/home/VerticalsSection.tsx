@@ -36,7 +36,6 @@ export function VerticalsSection() {
     <section className="py-14 sm:py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
       <Container size="wide">
         <SectionHeading
-          eyebrow="Summit Verticals"
           title="Eight Focus Sectors"
           subtitle="Explore the 8 tracks tailored to rural innovation and high-growth national markets."
         />
