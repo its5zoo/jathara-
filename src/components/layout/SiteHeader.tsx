@@ -58,57 +58,53 @@ export function SiteHeader() {
                 <span className="font-serif font-black text-xs min-[400px]:text-sm sm:text-base lg:text-[16px] text-[#1c1917] tracking-tight leading-tight group-hover:text-[#e87042] transition-colors whitespace-nowrap">
                   ISF STARTUP JATHARA
                 </span>
-                <span className="text-[9px] min-[400px]:text-[10px] sm:text-[11px] font-bold text-[#e87042] tracking-wider uppercase mt-0.5 flex items-center gap-1 sm:gap-1.5 leading-none whitespace-nowrap">
-                  <span>Dandakaranya 2026</span>
-                  <span className="text-[#8c671b] font-medium normal-case hidden 2xl:inline shrink-0">
-                    • 18–20 Dec
-                  </span>
+                <span className="text-[9px] min-[400px]:text-[10px] sm:text-[11px] font-bold text-[#e87042] tracking-wider uppercase mt-0.5 leading-none whitespace-nowrap">
+                  Dandakaranya 2026
                 </span>
               </div>
             </Link>
           </div>
 
-          {/* ZONE 2 (CENTER): Primary Desktop Navigation — No overlap, clean responsive gap */}
-          <nav
-            aria-label="Main Navigation"
-            className="hidden xl:flex items-center justify-center gap-0.5 2xl:gap-1.5 shrink-0"
-          >
-            {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "relative px-2 2xl:px-2.5 py-1.5 rounded-lg text-xs 2xl:text-[13px] font-semibold transition-all duration-150 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]",
-                    isActive
-                      ? "text-[#1c1917] font-bold bg-[#1c1917]/6 shadow-2xs after:absolute after:bottom-0 after:left-2 after:right-2 2xl:after:left-2.5 2xl:after:right-2.5 after:h-0.5 after:bg-[#e87042] after:rounded-full"
-                      : "text-[#57534e] hover:text-[#e87042] hover:bg-[#f5efe6]"
-                  )}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  <span className="inline-flex items-center gap-1 2xl:gap-1.5">
-                    {link.label}
-                    {link.badge && (
-                      <span
-                        className={cn(
-                          "text-[8px] 2xl:text-[9px] px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold leading-none",
-                          isActive
-                            ? "bg-[#e87042] text-white"
-                            : "bg-[#ffedd5] text-[#9a3412] border border-[#fed7aa]"
-                        )}
-                      >
-                        {link.badge}
-                      </span>
+          {/* ZONE 2 & 3 (RIGHT): Primary Desktop Navigation + Action Zone */}
+          <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
+            <nav
+              aria-label="Main Navigation"
+              className="hidden lg:flex items-center gap-1 xl:gap-1.5"
+            >
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "px-3 py-1.5 rounded-xl text-xs xl:text-[13px] transition-all duration-200 ease-out whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]",
+                      isActive
+                        ? "text-[#1c1917] font-bold bg-white shadow-[0_2px_10px_rgba(28,25,23,0.08)] border border-[#e8dfd3]/70"
+                        : "text-[#57534e] font-medium hover:text-[#1c1917] hover:bg-white/60 hover:shadow-xs"
                     )}
-                  </span>
-                </Link>
-              );
-            })}
-          </nav>
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    <span className="inline-flex items-center gap-1 xl:gap-1.5">
+                      {link.label}
+                      {link.badge && (
+                        <span
+                          className={cn(
+                            "text-[8px] xl:text-[9px] px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold leading-none",
+                            isActive
+                              ? "bg-[#e87042] text-white"
+                              : "bg-[#ffedd5] text-[#9a3412] border border-[#fed7aa]"
+                          )}
+                        >
+                          {link.badge}
+                        </span>
+                      )}
+                    </span>
+                  </Link>
+                );
+              })}
+            </nav>
 
-          {/* ZONE 3 (RIGHT): Action Zone & Mobile Trigger */}
-          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             {/* Primary Registration Call to Action */}
             <Link
               href="/register"

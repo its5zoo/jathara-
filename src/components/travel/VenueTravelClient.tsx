@@ -30,7 +30,6 @@ import { cn } from "@/lib/utils";
 import { GunupurHotelsSection } from "./GunupurHotelsSection";
 
 export function VenueTravelClient() {
-  const [selectedType, setSelectedType] = useState<TransitHubType | "all">("all");
   const [activeHubId, setActiveHubId] = useState<string>(TRAVEL_HUBS[0].id);
   const [expandedHubs, setExpandedHubs] = useState<Record<string, boolean>>({});
 
@@ -39,9 +38,7 @@ export function VenueTravelClient() {
     setExpandedHubs((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
-  const filteredHubs = TRAVEL_HUBS.filter(
-    (hub) => selectedType === "all" || hub.type === selectedType
-  );
+  const filteredHubs = TRAVEL_HUBS;
 
   return (
     <div className="w-full">
@@ -101,58 +98,60 @@ export function VenueTravelClient() {
             subtitle="Gandhi Institute of Engineering and Technology University (GIET University) is a state private university offering world-class research laboratories and residential hospitality amidst scenic hills."
           />
 
-          {/* Official Campus Building Photograph Feature */}
-          <div className="mb-10 sm:mb-12 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#dfd6c4] shadow-xl bg-[#0c0d12] group">
-            <div className="relative min-h-[340px] sm:min-h-0 sm:aspect-[16/9] md:aspect-[21/9] w-full flex flex-col justify-end">
+          {/* Official Campus Building Photograph Feature — Clean & Unboxed */}
+          <div className="mb-10 sm:mb-12 rounded-2xl sm:rounded-3xl border border-[#e6dfd1] overflow-hidden bg-white shadow-sm">
+            {/* Clean, unobstructed campus photo */}
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden">
               <Image
                 src="/images/giet-school-of-engineering.jpg"
                 alt="School of Engineering and Technology, GIET University Campus, Gunupur, Odisha"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                className="object-cover transition-transform duration-700 ease-out hover:scale-102"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/50 to-transparent pointer-events-none" />
-              
-              <div className="relative z-10 m-3 sm:m-6 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[#0c0d12]/90 backdrop-blur-md border border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
-                <div className="flex items-start sm:items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 sm:w-14 sm:h-12 rounded-xl bg-white p-1 sm:p-1.5 flex items-center justify-center shrink-0 border border-white/60 shadow-2xs">
-                    <Image
-                      src="/logos/giet-logo.png"
-                      alt="GIET University Official Crest"
-                      width={48}
-                      height={38}
-                      className="max-h-7 sm:max-h-9 max-w-9 sm:max-w-11 w-auto h-auto object-contain"
-                    />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-0.5">
-                      <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#d6b25e] bg-[#e87042] px-1.5 sm:px-2 py-0.5 rounded">
-                        Central Summit Venue
-                      </span>
-                      <span className="text-[9.5px] sm:text-[10px] font-semibold text-[#c8d1cd]">
-                        State Private University
-                      </span>
-                    </div>
-                    <h4 className="font-serif font-bold text-sm sm:text-lg md:text-xl text-[#fcfbf8] leading-snug whitespace-normal break-words">
-                      School of Engineering and Technology Building
-                    </h4>
-                    <p className="text-[11px] sm:text-xs text-[#c8d1cd] mt-0.5 leading-relaxed">
-                      Main Auditorium, Exhibition Arena &amp; Sector Roundtable Rooms, Gunupur, Rayagada, Odisha
-                    </p>
-                  </div>
-                </div>
+            </div>
 
-                <a
-                  href="https://www.giet.edu/schools/school-of-engineering/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2 rounded-xl bg-white text-xs font-bold text-[#e87042] hover:bg-[#ede7db] transition-colors shrink-0 shadow-xs w-full sm:w-auto"
-                >
-                  <GraduationCap className="w-3.5 h-3.5 text-[#c25e38]" />
-                  <span>Official School Portal</span>
-                  <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                </a>
+            {/* Clean, unboxed architectural venue bar (hairline border, zero floating boxes) */}
+            <div className="p-4 sm:p-6 border-t border-[#e6dfd1] bg-[#faf8f5] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="w-12 h-12 rounded-xl bg-white p-1.5 flex items-center justify-center shrink-0 border border-[#e6dfd1] shadow-2xs">
+                  <Image
+                    src="/logos/giet-logo.png"
+                    alt="GIET University Official Crest"
+                    width={44}
+                    height={36}
+                    className="max-h-8 max-w-9 w-auto h-auto object-contain"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#c25022]">
+                      Central Summit Venue
+                    </span>
+                    <span className="text-xs text-[#a8a29e]">•</span>
+                    <span className="text-xs font-medium text-[#78716c]">
+                      State Private University
+                    </span>
+                  </div>
+                  <h4 className="font-serif font-bold text-base sm:text-lg text-[#1c1917] leading-snug">
+                    School of Engineering and Technology Building
+                  </h4>
+                  <p className="text-xs text-[#57534e] mt-0.5">
+                    Main Auditorium, Exhibition Arena &amp; Sector Roundtable Rooms, Gunupur, Rayagada, Odisha
+                  </p>
+                </div>
               </div>
+
+              <a
+                href="https://www.giet.edu/schools/school-of-engineering/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-[#e87042]/30 bg-white text-xs font-semibold text-[#c25022] hover:bg-[#e87042]/5 transition-colors shrink-0 shadow-2xs self-start sm:self-center"
+              >
+                <GraduationCap className="w-4 h-4 text-[#e87042]" />
+                <span>Official School Portal</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
 
@@ -204,63 +203,8 @@ export function VenueTravelClient() {
             subtitle="Carefully reviewed distance and transit connectivity options to help you choose the best arrival corridor."
           />
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            <button
-              type="button"
-              onClick={() => setSelectedType("all")}
-              className={cn(
-                "px-4 py-2 rounded-full text-xs font-semibold transition-colors cursor-pointer border",
-                selectedType === "all"
-                  ? "bg-[#e87042] text-white border-[#e87042]"
-                  : "bg-[#ffffff] text-[#333e3a] border-[#dfd6c4] hover:bg-[#ede7db]"
-              )}
-            >
-              All Gateways ({TRAVEL_HUBS.length})
-            </button>
-            <button
-              type="button"
-              onClick={() => setSelectedType("airport")}
-              className={cn(
-                "px-4 py-2 rounded-full text-xs font-semibold transition-colors cursor-pointer border flex items-center gap-1.5",
-                selectedType === "airport"
-                  ? "bg-[#e87042] text-white border-[#e87042]"
-                  : "bg-[#ffffff] text-[#333e3a] border-[#dfd6c4] hover:bg-[#ede7db]"
-              )}
-            >
-              <Plane className="w-3.5 h-3.5" />
-              Airports
-            </button>
-            <button
-              type="button"
-              onClick={() => setSelectedType("railway")}
-              className={cn(
-                "px-4 py-2 rounded-full text-xs font-semibold transition-colors cursor-pointer border flex items-center gap-1.5",
-                selectedType === "railway"
-                  ? "bg-[#e87042] text-white border-[#e87042]"
-                  : "bg-[#ffffff] text-[#333e3a] border-[#dfd6c4] hover:bg-[#ede7db]"
-              )}
-            >
-              <Train className="w-3.5 h-3.5" />
-              Railways
-            </button>
-            <button
-              type="button"
-              onClick={() => setSelectedType("road")}
-              className={cn(
-                "px-4 py-2 rounded-full text-xs font-semibold transition-colors cursor-pointer border flex items-center gap-1.5",
-                selectedType === "road"
-                  ? "bg-[#e87042] text-white border-[#e87042]"
-                  : "bg-[#ffffff] text-[#333e3a] border-[#dfd6c4] hover:bg-[#ede7db]"
-              )}
-            >
-              <Car className="w-3.5 h-3.5" />
-              Road Highways
-            </button>
-          </div>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {/* Cards Grid — Large Typography, Crisp & High-Impact */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 mt-10">
             {filteredHubs.map((hub) => {
               const isAirport = hub.type === "airport";
               const isRail = hub.type === "railway";
@@ -271,46 +215,66 @@ export function VenueTravelClient() {
                   key={hub.id}
                   onClick={() => setActiveHubId(hub.id)}
                   className={cn(
-                    "bg-[#ffffff] rounded-3xl p-6 sm:p-7 border transition-all cursor-pointer flex flex-col justify-between",
+                    "bg-white rounded-2xl p-6 border transition-all cursor-pointer flex flex-col justify-between gap-4",
                     isSelected
                       ? "border-[#e87042] shadow-md ring-2 ring-[#e87042]/20"
-                      : "border-[#e6dfd1] hover:border-[#e87042]/30 shadow-xs"
+                      : "border-[#e6dfd1] hover:border-[#e87042]/50 hover:shadow-sm"
                   )}
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-2.5 rounded-xl bg-[#f7f4ec] text-[#e87042] border border-[#dfd6c4]">
-                        {isAirport ? (
-                          <Plane className="w-5 h-5 text-[#c25e38]" />
-                        ) : isRail ? (
-                          <Train className="w-5 h-5 text-[#e87042]" />
-                        ) : (
-                          <Car className="w-5 h-5 text-[#e87042]" />
-                        )}
+                  <div className="space-y-3.5">
+                    {/* Header Row: Category Badge & Code */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <div
+                          className={cn(
+                            "w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border",
+                            isAirport
+                              ? "bg-amber-50 border-amber-200/60 text-[#c25022]"
+                              : isRail
+                              ? "bg-emerald-50 border-emerald-200/60 text-emerald-700"
+                              : "bg-blue-50 border-blue-200/60 text-blue-700"
+                          )}
+                        >
+                          {isAirport ? (
+                            <Plane className="w-4 h-4" />
+                          ) : isRail ? (
+                            <Train className="w-4 h-4" />
+                          ) : (
+                            <Car className="w-4 h-4" />
+                          )}
+                        </div>
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#78716c]">
+                          {hub.type === "airport" ? "Airport" : hub.type === "railway" ? "Rail Junction" : "Highway Corridor"}
+                        </span>
                       </div>
 
-                      <Badge variant="ivory" size="sm">
+                      <span className="px-2.5 py-1 rounded-md bg-[#faf8f5] border border-[#e6dfd1] text-xs font-mono font-bold text-[#1c1917]">
                         {hub.code}
-                      </Badge>
+                      </span>
                     </div>
 
-                    <h3 className="font-serif font-bold text-xl text-[#1c1917]">
+                    {/* Hub Name — Large & Prominent */}
+                    <h3 className="font-serif font-bold text-lg sm:text-xl text-[#1c1917] leading-snug">
                       {hub.name}
                     </h3>
 
-                    <div className="mt-2 flex items-center gap-2 text-xs font-bold text-[#8c671b]">
-                      <span>{hub.distanceKm}</span>
-                      <span>•</span>
-                      <span>{hub.approxTravelTime}</span>
+                    {/* Clear Metrics: Distance & Travel Time Chip (Large & Legible) */}
+                    <div className="flex items-center gap-2.5 text-sm bg-[#faf8f5] border border-[#ede7db] px-3 py-1.5 rounded-xl w-fit">
+                      <div className="flex items-center gap-1.5 font-bold text-[#1c1917]">
+                        <MapPin className="w-4 h-4 text-[#e87042] shrink-0" />
+                        <span className="text-sm font-bold">{hub.distanceKm}</span>
+                      </div>
+                      <span className="text-[#d6d0c7]">•</span>
+                      <div className="flex items-center gap-1.5 text-[#57534e]">
+                        <Clock className="w-4 h-4 text-[#c25022] shrink-0" />
+                        <span className="text-sm font-medium">{hub.approxTravelTime}</span>
+                      </div>
                     </div>
 
-                    <p className="mt-3 text-xs sm:text-sm text-[#4a5752] leading-relaxed">
+                    {/* Direct Transit Advice — Large & Easy to Read */}
+                    <p className="text-sm sm:text-[15px] text-[#292524] leading-relaxed pt-1">
                       {hub.connectivityDescription}
                     </p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-[#ede7db] text-[11px] text-[#7e8d87]">
-                    <strong>Target:</strong> {hub.recommendedFor}
                   </div>
                 </div>
               );

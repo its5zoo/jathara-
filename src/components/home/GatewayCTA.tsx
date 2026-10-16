@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "../common/Container";
 import { Button } from "../common/Button";
 
@@ -16,11 +16,6 @@ export function GatewayCTA() {
       />
 
       <Container size="default" className="relative z-10 text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1a1d27] border border-[#2b3040] text-xs text-[#f7c89f] mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-[#e87042]" />
-          <span>ISF Startup Jathara @ Dandakaranya</span>
-        </div>
-
         <h2 className="font-serif font-black text-2xl sm:text-4xl md:text-5xl text-[#fcfbf8] tracking-tight max-w-2xl mx-auto leading-tight">
           Be Part of India&apos;s Grassroots Innovation Gathering
         </h2>

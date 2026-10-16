@@ -4,8 +4,7 @@ import Link from "next/link";
 import { 
   Mic2, 
   ArrowRight, 
-  Mail, 
-  AlertCircle 
+  Mail 
 } from "lucide-react";
 import { INITIAL_SPEAKERS } from "@/data/eventData";
 import { Container } from "@/components/common/Container";
@@ -53,13 +52,6 @@ export default function SpeakersPage() {
           <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
             Leading voices across government, venture capital, agriculture, healthcare, and higher education convening in Dandakaranya.
           </p>
-
-          <div className="mt-8 inline-flex items-center gap-2 text-xs text-[#ffedd5] bg-[#141620]/80 border border-white/10 px-3.5 py-1.5 rounded-xl backdrop-blur-md">
-            <AlertCircle className="w-4 h-4 text-[#e87042] flex-shrink-0" />
-            <span>
-              <strong>Editorial Transparency:</strong> The official confirmed dignitary roster is currently in steering committee review and will be released in scheduled editions.
-            </span>
-          </div>
         </Container>
       </section>
 

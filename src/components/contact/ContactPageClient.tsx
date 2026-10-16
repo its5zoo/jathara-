@@ -49,19 +49,19 @@ export function ContactPageClient() {
     <div className="w-full">
       {/* Editorial Header */}
       <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
-        {/* Background Image: giet-school-of-engineering.jpg */}
+        {/* Background Image: contact-secretariat-hero.jpg */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/giet-school-of-engineering.jpg"
-            alt="GIET University Secretariat Campus, Gunupur"
+            src="/images/contact-secretariat-hero.jpg"
+            alt="ISF Startup Jathara Secretariat & Concierge Reception"
             fill
             priority
             unoptimized
             sizes="100vw"
-            className="object-cover object-[center_35%] brightness-95"
+            className="object-cover object-center brightness-90"
           />
-          <div className="absolute inset-0 bg-black/45 sm:bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/40 to-[#0c0d12]/60" />
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none" />
         </div>
 

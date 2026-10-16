@@ -80,10 +80,6 @@ export function FAQAccordion({
                 className="px-5 sm:px-6 pb-5 pt-1 text-sm sm:text-base text-[#4a5752] leading-relaxed border-t border-[#f7f4ec]"
               >
                 <p>{item.answer}</p>
-                <div className="mt-3 text-[11px] text-[#7e8d87] flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#c25e38]" />
-                  <span>Category: {item.category}</span>
-                </div>
               </div>
             )}
           </div>

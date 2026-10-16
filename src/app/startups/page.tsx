@@ -17,7 +17,8 @@ import {
   CheckCircle2, 
   ShieldAlert, 
   Compass, 
-  Layers 
+  Layers,
+  Rocket 
 } from "lucide-react";
 import { STARTUP_VERTICALS } from "@/data/eventData";
 import { Container } from "@/components/common/Container";
@@ -142,36 +143,49 @@ export default function StartupsPage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="bg-[#f7f4ec] rounded-3xl p-8 border border-[#dfd6c4] space-y-5">
-                <div className="w-12 h-12 rounded-2xl bg-[#143e30] text-[#d6b25e] flex items-center justify-center">
-                  <Sparkles className="w-6 h-6" />
+              <div className="bg-[#ffffff] rounded-3xl p-6 sm:p-7 border border-[#e6dfd1] shadow-lg space-y-5 overflow-hidden">
+                {/* Photo preview of Junicorn Student Innovators - Clean & Unobstructed */}
+                <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden border border-[#dfd6c4] shadow-xs group">
+                  <Image
+                    src="/images/junicorn-innovators.jpg"
+                    alt="Indian Student Innovators Showcasing Prototypes with Mentors"
+                    fill
+                    unoptimized
+                    sizes="(max-width: 1024px) 100vw, 400px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
 
-                <h3 className="font-serif font-bold text-xl text-[#103327]">
-                  What Junicorn Teams Receive
-                </h3>
+                <div>
+                  <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1c1917]">
+                    What Junicorn Teams Receive
+                  </h3>
+                  <p className="mt-1 text-xs text-[#7e8d87]">
+                    Complete grassroots incubation and mentorship package for selected youth teams.
+                  </p>
+                </div>
 
                 <ul className="space-y-3 text-xs sm:text-sm text-[#333e3a]">
-                  <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#c25e38]" />
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                     <span>Free exhibition demo kiosk in the Exhibition Arena</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#c25e38]" />
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                     <span>One-on-one pairing with industry domain mentors</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#c25e38]" />
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                     <span>Participation in Day 2 Dandakaranya Forest Trekking</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#c25e38]" />
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                     <span>Summit certification and innovation recognition awards</span>
                   </li>
                 </ul>
 
                 <div className="pt-2 border-t border-[#dfd6c4]">
-                  <Button href="/register?category=junicorn-youth" variant="primary" size="sm" className="w-full justify-center">
+                  <Button href="/register?category=junicorn-youth" variant="terracotta" size="sm" className="w-full justify-center">
                     Register as Student / Junicorn Maker
                   </Button>
                 </div>

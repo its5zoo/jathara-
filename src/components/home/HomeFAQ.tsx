@@ -18,7 +18,7 @@ export function HomeFAQ() {
         />
 
         <div className="max-w-3xl mx-auto">
-          <FAQAccordion items={homeFaqs} defaultOpenId="faq-1" />
+          <FAQAccordion items={homeFaqs} />
 
           <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-[#f5efe6] border border-[#e8dfd3] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>

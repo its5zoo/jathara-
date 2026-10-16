@@ -12,7 +12,9 @@ import {
   ArrowRight,
   ExternalLink,
   Calendar,
-  Compass
+  Compass,
+  MapPin,
+  Quote
 } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
@@ -67,21 +69,6 @@ export default function AboutPage() {
           <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
             ISF Startup Jathara 2026 is an intentional enterprise movement designed to decentralize India&apos;s startup economy, bringing global capital and institutional mentorship to the rural and tribal communities of South Odisha.
           </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-white">
-            <span className="p-2.5 rounded-xl bg-[#141620]/80 backdrop-blur-md border border-white/10 flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-[#e87042]" />
-              <span><strong>Dates:</strong> 18–20 December 2026</span>
-            </span>
-            <span className="p-2.5 rounded-xl bg-[#141620]/80 backdrop-blur-md border border-white/10 flex items-center gap-2">
-              <Building2 className="w-4 h-4 text-[#e87042]" />
-              <span><strong>Host Campus:</strong> GIET University, Gunupur, Odisha</span>
-            </span>
-            <span className="p-2.5 rounded-xl bg-[#141620]/80 backdrop-blur-md border border-white/10 flex items-center gap-2">
-              <Compass className="w-4 h-4 text-[#e87042]" />
-              <span><strong>Convener:</strong> International Startup Foundation</span>
-            </span>
-          </div>
         </Container>
       </section>
 
@@ -177,105 +164,143 @@ export default function AboutPage() {
       <section id="giet-legacy" className="py-20 sm:py-24 bg-[#ffffff] border-b border-[#e6dfd1]">
         <Container size="default">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#1c1917] tracking-tight leading-[1.15]">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+            <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl text-[#1c1917] tracking-tight leading-[1.15]">
               A Legacy of Learning, Research &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Innovation</span>
             </h2>
-            <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
-              Founded in 1997 in Gunupur, Odisha, GIET University has grown from a pioneering technical college into a prestigious state private university, fostering international research, multi-disciplinary excellence, and grassroots rural empowerment.
+            <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto leading-relaxed">
+              Founded in 1997 in Gunupur, Odisha — fostering multidisciplinary scholarship, advanced research, and grassroots empowerment.
             </p>
-            <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
-              <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
-              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-              <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
+            <div className="mt-3.5 flex items-center justify-center gap-2" aria-hidden="true">
+              <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
+              <div className="h-1 w-10 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
+              <div className="h-0.5 w-6 rounded-full bg-[#d68c45]/25" />
             </div>
           </div>
 
-          {/* Institutional Overview & Founding Story Card */}
-          <div className="bg-[#faf8f4] rounded-3xl p-8 sm:p-12 border border-[#ede7db] shadow-xs space-y-8 mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-8 space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#8c671b]">
-                  Institutional Founding &amp; Evolution
-                </span>
-                <h3 className="font-serif font-bold text-2xl sm:text-3xl text-[#103327]">
+          {/* Institutional Overview & Founding Story — Completely Open & Unboxed Editorial Design */}
+          <div className="py-8 sm:py-10 border-t border-b border-[#e6dfd1]/80 mb-12 space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              {/* Left Column: Open Editorial Narrative */}
+              <div className="lg:col-span-7 space-y-3">
+                <div className="inline-flex items-center">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#c25022]">
+                    Institutional Founding &amp; Evolution
+                  </span>
+                </div>
+
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1c1917] leading-tight">
                   From Technical Pioneer to Premier State Private University
                 </h3>
-                <p className="text-sm sm:text-base text-[#333e3a] leading-relaxed">
-                  GIET University, Gunupur (formerly known as the <strong>Gandhi Institute of Engineering and Technology</strong>) was established by the <strong>Vidya Bharati Educational Trust</strong> in Gunupur, Rayagada district, Odisha, India in 1997. Approved by the All India Council for Technical Education (AICTE) since its inception, the Trust was established with the steadfast motto of providing high-quality technical education in a disciplined, progressive environment with international benchmarks.
+
+                <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed">
+                  Established in 1997 by the <strong>Vidya Bharati Educational Trust</strong> in Gunupur, GIET began as an AICTE-approved pioneer in technical and engineering education in Eastern India.
                 </p>
-                <p className="text-sm sm:text-base text-[#333e3a] leading-relaxed">
-                  In 2018, recognizing more than two decades of sustained academic excellence, the institution was conferred full State Private University status through the passage of the <strong>GIET University Act, 2018</strong> by the Odisha Legislative Assembly, with formal approval and incorporation under Section 2(f) of the UGC Act, 1956 in 2019.
+
+                <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed">
+                  In 2018, the Odisha Legislative Assembly conferred full State Private University status via the <strong>GIET University Act, 2018</strong>, with UGC Section 2(f) incorporation.
                 </p>
-                <p className="text-sm sm:text-base text-[#333e3a] leading-relaxed">
-                  Situated amidst the lush foothills of the Eastern Ghats with the scenic Bansadhara River flowing alongside, the university&apos;s 113.03-acre eco-friendly campus stands as a peaceful center of high-tech scholarship, bringing world-class laboratory infrastructure, industrial research, and community-centered incubation to the heartlands of Eastern India.
+
+                <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed">
+                  Set across a <strong>113.03-acre eco-friendly campus</strong> along the scenic Bansadhara River, the university anchors advanced research labs, academic excellence, and grassroots rural incubation.
                 </p>
               </div>
 
-              <div className="lg:col-span-4 bg-[#ffffff] p-6 rounded-2xl border border-[#ede7db] space-y-4 shadow-xs">
-                <div className="flex items-center gap-3 border-b border-[#ede7db] pb-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#081a14] p-1.5 flex items-center justify-center shrink-0">
-                    <Image
-                      src="/logos/giet-logo.png"
-                      alt="GIET Crest"
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
-                  </div>
+              {/* Right Column: Clean Architectural Snapshot (Zero Boxes) */}
+              <div className="lg:col-span-5 lg:border-l lg:border-[#e6dfd1] lg:pl-10 space-y-6">
+                {/* Header with Logo & Identity */}
+                <div className="flex items-center gap-4">
+                  <Image
+                    src="/logos/giet-logo.png"
+                    alt="GIET University Official Crest"
+                    width={56}
+                    height={56}
+                    className="w-14 h-14 object-contain shrink-0"
+                  />
                   <div>
-                    <strong className="block font-serif text-base text-[#103327]">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#c25022] block">
+                      Host Academic Campus
+                    </span>
+                    <strong className="block font-serif font-bold text-lg text-[#1c1917] leading-tight">
                       GIET University
                     </strong>
-                    <span className="text-xs text-[#7e8d87]">Gunupur, Rayagada, Odisha</span>
+                    <span className="text-xs text-[#78716c] flex items-center gap-1 mt-0.5">
+                      <MapPin className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
+                      Gunupur, Rayagada, Odisha
+                    </span>
                   </div>
                 </div>
 
-                <div className="space-y-2.5 text-xs text-[#4a5752]">
-                  <div>
-                    <span className="text-[#7e8d87] block font-medium">Founding Body:</span>
-                    <strong className="text-[#103327]">Vidya Bharati Educational Trust (1997)</strong>
+                {/* Specification List with Clean Subtle Dividers */}
+                <div className="space-y-3 text-xs text-[#2b2521] divide-y divide-[#ede7db]">
+                  <div className="pt-2 flex items-baseline justify-between gap-4">
+                    <span className="text-[#78716c] font-medium shrink-0">Founding Body</span>
+                    <span className="font-bold text-[#1c1917] text-right">Vidya Bharati Trust (1997)</span>
                   </div>
-                  <div>
-                    <span className="text-[#7e8d87] block font-medium">University Charter:</span>
-                    <strong className="text-[#103327]">GIET University Act, 2018 (Odisha)</strong>
+
+                  <div className="pt-3 flex items-baseline justify-between gap-4">
+                    <span className="text-[#78716c] font-medium shrink-0">Charter &amp; UGC</span>
+                    <span className="font-bold text-[#1c1917] text-right">GIET Act 2018 • UGC Sec 2(f)</span>
                   </div>
-                  <div>
-                    <span className="text-[#7e8d87] block font-medium">Statutory Recognitions:</span>
-                    <span>UGC Act 1956 (Sec 2f) • AICTE • NAAC • NBA • DSIR (SIRO) • ICAR</span>
-                  </div>
-                  <div>
-                    <span className="text-[#7e8d87] block font-medium">Campus Scale:</span>
-                    <span>113.03 Acres • 4,000+ Students • 300+ Faculty</span>
+
+                  <div className="pt-3 space-y-1.5">
+                    <span className="text-[#78716c] font-medium block">Statutory Accreditations</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {["UGC Act 1956", "AICTE", "NAAC", "NBA", "DSIR (SIRO)", "ICAR"].map((badge, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#f7f4ec] text-[#44403c] border border-[#dfd6c4]"
+                        >
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-[#ede7db]">
+                {/* 3 Metric Counts (Typographic Strip - No Boxes) */}
+                <div className="grid grid-cols-3 gap-4 pt-2 border-t border-[#ede7db]">
+                  <div>
+                    <div className="font-serif font-black text-2xl text-[#1c1917]">113+</div>
+                    <div className="text-xs text-[#78716c] font-medium">Acres Campus</div>
+                  </div>
+                  <div>
+                    <div className="font-serif font-black text-2xl text-[#1c1917]">4,000+</div>
+                    <div className="text-xs text-[#78716c] font-medium">Students</div>
+                  </div>
+                  <div>
+                    <div className="font-serif font-black text-2xl text-[#1c1917]">300+</div>
+                    <div className="text-xs text-[#78716c] font-medium">Faculty</div>
+                  </div>
+                </div>
+
+                {/* Clean Link */}
+                <div className="pt-1">
                   <a
                     href="https://www.giet.edu/about-giet/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-semibold text-[#1b5341] hover:underline inline-flex items-center gap-1"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#c25022] hover:text-[#e87042] transition-colors group"
                   >
-                    <span>View Official GIET Portal</span>
-                    <ExternalLink className="w-3 h-3" />
+                    <span>Visit Official GIET Portal</span>
+                    <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* Verified Statistics Bar */}
-            <div className="pt-6 border-t border-[#ede7db]">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {/* Bottom 6 Verified Statistics — Open Typographic Grid (No Boxes) */}
+            <div className="pt-8 border-t border-[#e6dfd1]/80">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                 {GIET_VERIFIED_STATS.map((stat, idx) => (
-                  <div key={idx} className="p-3.5 rounded-2xl bg-[#ffffff] border border-[#ede7db] text-center space-y-0.5">
-                    <div className="font-serif font-black text-2xl text-[#103327]">
+                  <div key={idx} className="space-y-1">
+                    <div className="font-serif font-black text-2xl sm:text-3xl text-[#1c1917] tracking-tight">
                       {stat.value}
                     </div>
-                    <div className="text-[11px] font-bold text-[#8c671b] leading-tight">
+                    <div className="text-xs font-bold text-[#8c671b] leading-tight">
                       {stat.label}
                     </div>
-                    <div className="text-[10px] text-[#7e8d87] truncate" title={stat.subtext}>
+                    <div className="text-[11px] text-[#78716c] leading-snug">
                       {stat.subtext}
                     </div>
                   </div>
@@ -301,32 +326,77 @@ export default function AboutPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {GIET_VERIFIED_MILESTONES.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 rounded-3xl bg-[#faf8f4] border border-[#ede7db] hover:border-[#be9740] transition-colors space-y-3 flex flex-col justify-between"
-                >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-serif font-black text-2xl text-[#103327]">
-                        {item.year}
-                      </span>
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-50 text-emerald-900 border border-emerald-200">
-                        Milestone
-                      </span>
+              {GIET_VERIFIED_MILESTONES.map((item, idx) => {
+                const simplifiedData: Record<string, { tag: string; shortTitle: string; easyDesc: string }> = {
+                  "1997": {
+                    tag: "Campus Foundation",
+                    shortTitle: "Founding of GIET Gunupur",
+                    easyDesc: "Established by Vidya Bharati Educational Trust with AICTE approval, pioneering quality engineering education in South Odisha."
+                  },
+                  "2005–2026": {
+                    tag: "Quality Benchmark",
+                    shortTitle: "NAAC 'A' & NBA Accreditations",
+                    easyDesc: "Continuously accredited by NAAC and NBA across engineering disciplines for premier outcome-based technical education."
+                  },
+                  "2018": {
+                    tag: "State University",
+                    shortTitle: "Conferred Full University Status",
+                    easyDesc: "Enacted under the GIET University Act, 2018 by the Odisha Legislative Assembly, celebrating 20+ years of academic excellence."
+                  },
+                  "2019": {
+                    tag: "National Recognition",
+                    shortTitle: "Formal UGC Enlistment (Sec 2f)",
+                    easyDesc: "Officially incorporated into the recognized universities directory by the University Grants Commission (UGC), New Delhi."
+                  },
+                  "2020+": {
+                    tag: "Innovation Hub",
+                    shortTitle: "DSIR Research & Atal Incubator",
+                    easyDesc: "Recognized by DSIR for scientific research; launched the Atal Community Innovation Centre (ACIC) and BIRAC biotech labs."
+                  },
+                  "2026": {
+                    tag: "Summit Host",
+                    shortTitle: "Host Campus for Startup Jathara",
+                    easyDesc: "Selected as official host campus for ISF Startup Jathara 2026, convening 5,000+ delegates, investors, and grassroots founders."
+                  }
+                };
+
+                const info = simplifiedData[item.year] || {
+                  tag: "Milestone",
+                  shortTitle: item.title,
+                  easyDesc: item.description
+                };
+
+                const displayYear = item.year === "2005–2026" ? "2005+" : item.year;
+
+                return (
+                  <div
+                    key={idx}
+                    className="p-6 sm:p-7 rounded-2xl bg-white border border-[#e6dfd1] hover:border-[#e87042] shadow-xs hover:shadow-md transition-all space-y-4 flex flex-col justify-between group"
+                  >
+                    <div className="space-y-3">
+                      {/* Top Row: Large Visible Year + Simple Meaningful Tag */}
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-serif font-black text-3xl sm:text-4xl text-[#c25022] tracking-tight whitespace-nowrap shrink-0">
+                          {displayYear}
+                        </span>
+                        <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#f7f4ec] text-[#e87042] border border-[#dfd6c4] whitespace-nowrap shrink-0">
+                          {info.tag}
+                        </span>
+                      </div>
+
+                      {/* Prominent High-Contrast Title */}
+                      <h4 className="font-serif font-bold text-lg sm:text-xl text-[#1c1917] leading-snug group-hover:text-[#c25022] transition-colors">
+                        {info.shortTitle}
+                      </h4>
+
+                      {/* Large, Easy-to-Read, Clear Description */}
+                      <p className="text-sm sm:text-[15px] text-[#44403c] leading-relaxed">
+                        {info.easyDesc}
+                      </p>
                     </div>
-                    <h4 className="font-serif font-bold text-base text-[#103327] leading-snug">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-[#4a5752] leading-relaxed">
-                      {item.description}
-                    </p>
                   </div>
-                  <div className="pt-3 border-t border-[#ede7db]/60 text-[10px] text-[#7e8d87] font-mono">
-                    Record: {item.verifiedSource}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -408,21 +478,75 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Social Responsibility & Tribal Community Commitment */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-[#071711] text-[#fcfbf8] border border-[#1b5341] space-y-4 mb-16">
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge variant="gold" size="sm">Official Mission Mandate</Badge>
-              <span className="text-xs text-[#a0b0aa] font-mono">Social Responsibility &amp; Regional Inclusion</span>
+          {/* Social Responsibility & Tribal Community Commitment — Architecturally Aligned Border Grid */}
+          <div className="rounded-2xl sm:rounded-3xl border border-[#e6dfd1] bg-white shadow-xs overflow-hidden mb-16">
+            {/* Header Bar with Proper Dividing Border */}
+            <div className="px-6 sm:px-8 py-4.5 border-b border-[#e6dfd1] bg-[#faf8f5]/80 flex flex-wrap items-center justify-between gap-3">
+              <div className="inline-flex items-center px-3 py-1 rounded-full border border-[#e87042]/30 bg-[#e87042]/5 text-[#c25022] text-xs font-semibold">
+                Official Mission Mandate
+              </div>
+              <span className="text-xs uppercase tracking-wider text-[#78716c] font-medium">
+                Social Responsibility &amp; Regional Inclusion
+              </span>
             </div>
-            <h3 className="font-serif font-bold text-2xl sm:text-3xl text-[#fcfbf8]">
-              Empowering the Meritorious Youth of Dandakaranya
-            </h3>
-            <blockquote className="text-base sm:text-lg text-[#dfd6c4] font-serif italic border-l-2 border-[#be9740] pl-4 my-2">
-              &ldquo;To support and uplift the meritorious students of this Tribal Area to represent as an Ambassador in all forums as a part of our social responsibility.&rdquo;
-            </blockquote>
-            <p className="text-xs sm:text-sm text-[#c8d1cd] leading-relaxed">
-              Situated in Rayagada district — one of the most culturally vibrant yet economically underserved tribal corridors of Eastern India — GIET University has made regional inclusion its central purpose. The university provides dedicated fee waivers, scholarship endowments, vocational training, and primary education initiatives (through the Gandhi Public School) to ensure talented students from indigenous communities become confident leaders, scientists, and entrepreneurs.
-            </p>
+
+            {/* Main Content Area: Title & Framed Quote */}
+            <div className="p-6 sm:p-8 md:p-10 space-y-6 sm:space-y-7">
+              <div className="space-y-2.5 max-w-3xl">
+                <h3 className="font-serif font-black text-2xl sm:text-3.5xl text-[#1c1917] tracking-tight leading-snug">
+                  Empowering the Meritorious Youth of Dandakaranya
+                </h3>
+                <p className="text-sm sm:text-[15px] text-[#57534e] leading-relaxed">
+                  Located in the tribal corridor of Rayagada, GIET University prioritizes grassroots community empowerment — ensuring talented rural and indigenous youth become confident leaders, scientists, and entrepreneurs.
+                </p>
+              </div>
+
+              {/* Featured Quote with Clean Border Framing */}
+              <div className="p-5 sm:p-6 rounded-xl bg-[#faf8f5] border border-[#e6dfd1] border-l-4 border-l-[#e87042]">
+                <p className="font-serif italic text-base sm:text-lg md:text-xl text-[#1c1917] leading-relaxed">
+                  &ldquo;To support and uplift the meritorious students of this Tribal Area to represent as an Ambassador in all forums as a part of our social responsibility.&rdquo;
+                </p>
+              </div>
+            </div>
+
+            {/* 3 Key Action Pillars (Crisp 3-Column Grid with Full-Height Borders) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#e6dfd1] border-t border-[#e6dfd1] bg-[#faf8f5]/30">
+              <div className="p-6 sm:p-7 space-y-2">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#e87042]/10 flex items-center justify-center text-[#e87042] shrink-0">
+                    <GraduationCap className="w-4.5 h-4.5" />
+                  </div>
+                  <h4 className="font-serif font-bold text-base sm:text-lg text-[#1c1917]">Full Fee Waivers</h4>
+                </div>
+                <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
+                  Merit scholarship endowments and complete tuition assistance for indigenous tribal students.
+                </p>
+              </div>
+
+              <div className="p-6 sm:p-7 space-y-2">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#c25022]/10 flex items-center justify-center text-[#c25022] shrink-0">
+                    <Building2 className="w-4.5 h-4.5" />
+                  </div>
+                  <h4 className="font-serif font-bold text-base sm:text-lg text-[#1c1917]">Gandhi Public School</h4>
+                </div>
+                <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
+                  Free foundational primary education and modern learning resources for local rural children.
+                </p>
+              </div>
+
+              <div className="p-6 sm:p-7 space-y-2">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#d68c45]/10 flex items-center justify-center text-[#d68c45] shrink-0">
+                    <Lightbulb className="w-4.5 h-4.5" />
+                  </div>
+                  <h4 className="font-serif font-bold text-base sm:text-lg text-[#1c1917]">Grassroots Incubation</h4>
+                </div>
+                <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
+                  Hands-on mentorship, seed funding, and incubation through Atal (ACIC) &amp; BIRAC biotechnology labs.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Leadership Preview Section (5 Verified Leaders) */}

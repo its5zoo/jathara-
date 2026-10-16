@@ -5,227 +5,200 @@ import {
   MapPin, 
   Calendar, 
   Mail, 
-  Phone, 
-  AlertTriangle 
+  Phone 
 } from "lucide-react";
 import { EVENT_METADATA } from "@/data/eventData";
 import { Container } from "../common/Container";
-import { InstitutionalLogos } from "../common/InstitutionalLogos";
 import { CopyrightYear } from "./CopyrightYear";
 
 export function SiteFooter() {
   return (
     <footer className="bg-[#0c0d12] text-[#d6d0c7] border-t border-[#232733] relative overflow-hidden">
-      {/* Decorative background aura */}
+      {/* Subtle warm decorative glow */}
       <div 
-        className="absolute top-0 right-0 w-96 h-96 bg-[#e87042]/10 rounded-full blur-3xl pointer-events-none" 
-        aria-hidden="true" 
-      />
-      <div 
-        className="absolute bottom-0 left-0 w-96 h-96 bg-[#e5c158]/8 rounded-full blur-3xl pointer-events-none" 
+        className="absolute top-0 right-1/4 w-80 h-40 bg-[#e87042]/10 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true" 
       />
 
-      {/* Main Footer Content */}
-      <div className="relative pt-16 pb-12">
+      {/* Main Concise Footer Content */}
+      <div className="relative pt-10 pb-8">
         <Container size="wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
-            {/* Column 1: Identity & Ecosystem (2 cols on lg) */}
-            <div className="lg:col-span-2 space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
+            {/* Column 1: Identity & Summit Details */}
+            <div className="space-y-3 lg:col-span-1">
               <Link
                 href="/"
-                className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6b25e] rounded-xl w-fit"
+                className="group flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] rounded-xl w-fit"
                 aria-label="ISF Startup Jathara 2026 Homepage"
               >
-                <div className="w-10 h-10 rounded-xl bg-white border border-[#dfd6c4] flex items-center justify-center p-1 shrink-0 shadow-2xs group-hover:scale-105 transition-transform duration-200">
+                <div className="w-8 h-8 rounded-lg bg-white border border-[#dfd6c4] flex items-center justify-center p-1 shrink-0 shadow-2xs group-hover:scale-105 transition-transform duration-200">
                   <Image
                     src="/logos/isf-logo.webp"
-                    alt="International Startup Foundation (ISF) Logo"
-                    width={32}
-                    height={32}
-                    className="max-h-8 max-w-8 w-auto h-auto object-contain"
+                    alt="ISF Logo"
+                    width={26}
+                    height={26}
+                    className="max-h-6 max-w-6 w-auto h-auto object-contain"
                   />
                 </div>
                 <div>
-                  <h3 className="font-serif font-black text-xl text-[#fcfbf8] tracking-tight group-hover:text-[#d6b25e] transition-colors">
+                  <h3 className="font-serif font-black text-base text-[#fcfbf8] tracking-tight group-hover:text-[#e87042] transition-colors leading-tight">
                     ISF STARTUP JATHARA 2026
                   </h3>
-                  <p className="text-xs text-[#d6b25e] font-semibold tracking-wide uppercase">
+                  <p className="text-[11px] text-[#e87042] font-semibold tracking-wide uppercase leading-tight">
                     Startup Jathara @ Dandakaranya
                   </p>
                 </div>
               </Link>
 
-              <p className="text-sm text-[#c8d1cd] leading-relaxed max-w-md">
-                An international innovation summit bringing together grassroots innovators, tribal and rural youth, angel investors, venture funds, GCC leaders, and sector mentors in the historic Dandakaranya landscape.
+              <p className="text-xs text-[#a8a29e] leading-relaxed">
+                National entrepreneurship &amp; grassroots innovation summit convening in South Odisha.
               </p>
 
-              <div className="pt-2 space-y-2 text-xs text-[#ede7db]">
-                <div className="flex items-start gap-2">
-                  <Calendar className="w-4 h-4 text-[#d6b25e] flex-shrink-0 mt-0.5" />
-                  <span><strong>18–20 December 2026</strong> (Welcome Dinner: 17 Dec evening)</span>
+              <div className="space-y-1.5 text-xs text-[#d6d0c7] pt-1">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-3.5 h-3.5 text-[#e87042] flex-shrink-0" />
+                  <span>18–20 December 2026</span>
                 </div>
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-[#c25e38] flex-shrink-0 mt-0.5" />
-                  <span>GIET University Campus, Gunupur, Rayagada District, Odisha, India</span>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#d68c45] flex-shrink-0" />
+                  <span>GIET University, Gunupur, Odisha</span>
                 </div>
-              </div>
-
-              {/* Official Institutional Pillars */}
-              <div className="pt-4 border-t border-[#1b5341]/60">
-                <p className="text-xs uppercase tracking-wider text-[#d6b25e] font-semibold mb-3">
-                  Organizing Ecosystem & Host Institution
-                </p>
-                <InstitutionalLogos variant="footer-lockup" />
               </div>
             </div>
 
-            {/* Column 2: Event Navigation */}
+            {/* Column 2: Navigation */}
             <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#d6b25e] font-semibold mb-4">
-                Explore Summit
+              <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
+                Explore
               </h4>
-              <ul className="space-y-2.5 text-sm">
+              <ul className="space-y-2 text-xs text-[#a8a29e]">
                 <li>
-                  <Link href="/about" className="hover:text-[#fcfbf8] transition-colors">
-                    About the Event
+                  <Link href="/about" className="hover:text-white transition-colors">
+                    About Summit
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about#institutional-legacy" className="hover:text-[#fcfbf8] transition-colors">
-                    GIET University Legacy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/programme" className="hover:text-[#fcfbf8] transition-colors">
+                  <Link href="/programme" className="hover:text-white transition-colors">
                     3-Day Schedule
                   </Link>
                 </li>
                 <li>
-                  <Link href="/startups" className="hover:text-[#fcfbf8] transition-colors">
-                    Startups & Junicorn
+                  <Link href="/startups" className="hover:text-white transition-colors">
+                    Startups &amp; Junicorn
                   </Link>
                 </li>
                 <li>
-                  <Link href="/investors" className="hover:text-[#fcfbf8] transition-colors">
-                    Investors & Delegates
+                  <Link href="/investors" className="hover:text-white transition-colors">
+                    Investors &amp; VCs
                   </Link>
                 </li>
                 <li>
-                  <Link href="/venue" className="hover:text-[#fcfbf8] transition-colors">
-                    Venue & Travel Hubs
+                  <Link href="/speakers" className="hover:text-white transition-colors">
+                    Speakers &amp; Mentors
                   </Link>
                 </li>
                 <li>
-                  <Link href="/speakers" className="hover:text-[#fcfbf8] transition-colors">
-                    Speakers & Dignitaries
+                  <Link href="/venue" className="hover:text-white transition-colors">
+                    Venue &amp; Stays
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Column 3: Participation & Gateway */}
+            {/* Column 3: Participation */}
             <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#d6b25e] font-semibold mb-4">
+              <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
                 Participation
               </h4>
-              <ul className="space-y-2.5 text-sm">
+              <ul className="space-y-2 text-xs text-[#a8a29e]">
                 <li>
-                  <Link href="/register" className="hover:text-[#fcfbf8] transition-colors flex items-center gap-1.5">
-                    <span>Registration Gateway</span>
-                    <span className="text-[10px] bg-emerald-800/80 text-emerald-200 px-1.5 py-0.5 rounded border border-emerald-500/40">Free</span>
+                  <Link href="/register" className="hover:text-white transition-colors inline-flex items-center gap-1.5">
+                    <span>Register (Free Entry)</span>
+                    <span className="text-[9px] bg-emerald-900/70 text-emerald-300 px-1 py-0.2 rounded border border-emerald-500/30">Free</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/register?category=startup-founder" className="hover:text-[#fcfbf8] transition-colors">
-                    Founder Pitch Entry
+                  <Link href="/register?category=startup-founder" className="hover:text-white transition-colors">
+                    Founder Pitch Application
                   </Link>
                 </li>
                 <li>
-                  <Link href="/register?category=investor-fund" className="hover:text-[#fcfbf8] transition-colors">
-                    Investor Delegation
+                  <Link href="/register?category=investor-fund" className="hover:text-white transition-colors">
+                    Investor Delegation Seat
                   </Link>
                 </li>
                 <li>
-                  <Link href="/partners" className="hover:text-[#fcfbf8] transition-colors">
-                    Partners & Sponsors
+                  <Link href="/partners" className="hover:text-white transition-colors">
+                    Partner With Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq" className="hover:text-[#fcfbf8] transition-colors">
+                  <Link href="/faq" className="hover:text-white transition-colors">
                     Summit FAQs
                   </Link>
                 </li>
-                <li>
-                  <Link href="/contact" className="hover:text-[#fcfbf8] transition-colors">
-                    Contact & Helplines
-                  </Link>
-                </li>
               </ul>
             </div>
 
-            {/* Column 4: Secretariat & Contact */}
+            {/* Column 4: Contact & Secretariat */}
             <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#d6b25e] font-semibold mb-4">
-                Helpline & Helpdesk
+              <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
+                Helpline
               </h4>
-              <div className="space-y-3 text-sm text-[#c8d1cd]">
-                <p>
-                  For institutional delegations, speaker confirmations, and travel coordination:
+              <div className="space-y-2.5 text-xs text-[#a8a29e]">
+                <p className="leading-relaxed">
+                  For inquiries, speaker nominations &amp; travel coordination:
                 </p>
-                <div className="space-y-2 text-xs pt-1">
+                <div className="space-y-2 pt-1 text-xs">
                   <div className="flex items-center gap-2">
-                    <Mail className="w-3.5 h-3.5 text-[#d6b25e] shrink-0" />
+                    <Mail className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
                     <a
                       href={`mailto:${EVENT_METADATA.contactEmail}`}
-                      className="text-[#fcfbf8] hover:text-[#d6b25e] transition-colors focus-visible:outline-none focus-visible:underline"
-                      aria-label={`Email secretariat at ${EVENT_METADATA.contactEmail}`}
+                      className="text-white hover:text-[#e87042] transition-colors"
                     >
                       {EVENT_METADATA.contactEmail}
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Phone className="w-3.5 h-3.5 text-[#c25e38] shrink-0" />
+                    <Phone className="w-3.5 h-3.5 text-[#d68c45] shrink-0" />
                     <a
                       href={`tel:${EVENT_METADATA.helplinePhone.replace(/\s+/g, "")}`}
-                      className="text-[#c8d1cd] hover:text-[#fcfbf8] transition-colors focus-visible:outline-none focus-visible:underline"
-                      aria-label={`Call campus helpline at ${EVENT_METADATA.helplinePhone}`}
+                      className="text-white hover:text-[#e87042] transition-colors"
                     >
                       {EVENT_METADATA.helplinePhone}
                     </a>
                   </div>
                 </div>
 
-                <div className="pt-3">
-                  <div className="p-3 rounded-lg bg-[#141620]/80 border border-[#262a38]/60 text-[11px] leading-relaxed">
-                    <div className="font-semibold text-[#fcfbf8] flex items-center gap-1 mb-1">
-                      <AlertTriangle className="w-3 h-3 text-[#e87042]" />
-                      Notice on Program Status
-                    </div>
-                    Official schedule tracks and keynote speaker confirmations are updated progressively.
-                  </div>
+                <div className="pt-2">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center text-[11px] font-semibold text-[#e87042] hover:text-[#ffedd5] transition-colors"
+                  >
+                    Open Secretariat Helpdesk →
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Legal, Copyright and Disclaimer Bar */}
-          <div className="mt-12 pt-6 border-t border-[#232733] flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-4 text-xs text-[#8c887f]">
+          {/* Compact Copyright & Legal Bar */}
+          <div className="mt-8 pt-5 border-t border-[#232733] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#78716c]">
             <p>
-              © <CopyrightYear /> {EVENT_METADATA.name}. Organized by International Startup Foundation (ISF) in collaboration with GIET University &amp; IncubateX.
+              © <CopyrightYear /> {EVENT_METADATA.name}. All rights reserved.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center md:justify-end gap-3 sm:gap-4">
-              <Link href="/privacy" className="hover:text-[#ede7db] transition-colors">
+            <div className="flex flex-wrap items-center gap-4">
+              <Link href="/privacy" className="hover:text-[#d6d0c7] transition-colors">
                 Privacy Policy
               </Link>
               <span>•</span>
-              <Link href="/terms" className="hover:text-[#ede7db] transition-colors">
+              <Link href="/terms" className="hover:text-[#d6d0c7] transition-colors">
                 Terms of Attendance
               </Link>
               <span>•</span>
-              <Link href="/contact" className="hover:text-[#ede7db] transition-colors">
-                Media Enquiries
+              <Link href="/contact" className="hover:text-[#d6d0c7] transition-colors">
+                Contact Desk
               </Link>
             </div>
           </div>

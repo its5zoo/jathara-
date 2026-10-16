@@ -45,11 +45,6 @@ export function VerticalsSection() {
       <Container size="wide" className="relative z-10">
         {/* Bespoke Editorial Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e87042]/10 border border-[#e87042]/25 text-[#c25022] text-xs font-bold tracking-widest uppercase mb-4 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#e87042]" />
-            <span>Summit Focus Tracks</span>
-          </div>
 
           {/* Main Title with Gradient Accent */}
           <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#1c1917] tracking-tight leading-[1.12]">
