@@ -1,154 +1,230 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { 
-  Calendar, 
-  MapPin, 
-  ArrowRight, 
-  Sparkles
-} from "lucide-react";
-import { EVENT_METADATA } from "@/data/eventData";
 import { Container } from "../common/Container";
-import { Button } from "../common/Button";
-import { InstitutionalLogos } from "../common/InstitutionalLogos";
+
+// Summit environment scenes
+const HERO_BACKDROPS = [
+  {
+    src: "/images/startup-stage-backdrop.jpg",
+    alt: "ISF Startup Jathara Grand Keynote Arena and Delegates",
+    tag: "Keynote Arena",
+  },
+  {
+    src: "/images/summit-pitch-stage.jpg",
+    alt: "Live Founder Pitch Stage & Investor Jury",
+    tag: "Startup Pitch Stage",
+  },
+  {
+    src: "/images/giet-school-of-engineering.jpg",
+    alt: "GIET University Engineering & Innovation Campus",
+    tag: "GIET University Campus",
+  },
+  {
+    src: "/images/dandakaranya-canopy.jpg",
+    alt: "Dandakaranya Innovation Valley",
+    tag: "Dandakaranya Valley",
+  },
+];
 
 export function HeroSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  // Auto-rotate environment scenes every 5.5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % HERO_BACKDROPS.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section 
       aria-label="Summit Introduction and Official Identity"
-      className="relative text-[#fcfbf8] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 overflow-hidden border-b border-[#1b5341]/60 bg-[#061811]"
+      className="relative text-[#fcfbf8] pt-10 sm:pt-12 lg:pt-14 pb-12 sm:pb-14 overflow-hidden border-b border-[#232733] bg-[#0c0d12]"
     >
-      {/* Background Image: GIET University Campus Aerial View with Serene Botanical Overlay */}
+      {/* Background Rotating Images (Smooth Crossfade Ken-Burns Effect) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-        <Image
-          src="/images/gietu-campus-aerial.jpg"
-          alt="GIET University Campus Aerial View, Gunupur, Odisha"
-          fill
-          priority
-          unoptimized
-          sizes="100vw"
-          className="object-cover object-[center_42%] brightness-95 scale-102"
-        />
-        {/* Balanced translucent overlay: clear aerial campus with sharp text legibility */}
-        <div className="absolute inset-0 bg-black/45 sm:bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#061811] via-[#061811]/60 to-[#061811]/70" />
-        
-        {/* Soft atmospheric peach-gold lighting accents */}
-        <div 
-          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] sm:w-[900px] h-[400px] bg-[#d6b25e]/15 rounded-full blur-[130px] pointer-events-none" 
-          aria-hidden="true" 
-        />
-        <div 
-          className="absolute bottom-10 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-[#c25e38]/10 rounded-full blur-[100px] pointer-events-none" 
-          aria-hidden="true" 
-        />
-      </div>
+        {HERO_BACKDROPS.map((slide, index) => {
+          const isActive = index === activeSlide;
+          return (
+            <div
+              key={slide.src}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                isActive ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                unoptimized
+                sizes="100vw"
+                className={`object-cover object-[center_38%] brightness-90 transition-transform duration-[6000ms] ease-out ${
+                  isActive ? "scale-105" : "scale-100"
+                }`}
+              />
+            </div>
+          );
+        })}
 
-      {/* Delicate Topographic Contour Vector Graphic */}
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.06] z-1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 900"
-        preserveAspectRatio="xMidYMid slice"
-        aria-hidden="true"
-      >
-        <path
-          d="M-100,200 Q200,100 600,220 T1500,150 M-100,350 Q300,250 800,380 T1500,300 M-100,500 Q400,420 900,520 T1500,480"
-          fill="none"
-          stroke="#d6b25e"
-          strokeWidth="1.2"
+        {/* Cinematic Scrim & Vignette so typography remains 100% crisp and readable across all scenes */}
+        <div className="absolute inset-0 z-20 bg-black/60 sm:bg-black/55" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/50 to-[#0c0d12]/75" />
+        
+        {/* Ambient warm peach-cream lighting glow */}
+        <div 
+          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[550px] sm:w-[750px] h-[350px] bg-[#f97316]/12 rounded-full blur-[140px] pointer-events-none z-20" 
+          aria-hidden="true" 
         />
-        <path
-          d="M-50,280 Q250,180 700,300 T1550,230 M-50,430 Q350,330 850,450 T1550,400"
-          fill="none"
-          stroke="#256f57"
-          strokeWidth="1"
-          strokeDasharray="6 8"
-        />
-      </svg>
+
+
+      </div>
 
       {/* Foreground Content */}
       <Container size="default" className="relative z-10 text-center px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Signature Event Title */}
-          <h1 className="font-serif font-black text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] text-white tracking-tight leading-[1.08] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
-            ISF STARTUP JATHARA{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d6b25e] via-[#f7e3af] to-[#c2983d]">
-              2026
-            </span>
+          
+
+
+          {/* Official Event Title (Authoritative & Sharp) */}
+          <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.08] drop-shadow-[0_2px_14px_rgba(0,0,0,0.9)]">
+            ISF STARTUP JATHARA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffedd5] via-[#f7c89f] to-[#e87042]">2026</span>
           </h1>
 
-          {/* Location & Cultural Identity Subtitle */}
-          <p className="mt-2.5 sm:mt-3 text-base xs:text-lg sm:text-xl md:text-2xl font-serif text-[#ede7db] italic drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-            Dandakaranya Valley Innovation Summit
+          {/* The Hook: Why this summit matters */}
+          <p className="mt-3 sm:mt-4 text-base sm:text-xl md:text-2xl font-serif text-[#ffedd5] font-semibold tracking-normal max-w-2xl mx-auto">
+            Where Grassroots Bharat Meets Venture Capital.
           </p>
 
-          {/* Concise Strategic Mission (Under 20 words — Instant Cognition) */}
-          <p className="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
-            Catalyzing grassroots innovators and tribal youth founders from India&apos;s heartlands, connecting them directly with global venture capital and mentors.
+          {/* Concise, Factual Value Proposition (Zero Fluff) */}
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] leading-relaxed max-w-2xl mx-auto font-normal">
+            Eastern India’s flagship 3-day entrepreneurial summit bringing <strong className="text-white font-semibold">100+ vetted founders</strong>, <strong className="text-white font-semibold">50+ tier-1 VCs &amp; angels</strong>, and industry pioneers directly to GIET University, Odisha.
           </p>
 
-          {/* Essential Event Metadata Strip (Date + Campus) */}
-          <div className="mt-6 sm:mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-white">
-            <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg bg-[#081a14]/85 border border-white/20 backdrop-blur-md shadow-xs">
-              <Calendar className="w-4 h-4 text-[#d6b25e] shrink-0" />
-              <strong className="text-[#fcfbf8]">{EVENT_METADATA.dates}</strong>
-            </span>
-            <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg bg-[#081a14]/85 border border-white/20 backdrop-blur-md shadow-xs">
-              <MapPin className="w-4 h-4 text-[#c25e38] shrink-0" />
-              <span className="text-[#dfd6c4]">GIET University Campus, Gunupur, Odisha</span>
-            </span>
-          </div>
 
-          {/* Primary Action Buttons (2 High-Converting CTAs) */}
-          <div className="mt-7 sm:mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            <Button
-              href="/register"
-              variant="terracotta"
-              size="lg"
-              className="font-bold shadow-xl text-sm sm:text-base transition-transform active:scale-95 w-full sm:w-auto justify-center px-6 sm:px-8 py-3 sm:py-3.5"
-            >
-              <span>Register for Summit</span>
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
 
-            <Button
-              href="/programme"
-              variant="gold"
-              size="lg"
-              className="font-bold shadow-xl text-sm sm:text-base transition-transform active:scale-95 w-full sm:w-auto justify-center px-6 sm:px-7 py-3 sm:py-3.5"
-            >
-              <Calendar className="w-4 h-4 mr-2" />
-              <span>Explore 3-Day Programme</span>
-            </Button>
-          </div>
-
-          {/* 4-Pillar Serene Telemetry Strip (Single Row, Glassmorphism, 0 Vertical Bloat) */}
-          <div className="mt-10 sm:mt-12 max-w-3xl mx-auto rounded-2xl bg-[#081a14]/75 border border-[#256f57]/50 backdrop-blur-md p-3 sm:p-5 shadow-lg">
-            <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 gap-3 md:gap-0 text-center">
-              <div className="px-3 py-1">
-                <span className="block font-serif font-black text-xl sm:text-2xl text-[#d6b25e]">2,000+</span>
-                <span className="block text-[11px] sm:text-xs text-[#c8d1cd] font-medium mt-0.5">Summit Delegates</span>
+          {/* Impact Stats Grid (Clean hairline layout, no box-in-a-box) */}
+          <div className="mt-8 pt-6 border-t border-white/15">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+              <div className="p-2 text-center">
+                <span className="block font-serif font-black text-2xl sm:text-3xl text-white">2,000+</span>
+                <span className="block text-xs text-[#a8a29e] mt-0.5 font-medium">Delegates &amp; Attendees</span>
               </div>
-              <div className="px-3 py-1">
-                <span className="block font-serif font-black text-xl sm:text-2xl text-[#d6b25e]">100+</span>
-                <span className="block text-[11px] sm:text-xs text-[#c8d1cd] font-medium mt-0.5">Grassroots Startups</span>
+              <div className="p-2 text-center">
+                <span className="block font-serif font-black text-2xl sm:text-3xl text-[#f7c89f]">100+</span>
+                <span className="block text-xs text-[#a8a29e] mt-0.5 font-medium">Startups Pitching</span>
               </div>
-              <div className="px-3 py-1">
-                <span className="block font-serif font-black text-xl sm:text-2xl text-[#d6b25e]">50+</span>
-                <span className="block text-[11px] sm:text-xs text-[#c8d1cd] font-medium mt-0.5">VCs &amp; Mentors</span>
+              <div className="p-2 text-center">
+                <span className="block font-serif font-black text-2xl sm:text-3xl text-[#e87042]">50+</span>
+                <span className="block text-xs text-[#a8a29e] mt-0.5 font-medium">VCs, Angels &amp; Mentors</span>
               </div>
-              <div className="px-3 py-1">
-                <span className="block font-serif font-black text-xl sm:text-2xl text-[#d6b25e]">8</span>
-                <span className="block text-[11px] sm:text-xs text-[#c8d1cd] font-medium mt-0.5">Focus Sectors</span>
+              <div className="p-2 text-center">
+                <span className="block font-serif font-black text-2xl sm:text-3xl text-[#e5c158]">8</span>
+                <span className="block text-xs text-[#a8a29e] mt-0.5 font-medium">Focus Growth Sectors</span>
               </div>
             </div>
           </div>
 
-          {/* Institutional Trust Strip */}
-          <div className="mt-10 sm:mt-12 pt-6 sm:pt-7 border-t border-white/15">
-            <InstitutionalLogos variant="hero-strip" />
+          {/* Institutional Partners / Conveners Bar (Sleek, transparent, unclipped) */}
+          <div className="mt-6 pt-5 border-t border-white/10 max-w-3xl mx-auto">
+            <p className="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#a8a29e] uppercase mb-3 text-center">
+              Convened Under the Aegis Of
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-center">
+              
+              {/* 1. ISF Network */}
+              <a
+                href="https://www.isfnetwork.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-2.5 rounded-xl bg-[#141620]/80 hover:bg-[#1a1d2b] border border-white/10 hover:border-[#e87042]/60 transition-all duration-200 group text-left"
+                aria-label="International Startup Foundation (ISF) - Organizer"
+              >
+                <div className="w-11 h-11 rounded-lg bg-white p-1.5 flex items-center justify-center shrink-0 shadow-sm">
+                  <Image
+                    src="/logos/isf-logo.webp"
+                    alt="International Startup Foundation (ISF)"
+                    width={36}
+                    height={36}
+                    className="max-h-8 max-w-8 object-contain"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <span className="text-[10px] font-bold text-[#e87042] uppercase tracking-wider block">
+                    Organizer
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#f7c89f] transition-colors block leading-tight">
+                    ISF Network
+                  </span>
+                  <span className="text-[11px] text-[#94a3b8] block truncate mt-0.5">
+                    International Startup Foundation
+                  </span>
+                </div>
+              </a>
+
+              {/* 2. GIET University */}
+              <a
+                href="https://www.giet.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-2.5 rounded-xl bg-[#141620]/80 hover:bg-[#1a1d2b] border border-white/10 hover:border-[#e87042]/60 transition-all duration-200 group text-left"
+                aria-label="GIET University - Host Institution"
+              >
+                <div className="w-11 h-11 rounded-lg bg-white p-1.5 flex items-center justify-center shrink-0 shadow-sm">
+                  <Image
+                    src="/logos/giet-logo.png"
+                    alt="GIET University Gunupur"
+                    width={36}
+                    height={36}
+                    className="max-h-8 max-w-8 object-contain"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <span className="text-[10px] font-bold text-[#e87042] uppercase tracking-wider block">
+                    Host Institution
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#f7c89f] transition-colors block leading-tight">
+                    GIET University
+                  </span>
+                  <span className="text-[11px] text-[#94a3b8] block truncate mt-0.5">
+                    Gunupur, Odisha
+                  </span>
+                </div>
+              </a>
+
+              {/* 3. IncubateX */}
+              <a
+                href="https://www.incubationx.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-2.5 rounded-xl bg-[#141620]/80 hover:bg-[#1a1d2b] border border-white/10 hover:border-[#e87042]/60 transition-all duration-200 group text-left"
+                aria-label="IncubateX Innovation Foundation - Innovation Partner"
+              >
+                <div className="w-11 h-11 rounded-lg bg-white p-1.5 flex items-center justify-center shrink-0 shadow-sm">
+                  <Image
+                    src="/logos/incubatex-logo.png"
+                    alt="IncubateX Innovation Foundation"
+                    width={36}
+                    height={36}
+                    className="max-h-8 max-w-8 object-contain"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <span className="text-[10px] font-bold text-[#e87042] uppercase tracking-wider block">
+                    Innovation Partner
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#f7c89f] transition-colors block leading-tight">
+                    IncubateX
+                  </span>
+                  <span className="text-[11px] text-[#94a3b8] block truncate mt-0.5">
+                    Incubation Foundation
+                  </span>
+                </div>
+              </a>
+            </div>
           </div>
 
         </div>

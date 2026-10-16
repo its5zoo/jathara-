@@ -105,13 +105,8 @@ export function VerticalsSection() {
                 </div>
 
                 {/* Footer Action Bar */}
-                <div className="relative z-10 mt-6 pt-3.5 border-t border-[#ede7db] flex items-center justify-between">
-                  <span className="flex items-center gap-1.5 text-[11px] font-medium text-[#8c671b]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 group-hover:scale-125 transition-transform" />
-                    <span>Dec 2026</span>
-                  </span>
-
-                  <span className="inline-flex items-center gap-1 text-xs font-bold text-[#143e30] group-hover:text-[#c25e38] transition-colors">
+                <div className="relative z-10 mt-6 pt-3.5 border-t border-[#ede7db] flex items-center justify-end">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#103327] group-hover:text-[#c25e38] transition-colors">
                     <span>Apply in Track</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1.5" />
                   </span>

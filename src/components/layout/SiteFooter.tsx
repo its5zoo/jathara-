@@ -15,14 +15,14 @@ import { CopyrightYear } from "./CopyrightYear";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#081a14] text-[#dfd6c4] border-t border-[#1b5341]/50 relative overflow-hidden">
+    <footer className="bg-[#0c0d12] text-[#d6d0c7] border-t border-[#232733] relative overflow-hidden">
       {/* Decorative background aura */}
       <div 
-        className="absolute top-0 right-0 w-96 h-96 bg-[#143e30]/30 rounded-full blur-3xl pointer-events-none" 
+        className="absolute top-0 right-0 w-96 h-96 bg-[#e87042]/10 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true" 
       />
       <div 
-        className="absolute bottom-0 left-0 w-96 h-96 bg-[#c25e38]/10 rounded-full blur-3xl pointer-events-none" 
+        className="absolute bottom-0 left-0 w-96 h-96 bg-[#e5c158]/8 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true" 
       />
 
@@ -197,12 +197,12 @@ export function SiteFooter() {
                 </div>
 
                 <div className="pt-3">
-                  <div className="p-3 rounded-lg bg-[#103327]/80 border border-[#256f57]/40 text-[11px] leading-relaxed">
+                  <div className="p-3 rounded-lg bg-[#141620]/80 border border-[#262a38]/60 text-[11px] leading-relaxed">
                     <div className="font-semibold text-[#fcfbf8] flex items-center gap-1 mb-1">
-                      <AlertTriangle className="w-3 h-3 text-amber-400" />
+                      <AlertTriangle className="w-3 h-3 text-[#e87042]" />
                       Notice on Program Status
                     </div>
-                    The published 18–20 Dec 2026 brochure programme is explicitly a draft schedule subject to ongoing refinements.
+                    Official schedule tracks and keynote speaker confirmations are updated progressively.
                   </div>
                 </div>
               </div>
@@ -210,7 +210,7 @@ export function SiteFooter() {
           </div>
 
           {/* Legal, Copyright and Disclaimer Bar */}
-          <div className="mt-12 pt-6 border-t border-[#1b5341]/40 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-4 text-xs text-[#7e8d87]">
+          <div className="mt-12 pt-6 border-t border-[#232733] flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-4 text-xs text-[#8c887f]">
             <p>
               © <CopyrightYear /> {EVENT_METADATA.name}. Organized by International Startup Foundation (ISF) in collaboration with GIET University &amp; IncubateX.
             </p>

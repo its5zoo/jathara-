@@ -27,7 +27,7 @@ export function InstitutionalLogos({
               href={org.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-3.5 p-3 rounded-2xl bg-[#081a14]/90 border border-[#1b5341] hover:border-[#d6b25e]/70 hover:bg-[#103327] transition-all duration-200 shadow-md backdrop-blur-sm"
+              className="group relative flex items-center gap-3.5 p-3 rounded-2xl bg-[#13151d]/90 border border-[#2b303e] hover:border-[#e87042]/70 hover:bg-[#1a1d28] transition-all duration-200 shadow-md backdrop-blur-sm"
               aria-label={`Visit official portal of ${org.name}`}
             >
               {/* Logo Well with crisp contrast & unclipped aspect ratio */}
@@ -41,7 +41,7 @@ export function InstitutionalLogos({
                     className="max-h-11 sm:max-h-12 max-w-[60px] sm:max-w-[70px] w-auto h-auto object-contain"
                   />
                 ) : (
-                  <span className="font-serif font-black text-xs text-[#081a14]">
+                  <span className="font-serif font-black text-xs text-[#0c0d12]">
                     {org.abbreviation}
                   </span>
                 )}
@@ -50,11 +50,11 @@ export function InstitutionalLogos({
               {/* Text Meta */}
               <div className="min-w-0 flex-1 text-left">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] font-semibold tracking-wider uppercase text-[#d6b25e] block truncate">
+                  <span className="text-[10px] font-semibold tracking-wider uppercase text-[#f7c89f] block truncate">
                     {org.role}
                   </span>
                   {org.id === "org-giet" && (
-                    <span className="text-[9px] font-bold bg-[#256f57] text-[#fcfbf8] px-1.5 py-0.2 rounded uppercase">
+                    <span className="text-[9px] font-bold bg-[#e87042] text-white px-1.5 py-0.2 rounded uppercase">
                       Gunupur
                     </span>
                   )}
@@ -66,7 +66,7 @@ export function InstitutionalLogos({
                   <span className="truncate">
                     {org.id === "org-giet" ? "School of Engineering & Tech" : org.website.replace("https://www.", "").replace("https://", "").replace(/\/$/, "")}
                   </span>
-                  <ArrowUpRight className="w-3 h-3 text-[#d6b25e] shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <ArrowUpRight className="w-3 h-3 text-[#f7c89f] shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" />
                 </span>
               </div>
             </a>
