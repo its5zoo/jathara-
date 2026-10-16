@@ -7,27 +7,27 @@ import { FAQAccordion } from "../faq/FAQAccordion";
 import { Button } from "../common/Button";
 
 export function HomeFAQ() {
-  const homeFaqs = FAQ_ITEMS.slice(0, 5);
+  const homeFaqs = FAQ_ITEMS.slice(0, 4);
 
   return (
-    <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
+    <section className="py-14 sm:py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
       <Container size="default">
         <SectionHeading
-          eyebrow="Key Information"
+          eyebrow="Quick Help"
           title="Frequently Asked Questions"
-          subtitle="Answers to common queries regarding the summit schedule, participant eligibility, transit, and registration status."
+          subtitle="Simple answers to common questions about attending, registering, and reaching the venue."
         />
 
         <div className="max-w-3xl mx-auto">
           <FAQAccordion items={homeFaqs} defaultOpenId="faq-1" />
 
-          <div className="mt-10 p-6 rounded-2xl bg-[#f7f4ec] border border-[#ede7db] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-[#f7f4ec] border border-[#ede7db] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>
               <h4 className="font-serif font-bold text-base text-[#103327]">
                 Have More Questions?
               </h4>
               <p className="text-xs sm:text-sm text-[#4a5752] mt-0.5">
-                Browse our complete FAQ repository or get in touch directly with the secretariat.
+                Check our full FAQ list or speak directly with the organizing team.
               </p>
             </div>
 

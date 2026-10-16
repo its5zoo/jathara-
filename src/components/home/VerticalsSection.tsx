@@ -10,8 +10,6 @@ import {
   Zap, 
   Coins, 
   ArrowRight, 
-  CheckCircle2, 
-  Calendar,
   Sparkles
 } from "lucide-react";
 import { OFFICIAL_TRACKS, SummitTrack } from "@/lib/config/tracks";
@@ -35,16 +33,16 @@ const trackIconMap: Record<string, React.ElementType> = {
 
 export function VerticalsSection() {
   return (
-    <section className="py-20 sm:py-28 bg-[#fcfbf8] border-b border-[#e6dfd1]">
+    <section className="py-14 sm:py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
       <Container size="wide">
         <SectionHeading
-          eyebrow="Official Summit Verticals"
-          title="Choose Your Arena of Impact"
-          subtitle="Eight distinctive sectoral tracks designed around Dandakaranya's indigenous strengths and high-growth national markets."
+          eyebrow="Summit Verticals"
+          title="Eight Focus Sectors"
+          subtitle="Explore the 8 tracks tailored to rural innovation and high-growth national markets."
         />
 
-        {/* Canonical Eight-Track Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+        {/* Canonical Eight-Track Grid - Streamlined, Compact & Easy to Read */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {OFFICIAL_TRACKS.map((track: SummitTrack) => {
             const IconComp = trackIconMap[track.iconName] || Sparkles;
 
@@ -52,89 +50,58 @@ export function VerticalsSection() {
               <div
                 key={track.slug}
                 className={cn(
-                  "bg-[#ffffff] rounded-3xl p-6 sm:p-7 border shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden",
+                  "bg-[#ffffff] rounded-2xl p-5 border shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group relative overflow-hidden",
                   track.accentBorder
                 )}
               >
                 {/* Subtle thematic ambient wash */}
                 <div
                   className={cn(
-                    "absolute inset-0 bg-gradient-to-br pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity",
+                    "absolute inset-0 bg-gradient-to-br pointer-events-none opacity-30 group-hover:opacity-50 transition-opacity",
                     track.accentBg
                   )}
                 />
 
                 <div className="relative z-10">
                   {/* Top Bar: Icon & Track Index Badge */}
-                  <div className="flex items-center justify-between gap-2 mb-5">
+                  <div className="flex items-center justify-between gap-2 mb-3">
                     <div
                       className={cn(
-                        "w-12 h-12 rounded-2xl flex items-center justify-center shadow-xs transition-transform group-hover:scale-105",
+                        "w-10 h-10 rounded-xl flex items-center justify-center shadow-2xs transition-transform group-hover:scale-105",
                         track.iconBg
                       )}
                     >
-                      <IconComp className="w-6 h-6" />
+                      <IconComp className="w-5 h-5" />
                     </div>
 
-                    <div className="text-right">
-                      <Badge variant={track.tagVariant} size="sm">
-                        Track 0{track.id}
-                      </Badge>
-                      <span className="text-[10px] font-mono text-[#7e8d87] block mt-1 flex items-center justify-end gap-1">
-                        <Calendar className="w-3 h-3 text-[#c25e38]" />
-                        <span>{track.scheduleHint}</span>
-                      </span>
-                    </div>
+                    <Badge variant={track.tagVariant} size="sm">
+                      Track 0{track.id}
+                    </Badge>
                   </div>
 
-                  {/* Official Track Heading */}
-                  <h3 className="font-serif font-bold text-xl text-[#103327] group-hover:text-[#143e30] transition-colors leading-snug">
+                  {/* Track Heading */}
+                  <h3 className="font-serif font-bold text-base sm:text-lg text-[#103327] group-hover:text-[#1b5341] transition-colors leading-snug">
                     {track.title}
                   </h3>
 
-                  {/* Domain Subtitle */}
-                  <p className="text-[11px] font-semibold text-[#8c671b] uppercase tracking-wider mt-1 line-clamp-1">
-                    {track.subtitle}
-                  </p>
-
-                  {/* Canonical Official Description */}
-                  <p className="text-xs sm:text-sm text-[#4a5752] mt-3 leading-relaxed">
+                  {/* Concise Description in Easy Words */}
+                  <p className="text-xs text-[#5c6964] mt-2 line-clamp-2 leading-relaxed">
                     {track.description}
                   </p>
-
-                  {/* Sub-Themes / Focus Areas */}
-                  <div className="mt-5 pt-4 border-t border-[#ede7db]">
-                    <span className="text-[11px] font-bold text-[#161e1b] uppercase tracking-wider block mb-2">
-                      Core Value Chains:
-                    </span>
-                    <div className="space-y-1.5">
-                      {track.focusAreas.slice(0, 3).map((area, idx) => (
-                        <div key={idx} className="flex items-start gap-1.5 text-xs text-[#333e3a]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#256f57] shrink-0 mt-0.5" />
-                          <span className="leading-snug text-[11px]">{area}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                 </div>
 
-                {/* Footer Section: Target Audience & Registration Link */}
-                <div className="relative z-10 mt-6 pt-4 border-t border-[#ede7db] flex flex-col gap-2">
-                  <span className="text-[10px] text-[#7e8d87] leading-snug">
-                    <strong className="text-[#4a5752]">Audience:</strong> {track.targetParticipants}
+                {/* Footer Link */}
+                <div className="relative z-10 mt-4 pt-3 border-t border-[#ede7db] flex items-center justify-between">
+                  <span className="text-[11px] font-semibold text-[#8c671b]">
+                    Dec 2026
                   </span>
-                  <div className="flex items-center justify-between pt-1">
-                    <span className="text-[11px] font-bold text-[#8c671b]">
-                      Verified Sector
-                    </span>
-                    <Link
-                      href={`/register?category=startup-founder&track=${track.slug}`}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-[#103327] hover:text-[#c25e38] transition-colors"
-                    >
-                      <span>Apply in Track</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
+                  <Link
+                    href={`/register?category=startup-founder&track=${track.slug}`}
+                    className="inline-flex items-center gap-1 text-xs font-bold text-[#103327] group-hover:text-[#c25e38] transition-colors"
+                  >
+                    <span>Apply in Track</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             );
@@ -142,9 +109,9 @@ export function VerticalsSection() {
         </div>
 
         {/* Global CTA */}
-        <div className="mt-14 text-center">
-          <Button href="/startups" variant="secondary" size="md" className="font-bold shadow-xs w-full sm:w-auto justify-center">
-            <span>Explore Complete Startup & Junicorn Guidelines</span>
+        <div className="mt-10 text-center">
+          <Button href="/startups" variant="secondary" size="md" className="font-bold shadow-2xs w-full sm:w-auto justify-center">
+            <span>Explore Complete Startup &amp; Junicorn Guidelines</span>
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>

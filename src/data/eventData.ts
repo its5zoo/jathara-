@@ -35,14 +35,11 @@ export const EVENT_METADATA: EventMetadata = {
 };
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Programme", href: "/programme" },
   { label: "Startups & Junicorn", href: "/startups" },
-  { label: "Investors & Delegates", href: "/investors" },
-  { label: "Venue & Travel", href: "/venue" },
   { label: "Speakers", href: "/speakers" },
-  { label: "Partners", href: "/partners" },
+  { label: "Venue & Travel", href: "/venue" },
 ];
 
 export const MOBILE_NAV_GROUPS = [
