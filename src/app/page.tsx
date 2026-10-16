@@ -1,7 +1,6 @@
 import React from "react";
 import { HeroSection } from "@/components/home/HeroSection";
 import { VerticalsSection } from "@/components/home/VerticalsSection";
-import { ProgrammePreview } from "@/components/home/ProgrammePreview";
 import { VenueBridgeCard } from "@/components/home/VenueBridgeCard";
 import { HomeFAQ } from "@/components/home/HomeFAQ";
 import { GatewayCTA } from "@/components/home/GatewayCTA";
@@ -15,10 +14,7 @@ export default function HomePage() {
       {/* 2. Summit Tracks - 8 focus sectors, concise cards */}
       <VerticalsSection />
 
-      {/* 3. Programme Schedule - 3-day snapshot with clear links */}
-      <ProgrammePreview />
-
-      {/* 4. Host Campus & Travel Bridge - Replaces bulky duplicate university & travel sections */}
+      {/* 3. Host Campus & Travel Bridge - Replaces bulky duplicate university & travel sections */}
       <VenueBridgeCard />
 
       {/* 5. Frequently Asked Questions - 4 practical attendee queries */}
