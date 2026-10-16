@@ -2,13 +2,12 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import { AnnouncementBanner } from "@/components/common/AnnouncementBanner";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
 /**
- * Renders the global Announcement Banner and Public SiteHeader only on public pages.
- * Suppresses them on administrative console routes (/admin) and dedicated login (/login).
+ * Renders the Public SiteHeader only on public pages.
+ * Suppresses it on administrative console routes (/admin) and dedicated login (/login).
  */
 export function PublicHeaderWrapper() {
   const pathname = usePathname();
@@ -18,12 +17,7 @@ export function PublicHeaderWrapper() {
     return null;
   }
 
-  return (
-    <>
-      <AnnouncementBanner />
-      <SiteHeader />
-    </>
-  );
+  return <SiteHeader />;
 }
 
 /**

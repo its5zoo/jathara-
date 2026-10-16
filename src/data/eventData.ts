@@ -37,7 +37,7 @@ export const EVENT_METADATA: EventMetadata = {
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Programme", href: "/programme", badge: "Draft" },
+  { label: "Programme", href: "/programme" },
   { label: "Startups & Junicorn", href: "/startups" },
   { label: "Investors & Delegates", href: "/investors" },
   { label: "Venue & Travel", href: "/venue" },
@@ -51,7 +51,7 @@ export const MOBILE_NAV_GROUPS = [
     links: [
       { label: "Home", href: "/", description: "Summit overview & key themes" },
       { label: "About", href: "/about", description: "Mission, Dandakaranya ethos & conveners" },
-      { label: "Programme", href: "/programme", badge: "Draft", description: "3-day timetable & track schedules" },
+      { label: "Programme", href: "/programme", description: "3-day timetable & track schedules" },
       { label: "Venue & Travel", href: "/venue", description: "GIET University campus, trains & flights" },
     ],
   },

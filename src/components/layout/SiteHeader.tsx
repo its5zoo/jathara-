@@ -31,11 +31,11 @@ export function SiteHeader() {
           : "bg-[#fcfbf8] border-[#ede7db] py-2.5 sm:py-3.5"
       )}
     >
-      <Container size="wide" className="px-3 min-[380px]:px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-3 sm:gap-4 min-w-0">
+      <Container size="wide" className="px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           
-          {/* ZONE 1 (LEFT): Authentic Event Identity & Host Attribution */}
-          <div className="flex items-center gap-3 shrink-0">
+          {/* ZONE 1 (LEFT): Authentic Event Identity */}
+          <div className="flex items-center shrink-0">
             <Link
               href="/"
               className="group flex items-center gap-2 min-[400px]:gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#143e30] rounded-xl shrink-0"
@@ -53,9 +53,9 @@ export function SiteHeader() {
                 />
               </div>
 
-              {/* Event Typography Lockup — Guaranteed never to shrink or truncate abruptly */}
+              {/* Event Typography Lockup */}
               <div className="flex flex-col text-left shrink-0">
-                <span className="font-serif font-black text-xs min-[400px]:text-sm sm:text-base lg:text-[17px] text-[#0d281e] tracking-tight leading-tight group-hover:text-[#1b5341] transition-colors whitespace-nowrap">
+                <span className="font-serif font-black text-xs min-[400px]:text-sm sm:text-base lg:text-[16px] text-[#0d281e] tracking-tight leading-tight group-hover:text-[#1b5341] transition-colors whitespace-nowrap">
                   ISF STARTUP JATHARA
                 </span>
                 <span className="text-[9px] min-[400px]:text-[10px] sm:text-[11px] font-bold text-[#c25e38] tracking-wider uppercase mt-0.5 flex items-center gap-1 sm:gap-1.5 leading-none whitespace-nowrap">
@@ -66,39 +66,12 @@ export function SiteHeader() {
                 </span>
               </div>
             </Link>
-
-            {/* GIET University Host Attribution — Displayed strictly on 2xl: (1536px+) where there is abundant space */}
-            <a
-              href="https://www.giet.edu/schools/school-of-engineering/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GIET University School of Engineering Website"
-              className="hidden 2xl:flex items-center gap-2 pl-3.5 border-l border-[#e6dfd1] shrink-0 hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#143e30] rounded-lg p-0.5"
-            >
-              <div className="w-8 h-8 rounded-lg bg-white p-1 flex items-center justify-center border border-[#e6dfd1] shadow-2xs shrink-0">
-                <Image
-                  src="/logos/giet-logo.png"
-                  alt="GIET University Crest"
-                  width={28}
-                  height={28}
-                  className="max-h-6 max-w-6 w-auto h-auto object-contain"
-                />
-              </div>
-              <div className="flex flex-col text-left">
-                <span className="text-[9px] uppercase tracking-wider text-[#8c671b] font-bold leading-none">
-                  Host Campus
-                </span>
-                <span className="text-[11px] font-bold text-[#103327] leading-tight mt-0.5 whitespace-nowrap">
-                  GIET University
-                </span>
-              </div>
-            </a>
           </div>
 
-          {/* ZONE 2 (CENTER): Primary Desktop Navigation — Hidden below xl (1280px) to prevent squeezing */}
+          {/* ZONE 2 (CENTER): Primary Desktop Navigation — No overlap, clean responsive gap */}
           <nav
             aria-label="Main Navigation"
-            className="hidden xl:flex items-center justify-center gap-1 2xl:gap-1.5 shrink-0"
+            className="hidden xl:flex items-center justify-center gap-0.5 2xl:gap-1.5 shrink-0"
           >
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
@@ -119,7 +92,7 @@ export function SiteHeader() {
                     {link.badge && (
                       <span
                         className={cn(
-                          "text-[8.5px] 2xl:text-[9px] px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold leading-none",
+                          "text-[8px] 2xl:text-[9px] px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold leading-none",
                           isActive
                             ? "bg-[#143e30] text-[#fcfbf8]"
                             : "bg-amber-100 text-amber-900 border border-amber-300/80"
@@ -136,15 +109,6 @@ export function SiteHeader() {
 
           {/* ZONE 3 (RIGHT): Action Zone & Mobile Trigger */}
           <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-            {/* Draft Schedule Indicator (Displayed on 2xl screens only to avoid competing for space) */}
-            <Link
-              href="/programme"
-              className="hidden 2xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-50/90 hover:bg-amber-100 text-amber-900 border border-amber-200/90 transition-colors shadow-2xs shrink-0"
-            >
-              <Calendar className="w-3.5 h-3.5 text-amber-800" />
-              <span>Draft Schedule</span>
-            </Link>
-
             {/* Primary Registration Call to Action */}
             <Link
               href="/register"
