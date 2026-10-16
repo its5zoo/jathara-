@@ -71,15 +71,6 @@ export function HeroSection() {
       {/* Foreground Content */}
       <Container size="default" className="relative z-10 text-center px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          
-          {/* Eyebrow Badge: Organizer & Academic Host */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#be9740]/20 border border-[#be9740]/40 text-[#f7e3af] text-xs sm:text-[13px] font-semibold backdrop-blur-md mb-4 sm:mb-5 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#d6b25e] animate-pulse" aria-hidden="true" />
-            <span>ISF × GIET University</span>
-            <span className="text-[#be9740]/80">·</span>
-            <span className="text-white/90 font-medium">Dandakaranya 2026</span>
-          </div>
-
           {/* Signature Event Title */}
           <h1 className="font-serif font-black text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] text-white tracking-tight leading-[1.08] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-4xl mx-auto">
             ISF STARTUP JATHARA{" "}
