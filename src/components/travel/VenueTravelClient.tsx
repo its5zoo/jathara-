@@ -20,7 +20,7 @@ import {
   ChevronDown,
   ChevronUp
 } from "lucide-react";
-import { TRAVEL_HUBS } from "@/data/eventData";
+import { TRAVEL_HUBS, EVENT_METADATA } from "@/data/eventData";
 import { TransitHubType } from "@/lib/types";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
@@ -28,6 +28,7 @@ import { Badge } from "../common/Badge";
 import { Button } from "../common/Button";
 import { cn } from "@/lib/utils";
 import { GunupurHotelsSection } from "./GunupurHotelsSection";
+import { GIETCampusMapSection } from "./GIETCampusMapSection";
 
 export function VenueTravelClient() {
   const [activeHubId, setActiveHubId] = useState<string>(TRAVEL_HUBS[0].id);
@@ -194,8 +195,11 @@ export function VenueTravelClient() {
         </Container>
       </section>
 
+      {/* Interactive GIET University Campus Map & Directions */}
+      <GIETCampusMapSection />
+
       {/* Verified Travel Gateways & Hub Selector */}
-      <section className="py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
+      <section className="py-20 bg-[#ffffff] border-b border-[#e6dfd1]">
         <Container size="wide">
           <SectionHeading
             title="Verified Regional Travel Gateways"
@@ -297,7 +301,7 @@ export function VenueTravelClient() {
               </p>
             </div>
 
-            <Button href="/contact" variant="primary" size="md" className="shrink-0 w-full md:w-auto justify-center">
+            <Button href={`mailto:${EVENT_METADATA.contactEmail}?subject=Travel%20Desk%20Inquiry`} variant="primary" size="md" className="shrink-0 w-full md:w-auto justify-center">
               <span>Contact Travel Desk</span>
             </Button>
           </div>

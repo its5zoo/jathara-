@@ -55,17 +55,17 @@ export default function InvestorsPage() {
             Connect with early-stage inventors, tribal agro-tech enterprises, and grassroots healthcare pioneers at the intersection of capital, technology, and regional impact.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <Link 
               href="https://isf-test.vercel.app/" 
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
+              className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-xs min-[360px]:text-sm shadow-md hover:shadow-lg transition-all w-full min-[420px]:w-auto text-center"
             >
               <span>Register as Investor / Fund Delegate</span>
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
             </Link>
             <Link 
               href="/programme" 
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#141620]/80 hover:bg-[#1f2230] text-white border border-white/20 font-bold text-sm backdrop-blur-md transition-all"
+              className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-[#141620]/80 hover:bg-[#1f2230] text-white border border-white/20 font-bold text-xs min-[360px]:text-sm backdrop-blur-md transition-all w-full min-[420px]:w-auto text-center"
             >
               <span>Roundtable Timings</span>
             </Link>
@@ -224,11 +224,11 @@ export default function InvestorsPage() {
           <p className="mt-2 text-sm text-[#c8d1cd] max-w-xl mx-auto">
             Contact the ISF Investor Relations desk or register your delegation interest.
           </p>
-          <div className="mt-6 flex justify-center gap-4">
-            <Button href="https://isf-test.vercel.app/" variant="gold" size="md">
+          <div className="mt-6 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
+            <Button href="https://isf-test.vercel.app/" variant="gold" size="md" className="w-full min-[420px]:w-auto justify-center">
               Register as Investor
             </Button>
-            <Button href="/venue" variant="outline" size="md" className="text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#143e30]">
+            <Button href="/venue" variant="outline" size="md" className="w-full min-[420px]:w-auto justify-center text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#143e30]">
               Transit & Campus Location
             </Button>
           </div>

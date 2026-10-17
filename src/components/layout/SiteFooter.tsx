@@ -54,14 +54,21 @@ export function SiteFooter() {
                 National entrepreneurship &amp; grassroots innovation summit convening in South Odisha.
               </p>
 
-              <div className="space-y-1.5 text-xs text-[#d6d0c7] pt-1">
+              <div className="space-y-2 text-xs text-[#d6d0c7] pt-1">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-3.5 h-3.5 text-[#e87042] flex-shrink-0" />
                   <span>18–20 December 2026</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-[#d68c45] flex-shrink-0" />
-                  <span>GIET University, Gunupur, Odisha</span>
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#d68c45] flex-shrink-0 mt-0.5" />
+                  <a
+                    href="https://maps.google.com/?q=GIET+University+Gunupur+Odisha+765022"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#e87042] transition-colors leading-relaxed"
+                  >
+                    GIET University Campus, Goboriguda, Po-Kharling, Gunupur, Dist-Rayagada, Odisha - 765022, India
+                  </a>
                 </div>
               </div>
             </div>
@@ -168,15 +175,18 @@ export function SiteFooter() {
                       {EVENT_METADATA.helplinePhone}
                     </a>
                   </div>
+                  <div className="flex items-start gap-2 pt-0.5">
+                    <MapPin className="w-3.5 h-3.5 text-[#e87042] shrink-0 mt-0.5" />
+                    <span className="text-[11px] text-[#a8a29e] leading-snug">
+                      Goboriguda, Po-Kharling, Gunupur, Rayagada, Odisha - 765022
+                    </span>
+                  </div>
                 </div>
 
                 <div className="pt-2">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center text-[11px] font-semibold text-[#e87042] hover:text-[#ffedd5] transition-colors"
-                  >
+                  <span className="inline-flex items-center text-[11px] font-semibold text-[#e87042] cursor-default select-none">
                     Open Secretariat Helpdesk →
-                  </Link>
+                  </span>
                 </div>
               </div>
             </div>
@@ -197,9 +207,9 @@ export function SiteFooter() {
                 Terms of Attendance
               </Link>
               <span>•</span>
-              <Link href="/contact" className="hover:text-[#d6d0c7] transition-colors">
-                Contact Desk
-              </Link>
+              <a href={`mailto:${EVENT_METADATA.contactEmail}`} className="hover:text-[#d6d0c7] transition-colors">
+                Contact Secretariat
+              </a>
             </div>
           </div>
         </Container>

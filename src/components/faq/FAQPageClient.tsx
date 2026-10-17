@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Mail } from "lucide-react";
-import { FAQ_ITEMS } from "@/data/eventData";
+import { FAQ_ITEMS, EVENT_METADATA } from "@/data/eventData";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 import { FAQAccordion } from "@/components/faq/FAQAccordion";
@@ -61,9 +61,9 @@ export function FAQPageClient() {
                 </p>
               </div>
 
-              <Button href="/contact" variant="primary" size="md" className="flex-shrink-0">
+              <Button href={`mailto:${EVENT_METADATA.contactEmail}`} variant="primary" size="md" className="flex-shrink-0">
                 <Mail className="w-4 h-4 mr-2" />
-                <span>Contact Desk</span>
+                <span>Contact Secretariat</span>
               </Button>
             </div>
           </div>

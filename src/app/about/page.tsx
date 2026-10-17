@@ -793,11 +793,11 @@ export default function AboutPage() {
           <p className="mt-3 text-sm text-[#c8d1cd] max-w-xl mx-auto">
             Inspect the tentative three-day timetable or register your interest across founder, investor, and delegate categories.
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <Button href="/programme" variant="outline" size="md" className="border-white/20 text-white hover:bg-white/10">
+          <div className="mt-6 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
+            <Button href="/programme" variant="outline" size="md" className="w-full min-[420px]:w-auto justify-center border-white/20 text-white hover:bg-white/10">
               View Draft Schedule
             </Button>
-            <Button href="https://isf-test.vercel.app/" variant="terracotta" size="md">
+            <Button href="https://isf-test.vercel.app/" variant="terracotta" size="md" className="w-full min-[420px]:w-auto justify-center">
               Registration Gateway
             </Button>
           </div>

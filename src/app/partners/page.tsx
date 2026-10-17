@@ -10,7 +10,7 @@ import {
   Rocket,
   ArrowRight
 } from "lucide-react";
-import { PARTNERS_ORGANIZATIONS } from "@/data/eventData";
+import { PARTNERS_ORGANIZATIONS, EVENT_METADATA } from "@/data/eventData";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { Badge } from "@/components/common/Badge";
@@ -223,7 +223,7 @@ export default function PartnersPage() {
             <p className="text-xs sm:text-sm text-[#4a5752] leading-relaxed">
               Formal sponsor brochures, roundtable lead frameworks, and bilateral collaboration agreements can be requested through our secretariat desk.
             </p>
-            <Button href="/contact" variant="forest" size="md">
+            <Button href={`mailto:${EVENT_METADATA.contactEmail}?subject=Partnership%20Proposal%20Inquiry`} variant="forest" size="md">
               <Mail className="w-4 h-4 mr-2" />
               <span>Contact Partnership Secretariat</span>
               <ArrowRight className="w-4 h-4 ml-2" />

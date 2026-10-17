@@ -7,7 +7,8 @@ export type SessionTrack =
   | "Global Investors & GCC"
   | "Policy & Ecosystem"
   | "Eco-Trek & Cultural"
-  | "Networking & Dining";
+  | "Networking & Dining"
+  | "Sector Breakouts";
 
 export type SessionType = 
   | "keynote"
@@ -17,6 +18,12 @@ export type SessionType =
   | "networking"
   | "outdoor"
   | "cultural";
+
+export interface SubEvent {
+  time: string;
+  title: string;
+  speaker?: string;
+}
 
 export interface Session {
   id: string;
@@ -31,6 +38,7 @@ export interface Session {
   isTentative: boolean;
   speakerIds?: string[];
   capacityNote?: string;
+  subEvents?: SubEvent[];
 }
 
 export interface ProgrammeDay {
@@ -144,7 +152,9 @@ export interface EventMetadata {
   venueCity: string;
   venueDistrict: string;
   venueState: string;
+  venuePincode?: string;
   venueCountry: string;
+  venueFullAddress?: string;
   organizer: string;
   hostInstitution: string;
   associatedInnovation: string;

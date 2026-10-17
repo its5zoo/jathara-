@@ -9,7 +9,9 @@ import {
   Sparkles,
   ArrowRight,
   Compass,
-  CheckCircle2
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 import { PROGRAMME_DAYS } from "@/data/eventData";
 import { Container } from "../common/Container";
@@ -106,10 +108,11 @@ function getSessionImage(sessionId: string, sessionType: string, title: string):
 }
 
 export function ProgrammeClient() {
-  const [selectedDayId, setSelectedDayId] = useState(PROGRAMME_DAYS[0].id);
+  const [selectedDayId, setSelectedDayId] = useState(PROGRAMME_DAYS[1].id);
   const [hoveredSessionId, setHoveredSessionId] = useState<string | null>(null);
+  const [expandedCeremony, setExpandedCeremony] = useState(false);
 
-  const activeDay = PROGRAMME_DAYS.find((d) => d.id === selectedDayId) || PROGRAMME_DAYS[0];
+  const activeDay = PROGRAMME_DAYS.find((d) => d.id === selectedDayId) || PROGRAMME_DAYS[1];
 
   return (
     <div className="w-full">
@@ -137,11 +140,11 @@ export function ProgrammeClient() {
           </h1>
 
           <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
-            Three Days of Venture Dealmaking, Deep Exploration &amp; Grassroots Scale.
+            Four Days of Sectoral Breakouts, Venture Pitching, Forest Exploration &amp; Grassroots Ecosystem Building.
           </p>
 
           <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
-            Interactive schedule for 18–20 December 2026 at GIET University, Gunupur.
+            Verified official schedule for 17–20 December 2026 at GIET University, Gunupur.
           </p>
         </Container>
       </section>
@@ -149,14 +152,14 @@ export function ProgrammeClient() {
       {/* Interactive Main Area */}
       <section className="py-12 sm:py-16 bg-[#fcfbf8]">
         <Container size="default">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {/* Centered Section Heading */}
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
               <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl lg:text-[2.65rem] text-[#1c1917] tracking-tight leading-[1.15]">
-                Explore the 3-Day <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Summit Timetable</span>
+                Explore the Summit <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Agenda &amp; Timetable</span>
               </h2>
               <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
-                Plenary ceremonies, deep-tech panels, venture pitches, and regional cultural immersions across all three days.
+                Pre-summit domain breakouts, plenary inaugurations, sector roundtables, Junicorn pitches, and forest immersion across all days.
               </p>
               <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
                 <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
@@ -166,7 +169,7 @@ export function ProgrammeClient() {
             </div>
 
             {/* Day Navigation Tabs */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-8">
               {PROGRAMME_DAYS.map((day) => {
                 const isSelected = day.id === selectedDayId;
                 return (
@@ -193,7 +196,7 @@ export function ProgrammeClient() {
                           isSelected ? "bg-[#e87042] text-white" : "bg-[#f7f4ec] text-[#e87042]"
                         )}
                       >
-                        Day 0{day.dayNumber}
+                        {day.dayNumber === 0 ? "Pre-Summit" : `Day 0${day.dayNumber}`}
                       </span>
                     </div>
 
@@ -215,10 +218,10 @@ export function ProgrammeClient() {
             </div>
 
             {/* Animated Vertical Graph Timeline */}
-            <div className="relative pl-6 sm:pl-10 md:pl-14">
+            <div className="relative pl-7 min-[380px]:pl-8 sm:pl-10 md:pl-14">
             {/* Continuous Vertical Graph Spine Line */}
             <div 
-              className="absolute left-2.5 sm:left-4 md:left-6 top-3 bottom-8 w-[3px] bg-gradient-to-b from-[#e87042] via-[#d68c45] to-[#c25022]/40 rounded-full"
+              className="absolute left-3 sm:left-4 md:left-6 top-3 bottom-8 w-[3px] bg-gradient-to-b from-[#e87042] via-[#d68c45] to-[#c25022]/40 rounded-full"
               style={{
                 boxShadow: "0 0 12px rgba(232, 112, 66, 0.35)"
               }}
@@ -245,7 +248,7 @@ export function ProgrammeClient() {
                     {/* Animated Timeline Graph Node on Spine */}
                     <div 
                       className={cn(
-                        "absolute -left-[27px] sm:-left-[39px] md:-left-[47px] top-6 -translate-y-1/2 flex items-center justify-center transition-all duration-300 z-10",
+                        "absolute -left-[28px] sm:-left-[39px] md:-left-[47px] top-6 -translate-y-1/2 flex items-center justify-center transition-all duration-300 z-10",
                         isHovered ? "scale-115" : "scale-100"
                       )}
                     >
@@ -257,7 +260,7 @@ export function ProgrammeClient() {
 
                       {/* Main Node Badge */}
                       <div className={cn(
-                        "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-[10px] sm:text-[11px] transition-colors duration-300 shadow-sm border-2",
+                        "w-6.5 h-6.5 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-[10px] sm:text-[11px] transition-colors duration-300 shadow-sm border-2",
                         isHovered
                           ? "bg-[#e87042] text-white border-white ring-2 ring-[#e87042]"
                           : "bg-[#1c1917] text-[#ffedd5] border-[#e87042]"
@@ -302,20 +305,61 @@ export function ProgrammeClient() {
                           </div>
 
                           {/* Session Title */}
-                          <h3 className="font-serif font-bold text-base sm:text-lg text-[#1c1917] leading-snug group-hover:text-[#c25022] transition-colors line-clamp-1">
+                          <h3 className="font-serif font-bold text-base sm:text-lg text-[#1c1917] leading-snug group-hover:text-[#c25022] transition-colors">
                             {session.title}
                           </h3>
 
                           {/* Location Pin */}
                           <div className="flex items-center gap-1.5 text-xs text-[#7e8d87]">
                             <MapPin className="w-3 h-3 text-[#e87042] flex-shrink-0" />
-                            <span className="font-medium text-[#57534e] line-clamp-1">{session.location}</span>
+                            <span className="font-semibold text-[#57534e]">{session.location}</span>
                           </div>
 
                           {/* Session Description */}
-                          <p className="text-xs text-[#57534e] leading-relaxed line-clamp-2">
+                          <p className="text-xs text-[#57534e] leading-relaxed">
                             {session.description}
                           </p>
+
+                          {/* Optional Sub-events timeline (e.g. Inauguration Ceremony Breakdown) */}
+                          {session.subEvents && session.subEvents.length > 0 && (
+                            <div className="mt-3 pt-2.5 border-t border-[#ede7db]/80">
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setExpandedCeremony(!expandedCeremony);
+                                }}
+                                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#c25022] hover:text-[#e87042] transition-colors cursor-pointer py-1"
+                              >
+                                <span>
+                                  {expandedCeremony 
+                                    ? "Hide Minute-by-Minute Ceremony Protocol" 
+                                    : "View Minute-by-Minute Ceremony Schedule (09:30 - 11:25 AM)"}
+                                </span>
+                                {expandedCeremony ? (
+                                  <ChevronUp className="w-3.5 h-3.5" />
+                                ) : (
+                                  <ChevronDown className="w-3.5 h-3.5" />
+                                )}
+                              </button>
+
+                              {expandedCeremony && (
+                                <div className="mt-2.5 space-y-1 bg-[#faf8f5] p-3 sm:p-4 rounded-xl border border-[#ede7db] max-h-80 overflow-y-auto">
+                                  {session.subEvents.map((evt, eIdx) => (
+                                    <div 
+                                      key={eIdx} 
+                                      className="flex items-start gap-2 sm:gap-2.5 text-xs text-[#292524] py-1 border-b border-[#ede7db]/50 last:border-0"
+                                    >
+                                      <span className="font-mono font-semibold text-[#c25022] shrink-0 text-[10.5px] sm:text-[11px] w-20 min-[360px]:w-24">
+                                        {evt.time}
+                                      </span>
+                                      <span className="leading-snug text-[#44403c] font-medium text-xs">{evt.title}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          )}
                         </div>
 
                         {/* Right / Visual AI-Generated Picture Thumbnail - Compact & Elegant */}

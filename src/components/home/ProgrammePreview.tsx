@@ -167,28 +167,28 @@ export function ProgrammePreview() {
         </div>
 
         {/* Interactive "See More" Bar */}
-        <div className="mt-12 sm:mt-16 p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-[#1c1917] via-[#24211d] to-[#1c1917] text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
-              <Clock className="w-6 h-6 text-[#f7c89f]" />
+        <div className="mt-12 sm:mt-16 p-4 sm:p-7 rounded-3xl bg-gradient-to-r from-[#1c1917] via-[#24211d] to-[#1c1917] text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+              <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-[#f7c89f]" />
             </div>
-              <div>
-                <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#e87042] uppercase block">
-                  Official Summit Itinerary
-                </span>
-                <h4 className="font-serif font-bold text-lg sm:text-xl text-white mt-0.5 leading-snug">
-                  Explore All 24+ Keynotes, Pitch Stages &amp; Sector Masterclasses
-                </h4>
-              </div>
+            <div>
+              <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#e87042] uppercase block">
+                Official Summit Itinerary
+              </span>
+              <h4 className="font-serif font-bold text-base sm:text-xl text-white mt-0.5 leading-snug">
+                Explore All 24+ Keynotes, Pitch Stages &amp; Sector Masterclasses
+              </h4>
             </div>
+          </div>
 
-            <Link
-              href="/programme"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg active:scale-95 shrink-0"
-            >
-              <span>Explore Full Schedule</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+          <Link
+            href="/programme"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg active:scale-95 shrink-0 w-full sm:w-auto"
+          >
+            <span>Explore Full Schedule</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
       </Container>

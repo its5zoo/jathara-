@@ -30,7 +30,7 @@ export function LeadershipSection() {
             </div>
           </div>
 
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-[#e8dfd3] shadow-md flex flex-col md:flex-row items-center gap-8">
+          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-4 sm:p-8 md:p-10 border border-[#e8dfd3] shadow-md flex flex-col md:flex-row items-center gap-6 sm:gap-8">
             <div className="relative w-44 h-52 sm:w-52 sm:h-64 rounded-2xl overflow-hidden shrink-0 shadow-md border-2 border-[#e8dfd3]">
               <Image
                 src="/images/leadership/dr-ja-chowdary.png"
@@ -90,7 +90,7 @@ export function LeadershipSection() {
           </div>
 
           {/* Leaders Grid (5 Leaders) */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 min-[380px]:gap-3 sm:gap-5">
             {GIET_LEADERSHIP_PROFILES.map((leader) => (
               <div
                 key={leader.id}
@@ -104,18 +104,15 @@ export function LeadershipSection() {
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                     className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                  <span className="absolute bottom-2 left-2 right-2 text-[10px] font-bold text-white bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded text-center truncate">
-                    {leader.position}
-                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                 </div>
 
-                <div className="p-3 text-center flex-1 flex flex-col justify-between">
+                <div className="p-3 text-center flex-1 flex flex-col justify-center">
                   <h4 className="font-serif font-bold text-xs sm:text-sm text-[#1c1917] line-clamp-1">
                     {leader.name}
                   </h4>
-                  <p className="text-[10px] sm:text-[11px] text-[#78716c] line-clamp-1 mt-0.5">
-                    {leader.honorific || leader.position}
+                  <p className="text-[10px] sm:text-[11px] text-[#c25e38] font-semibold line-clamp-1 mt-0.5">
+                    {leader.position}
                   </p>
                 </div>
               </div>

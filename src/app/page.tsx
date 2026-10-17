@@ -1,5 +1,6 @@
 import React from "react";
 import { HeroSection } from "@/components/home/HeroSection";
+import { ChiefGuestSection } from "@/components/home/ChiefGuestSection";
 import { VerticalsSection } from "@/components/home/VerticalsSection";
 import { VenueBridgeCard } from "@/components/home/VenueBridgeCard";
 import { ProgrammePreview } from "@/components/home/ProgrammePreview";
@@ -13,7 +14,10 @@ export default function HomePage() {
       {/* 1. Hero Section - Refined height, real campus backdrop, 4-stat telemetry */}
       <HeroSection />
 
-      {/* 2. Summit Tracks - 8 focus sectors, concise cards */}
+      {/* 2. Chief Guest of Honour Spotlight - Sadguru Sri Madhusudan Sai */}
+      <ChiefGuestSection />
+
+      {/* 3. Summit Tracks - 8 focus sectors, concise cards */}
       <VerticalsSection />
 
       {/* 3. Host Campus & Travel Bridge */}

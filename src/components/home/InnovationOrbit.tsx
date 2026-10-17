@@ -205,12 +205,12 @@ export function InnovationOrbit() {
               </svg>
 
               {/* Central Nucleus Event Emblem */}
-              <div className="relative z-20 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-[#103327] via-[#0d281e] to-[#081a14] border-2 border-[#d6b25e] shadow-[0_0_30px_rgba(214,178,94,0.25)] flex flex-col items-center justify-center text-center p-2.5 transition-transform hover:scale-105 select-none">
-                <Sparkles className="w-5 h-5 text-[#d6b25e] mb-1" />
-                <span className="font-serif font-black text-[11px] sm:text-xs text-[#fcfbf8] leading-tight uppercase">
+              <div className="relative z-20 w-20 h-20 min-[380px]:w-24 min-[380px]:h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-[#103327] via-[#0d281e] to-[#081a14] border-2 border-[#d6b25e] shadow-[0_0_30px_rgba(214,178,94,0.25)] flex flex-col items-center justify-center text-center p-2 min-[380px]:p-2.5 transition-transform hover:scale-105 select-none">
+                <Sparkles className="w-4 h-4 min-[380px]:w-5 min-[380px]:h-5 text-[#d6b25e] mb-0.5 min-[380px]:mb-1" />
+                <span className="font-serif font-black text-[10px] min-[380px]:text-[11px] sm:text-xs text-[#fcfbf8] leading-tight uppercase">
                   Startup Jathara
                 </span>
-                <span className="text-[9px] text-[#dfd6c4] font-mono mt-0.5">
+                <span className="text-[8px] min-[380px]:text-[9px] text-[#dfd6c4] font-mono mt-0.5">
                   @ Dandakaranya
                 </span>
               </div>
@@ -246,7 +246,7 @@ export function InnovationOrbit() {
                   >
                     <div
                       className={cn(
-                        "w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center transition-all duration-200 shadow-md",
+                        "w-8 h-8 min-[380px]:w-10 min-[380px]:h-10 sm:w-11 sm:h-11 rounded-xl min-[380px]:rounded-2xl flex items-center justify-center transition-all duration-200 shadow-md",
                         isSelected
                           ? "bg-[#d6b25e] text-[#081a14] border-2 border-white shadow-[0_0_20px_rgba(214,178,94,0.6)]"
                           : node.category === "host"
@@ -254,7 +254,7 @@ export function InnovationOrbit() {
                           : "bg-[#103327] text-[#fcfbf8] border border-[#1b5341] group-hover:border-[#dfd6c4]"
                       )}
                     >
-                      <IconComp className="w-5 h-5 shrink-0" />
+                      <IconComp className="w-4 h-4 min-[380px]:w-5 min-[380px]:h-5 shrink-0" />
                     </div>
 
                     <span 
@@ -275,7 +275,7 @@ export function InnovationOrbit() {
 
           {/* Right Area: Interactive Intelligence Detail Card */}
           <div className="lg:col-span-5">
-            <div className="bg-[#103327]/90 rounded-3xl p-7 sm:p-9 border border-[#256f57]/60 shadow-2xl backdrop-blur-md relative overflow-hidden transition-all duration-300">
+            <div className="bg-[#103327]/90 rounded-2xl sm:rounded-3xl p-4 min-[380px]:p-6 sm:p-9 border border-[#256f57]/60 shadow-2xl backdrop-blur-md relative overflow-hidden transition-all duration-300">
               
               {/* Subtle top light bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#d6b25e] via-[#c25e38] to-[#256f57]" />

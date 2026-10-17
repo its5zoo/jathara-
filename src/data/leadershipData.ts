@@ -33,9 +33,8 @@ export interface UniversityStat {
 export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
   {
     id: "dr-satya-prakash-panda",
-    name: "Dr. Satya Prakash Panda",
+    name: "Satya Prakash Panda",
     position: "President",
-    honorific: "Prof. (Dr.)",
     category: "governance",
     imageSrc: "/images/leadership/dr-satya-prakash-panda.jpg",
     fallbackInitials: "SPP",
@@ -58,9 +57,8 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
   },
   {
     id: "dr-chandra-dhwaj-panda",
-    name: "Dr. Chandra Dhwaj Panda",
+    name: "Chandra Dhwaj Panda",
     position: "Vice President",
-    honorific: "Dr.",
     category: "governance",
     imageSrc: "/images/leadership/dr-chandra-dhwaj-panda.jpg",
     fallbackInitials: "CDP",
@@ -69,7 +67,7 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
       "Co-founder, Gandhi Group of Institutions (VBET)"
     ],
     keyHighlights: [
-      "Co-founded the Gandhi Group of Institutions alongside Dr. Satya Prakash Panda",
+      "Co-founded the Gandhi Group of Institutions alongside Satya Prakash Panda",
       "Iconic academic figure in Eastern Indian technical education and economic thought",
       "Judiciously integrates ancient philosophical values with modern technological management",
       "Guides institutional strategy, faculty excellence, and student motivational programs"
@@ -77,15 +75,14 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
     summaryBio:
       "Co-founder of the Gandhi Group of Institutions and scholar of economics, recognized as an iconic educator who bridges foundational Indian values with cutting-edge technology and management systems.",
     fullBio:
-      "We live in a world intensely driven by knowledge, where knowledge is power. Exercising this power with diligence and dynamism is a formidable task that requires a mindset combining wisdom and professionalism - qualities personified in Dr. Chandradhwaj Panda, co-founder of the legendary Gandhi Group (owned by Vidya Bharati Educational Trust) and an iconic figure in technical education across Eastern India. Dr. Panda is characterized by a judicious blend of the values of our ancient wisdom and rapidly evolving concepts in technology and management. A distinguished scholar of Economics, an endearing professor, and a trusted friend to the common citizen, he inspires thousands of learners with his ability to lead the curious mind from knowledge to actionable wisdom.",
+      "We live in a world intensely driven by knowledge, where knowledge is power. Exercising this power with diligence and dynamism is a formidable task that requires a mindset combining wisdom and professionalism - qualities personified in Chandra Dhwaj Panda, co-founder of the legendary Gandhi Group (owned by Vidya Bharati Educational Trust) and an iconic figure in technical education across Eastern India. Panda is characterized by a judicious blend of the values of our ancient wisdom and rapidly evolving concepts in technology and management. A distinguished scholar of Economics, an endearing professor, and a trusted friend to the common citizen, he inspires thousands of learners with his ability to lead the curious mind from knowledge to actionable wisdom.",
     institutionalQuote:
       "Knowledge becomes truly powerful only when guided by ethical wisdom, empathy for society, and relentless diligence."
   },
   {
     id: "dr-jagadish-panda",
-    name: "Dr. Jagadish Panda",
+    name: "Jagadish Panda",
     position: "Director General",
-    honorific: "Dr.",
     category: "executive",
     imageSrc: "/images/leadership/dr-jagadish-panda.jpeg",
     fallbackInitials: "JP",
@@ -102,15 +99,14 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
     summaryBio:
       "Dynamic computer science scholar and institutional leader steering university development, research infrastructure, and foundational education across the Eastern Ghats.",
     fullBio:
-      "GIET University draws much of its vitality and forward-looking momentum from its Director General, Dr. Jagadish Panda. An energetic and dynamic academic leader, Dr. Panda holds an M.Tech and Ph.D in Computer Science & Engineering. He exemplifies passion, technical acumen, and institutional commitment with an expansive global outlook. Serving both as a Trustee of Vidya Bharati Educational Trust and as Director General, his contributions toward the university's academic modernization and infrastructural scale are exemplary. He provides critical guidance to maintain harmony between financial growth and social responsibility, fostering team-oriented governance that invites diverse perspectives. Deeply devoted to child welfare and foundational learning, his commitment is reflected in his passionate stewardship of the Gandhi Public School (GPS) in Gunupur.",
+      "GIET University draws much of its vitality and forward-looking momentum from its Director General, Jagadish Panda. An energetic and dynamic academic leader, Panda holds an M.Tech and Ph.D in Computer Science & Engineering. He exemplifies passion, technical acumen, and institutional commitment with an expansive global outlook. Serving both as a Trustee of Vidya Bharati Educational Trust and as Director General, his contributions toward the university's academic modernization and infrastructural scale are exemplary. He provides critical guidance to maintain harmony between financial growth and social responsibility, fostering team-oriented governance that invites diverse perspectives. Deeply devoted to child welfare and foundational learning, his commitment is reflected in his passionate stewardship of the Gandhi Public School (GPS) in Gunupur.",
     institutionalQuote:
       "Modern universities must balance global technological sophistication with deep community responsibility. Innovation is authentic only when it reaches the grassroots."
   },
   {
     id: "prof-goutam-ghosh",
-    name: "Prof. Goutam Ghosh",
+    name: "Goutam Ghosh",
     position: "Vice Chancellor",
-    honorific: "Prof.",
     category: "executive",
     imageSrc: "/images/leadership/prof-goutam-ghosh.jpg",
     fallbackInitials: "GG",
@@ -128,15 +124,14 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
     summaryBio:
       "IIT alumnus, former World Bank Scholar, and translational biotechnology pioneer who has led national vaccine innovation, raised over ₹50 Cr in scientific funding, and established premier incubation ecosystems.",
     fullBio:
-      "Prof. Goutam Ghosh carries a unique blend of high-impact leadership spanning academia, national government, and translational biotechnology industry. He previously served as Senior Vice President and CEO of major industry enterprises and in the Ministry of Science & Technology, Government of India. A former prestigious World Bank Scholar, he conducted research and teaching at Wageningen University in the Netherlands. An alumnus of IIT Kharagpur and IIT Delhi, Prof. Ghosh has introduced sustainable academic disciplines and established pivotal innovation infrastructure, including the Atal Community Innovation Centre (ACIC) and the Biotech e-YUVA Innovation Centre supported by multi-crore public grants. In translational research and product development, he successfully spearheaded the development of multiple biological products, including India's first Dengue Vaccine in collaboration with the National Institutes of Health (NIH), Maryland, USA. He co-founded a specialized vaccine R&D venture developing vaccines for Hepatitis-E (consortium with AIIMS, THSTI, PGI Chandigarh), Chikungunya, and animal pox. Prof. Ghosh has represented India on technology missions across WHO Geneva, the Butantan Institute in Brazil, the Chinese Academy of Sciences in Wuhan, and Grenoble institutions in France through the Indian National Academy of Engineering. He is the recipient of the Dr. Sosil Kumar Jain-AMI Award (2024), serves as Vice President of the Asian Federation of Biotechnology in Seoul, and is a passionate long-distance cyclist who once pedaled from Kolkata to Kathmandu.",
+      "Goutam Ghosh carries a unique blend of high-impact leadership spanning academia, national government, and translational biotechnology industry. He previously served as Senior Vice President and CEO of major industry enterprises and in the Ministry of Science & Technology, Government of India. A former prestigious World Bank Scholar, he conducted research and teaching at Wageningen University in the Netherlands. An alumnus of IIT Kharagpur and IIT Delhi, Ghosh has introduced sustainable academic disciplines and established pivotal innovation infrastructure, including the Atal Community Innovation Centre (ACIC) and the Biotech e-YUVA Innovation Centre supported by multi-crore public grants. In translational research and product development, he successfully spearheaded the development of multiple biological products, including India's first Dengue Vaccine in collaboration with the National Institutes of Health (NIH), Maryland, USA. He co-founded a specialized vaccine R&D venture developing vaccines for Hepatitis-E (consortium with AIIMS, THSTI, PGI Chandigarh), Chikungunya, and animal pox. Ghosh has represented India on technology missions across WHO Geneva, the Butantan Institute in Brazil, the Chinese Academy of Sciences in Wuhan, and Grenoble institutions in France through the Indian National Academy of Engineering. He is the recipient of the Dr. Sosil Kumar Jain-AMI Award (2024), serves as Vice President of the Asian Federation of Biotechnology in Seoul, and is a passionate long-distance cyclist who once pedaled from Kolkata to Kathmandu.",
     institutionalQuote:
       "True translational research bridges the gap between scientific publications in laboratories and life-saving technologies deployed in the hands of citizens."
   },
   {
     id: "dr-nv-jagannadha-rao",
-    name: "Dr. N. V. Jagannadha Rao",
+    name: "N. V. Jagannadha Rao",
     position: "Registrar",
-    honorific: "Dr.",
     category: "administration",
     imageSrc: "/images/leadership/dr-nv-jagannadha-rao.jpg",
     fallbackInitials: "NVJR",
@@ -153,7 +148,7 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
     summaryBio:
       "Foundational administrative leader with over 25 years of service at GIET since 1997, overseeing university compliance, statutory governance, and student-centered administration.",
     fullBio:
-      "Dr. N. V. Jagannadha Rao is a versatile institutional administrator and thought leader with over 25 years of academic and operational experience. Holding an MBA and Ph.D in Management, Dr. Rao has served the institution faithfully since its founding in 1997. He provides the administrative backbone of GIET University, upholding regulatory integrity, institutional policies, and statutory compliance with All India Council for Technical Education (AICTE), University Grants Commission (UGC), and state government bodies. Renowned for his student-first mentorship, he actively counsels students through academic, professional, and career challenges, ensuring that university graduates emerge capable, disciplined, and industry-ready.",
+      "N. V. Jagannadha Rao is a versatile institutional administrator and thought leader with over 25 years of academic and operational experience. Holding an MBA and Ph.D in Management, Rao has served the institution faithfully since its founding in 1997. He provides the administrative backbone of GIET University, upholding regulatory integrity, institutional policies, and statutory compliance with All India Council for Technical Education (AICTE), University Grants Commission (UGC), and state government bodies. Renowned for his student-first mentorship, he actively counsels students through academic, professional, and career challenges, ensuring that university graduates emerge capable, disciplined, and industry-ready.",
     institutionalQuote:
       "Academic administration is meaningful when it ensures integrity in governance while keeping every student's aspirations, dignity, and future at the center of institutional policy."
   }

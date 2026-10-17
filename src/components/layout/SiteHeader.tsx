@@ -31,34 +31,34 @@ export function SiteHeader() {
           : "bg-[#faf7f2] border-[#e8dfd3] py-2.5 sm:py-3.5"
       )}
     >
-      <Container size="wide" className="px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-2 sm:gap-4">
+      <Container size="wide" className="px-2.5 min-[360px]:px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-1.5 sm:gap-4">
           
           {/* ZONE 1 (LEFT): Authentic Event Identity */}
-          <div className="flex items-center shrink-0">
+          <div className="flex items-center shrink min-w-0">
             <Link
               href="/"
-              className="group flex items-center gap-2 min-[400px]:gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] rounded-xl shrink-0"
+              className="group flex items-center gap-1.5 min-[360px]:gap-2 min-[400px]:gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] rounded-xl shrink min-w-0"
               aria-label="ISF Startup Jathara 2026 Homepage"
             >
               {/* Official ISF Mark Container */}
-              <div className="w-8 h-8 min-[380px]:w-9 min-[380px]:h-9 sm:w-10 sm:h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-2xs border border-[#e8dfd3] transition-transform duration-200 group-hover:scale-105 shrink-0">
+              <div className="w-7 h-7 min-[360px]:w-8 min-[360px]:h-8 min-[380px]:w-9 min-[380px]:h-9 sm:w-10 sm:h-10 rounded-xl bg-white p-0.5 min-[360px]:p-1 flex items-center justify-center shadow-2xs border border-[#e8dfd3] transition-transform duration-200 group-hover:scale-105 shrink-0">
                 <Image
                   src="/logos/isf-logo.webp"
                   alt="International Startup Foundation (ISF) Logo"
                   width={36}
                   height={36}
-                  className="max-h-6 max-w-6 min-[380px]:max-h-7 min-[380px]:max-w-7 sm:max-h-8 sm:max-w-8 w-auto h-auto object-contain"
+                  className="max-h-5 max-w-5 min-[360px]:max-h-6 min-[360px]:max-w-6 min-[380px]:max-h-7 min-[380px]:max-w-7 sm:max-h-8 sm:max-w-8 w-auto h-auto object-contain"
                   priority
                 />
               </div>
 
               {/* Event Typography Lockup */}
-              <div className="flex flex-col text-left shrink-0">
-                <span className="font-serif font-black text-xs min-[400px]:text-sm sm:text-base lg:text-[16px] text-[#1c1917] tracking-tight leading-tight group-hover:text-[#e87042] transition-colors whitespace-nowrap">
+              <div className="flex flex-col text-left shrink min-w-0">
+                <span className="font-serif font-black text-[11px] min-[360px]:text-xs min-[400px]:text-sm sm:text-base lg:text-[16px] text-[#1c1917] tracking-tight leading-tight group-hover:text-[#e87042] transition-colors whitespace-nowrap">
                   ISF STARTUP JATHARA
                 </span>
-                <span className="text-[9px] min-[400px]:text-[10px] sm:text-[11px] font-bold text-[#e87042] tracking-wider uppercase mt-0.5 leading-none whitespace-nowrap">
+                <span className="text-[8px] min-[360px]:text-[9px] min-[400px]:text-[10px] sm:text-[11px] font-bold text-[#e87042] tracking-wider uppercase mt-0.5 leading-none whitespace-nowrap">
                   Dandakaranya 2026
                 </span>
               </div>
@@ -110,7 +110,7 @@ export function SiteHeader() {
               href="https://isf-test.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#e87042] text-white hover:bg-[#d95d2c] shadow-xs hover:shadow-sm transition-all duration-200 active:scale-95 shrink-0 min-h-[36px] sm:min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]"
+              className="group inline-flex items-center justify-center px-2.5 min-[360px]:px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] min-[360px]:text-xs sm:text-sm font-bold bg-[#e87042] text-white hover:bg-[#d95d2c] shadow-xs hover:shadow-sm transition-all duration-200 active:scale-95 shrink-0 min-h-[32px] min-[360px]:min-h-[36px] sm:min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]"
               aria-label="Register for ISF Startup Jathara 2026 (Opens in new tab)"
             >
               <span>Register</span>

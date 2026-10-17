@@ -80,19 +80,19 @@ export default function StartupsPage() {
             The platform where collegiate makers, grassroots problem solvers, and early-stage enterprises connect with national venture capital and industry mentors.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <a 
               href="https://isf-test.vercel.app/"
               target="_blank"
               rel="noopener noreferrer" 
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
+              className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-xs min-[360px]:text-sm shadow-md hover:shadow-lg transition-all w-full min-[420px]:w-auto text-center"
             >
               <span>Founder Registration Gateway</span>
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
             </a>
             <Link 
               href="/programme" 
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#141620]/80 hover:bg-[#1f2230] text-white border border-white/20 font-bold text-sm backdrop-blur-md transition-all"
+              className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-[#141620]/80 hover:bg-[#1f2230] text-white border border-white/20 font-bold text-xs min-[360px]:text-sm backdrop-blur-md transition-all w-full min-[420px]:w-auto text-center"
             >
               <span>Check Pitch Day Timing</span>
             </Link>
@@ -273,11 +273,11 @@ export default function StartupsPage() {
           <p className="mt-2 text-sm text-[#c8d1cd] max-w-xl mx-auto">
             Review participation categories and prepare your startup presentation for ISF Startup Jathara 2026.
           </p>
-          <div className="mt-6 flex justify-center gap-4">
-            <Button href="https://isf-test.vercel.app/" variant="gold" size="md">
+          <div className="mt-6 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
+            <Button href="https://isf-test.vercel.app/" variant="gold" size="md" className="w-full min-[420px]:w-auto justify-center">
               Browse Registration Categories
             </Button>
-            <Button href="/programme" variant="outline" size="md" className="text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#143e30]">
+            <Button href="/programme" variant="outline" size="md" className="w-full min-[420px]:w-auto justify-center text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#143e30]">
               View Pitch Schedule
             </Button>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import { FAQ_ITEMS } from "@/data/eventData";
+import { FAQ_ITEMS, EVENT_METADATA } from "@/data/eventData";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
 import { FAQAccordion } from "../faq/FAQAccordion";
@@ -30,13 +30,13 @@ export function HomeFAQ() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
-              <Button href="/faq" variant="outline" size="sm">
+            <div className="flex flex-col min-[420px]:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+              <Button href="/faq" variant="outline" size="sm" className="w-full sm:w-auto justify-center">
                 <span>All FAQs</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1" />
               </Button>
-              <Button href="/contact" variant="primary" size="sm">
-                <span>Contact Desk</span>
+              <Button href={`mailto:${EVENT_METADATA.contactEmail}`} variant="primary" size="sm" className="w-full sm:w-auto justify-center">
+                <span>Contact Secretariat</span>
               </Button>
             </div>
           </div>

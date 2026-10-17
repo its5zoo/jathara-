@@ -385,7 +385,7 @@ export function GunupurHotelsSection() {
                       <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-[#e8e1d3] space-y-2.5">
                         <a
                           href={`tel:${hotel.primaryPhone.replace(/[^0-9+]/g, "")}`}
-                          className="w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-full bg-gradient-to-r from-[#143e30] via-[#103327] to-[#0a2018] hover:from-[#1b5341] hover:to-[#143e30] text-[#faf8f2] text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 shadow-[0_4px_14px_rgba(20,62,48,0.25)] hover:shadow-[0_8px_22px_rgba(20,62,48,0.35)] hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 sm:gap-2.5 group/cta cursor-pointer text-center"
+                          className="w-full py-3 sm:py-3.5 px-3 min-[360px]:px-4 sm:px-5 rounded-full bg-gradient-to-r from-[#143e30] via-[#103327] to-[#0a2018] hover:from-[#1b5341] hover:to-[#143e30] text-[#faf8f2] text-[11px] min-[360px]:text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 shadow-[0_4px_14px_rgba(20,62,48,0.25)] hover:shadow-[0_8px_22px_rgba(20,62,48,0.35)] hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-1.5 sm:gap-2.5 group/cta cursor-pointer text-center"
                         >
                           <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#d6b25e] transition-transform duration-300 group-hover/cta:rotate-12 shrink-0" />
                           <span>Call to Book: {hotel.primaryPhone}</span>
