@@ -13,7 +13,7 @@ import {
   Sparkles, 
   Leaf, 
   Globe2, 
-  ChevronDown,
+  ChevronDown, 
   ArrowRight 
 } from "lucide-react";
 import { STARTUP_VERTICALS } from "@/data/eventData";
@@ -73,8 +73,8 @@ export function StartupVerticalsGrid() {
         </button>
       </div>
 
-      {/* Grid: 4 Columns with Clean Compact Default Heights */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+      {/* Grid: 4 Columns with Equalized Heights */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {STARTUP_VERTICALS.map((vertical) => {
           const IconComponent = iconMap[vertical.iconName] || Sparkles;
           const isExpanded = !!expandedIds[vertical.id];
@@ -83,20 +83,20 @@ export function StartupVerticalsGrid() {
             <div
               key={vertical.id}
               className={cn(
-                "bg-white rounded-3xl p-6 border transition-all duration-200 flex flex-col justify-between shadow-xs",
+                "bg-white rounded-3xl p-6 border transition-all duration-200 flex flex-col justify-between shadow-xs h-full",
                 isExpanded
                   ? "border-[#e87042]/60 shadow-md ring-1 ring-[#e87042]/20"
                   : "border-[#e6dfd1] hover:border-[#e87042]/40 hover:shadow-sm"
               )}
             >
-              <div>
+              <div className="flex-1 flex flex-col">
                 {/* Icon Container */}
                 <div className="w-11 h-11 rounded-2xl bg-[#faf8f5] border border-[#ede7db] flex items-center justify-center text-[#c25022] mb-3.5 shrink-0">
                   <IconComponent className="w-5 h-5 text-[#e87042]" />
                 </div>
 
-                {/* Title & Subtitle */}
-                <h3 className="font-serif font-bold text-lg text-[#1c1917] leading-snug break-words [overflow-wrap:anywhere]">
+                {/* Title (Consistent height for 1 or 2 lines) */}
+                <h3 className="font-serif font-bold text-lg text-[#1c1917] leading-snug break-words [overflow-wrap:anywhere] min-h-[50px] flex items-start">
                   {vertical.title.includes("/") ? (
                     vertical.title.split("/").map((part, i, arr) => (
                       <React.Fragment key={i}>
@@ -110,17 +110,18 @@ export function StartupVerticalsGrid() {
                   )}
                 </h3>
 
-                <p className="text-[10px] sm:text-[11px] font-semibold text-[#8c671b] uppercase tracking-wider mt-1 leading-tight break-words">
+                {/* Subtitle (Consistent height) */}
+                <p className="text-[10px] sm:text-[11px] font-semibold text-[#8c671b] uppercase tracking-wider mt-1 leading-tight break-words min-h-[28px] flex items-start">
                   {vertical.subtitle}
                 </p>
 
-                {/* Short Description */}
-                <p className="text-xs sm:text-sm text-[#57534e] mt-2.5 leading-relaxed">
+                {/* Short Description (Consistent height) */}
+                <p className="text-xs sm:text-sm text-[#57534e] mt-2.5 leading-relaxed min-h-[64px]">
                   {vertical.description}
                 </p>
 
-                {/* Dropdown Toggle Button */}
-                <div className="mt-4 pt-3 border-t border-[#f0ede6]">
+                {/* Dropdown Toggle Button (Aligned at the same level) */}
+                <div className="mt-auto pt-4 border-t border-[#f0ede6]">
                   <button
                     type="button"
                     onClick={() => toggleExpand(vertical.id)}

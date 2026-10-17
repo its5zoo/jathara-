@@ -57,12 +57,6 @@ export function LeadershipSection() {
                     </div>
                   </div>
                 </div>
-
-                {/* Floating Insignia Badge below the Circle Frame */}
-                <div className="absolute -bottom-2.5 sm:-bottom-3 left-1/2 -translate-x-1/2 bg-[#1c1917] text-white px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold border border-[#e87042] shadow-lg whitespace-nowrap flex items-center gap-1.5 z-10">
-                  <Award className="w-3.5 h-3.5 text-[#e87042]" />
-                  <span>Visionary Founder</span>
-                </div>
               </div>
             </div>
 

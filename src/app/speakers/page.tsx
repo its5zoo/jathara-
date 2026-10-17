@@ -65,15 +65,13 @@ export default function SpeakersPage() {
             subtitle="In accordance with our strict data integrity policy, verified dignitaries and plenary leaders are formally presented below."
           />
 
-          {/* Chief Guest Spotlight Feature Card */}
+          {/* Chief Guest Spotlight Feature Card - Clean & Simple Light Aesthetic */}
           {chiefGuest && (
-            <div className="mb-14 rounded-3xl bg-gradient-to-br from-[#10141e] via-[#161c28] to-[#0c0e14] border-2 border-[#d97706]/40 p-4 sm:p-8 lg:p-10 text-[#fcfbf8] shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-80 h-80 bg-[#d97706]/10 rounded-full blur-3xl pointer-events-none" />
-
+            <div className="mb-14 rounded-3xl bg-white border border-[#e6dfd1] p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 {/* Photo Column */}
                 <div className="md:col-span-5 flex justify-center">
-                  <div className="relative w-56 sm:w-64 md:w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-[#d97706]/50 shadow-2xl group">
+                  <div className="relative w-56 sm:w-64 md:w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border border-[#e6dfd1] shadow-md group">
                     <Image
                       src={chiefGuest.photoUrl || "/images/sadguru-sri-madhusudan-sai.jpg"}
                       alt={chiefGuest.name}
@@ -81,8 +79,7 @@ export default function SpeakersPage() {
                       priority
                       className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e14] via-transparent to-transparent opacity-75" />
-                    <div className="absolute bottom-3 left-3 right-3 text-center py-1.5 px-2 rounded-lg bg-[#0c0e14]/90 border border-[#d97706]/30 text-[11px] font-bold text-[#fbd38d]">
+                    <div className="absolute bottom-3 left-3 right-3 text-center py-1.5 px-2 rounded-lg bg-white/95 backdrop-blur-xs border border-[#e6dfd1] text-[11px] font-bold text-[#8c671b] shadow-xs">
                       Inaugural Summit Plenary Keynote
                     </div>
                   </div>
@@ -91,34 +88,34 @@ export default function SpeakersPage() {
                 {/* Details Column */}
                 <div className="md:col-span-7 space-y-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#d97706] to-[#c25022] text-[#ffffff] text-xs font-bold uppercase tracking-wider shadow-xs">
+                    <span className="px-3 py-1 rounded-full bg-[#c25022]/10 text-[#c25022] text-xs font-bold uppercase tracking-wider">
                       Chief Guest of Honour
                     </span>
-                    <span className="text-xs font-semibold text-[#fbd38d] bg-[#d97706]/15 px-2.5 py-0.5 rounded-md border border-[#d97706]/30">
+                    <span className="text-xs font-semibold text-[#8c671b] bg-[#fbf6ea] px-2.5 py-1 rounded-md border border-[#e8dfc8]">
                       Confirmed Keynote
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-[#ffffff] tracking-tight">
+                    <h3 className="font-serif font-black text-2xl sm:text-3.5xl text-[#1c1917] tracking-tight">
                       {chiefGuest.name}
                     </h3>
-                    <p className="text-xs sm:text-sm font-semibold text-[#fbd38d] mt-1">
+                    <p className="text-xs sm:text-sm font-semibold text-[#8c671b] mt-1">
                       {chiefGuest.designation} • {chiefGuest.organization}
                     </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[#cbd5e1] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
                     {chiefGuest.bio}
                   </p>
 
-                  <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-[#e2e8f0]">
-                    <div className="flex items-center gap-2 bg-[#1a202c]/80 px-3 py-2 rounded-xl border border-[#2d3748]">
-                      <span className="text-[#f6ad55] font-bold">Exhibition Inauguration:</span>
+                  <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-[#2b2521]">
+                    <div className="flex items-center gap-2 bg-[#faf7f2] px-3.5 py-2 rounded-xl border border-[#e8dfd3]">
+                      <span className="text-[#c25022] font-bold">Exhibition Inauguration:</span>
                       <span>18 Dec 2026 • 09:00 AM</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-[#1a202c]/80 px-3 py-2 rounded-xl border border-[#2d3748]">
-                      <span className="text-[#f6ad55] font-bold">Plenary Address:</span>
+                    <div className="flex items-center gap-2 bg-[#faf7f2] px-3.5 py-2 rounded-xl border border-[#e8dfd3]">
+                      <span className="text-[#c25022] font-bold">Plenary Address:</span>
                       <span>18 Dec 2026 • 10:40 AM (Mega Audi)</span>
                     </div>
                   </div>
@@ -126,7 +123,7 @@ export default function SpeakersPage() {
                   <div className="pt-2">
                     <Link
                       href="/programme"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-[#c25022] to-[#d97706] text-white text-xs font-bold shadow-xs hover:opacity-95 transition-opacity"
+                      className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white text-xs font-bold shadow-xs hover:shadow-sm transition-all"
                     >
                       <span>View 18th Dec Protocol</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -232,7 +229,7 @@ export default function SpeakersPage() {
                 <Mail className="w-4 h-4 mr-2" />
                 <span>Submit Speaker Nomination</span>
               </Button>
-              <Button href="https://isf-test.vercel.app/" variant="outline" size="md">
+              <Button variant="outline" size="md">
                 <span>Mentor Category Details</span>
               </Button>
             </div>
