@@ -14,22 +14,22 @@ export function ChiefGuestSection() {
         {/* Open, unboxed editorial layout without enclosing box */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
           
-          {/* Left: Clean Dignitary Portrait (No box, natural rounded shape with gentle depth) */}
-          <div className="md:col-span-5 lg:col-span-4 flex justify-center md:justify-start">
-            <div className="relative w-52 sm:w-60 md:w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden shadow-lg shadow-[#1c1917]/8 group">
+          {/* Left: Dignitary Portrait - Prominent & Large */}
+          <div className="md:col-span-5 lg:col-span-5 flex justify-center md:justify-start">
+            <div className="relative w-full max-w-[340px] sm:max-w-[380px] md:max-w-[390px] lg:max-w-[430px] aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-[#1c1917]/10 group">
               <Image
                 src="/images/sadguru-sri-madhusudan-sai.jpg"
                 alt="Sadguru Sri Madhusudan Sai - Chief Guest of Honour at ISF Startup Jathara 2026"
                 fill
                 priority
-                sizes="(max-width: 640px) 220px, (max-width: 768px) 260px, 280px"
+                sizes="(max-width: 640px) 340px, (max-width: 1024px) 390px, 430px"
                 className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-102"
               />
             </div>
           </div>
 
           {/* Right: Narrative & Verified Details (Proper typography & spacing) */}
-          <div className="md:col-span-7 lg:col-span-8 space-y-4 text-left">
+          <div className="md:col-span-7 lg:col-span-7 space-y-4 text-left">
             
             {/* Header Eyebrow (Zero AI icons) */}
             <div className="flex items-center gap-2">
