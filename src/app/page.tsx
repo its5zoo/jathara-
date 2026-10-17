@@ -14,10 +14,7 @@ export default function HomePage() {
       {/* 1. Hero Section - Refined height, real campus backdrop, 4-stat telemetry */}
       <HeroSection />
 
-      {/* 2. Chief Guest of Honour Spotlight - Sadguru Sri Madhusudan Sai */}
-      <ChiefGuestSection />
-
-      {/* 3. Summit Tracks - 8 focus sectors, concise cards */}
+      {/* 2. Summit Tracks - 8 focus sectors, concise cards */}
       <VerticalsSection />
 
       {/* 3. Host Campus & Travel Bridge */}
@@ -26,7 +23,10 @@ export default function HomePage() {
       {/* 4. Three Days of Immersive Engagement - Curated Timeline Preview */}
       <ProgrammePreview />
 
-      {/* 5. Leadership & Vision Behind ISF + Institutional Governance */}
+      {/* 5. Chief Guest of Honour Spotlight - Sadguru Sri Madhusudan Sai (Under Immersion) */}
+      <ChiefGuestSection />
+
+      {/* 6. Leadership & Vision Behind ISF + Institutional Governance */}
       <LeadershipSection />
 
       {/* 6. Frequently Asked Questions */}
