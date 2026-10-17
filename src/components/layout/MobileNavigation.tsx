@@ -102,16 +102,6 @@ export function MobileNavigation() {
               />
             </div>
 
-            {/* GIET University Host Crest */}
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white p-1 flex items-center justify-center border border-[#e8dfd3] shadow-2xs shrink-0">
-              <Image
-                src="/logos/giet-logo.png"
-                alt="GIET University Crest"
-                width={32}
-                height={32}
-                className="max-h-6 max-w-6 sm:max-h-7 sm:max-w-7 w-auto h-auto object-contain"
-              />
-            </div>
 
             <div className="min-w-0 text-left">
               <div className="font-serif font-black text-[#1c1917] text-xs min-[380px]:text-sm leading-tight truncate">

@@ -347,25 +347,6 @@ export function VenueTravelClient() {
         </Container>
       </section>
 
-      {/* Action Footer */}
-      <section className="py-16 bg-[#0c0d12] text-[#fcfbf8] text-center">
-        <Container size="default">
-          <h2 className="font-serif font-bold text-2xl sm:text-3xl">
-            Start Planning Your Journey
-          </h2>
-          <p className="mt-2 text-sm text-[#c8d1cd] max-w-xl mx-auto">
-            Review the 3-day tentative programme or register your category for December 2026.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <Button href="/programme" variant="gold" size="md" className="w-full sm:w-auto justify-center">
-              View 3-Day Programme
-            </Button>
-            <Button href="https://isf-test.vercel.app/" variant="terracotta" size="md" className="w-full sm:w-auto justify-center">
-              Registration Gateway
-            </Button>
-          </div>
-        </Container>
-      </section>
     </div>
   );
 }

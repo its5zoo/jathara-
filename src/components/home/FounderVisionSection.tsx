@@ -33,13 +33,13 @@ export function FounderVisionSection() {
             <div className="relative group">
               {/* Outer decorative ambient glow ring */}
               <div 
-                className="absolute -inset-2 sm:-inset-3 rounded-full bg-gradient-to-tr from-[#c25022]/20 via-[#e87042]/25 to-[#d68c45]/20 blur-md group-hover:blur-lg transition-all duration-500" 
+                className="absolute -inset-1.5 sm:-inset-2 rounded-full bg-gradient-to-tr from-[#c25022]/15 via-[#e87042]/20 to-[#d68c45]/15 blur-sm group-hover:blur-md transition-all duration-500" 
                 aria-hidden="true" 
               />
 
-              {/* Concentric Double-Ring Circular Frame */}
-              <div className="relative w-56 h-56 sm:w-68 sm:h-68 md:w-76 md:h-76 rounded-full p-2 sm:p-2.5 bg-gradient-to-tr from-[#c25022] via-[#e87042] to-[#d68c45] shadow-xl shadow-[#e87042]/15">
-                <div className="w-full h-full rounded-full p-1.5 sm:p-2 bg-white shadow-inner">
+              {/* Concentric Double-Ring Circular Frame (Refined Thin Border) */}
+              <div className="relative w-56 h-56 sm:w-68 sm:h-68 md:w-76 md:h-76 rounded-full p-1 sm:p-1.5 bg-gradient-to-tr from-[#c25022] via-[#e87042] to-[#d68c45] shadow-lg shadow-[#e87042]/15">
+                <div className="w-full h-full rounded-full p-1 sm:p-1.5 bg-white shadow-inner">
                   <div className="relative w-full h-full rounded-full overflow-hidden bg-[#faf8f5]">
                     <Image
                       src="/images/leadership/ja-chowdary.jpg"
@@ -56,9 +56,9 @@ export function FounderVisionSection() {
           </div>
 
           {/* Right: Narrative, Achievements & Vision */}
-          <div className="md:col-span-7 lg:col-span-7 space-y-4 text-left">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#c25022]">
+          <div className="md:col-span-7 lg:col-span-7 space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
+            <div className="w-full text-center md:text-left">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#c25022] block">
                 Founder &amp; Chairman, ISF
               </span>
               <h3 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl text-[#1c1917] tracking-tight leading-tight mt-1">
@@ -69,15 +69,15 @@ export function FounderVisionSection() {
               </p>
             </div>
 
-            <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed text-center md:text-left">
               Widely acknowledged as one of the visionary architects who shaped India&apos;s software technology exports and transformed Hyderabad into a premier global IT destination. Through the International Startup Foundation, he champions an audacious mission: decentralizing wealth creation by empowering collegiate innovators, rural entrepreneurs, and tribal youth directly with venture capital and institutional mentorship.
             </p>
 
-            <blockquote className="p-3.5 sm:p-4 rounded-xl bg-white/80 border-l-4 border-l-[#e87042] border border-[#e8dfd3] text-xs sm:text-sm text-[#44403c] italic leading-relaxed shadow-2xs">
+            <blockquote className="w-full p-3.5 sm:p-4 rounded-xl bg-white/80 border-l-4 border-l-[#e87042] border border-[#e8dfd3] text-xs sm:text-sm text-[#44403c] italic leading-relaxed shadow-2xs text-center md:text-left">
               &ldquo;India&apos;s true innovative breakthrough will not emerge solely from metropolitan high-rises, but from decentralizing opportunity directly to grassroots youth across rural and tribal corridors.&rdquo;
             </blockquote>
 
-            <div className="pt-2">
+            <div className="pt-2 w-full flex justify-center md:justify-start">
               <Link
                 href="/about"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#c25022] hover:text-[#e87042] transition-colors group"

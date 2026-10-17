@@ -21,12 +21,16 @@ export function InstitutionalLeadershipSection() {
           </div>
         </div>
 
-        {/* Leaders Grid (5 Leaders) */}
+        {/* Leaders Grid (5 Leaders: 2 + 2 + 1 centered on mobile) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 min-[380px]:gap-3 sm:gap-5">
-          {GIET_LEADERSHIP_PROFILES.map((leader) => (
+          {GIET_LEADERSHIP_PROFILES.map((leader, index) => (
             <div
               key={leader.id}
-              className="bg-white rounded-2xl border border-[#e8dfd3] overflow-hidden shadow-xs hover:shadow-md hover:border-[#e87042]/40 transition-all flex flex-col group"
+              className={`bg-white rounded-2xl border border-[#e8dfd3] overflow-hidden shadow-xs hover:shadow-md hover:border-[#e87042]/40 transition-all flex flex-col group ${
+                index === 4
+                  ? "col-span-2 sm:col-span-1 w-[calc(50%-5px)] min-[380px]:w-[calc(50%-6px)] sm:w-full mx-auto"
+                  : ""
+              }`}
             >
               <div className="relative aspect-[3/3.6] w-full bg-[#181a24] overflow-hidden">
                 <Image

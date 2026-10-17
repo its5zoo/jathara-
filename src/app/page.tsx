@@ -30,11 +30,11 @@ export default function HomePage() {
       {/* 6. Institutional Leadership (GIET University Governance) */}
       <InstitutionalLeadershipSection />
 
-      {/* 7. Frequently Asked Questions */}
-      <HomeFAQ />
-
-      {/* 8. Three Days of Immersive Engagement - Curated Timeline Preview (Last Content Section) */}
+      {/* 7. Three Days of Immersive Engagement - Curated Timeline Preview */}
       <ProgrammePreview />
+
+      {/* 8. Frequently Asked Questions */}
+      <HomeFAQ />
 
       {/* 9. Closing Call to Action */}
       <GatewayCTA />

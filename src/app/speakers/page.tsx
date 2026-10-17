@@ -4,12 +4,14 @@ import Link from "next/link";
 import { 
   Mic2, 
   ArrowRight, 
-  Mail 
+  Mail,
+  HeartHandshake,
+  GraduationCap,
+  Utensils
 } from "lucide-react";
 import { INITIAL_SPEAKERS, EVENT_METADATA } from "@/data/eventData";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
-import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { EmptyState } from "@/components/common/EmptyState";
 
@@ -65,68 +67,87 @@ export default function SpeakersPage() {
             subtitle="In accordance with our strict data integrity policy, verified dignitaries and plenary leaders are formally presented below."
           />
 
-          {/* Chief Guest Spotlight Feature Card - Clean & Simple Light Aesthetic */}
+          {/* Chief Guest Spotlight Feature - Prestigious Editorial Presentation */}
           {chiefGuest && (
-            <div className="mb-14 rounded-3xl bg-white border border-[#e6dfd1] p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                {/* Photo Column */}
-                <div className="md:col-span-5 flex justify-center">
-                  <div className="relative w-56 sm:w-64 md:w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border border-[#e6dfd1] shadow-md group">
+            <div className="mb-20 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+                {/* Photo Column - Dignified & High-Resolution */}
+                <div className="md:col-span-5 flex justify-center md:justify-start">
+                  <div className="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-[#1c1917]/10 group">
                     <Image
                       src={chiefGuest.photoUrl || "/images/sadguru-sri-madhusudan-sai.jpg"}
                       alt={chiefGuest.name}
                       fill
                       priority
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 400px"
+                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-102"
                     />
-                    <div className="absolute bottom-3 left-3 right-3 text-center py-1.5 px-2 rounded-lg bg-white/95 backdrop-blur-xs border border-[#e6dfd1] text-[11px] font-bold text-[#8c671b] shadow-xs">
-                      Inaugural Summit Plenary Keynote
-                    </div>
                   </div>
                 </div>
 
                 {/* Details Column */}
-                <div className="md:col-span-7 space-y-4">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="px-3 py-1 rounded-full bg-[#c25022]/10 text-[#c25022] text-xs font-bold uppercase tracking-wider">
+                <div className="md:col-span-7 space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
+                  {/* Eyebrow */}
+                  <div className="flex items-center justify-center md:justify-start gap-2 w-full">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#c25022]">
                       Chief Guest of Honour
                     </span>
-                    <span className="text-xs font-semibold text-[#8c671b] bg-[#fbf6ea] px-2.5 py-1 rounded-md border border-[#e8dfc8]">
-                      Confirmed Keynote
+                    <span className="text-[#d6c7b2]">•</span>
+                    <span className="text-xs font-semibold text-[#8c671b] uppercase tracking-wider">
+                      Plenary Keynote
                     </span>
                   </div>
 
-                  <div>
-                    <h3 className="font-serif font-black text-2xl sm:text-3.5xl text-[#1c1917] tracking-tight">
+                  {/* Title & Organization */}
+                  <div className="space-y-1 w-full text-center md:text-left">
+                    <h3 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl text-[#1c1917] tracking-tight leading-tight">
                       {chiefGuest.name}
                     </h3>
-                    <p className="text-xs sm:text-sm font-semibold text-[#8c671b] mt-1">
-                      {chiefGuest.designation} • {chiefGuest.organization}
+                    <p className="text-xs sm:text-sm md:text-base font-semibold text-[#8c671b] leading-snug">
+                      Global Humanitarian, Spiritual Leader &amp; Founder, Sri Madhusudan Sai Global Humanitarian Mission
                     </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
-                    {chiefGuest.bio}
+                  {/* Detailed Humanitarian Context */}
+                  <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed text-center md:text-left">
+                    Revered internationally for spearheading transformative selfless service across 30+ nations based on the timeless philosophy of <em>Vasudhaiva Kutumbakam</em> (The World is One Family). Under his visionary guidance, massive humanitarian institutions deliver world-class healthcare, values-based higher education, and morning nutrition completely free of charge to millions of underserved families.
                   </p>
 
-                  <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-[#2b2521]">
-                    <div className="flex items-center gap-2 bg-[#faf7f2] px-3.5 py-2 rounded-xl border border-[#e8dfd3]">
-                      <span className="text-[#c25022] font-bold">Exhibition Inauguration:</span>
-                      <span>18 Dec 2026 • 09:00 AM</span>
+                  {/* 3 Core Humanitarian Pillars */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 w-full">
+                    <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs text-left">
+                      <HeartHandshake className="w-4 h-4 text-[#c25022] shrink-0 mt-0.5" />
+                      <div className="text-xs">
+                        <strong className="block text-[#1c1917] font-bold">Free Pediatric Care</strong>
+                        <span className="text-[11px] text-[#6b7280] leading-tight">Sri Sathya Sai Sanjeevani</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2 bg-[#faf7f2] px-3.5 py-2 rounded-xl border border-[#e8dfd3]">
-                      <span className="text-[#c25022] font-bold">Plenary Address:</span>
-                      <span>18 Dec 2026 • 10:40 AM (Mega Audi)</span>
+
+                    <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs text-left">
+                      <GraduationCap className="w-4 h-4 text-[#8c671b] shrink-0 mt-0.5" />
+                      <div className="text-xs">
+                        <strong className="block text-[#1c1917] font-bold">Free Education</strong>
+                        <span className="text-[11px] text-[#6b7280] leading-tight">Human Excellence Univ</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs text-left">
+                      <Utensils className="w-4 h-4 text-[#256f57] shrink-0 mt-0.5" />
+                      <div className="text-xs">
+                        <strong className="block text-[#1c1917] font-bold">3M+ Daily Meals</strong>
+                        <span className="text-[11px] text-[#6b7280] leading-tight">Annapoorna Nutrition</span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="pt-2">
+                  {/* Link to Programme */}
+                  <div className="pt-2 w-full flex justify-center md:justify-start">
                     <Link
                       href="/programme"
-                      className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white text-xs font-bold shadow-xs hover:shadow-sm transition-all"
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#c25022] hover:text-[#e87042] transition-colors group"
                     >
-                      <span>View 18th Dec Protocol</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <span>View Plenary Session Schedule</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
@@ -134,17 +155,6 @@ export default function SpeakersPage() {
             </div>
           )}
 
-          {/* Polished Empty State / Advisory Notice */}
-          <EmptyState
-            icon="clock"
-            badgeText="Roster In Formalization"
-            title="Additional Plenary Keynotes & Track Chairs Being Finalized"
-            description="The steering committee of the International Startup Foundation and GIET University is currently finalizing invitations and confirmations for plenary keynotes, ministerial guests, and sector roundtable chairs."
-            note="To maintain authentic and verified information, speaker profiles will be populated progressively upon formal confirmation. No placeholder personas are used."
-            actionLabel="Inquire About Speaking / Mentoring"
-            actionHref={`mailto:${EVENT_METADATA.contactEmail}?subject=Speaking%20or%20Mentoring%20Inquiry`}
-            className="mb-16"
-          />
 
           {/* Sector Panel Chairs Outline */}
           <div className="mt-16">
@@ -169,15 +179,6 @@ export default function SpeakersPage() {
                   className="bg-[#ffffff] rounded-3xl p-6 sm:p-7 border border-[#e6dfd1] hover:border-[#143e30]/30 transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <Badge variant="terracotta" size="sm">
-                        {spk.track}
-                      </Badge>
-                      <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
-                        {spk.statusLabel}
-                      </span>
-                    </div>
-
                     <h4 className="font-serif font-bold text-lg sm:text-xl text-[#103327]">
                       {spk.name}
                     </h4>
@@ -234,6 +235,18 @@ export default function SpeakersPage() {
               </Button>
             </div>
           </div>
+
+          {/* Additional Plenary Keynotes Advisory Notice */}
+          <EmptyState
+            icon="mic"
+            badgeText="Announcements in Progress"
+            title="More Speakers & Mentors Coming Soon"
+            description="We are currently confirming distinguished founders, industry leaders, and domain experts. The complete lineup will be published as schedules are locked in."
+            note="All speaker profiles are verified directly with the speakers before being published."
+            actionLabel="Inquire About Speaking / Mentoring"
+            actionHref={`mailto:${EVENT_METADATA.contactEmail}?subject=Speaking%20or%20Mentoring%20Inquiry`}
+            className="mt-12"
+          />
         </Container>
       </section>
     </div>

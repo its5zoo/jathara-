@@ -29,10 +29,10 @@ export function ChiefGuestSection() {
           </div>
 
           {/* Right: Narrative & Verified Details (Proper typography & spacing) */}
-          <div className="md:col-span-7 lg:col-span-7 space-y-4 text-left">
+          <div className="md:col-span-7 lg:col-span-7 space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
             
             {/* Header Eyebrow (Zero AI icons) */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2 w-full">
               <span className="text-xs font-bold uppercase tracking-wider text-[#c25022]">
                 Chief Guest of Honour
               </span>
@@ -43,7 +43,7 @@ export function ChiefGuestSection() {
             </div>
 
             {/* Title & Organization */}
-            <div className="space-y-1">
+            <div className="space-y-1 w-full text-center md:text-left">
               <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl text-[#1c1917] tracking-tight leading-tight">
                 Sadguru Sri Madhusudan Sai
               </h2>
@@ -53,13 +53,13 @@ export function ChiefGuestSection() {
             </div>
 
             {/* Detailed Humanitarian Context */}
-            <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed text-center md:text-left">
               Revered internationally for spearheading transformative selfless service across 30+ nations based on the timeless philosophy of <em>Vasudhaiva Kutumbakam</em> (The World is One Family). Under his visionary guidance, massive humanitarian institutions deliver world-class healthcare, values-based higher education, and morning nutrition completely free of charge to millions of underserved families.
             </p>
 
             {/* 3 Core Humanitarian Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
-              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 w-full">
+              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs text-left">
                 <HeartHandshake className="w-4 h-4 text-[#c25022] shrink-0 mt-0.5" />
                 <div className="text-xs">
                   <strong className="block text-[#1c1917] font-bold">Free Pediatric Care</strong>
@@ -67,7 +67,7 @@ export function ChiefGuestSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs">
+              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs text-left">
                 <GraduationCap className="w-4 h-4 text-[#8c671b] shrink-0 mt-0.5" />
                 <div className="text-xs">
                   <strong className="block text-[#1c1917] font-bold">Free Education</strong>
@@ -75,7 +75,7 @@ export function ChiefGuestSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs">
+              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs text-left">
                 <Utensils className="w-4 h-4 text-[#256f57] shrink-0 mt-0.5" />
                 <div className="text-xs">
                   <strong className="block text-[#1c1917] font-bold">3M+ Daily Meals</strong>
@@ -85,21 +85,21 @@ export function ChiefGuestSection() {
             </div>
 
             {/* Verified Ceremony Timing & Venue */}
-            <div className="pt-3 border-t border-[#e6dfd1] flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-[#2b2521]">
-              <div className="flex items-center gap-2">
+            <div className="pt-3 border-t border-[#e6dfd1] flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm text-[#2b2521] w-full text-center sm:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2">
                 <Calendar className="w-4 h-4 text-[#e87042] shrink-0" />
                 <span>
                   <strong>Inauguration Ceremony:</strong> Friday, 18 December 2026 (09:00 – 11:00 AM)
                 </span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center justify-center md:justify-start gap-2">
                 <MapPin className="w-4 h-4 text-[#e87042] shrink-0" />
                 <span>Mega Auditorium, GIET University Campus, Gunupur</span>
               </div>
             </div>
 
             {/* Direct Link to Programme */}
-            <div className="pt-1">
+            <div className="pt-1 w-full flex justify-center md:justify-start">
               <Link
                 href="/programme"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#c25022] hover:text-[#e87042] transition-colors group"

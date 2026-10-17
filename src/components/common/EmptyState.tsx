@@ -1,11 +1,11 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Clock, ShieldAlert, Sparkles, HelpCircle } from "lucide-react";
+import { Clock, ShieldAlert, Sparkles, HelpCircle, Mic, Users, Megaphone } from "lucide-react";
 import { Button } from "./Button";
 import { Badge } from "./Badge";
 
 interface EmptyStateProps {
-  icon?: "clock" | "shield" | "sparkles" | "help";
+  icon?: "clock" | "shield" | "sparkles" | "help" | "mic" | "users" | "megaphone";
   badgeText?: string;
   title: string;
   description: string;
@@ -30,6 +30,9 @@ export function EmptyState({
     shield: ShieldAlert,
     sparkles: Sparkles,
     help: HelpCircle,
+    mic: Mic,
+    users: Users,
+    megaphone: Megaphone,
   };
 
   const IconComponent = iconMap[icon];
@@ -41,7 +44,7 @@ export function EmptyState({
         className
       )}
     >
-      <div className="mx-auto w-14 h-14 rounded-2xl bg-[#f7f4ec] border border-[#dfd6c4] flex items-center justify-center text-[#143e30] mb-4">
+      <div className="mx-auto w-14 h-14 rounded-2xl bg-[#fff7ed] border border-[#fed7aa] flex items-center justify-center text-[#c25022] mb-4 shadow-2xs">
         <IconComponent className="w-7 h-7" aria-hidden="true" />
       </div>
 
@@ -51,11 +54,11 @@ export function EmptyState({
         </Badge>
       )}
 
-      <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#103327] tracking-tight">
+      <h3 className="text-xl sm:text-2xl font-serif font-black text-[#1c1917] tracking-tight">
         {title}
       </h3>
 
-      <p className="mt-2.5 text-sm sm:text-base text-[#4a5752] leading-relaxed">
+      <p className="mt-2 text-xs sm:text-sm text-[#57534e] max-w-lg mx-auto leading-relaxed">
         {description}
       </p>
 
