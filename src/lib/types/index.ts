@@ -169,6 +169,16 @@ export interface NavLink {
   badge?: string;
 }
 
+export interface MobileNavGroup {
+  groupTitle: string;
+  links: {
+    label: string;
+    href: string;
+    description: string;
+    badge?: string;
+  }[];
+}
+
 export * from "./registration";
 export * from "./admin";
 export * from "./cloudinary";

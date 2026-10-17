@@ -79,29 +79,19 @@ export function FounderTributeSection() {
                 />
 
                 {/* Primary Portrait Card */}
-                <div className="relative bg-[#f7f4ec] p-3 sm:p-3.5 rounded-2xl border border-[#dfd6c4] shadow-md overflow-hidden">
-                  <div className="relative aspect-[4/4.6] w-full rounded-xl overflow-hidden bg-[#103327]/90">
-                    <Image
-                      src="/images/leadership/dr-ja-chowdary.png"
-                      alt="Dr. J. A. Chowdary, Founder & Chairman of the International Startup Foundation (ISF)"
-                      fill
-                      sizes="(max-width: 640px) 340px, (max-width: 1024px) 380px, 420px"
-                      priority={false}
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-103"
-                    />
-
-                    {/* Gradient vignette for lighting depth */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a2119]/70 via-transparent to-transparent pointer-events-none" />
-
-                    {/* Milestone Insignia Tag */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white/90 text-[11px] font-medium bg-[#103327]/85 backdrop-blur-xs px-3 py-1.5 rounded-lg border border-white/10 shadow-xs">
-                      <span className="flex items-center gap-1.5">
-                        <Compass className="w-3.5 h-3.5 text-[#e5a882]" />
-                        <span>ISF Leadership</span>
-                      </span>
-                      <span className="text-[#e5a882] font-semibold text-[10px] uppercase tracking-wider">
-                        Ecosystem Catalyst
-                      </span>
+                <div className="relative bg-[#f7f4ec] p-4 sm:p-5 rounded-2xl border border-[#dfd6c4] shadow-md overflow-hidden flex flex-col items-center">
+                  <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-tr from-[#103327] via-[#c25e38] to-[#dfd6c4] shadow-lg">
+                    <div className="w-full h-full rounded-full p-1.5 bg-white shadow-inner">
+                      <div className="relative w-full h-full rounded-full overflow-hidden bg-[#faf8f5]">
+                        <Image
+                          src="/images/leadership/ja-chowdary.jpg"
+                          alt="Dr. J. A. Chowdary, Founder & Chairman of the International Startup Foundation (ISF)"
+                          fill
+                          sizes="(max-width: 640px) 240px, 280px"
+                          priority={false}
+                          className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
                     </div>
                   </div>
 

@@ -4,27 +4,27 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Container } from "../common/Container";
 
-// Summit environment scenes
+// Summit environment scenes (featuring official Junicorn Summit and Cohort delegation photos)
 const HERO_BACKDROPS = [
+  {
+    src: "/images/hero-junicorn-summit.jpeg",
+    alt: "ISF Junicorn Student Innovators and Mentors Delegation",
+    tag: "Junicorn Delegation",
+  },
+  {
+    src: "/images/hero-cohort-team.png",
+    alt: "ISF Global Innovation Summit Cohort Delegation on Stage",
+    tag: "Global Innovation Summit",
+  },
   {
     src: "/images/startup-stage-backdrop.jpg",
     alt: "ISF Startup Jathara Grand Keynote Arena and Delegates",
     tag: "Keynote Arena",
   },
   {
-    src: "/images/summit-pitch-stage.jpg",
-    alt: "Live Founder Pitch Stage & Investor Jury",
-    tag: "Startup Pitch Stage",
-  },
-  {
     src: "/images/giet-school-of-engineering.jpg",
     alt: "GIET University Engineering & Innovation Campus",
     tag: "GIET University Campus",
-  },
-  {
-    src: "/images/dandakaranya-canopy.jpg",
-    alt: "Dandakaranya Innovation Valley",
-    tag: "Dandakaranya Valley",
   },
 ];
 
@@ -127,12 +127,65 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Institutional Partners / Conveners Bar (Sleek, transparent, unclipped) */}
+          {/* Institutional Partners / Conveners Bar */}
           <div className="mt-6 pt-5 border-t border-white/10 max-w-3xl mx-auto">
             <p className="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#a8a29e] uppercase mb-3 text-center">
               Convened Under the Aegis Of
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-center">
+
+            {/* Mobile View (< sm): Clean horizontal logo strip without bulky text */}
+            <div className="flex sm:hidden items-center justify-center gap-3.5 min-[360px]:gap-5 py-1">
+              <a
+                href="https://www.isfnetwork.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-12 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-sm active:scale-95 transition-transform"
+                aria-label="ISF Network - Organizer"
+              >
+                <Image
+                  src="/logos/isf-logo.webp"
+                  alt="ISF Network"
+                  width={40}
+                  height={40}
+                  className="max-h-8 max-w-10 object-contain"
+                />
+              </a>
+
+              <a
+                href="https://www.giet.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-12 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-sm active:scale-95 transition-transform"
+                aria-label="GIET University - Host Institution"
+              >
+                <Image
+                  src="/logos/giet-logo.png"
+                  alt="GIET University"
+                  width={40}
+                  height={40}
+                  className="max-h-8 max-w-10 object-contain"
+                />
+              </a>
+
+              <a
+                href="https://www.incubationx.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-12 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-sm active:scale-95 transition-transform"
+                aria-label="IncubateX - Innovation Partner"
+              >
+                <Image
+                  src="/logos/incubatex-logo.png"
+                  alt="IncubateX"
+                  width={40}
+                  height={40}
+                  className="max-h-8 max-w-10 object-contain"
+                />
+              </a>
+            </div>
+
+            {/* Laptop / Desktop View (sm+): Full rich cards with detailed roles */}
+            <div className="hidden sm:grid sm:grid-cols-3 gap-3 items-center">
               
               {/* 1. ISF Network */}
               <a

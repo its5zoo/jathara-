@@ -33,17 +33,36 @@ export function LeadershipSection() {
           {/* Open Editorial Layout (No enclosing box) */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center max-w-5xl mx-auto">
             
-            {/* Left: Dignitary Portrait (Natural rounded portrait with soft depth) */}
-            <div className="md:col-span-5 lg:col-span-5 flex justify-center md:justify-start">
-              <div className="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px] aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-[#1c1917]/10 group">
-                <Image
-                  src="/images/leadership/dr-ja-chowdary.png"
-                  alt="J. A. Chowdary - Founder & Chairman, International Startup Foundation"
-                  fill
-                  priority
-                  sizes="(max-width: 640px) 320px, (max-width: 1024px) 360px, 380px"
-                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-102"
+            {/* Left: Founder Dignitary Portrait in Elegant Circle Frame */}
+            <div className="md:col-span-5 lg:col-span-5 flex justify-center">
+              <div className="relative group">
+                {/* Outer decorative ambient glow ring */}
+                <div 
+                  className="absolute -inset-2 sm:-inset-3 rounded-full bg-gradient-to-tr from-[#c25022]/20 via-[#e87042]/25 to-[#d68c45]/20 blur-md group-hover:blur-lg transition-all duration-500" 
+                  aria-hidden="true" 
                 />
+
+                {/* Concentric Double-Ring Circular Frame */}
+                <div className="relative w-56 h-56 sm:w-68 sm:h-68 md:w-76 md:h-76 rounded-full p-2 sm:p-2.5 bg-gradient-to-tr from-[#c25022] via-[#e87042] to-[#d68c45] shadow-xl shadow-[#e87042]/15">
+                  <div className="w-full h-full rounded-full p-1.5 sm:p-2 bg-white shadow-inner">
+                    <div className="relative w-full h-full rounded-full overflow-hidden bg-[#faf8f5]">
+                      <Image
+                        src="/images/leadership/ja-chowdary.jpg"
+                        alt="J. A. Chowdary - Founder & Chairman, International Startup Foundation"
+                        fill
+                        priority
+                        sizes="(max-width: 640px) 240px, (max-width: 1024px) 300px, 320px"
+                        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Insignia Badge below the Circle Frame */}
+                <div className="absolute -bottom-2.5 sm:-bottom-3 left-1/2 -translate-x-1/2 bg-[#1c1917] text-white px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold border border-[#e87042] shadow-lg whitespace-nowrap flex items-center gap-1.5 z-10">
+                  <Award className="w-3.5 h-3.5 text-[#e87042]" />
+                  <span>Visionary Founder</span>
+                </div>
               </div>
             </div>
 

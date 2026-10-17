@@ -54,13 +54,6 @@ export default function PartnersPage() {
           <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
             Convened through the shared vision of global enterprise foundations, an accredited academic university campus, and grassroots acceleration platforms.
           </p>
-
-          <div className="mt-8 inline-flex items-center gap-2 p-2.5 rounded-xl bg-[#141620]/80 border border-white/10 text-xs sm:text-sm text-white backdrop-blur-md">
-            <ShieldCheck className="w-4 h-4 text-[#e87042]" />
-            <span>
-              <strong>Accredited Triad:</strong> ISF (Organizer) • GIET University (Host) • IncubateX (Associated Foundation)
-            </span>
-          </div>
         </Container>
       </section>
 

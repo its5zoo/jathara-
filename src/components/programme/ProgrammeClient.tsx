@@ -18,10 +18,76 @@ import { Container } from "../common/Container";
 import { Button } from "../common/Button";
 import { cn } from "@/lib/utils";
 
-// Map each session to its tailored AI-generated realistic photo & metadata
+// Map each session to its tailored realistic photo & metadata
 function getSessionImage(sessionId: string, sessionType: string, title: string): { src: string; alt: string; tag: string } {
   const lowerTitle = title.toLowerCase();
-  
+
+  // Day 0 - 9 Sectoral Pre-Summit Breakouts (each with its own distinct realistic documentary photo)
+  if (sessionId === "sess-001" || lowerTitle.includes("agritech")) {
+    return {
+      src: "/images/sessions/breakout-agritech.jpg",
+      alt: "Agritech startup founders demonstrating soil sensors and precision agriculture in seminar hall",
+      tag: "Agritech & Food Safety"
+    };
+  }
+  if (sessionId === "sess-002" || lowerTitle.includes("defence") || lowerTitle.includes("aerospace")) {
+    return {
+      src: "/images/sessions/breakout-defence.jpg",
+      alt: "Aerospace and defence engineering prototype demonstration before jury in auditorium",
+      tag: "Defence & Deep Tech"
+    };
+  }
+  if (sessionId === "sess-003" || lowerTitle.includes("life sciences") || lowerTitle.includes("healthcare breakout")) {
+    return {
+      src: "/images/sessions/breakout-healthcare.jpg",
+      alt: "Biomedical startup founder presenting diagnostic device to medical jury",
+      tag: "Life Sciences & Healthcare"
+    };
+  }
+  if (sessionId === "sess-004" || (lowerTitle.includes("infrastructure") && !lowerTitle.includes("roundtable"))) {
+    return {
+      src: "/images/sessions/breakout-infra.jpg",
+      alt: "Civil engineering and sustainable materials presentation in conference hall",
+      tag: "Infrastructure"
+    };
+  }
+  if (sessionId === "sess-005" || lowerTitle.includes("clean energy") || lowerTitle.includes("water safety")) {
+    return {
+      src: "/images/sessions/breakout-clean-energy.jpg",
+      alt: "Solar-powered water filtration prototype demonstration before academic panel",
+      tag: "Clean Energy & Water Safety"
+    };
+  }
+  if (sessionId === "sess-006" || lowerTitle.includes("quantum") || (lowerTitle.includes("ai &") && lowerTitle.includes("technology"))) {
+    return {
+      src: "/images/sessions/breakout-ai-quantum.jpg",
+      alt: "Computer science researcher presenting AI models and quantum computing benchmarks in auditorium",
+      tag: "AI & Quantum Tech"
+    };
+  }
+  if (sessionId === "sess-007" || lowerTitle.includes("fintech") || lowerTitle.includes("tribaltech")) {
+    return {
+      src: "/images/sessions/breakout-fintech-tribal.jpg",
+      alt: "Rural fintech POS device and tribal marketplace demonstration before banking jury",
+      tag: "Fintech & Tribaltech"
+    };
+  }
+  if (sessionId === "sess-008" || lowerTitle.includes("women empowerment") || lowerTitle.includes("social inclusion")) {
+    return {
+      src: "/images/sessions/breakout-women-empowerment.jpg",
+      alt: "Woman entrepreneur presenting artisanal enterprise and rural empowerment initiative",
+      tag: "Women Empowerment"
+    };
+  }
+  if (sessionId === "sess-009" || lowerTitle.includes("cross-disciplinary") || lowerTitle.includes("innovation showcase")) {
+    return {
+      src: "/images/sessions/breakout-innovation-showcase.jpg",
+      alt: "Engineering students demonstrating autonomous robotics rover in university makerspace",
+      tag: "Innovation Showcase"
+    };
+  }
+
+  // Day 1 & General Sessions
   if (sessionId === "sess-101" || lowerTitle.includes("registration") || lowerTitle.includes("breakfast networking")) {
     return {
       src: "/images/sessions/session-breakfast.jpg",
@@ -50,7 +116,14 @@ function getSessionImage(sessionId: string, sessionType: string, title: string):
       tag: "Keynote Plenary"
     };
   }
-  if (sessionId === "sess-105" || sessionId === "sess-106" || sessionId === "sess-302" || sessionType === "roundtable") {
+  if (sessionId === "sess-106" || lowerTitle.includes("agri & food roundtable")) {
+    return {
+      src: "/images/sessions/breakout-agritech.jpg",
+      alt: "Agri & Food Sector Leadership Roundtable Discussion",
+      tag: "Agri & Food Roundtable"
+    };
+  }
+  if (sessionId === "sess-105" || sessionId === "sess-302" || sessionType === "roundtable") {
     return {
       src: "/images/sessions/session-roundtable.jpg",
       alt: "Executive Sector Roundtable & Policy Formulation Discussion",

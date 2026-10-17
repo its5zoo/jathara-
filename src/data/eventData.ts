@@ -7,7 +7,8 @@ import {
   RegistrationCategory,
   FAQItem,
   NavLink,
-  Speaker
+  Speaker,
+  MobileNavGroup
 } from "@/lib/types";
 
 export const EVENT_METADATA: EventMetadata = {
@@ -44,31 +45,17 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Venue & Travel", href: "/venue" },
 ];
 
-export const MOBILE_NAV_GROUPS = [
+export const MOBILE_NAV_GROUPS: MobileNavGroup[] = [
   {
-    groupTitle: "Summit Foundations",
+    groupTitle: "Navigation",
     links: [
-      { label: "Home", href: "/", description: "Summit overview & key themes" },
-      { label: "About", href: "/about", description: "Mission, Dandakaranya ethos & conveners" },
+      { label: "Home", href: "/", description: "Summit overview & key highlights" },
+      { label: "About", href: "/about", description: "Mission, Dandakaranya thesis & conveners" },
       { label: "Programme", href: "/programme", description: "3-day timetable & track schedules" },
-      { label: "Venue & Travel", href: "/venue", description: "GIET University campus, trains & flights" },
-    ],
-  },
-  {
-    groupTitle: "Ecosystem Tracks",
-    links: [
-      { label: "Startups & Junicorn", href: "/startups", description: "Grassroots scout, showcase & pitch stage" },
-      { label: "Investors & Delegates", href: "/investors", description: "Angel syndicates, venture funds & GCCs" },
-      { label: "Speakers", href: "/speakers", description: "Sector experts & institutional leaders" },
-      { label: "Partners", href: "/partners", description: "ISF, GIET University & IncubateX coalition" },
-    ],
-  },
-  {
-    groupTitle: "Participation & Desk",
-    links: [
-      { label: "Registration Gateway", href: "https://isf-test.vercel.app/", badge: "Open", description: "Delegate, founder & student categories" },
-      { label: "Frequently Asked Questions", href: "/faq", description: "Travel, accommodation & schedule notes" },
-      { label: "Contact & Secretariat Desk", href: "mailto:sjd@giet.edu", description: "Direct partner & attendee inquiries" },
+      { label: "Startups & Junicorn", href: "/startups", description: "Grassroots scouting, demo kiosks & pitches" },
+      { label: "Speakers", href: "/speakers", description: "Chief guest, sector luminaries & leaders" },
+      { label: "Venue & Travel", href: "/venue", description: "GIET University campus, trains & stays" },
+      { label: "FAQs", href: "/faq", description: "Frequently asked questions & delegate help" },
     ],
   },
 ];
