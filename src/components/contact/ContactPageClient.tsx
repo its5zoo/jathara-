@@ -56,7 +56,6 @@ export function ContactPageClient() {
             alt="ISF Startup Jathara Secretariat & Concierge Reception"
             fill
             priority
-            unoptimized
             sizes="100vw"
             className="object-cover object-center brightness-90"
           />

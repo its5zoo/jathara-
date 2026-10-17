@@ -21,7 +21,6 @@ export function FAQPageClient() {
             alt="ISF Startup Jathara Attendee Concierge & FAQ Pavilion"
             fill
             priority
-            unoptimized
             sizes="100vw"
             className="object-cover object-center brightness-90"
           />

@@ -58,7 +58,6 @@ export default function StartupsPage() {
             alt="Founders Pitching on Stage to Investor Jury"
             fill
             priority
-            unoptimized
             sizes="100vw"
             className="object-cover object-[center_35%] brightness-95"
           />
@@ -153,7 +152,6 @@ export default function StartupsPage() {
                     src="/images/junicorn-innovators.jpg"
                     alt="Indian Student Innovators Showcasing Prototypes with Mentors"
                     fill
-                    unoptimized
                     sizes="(max-width: 1024px) 100vw, 400px"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />

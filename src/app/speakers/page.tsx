@@ -30,7 +30,6 @@ export default function SpeakersPage() {
             alt="Speakers, Mentors and Dignitaries on Podium"
             fill
             priority
-            unoptimized
             sizes="100vw"
             className="object-cover object-[center_35%] brightness-95"
           />

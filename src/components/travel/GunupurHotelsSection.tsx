@@ -124,7 +124,6 @@ export function GunupurHotelsSection() {
                     src={encodeURI(h.frontPhoto)}
                     alt={h.name}
                     fill
-                    unoptimized
                     sizes="48px"
                     className="object-cover"
                   />
@@ -217,7 +216,6 @@ export function GunupurHotelsSection() {
                                 src={encodeURI(p.url)}
                                 alt=""
                                 fill
-                                unoptimized
                                 className="object-cover blur-2xl scale-125 brightness-75"
                               />
                             </div>
@@ -241,7 +239,6 @@ export function GunupurHotelsSection() {
                                 alt={`${hotel.name} – ${p.label}`}
                                 fill
                                 priority={isHotelActive && idx === 0}
-                                unoptimized
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
                                 className="object-contain select-none drop-shadow-[0_12px_30px_rgba(0,0,0,0.6)]"
                               />
@@ -303,7 +300,6 @@ export function GunupurHotelsSection() {
                               src={encodeURI(p.url)}
                               alt={p.label}
                               fill
-                              unoptimized
                               sizes="68px"
                               className="object-cover"
                             />

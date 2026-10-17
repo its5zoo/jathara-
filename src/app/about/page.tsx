@@ -47,7 +47,6 @@ export default function AboutPage() {
             alt="Igniting Grassroots Potential in Dandakaranya"
             fill
             priority
-            unoptimized
             sizes="100vw"
             className="object-cover object-[center_35%] brightness-95"
           />

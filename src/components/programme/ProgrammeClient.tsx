@@ -122,7 +122,6 @@ export function ProgrammeClient() {
             alt="Summit Programme & Timetable Display Screen with Attendees"
             fill
             priority
-            unoptimized
             sizes="100vw"
             className="object-cover object-[center_35%] brightness-95"
           />
@@ -325,7 +324,6 @@ export function ProgrammeClient() {
                             src={media.src}
                             alt={media.alt}
                             fill
-                            unoptimized
                             sizes="(max-width: 640px) 100vw, 224px"
                             className={cn(
                               "object-cover transition-all duration-500 ease-out",

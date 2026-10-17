@@ -60,7 +60,6 @@ export function HeroSection() {
                 alt={slide.alt}
                 fill
                 priority={index === 0}
-                unoptimized
                 sizes="100vw"
                 className={`object-cover object-[center_38%] brightness-95 transition-transform duration-[6000ms] ease-out ${
                   isActive ? "scale-105" : "scale-100"

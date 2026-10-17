@@ -33,7 +33,6 @@ export default function PartnersPage() {
             alt="International Partners Expo Pavilion and Delegates"
             fill
             priority
-            unoptimized
             sizes="100vw"
             className="object-cover object-[center_35%] brightness-95"
           />

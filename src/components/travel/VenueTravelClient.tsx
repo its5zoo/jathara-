@@ -51,7 +51,6 @@ export function VenueTravelClient() {
             alt="GIET University Campus Aerial View, Gunupur, Odisha"
             fill
             priority
-            unoptimized
             sizes="100vw"
             className="object-cover object-[center_42%] select-none brightness-95"
           />
