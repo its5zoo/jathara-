@@ -98,7 +98,7 @@ export function VenueTravelClient() {
             subtitle="Gandhi Institute of Engineering and Technology University (GIET University) is a state private university offering world-class research laboratories and residential hospitality amidst scenic hills."
           />
 
-          {/* Official Campus Building Photograph Feature — Clean & Unboxed */}
+          {/* Official Campus Building Photograph Feature - Clean & Unboxed */}
           <div className="mb-10 sm:mb-12 rounded-2xl sm:rounded-3xl border border-[#e6dfd1] overflow-hidden bg-white shadow-sm">
             {/* Clean, unobstructed campus photo */}
             <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden">
@@ -203,19 +203,21 @@ export function VenueTravelClient() {
             subtitle="Carefully reviewed distance and transit connectivity options to help you choose the best arrival corridor."
           />
 
-          {/* Cards Grid — Large Typography, Crisp & High-Impact */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 mt-10">
-            {filteredHubs.map((hub) => {
+          {/* Cards Grid: Exactly 2 rows on desktop (Row 1: 4 cards, Row 2: 3 cards) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 mb-12 mt-10">
+            {filteredHubs.map((hub, idx) => {
               const isAirport = hub.type === "airport";
               const isRail = hub.type === "railway";
               const isSelected = hub.id === activeHubId;
+              const colSpanClass = idx < 4 ? "lg:col-span-3" : "lg:col-span-4";
 
               return (
                 <div
                   key={hub.id}
                   onClick={() => setActiveHubId(hub.id)}
                   className={cn(
-                    "bg-white rounded-2xl p-6 border transition-all cursor-pointer flex flex-col justify-between gap-4",
+                    "bg-white rounded-2xl p-5 sm:p-6 border transition-all cursor-pointer flex flex-col justify-between gap-4",
+                    colSpanClass,
                     isSelected
                       ? "border-[#e87042] shadow-md ring-2 ring-[#e87042]/20"
                       : "border-[#e6dfd1] hover:border-[#e87042]/50 hover:shadow-sm"
@@ -253,26 +255,26 @@ export function VenueTravelClient() {
                       </span>
                     </div>
 
-                    {/* Hub Name — Large & Prominent */}
-                    <h3 className="font-serif font-bold text-lg sm:text-xl text-[#1c1917] leading-snug">
+                    {/* Hub Name: Large & Prominent */}
+                    <h3 className="font-serif font-bold text-base sm:text-lg text-[#1c1917] leading-snug">
                       {hub.name}
                     </h3>
 
-                    {/* Clear Metrics: Distance & Travel Time Chip (Large & Legible) */}
-                    <div className="flex items-center gap-2.5 text-sm bg-[#faf8f5] border border-[#ede7db] px-3 py-1.5 rounded-xl w-fit">
+                    {/* Clear Metrics: Distance & Travel Time Chip */}
+                    <div className="flex items-center gap-2 text-xs sm:text-sm bg-[#faf8f5] border border-[#ede7db] px-2.5 py-1.5 rounded-xl w-fit">
                       <div className="flex items-center gap-1.5 font-bold text-[#1c1917]">
-                        <MapPin className="w-4 h-4 text-[#e87042] shrink-0" />
-                        <span className="text-sm font-bold">{hub.distanceKm}</span>
+                        <MapPin className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
+                        <span>{hub.distanceKm}</span>
                       </div>
                       <span className="text-[#d6d0c7]">•</span>
                       <div className="flex items-center gap-1.5 text-[#57534e]">
-                        <Clock className="w-4 h-4 text-[#c25022] shrink-0" />
-                        <span className="text-sm font-medium">{hub.approxTravelTime}</span>
+                        <Clock className="w-3.5 h-3.5 text-[#c25022] shrink-0" />
+                        <span className="font-medium">{hub.approxTravelTime}</span>
                       </div>
                     </div>
 
-                    {/* Direct Transit Advice — Large & Easy to Read */}
-                    <p className="text-sm sm:text-[15px] text-[#292524] leading-relaxed pt-1">
+                    {/* Direct Transit Advice */}
+                    <p className="text-xs sm:text-sm text-[#292524] leading-relaxed pt-1">
                       {hub.connectivityDescription}
                     </p>
                   </div>
@@ -355,7 +357,7 @@ export function VenueTravelClient() {
             <Button href="/programme" variant="gold" size="md" className="w-full sm:w-auto justify-center">
               View 3-Day Programme
             </Button>
-            <Button href="/register" variant="terracotta" size="md" className="w-full sm:w-auto justify-center">
+            <Button href="https://isf-test.vercel.app/" variant="terracotta" size="md" className="w-full sm:w-auto justify-center">
               Registration Gateway
             </Button>
           </div>

@@ -58,7 +58,7 @@ export default function InvestorsPage() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link 
-              href="/register?category=investor-fund" 
+              href="https://isf-test.vercel.app/" 
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
             >
               <span>Register as Investor / Fund Delegate</span>
@@ -155,7 +155,7 @@ export default function InvestorsPage() {
               </p>
 
               <div className="pt-2">
-                <Button href="/register?category=corporate-delegate" variant="gold" size="md" className="font-bold">
+                <Button href="https://isf-test.vercel.app/" variant="gold" size="md" className="font-bold">
                   Request Roundtable Seat
                 </Button>
               </div>
@@ -226,7 +226,7 @@ export default function InvestorsPage() {
             Contact the ISF Investor Relations desk or register your delegation interest.
           </p>
           <div className="mt-6 flex justify-center gap-4">
-            <Button href="/register?category=investor-fund" variant="gold" size="md">
+            <Button href="https://isf-test.vercel.app/" variant="gold" size="md">
               Register as Investor
             </Button>
             <Button href="/venue" variant="outline" size="md" className="text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#143e30]">

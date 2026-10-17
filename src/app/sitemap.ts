@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/venue",
     "/speakers",
     "/partners",
-    "/register",
     "/faq",
     "/contact",
     "/privacy",
@@ -24,6 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified,
     changeFrequency: route === "" || route === "/programme" ? "weekly" : "monthly",
-    priority: route === "" ? 1.0 : route === "/programme" || route === "/register" ? 0.9 : 0.8,
+    priority: route === "" ? 1.0 : route === "/programme" ? 0.9 : 0.8,
   }));
 }

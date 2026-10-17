@@ -25,7 +25,7 @@ export function GunupurHotelsSection() {
   const [isPaused, setIsPaused] = useState<boolean>(false);
   const [hasManuallySelected, setHasManuallySelected] = useState<boolean>(false);
 
-  // 3-second auto cycle timer — permanently stops if user manually clicks any hotel or gallery item
+  // 3-second auto cycle timer - permanently stops if user manually clicks any hotel or gallery item
   useEffect(() => {
     if (isPaused || hasManuallySelected) return;
 
@@ -201,7 +201,7 @@ export function GunupurHotelsSection() {
                         LEFT: Photo Gallery (with arrows & strip)
                     ────────────────────────────────────────── */}
                     <div className="lg:w-[50%] shrink-0 flex flex-col bg-[#0a140f] border-b lg:border-b-0 lg:border-r border-[#1e3328]/60">
-                      {/* Main photo stage — full explicit height on all devices */}
+                      {/* Main photo stage - full explicit height on all devices */}
                       <div className="relative w-full h-[280px] xs:h-[320px] sm:h-[380px] lg:h-[480px] group overflow-hidden bg-[#070f0b]">
                         
                         {/* Ambient color-matched background on the sides (blur fill with crossfade) */}
@@ -225,7 +225,7 @@ export function GunupurHotelsSection() {
                           <div className="absolute inset-0 bg-[#070f0b]/55 backdrop-blur-xs" />
                         </div>
 
-                        {/* Main Full-Size Photos — occupies 100% of stage */}
+                        {/* Main Full-Size Photos - occupies 100% of stage */}
                         {hotel.photos.map((p, idx) => (
                           <div
                             key={p.url}
@@ -252,7 +252,7 @@ export function GunupurHotelsSection() {
                         {/* Top & bottom subtle vignette for controls & caption legibility */}
                         <div className="absolute inset-0 bg-gradient-to-t from-[#070f0b]/90 via-transparent to-black/30 pointer-events-none z-2" />
 
-                        {/* Arrow navigation — visible on mobile touch, hover on desktop */}
+                        {/* Arrow navigation - visible on mobile touch, hover on desktop */}
                         {total > 1 && (
                           <>
                             <button

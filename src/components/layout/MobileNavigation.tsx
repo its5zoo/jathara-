@@ -160,10 +160,13 @@ export function MobileNavigation() {
               <div className="space-y-1">
                 {group.links.map((link) => {
                   const isActive = pathname === link.href;
+                  const isExternal = link.href.startsWith("http://") || link.href.startsWith("https://");
                   return (
                     <Link
                       key={link.href}
                       href={link.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
                       onClick={() => setIsOpen(false)}
                       className={cn(
                         "group flex items-center justify-between p-3 rounded-xl transition-all text-left",
@@ -210,17 +213,19 @@ export function MobileNavigation() {
 
         {/* Drawer Footer with Actions & Host Credibility */}
         <div className="p-4 sm:p-5 border-t border-[#e6dfd1] bg-[#f7f4ec] space-y-3 shrink-0 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
-          <Link
-            href="/register"
+          <a
+            href="https://isf-test.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             className="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl text-sm font-bold bg-[#c25e38] text-[#fcfbf8] hover:bg-[#a64e2d] shadow-xs hover:shadow-sm active:scale-98 transition-all"
           >
             <span className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-amber-200" />
-              <span>Registration Gateway</span>
+              <span>Register Now</span>
             </span>
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
 
           <div className="p-2.5 rounded-xl bg-white border border-[#dfd6c4] flex items-center justify-between text-xs text-[#4a5752]">
             <div className="flex items-center gap-2">

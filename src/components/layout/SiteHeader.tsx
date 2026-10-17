@@ -106,14 +106,16 @@ export function SiteHeader() {
             </nav>
 
             {/* Primary Registration Call to Action */}
-            <Link
-              href="/register"
+            <a
+              href="https://isf-test.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#e87042] text-white hover:bg-[#d95d2c] shadow-xs hover:shadow-sm transition-all duration-200 active:scale-95 shrink-0 min-h-[36px] sm:min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]"
-              aria-label="Register for ISF Startup Jathara 2026"
+              aria-label="Register for ISF Startup Jathara 2026 (Opens in new tab)"
             >
               <span>Register</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform duration-200 group-hover:translate-x-0.5 hidden min-[400px]:inline" />
-            </Link>
+            </a>
 
             {/* Mobile / Tablet Navigation Trigger */}
             <MobileNavigation />

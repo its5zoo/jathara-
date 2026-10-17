@@ -47,7 +47,8 @@ export function Button({
   );
 
   if (href) {
-    if (external) {
+    const isExternal = external || href.startsWith("http://") || href.startsWith("https://") || href.startsWith("//");
+    if (isExternal) {
       return (
         <a
           href={href}

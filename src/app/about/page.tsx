@@ -108,7 +108,7 @@ export default function AboutPage() {
                   What &apos;Jathara&apos; Signifies
                 </h3>
                 <p className="text-sm text-[#4a5752] leading-relaxed">
-                  In regional tradition, a <em>Jathara</em> is a vibrant collective pilgrimage and festival of celebration, solidarity, and trade. Startup Jathara adopts this cultural ethos — transforming venture capital and startup pitching into a communal celebration of ingenuity, indigenous knowledge, and resilience.
+                  In regional tradition, a <em>Jathara</em> is a vibrant collective pilgrimage and festival of celebration, solidarity, and trade. Startup Jathara adopts this cultural ethos - transforming venture capital and startup pitching into a communal celebration of ingenuity, indigenous knowledge, and resilience.
                 </p>
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
               A Legacy of Learning, Research &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Innovation</span>
             </h2>
             <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto leading-relaxed">
-              Founded in 1997 in Gunupur, Odisha — fostering multidisciplinary scholarship, advanced research, and grassroots empowerment.
+              Founded in 1997 in Gunupur, Odisha - fostering multidisciplinary scholarship, advanced research, and grassroots empowerment.
             </p>
             <div className="mt-3.5 flex items-center justify-center gap-2" aria-hidden="true">
               <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
@@ -178,7 +178,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Institutional Overview & Founding Story — Completely Open & Unboxed Editorial Design */}
+          {/* Institutional Overview & Founding Story - Completely Open & Unboxed Editorial Design */}
           <div className="py-8 sm:py-10 border-t border-b border-[#e6dfd1]/80 mb-12 space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* Left Column: Open Editorial Narrative */}
@@ -289,7 +289,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Bottom 6 Verified Statistics — Open Typographic Grid (No Boxes) */}
+            {/* Bottom 6 Verified Statistics - Open Typographic Grid (No Boxes) */}
             <div className="pt-8 border-t border-[#e6dfd1]/80">
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                 {GIET_VERIFIED_STATS.map((stat, idx) => (
@@ -478,7 +478,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Social Responsibility & Tribal Community Commitment — Architecturally Aligned Border Grid */}
+          {/* Social Responsibility & Tribal Community Commitment - Architecturally Aligned Border Grid */}
           <div className="rounded-2xl sm:rounded-3xl border border-[#e6dfd1] bg-white shadow-xs overflow-hidden mb-16">
             {/* Header Bar with Proper Dividing Border */}
             <div className="px-6 sm:px-8 py-4.5 border-b border-[#e6dfd1] bg-[#faf8f5]/80 flex flex-wrap items-center justify-between gap-3">
@@ -497,7 +497,7 @@ export default function AboutPage() {
                   Empowering the Meritorious Youth of Dandakaranya
                 </h3>
                 <p className="text-sm sm:text-[15px] text-[#57534e] leading-relaxed">
-                  Located in the tribal corridor of Rayagada, GIET University prioritizes grassroots community empowerment — ensuring talented rural and indigenous youth become confident leaders, scientists, and entrepreneurs.
+                  Located in the tribal corridor of Rayagada, GIET University prioritizes grassroots community empowerment - ensuring talented rural and indigenous youth become confident leaders, scientists, and entrepreneurs.
                 </p>
               </div>
 
@@ -798,7 +798,7 @@ export default function AboutPage() {
             <Button href="/programme" variant="outline" size="md" className="border-white/20 text-white hover:bg-white/10">
               View Draft Schedule
             </Button>
-            <Button href="/register" variant="terracotta" size="md">
+            <Button href="https://isf-test.vercel.app/" variant="terracotta" size="md">
               Registration Gateway
             </Button>
           </div>

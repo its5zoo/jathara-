@@ -363,7 +363,7 @@ export function ProgrammeClient() {
             </div>
 
             <div className="flex items-center gap-3">
-              <Button href="/register" variant="terracotta" size="md">
+              <Button href="https://isf-test.vercel.app/" variant="terracotta" size="md">
                 Register Interest
               </Button>
               <Button href="/venue" variant="outline" size="md" className="text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#1a1d28]">

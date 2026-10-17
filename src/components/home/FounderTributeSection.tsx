@@ -13,7 +13,7 @@ import { Badge } from "../common/Badge";
 export function FounderTributeSection() {
   return (
     <section 
-      aria-label="Honouring Dr. J. A. Chowdary — Founder & Chairman, ISF"
+      aria-label="Honouring Dr. J. A. Chowdary - Founder & Chairman, ISF"
       className="py-20 sm:py-28 lg:py-32 bg-[#faf7f0] border-b border-[#e6dfd1] relative overflow-hidden"
     >
       {/* Subtle Botanical & Upward Growth Decorative Background Accents */}
@@ -133,7 +133,7 @@ export function FounderTributeSection() {
               {/* Tribute Copy Paragraphs */}
               <div className="space-y-4 sm:space-y-5 text-[#4a5752] text-sm sm:text-base leading-relaxed">
                 <p className="font-serif text-base sm:text-lg text-[#163a2e] leading-relaxed italic">
-                  “Every thriving innovation ecosystem begins with a vision—and grows when that vision inspires others to build, collaborate, and create opportunities.
+                  “Every thriving innovation ecosystem begins with a vision - and grows when that vision inspires others to build, collaborate, and create opportunities.
                 </p>
 
                 <p>
@@ -141,7 +141,7 @@ export function FounderTributeSection() {
                 </p>
 
                 <p>
-                  As we gather for ISF Startup Jathara 2026, we extend our heartfelt gratitude and deep respect to the vision that brings entrepreneurs, mentors, investors, and emerging innovators together. May this gathering carry that spirit forward—turning ambition into action and local ideas into meaningful impact.”
+                  As we gather for ISF Startup Jathara 2026, we extend our heartfelt gratitude and deep respect to the vision that brings entrepreneurs, mentors, investors, and emerging innovators together. May this gathering carry that spirit forward - turning ambition into action and local ideas into meaningful impact.”
                 </p>
               </div>
 

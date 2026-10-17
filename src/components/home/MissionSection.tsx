@@ -42,7 +42,7 @@ export function MissionSection() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#256f57] flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-[#333e3a]">
-                  <strong>Value Addition to Native Produce:</strong> Transforming forest treasures — from Araku organic coffee and minor millets to ethno-medicinal flora — into standardized consumer products.
+                  <strong>Value Addition to Native Produce:</strong> Transforming forest treasures - from Araku organic coffee and minor millets to ethno-medicinal flora - into standardized consumer products.
                 </p>
               </div>
 
@@ -99,7 +99,7 @@ export function MissionSection() {
 
               <div className="pt-2">
                 <Button
-                  href="/register?category=startup-founder"
+                  href="https://isf-test.vercel.app/"
                   variant="gold"
                   size="md"
                   className="w-full justify-center font-bold"

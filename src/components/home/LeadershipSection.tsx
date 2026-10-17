@@ -34,7 +34,7 @@ export function LeadershipSection() {
             <div className="relative w-44 h-52 sm:w-52 sm:h-64 rounded-2xl overflow-hidden shrink-0 shadow-md border-2 border-[#e8dfd3]">
               <Image
                 src="/images/leadership/dr-ja-chowdary.png"
-                alt="Dr. J. A. Chowdary — Founder & Chairman, International Startup Foundation"
+                alt="Dr. J. A. Chowdary - Founder & Chairman, International Startup Foundation"
                 fill
                 sizes="(max-width: 768px) 176px, 208px"
                 className="object-cover object-top"

@@ -27,7 +27,7 @@ export function GatewayCTA() {
         {/* Buttons */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
           <Button
-            href="/register"
+            href="https://isf-test.vercel.app/"
             variant="gold"
             size="lg"
             className="font-bold text-sm sm:text-base shadow-lg"

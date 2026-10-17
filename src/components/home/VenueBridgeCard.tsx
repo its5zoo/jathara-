@@ -44,7 +44,7 @@ export function VenueBridgeCard() {
             </div>
 
             <p className="text-sm sm:text-base text-[#57534e] leading-relaxed">
-              The summit is hosted at GIET University — a premier research institution established in 1997. Situated in Gunupur amidst lush Eastern Ghats hills and the Bansadhara River, the campus offers world-class auditoriums, incubator facilities, and peaceful residential quarters.
+              The summit is hosted at GIET University - a premier research institution established in 1997. Situated in Gunupur amidst lush Eastern Ghats hills and the Bansadhara River, the campus offers world-class auditoriums, incubator facilities, and peaceful residential quarters.
             </p>
 
             {/* Clean Information Points (Pure content, no boxes) */}

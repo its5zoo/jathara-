@@ -29,7 +29,7 @@ export const EVENT_METADATA: EventMetadata = {
   organizer: "International Startup Foundation (ISF)",
   hostInstitution: "GIET University",
   associatedInnovation: "IncubateX Innovation Foundation",
-  officialDraftDisclaimer: "Tentative Programme — Subject to Change. Official brochure schedules represent draft planning and announced expectations.",
+  officialDraftDisclaimer: "Tentative Programme - Subject to Change. Official brochure schedules represent draft planning and announced expectations.",
   contactEmail: "secretariat@isfnetwork.org",
   helplinePhone: "+91 6868 222044",
 };
@@ -64,7 +64,7 @@ export const MOBILE_NAV_GROUPS = [
   {
     groupTitle: "Participation & Desk",
     links: [
-      { label: "Registration Gateway", href: "/register", badge: "Open", description: "Delegate, founder & student categories" },
+      { label: "Registration Gateway", href: "https://isf-test.vercel.app/", badge: "Open", description: "Delegate, founder & student categories" },
       { label: "Frequently Asked Questions", href: "/faq", description: "Travel, accommodation & schedule notes" },
       { label: "Contact & Secretariat Desk", href: "/contact", description: "Direct partner & attendee inquiries" },
     ],
@@ -79,7 +79,7 @@ export const PROGRAMME_DAYS: ProgrammeDay[] = [
     dateFormatted: "18 December 2026",
     theme: "Summit Inauguration, Sector Roundtables & Junicorn Pitches",
     status: "Tentative",
-    statusNote: "Brochure Draft Schedule — Official timings are subject to organizer confirmation.",
+    statusNote: "Brochure Draft Schedule - Official timings are subject to organizer confirmation.",
     sessions: [
       {
         id: "sess-101",
@@ -245,7 +245,7 @@ export const PROGRAMME_DAYS: ProgrammeDay[] = [
     dateFormatted: "20 December 2026",
     theme: "Grassroots Ecosystem Policy Roundtable & Summit Concluding Session",
     status: "Tentative",
-    statusNote: "Brochure Draft Schedule — Final concluding remarks and departure facilitation.",
+    statusNote: "Brochure Draft Schedule - Final concluding remarks and departure facilitation.",
     sessions: [
       {
         id: "sess-301",
@@ -399,7 +399,7 @@ export const TRAVEL_HUBS: TravelHub[] = [
     distanceKm: "4 km",
     approxTravelTime: "10 min by auto/cab",
     locationDetails: "Gunupur Town, Rayagada District, Odisha",
-    operationalStatus: "Active Terminal Station (East Coast Railway, Naupada–Gunupur Branch)",
+    operationalStatus: "Active Terminal Station (East Coast Railway, Naupada-Gunupur Branch)",
     routeSummary: "Local Gunupur town road directly to GIET University campus at Gobriguda",
     publicTransport: "Auto-rickshaws, e-rickshaws, local taxis, and campus reception shuttles at the station",
     connectivityDescription: "Direct rail terminus serving the campus. Campus reception shuttles, local taxis, and autos readily available at station exit.",
@@ -418,7 +418,7 @@ export const TRAVEL_HUBS: TravelHub[] = [
     operationalStatus: "Major Mainline Junction Station (East Coast Railway, Waltair Division)",
     routeSummary: "Amadalavalasa → Palakonda → Kotturu → Gunupur (smooth 92 km highway corridor)",
     publicTransport: "Pre-booked taxis, shared cabs, and regular interstate buses towards Gunupur",
-    connectivityDescription: "Major coastal mainline junction on the Howrah–Chennai Trunk Line with frequent superfast train halts from Kolkata, Chennai, and Bengaluru.",
+    connectivityDescription: "Major coastal mainline junction on the Howrah-Chennai Trunk Line with frequent superfast train halts from Kolkata, Chennai, and Bengaluru.",
     recommendedFor: "Recommended mainline gateway for coastal and south-bound express trains.",
     verifiedStatus: "Verified Mainline Rail Junction",
     mapDirectionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Srikakulam+Road+Railway+Station+Amadalavalasa&destination=GIET+University+Gunupur+Odisha+765022",
@@ -447,7 +447,7 @@ export const TRAVEL_HUBS: TravelHub[] = [
     distanceKm: "96 km",
     approxTravelTime: "1 h 45 min by road",
     locationDetails: "Palasa-Kasibugga, Srikakulam District, Andhra Pradesh",
-    operationalStatus: "Key Mainline Station (Howrah–Chennai Trunk Corridor)",
+    operationalStatus: "Key Mainline Station (Howrah-Chennai Trunk Corridor)",
     routeSummary: "Palasa Station → Paralakhemundi → NH-326 directly into Gunupur",
     publicTransport: "Station cabs, interstate buses, and onward direct train link to Gunupur via Rajya Rani Express",
     connectivityDescription: "Scheduled stop for Vande Bharat, Howrah Mail, and Falaknuma Express. Fast road connection or local train directly into Gunupur.",
@@ -462,7 +462,7 @@ export const TRAVEL_HUBS: TravelHub[] = [
     type: "road",
     distanceKm: "Direct Access",
     approxTravelTime: "Smooth Highway",
-    locationDetails: "Rayagada – Gunupur – Paralakhemundi – Berhampur corridor",
+    locationDetails: "Rayagada - Gunupur - Paralakhemundi - Berhampur corridor",
     connectivityDescription: "Direct all-weather highway connectivity for self-driven vehicles, inter-city cabs, and buses from Berhampur, Koraput, and Andhra Pradesh.",
     recommendedFor: "Self-driven cars, private taxis, and chartered coaches.",
     verifiedStatus: "Verified Highway Route",

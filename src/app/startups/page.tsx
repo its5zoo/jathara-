@@ -25,6 +25,7 @@ import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
+import { StartupVerticalsGrid } from "@/components/startups/StartupVerticalsGrid";
 
 export const metadata: Metadata = {
   title: "Startups & Junicorn Initiative",
@@ -81,13 +82,15 @@ export default function StartupsPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link 
-              href="/register?category=startup-founder" 
+            <a 
+              href="https://isf-test.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer" 
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
             >
               <span>Founder Registration Gateway</span>
               <ArrowRight className="w-4 h-4 ml-1" />
-            </Link>
+            </a>
             <Link 
               href="/programme" 
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#141620]/80 hover:bg-[#1f2230] text-white border border-white/20 font-bold text-sm backdrop-blur-md transition-all"
@@ -118,7 +121,7 @@ export default function StartupsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <p className="text-base text-[#4a5752] leading-relaxed">
-                The <strong>Junicorn Initiative</strong> is a nationwide movement pioneered by ISF to cultivate &apos;Junior Unicorns&apos; — young student innovators, school inventors, and rural youth who demonstrate ingenuity in solving everyday challenges in their local communities.
+                The <strong>Junicorn Initiative</strong> is a nationwide movement pioneered by ISF to cultivate &apos;Junior Unicorns&apos; - young student innovators, school inventors, and rural youth who demonstrate ingenuity in solving everyday challenges in their local communities.
               </p>
 
               <p className="text-base text-[#4a5752] leading-relaxed">
@@ -185,7 +188,7 @@ export default function StartupsPage() {
                 </ul>
 
                 <div className="pt-2 border-t border-[#dfd6c4]">
-                  <Button href="/register?category=junicorn-youth" variant="terracotta" size="sm" className="w-full justify-center">
+                  <Button href="https://isf-test.vercel.app/" variant="terracotta" size="sm" className="w-full justify-center">
                     Register as Student / Junicorn Maker
                   </Button>
                 </div>
@@ -203,63 +206,7 @@ export default function StartupsPage() {
             subtitle="Startups with active prototypes, MVPs, or operational traction in these eight official domains are invited to exhibit."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {STARTUP_VERTICALS.map((vertical) => {
-              const IconComponent = iconMap[vertical.iconName] || Sparkles;
-
-              return (
-                <div
-                  key={vertical.id}
-                  className="bg-[#ffffff] rounded-3xl p-6 sm:p-8 border border-[#e6dfd1] hover:border-[#143e30]/40 transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="w-12 h-12 rounded-2xl bg-[#f7f4ec] border border-[#dfd6c4] flex items-center justify-center text-[#143e30] mb-4">
-                      <IconComponent className="w-6 h-6 text-[#c25e38]" />
-                    </div>
-
-                    <h3 className="font-serif font-bold text-xl text-[#103327]">
-                      {vertical.title}
-                    </h3>
-
-                    <p className="text-xs font-semibold text-[#8c671b] uppercase tracking-wider mt-1">
-                      {vertical.subtitle}
-                    </p>
-
-                    <p className="text-sm text-[#4a5752] mt-3.5 leading-relaxed">
-                      {vertical.description}
-                    </p>
-
-                    <div className="mt-5 pt-4 border-t border-[#ede7db] space-y-2">
-                      <span className="text-xs font-bold text-[#161e1b] uppercase tracking-wider block">
-                        Sub-domain Focus:
-                      </span>
-                      <ul className="space-y-1 text-xs text-[#333e3a]">
-                        {vertical.focusAreas.map((f, i) => (
-                          <li key={i} className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#256f57]" />
-                            <span>{f}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-[#ede7db]">
-                    <div className="text-[11px] text-[#7e8d87] mb-3">
-                      <strong>Audience:</strong> {vertical.targetParticipants}
-                    </div>
-                    <Link
-                      href="/register?category=startup-founder"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-[#143e30] hover:text-[#c25e38] transition-colors"
-                    >
-                      <span>Express Founder Interest</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <StartupVerticalsGrid />
         </Container>
       </section>
 
@@ -329,7 +276,7 @@ export default function StartupsPage() {
             Review participation categories and prepare your startup presentation for ISF Startup Jathara 2026.
           </p>
           <div className="mt-6 flex justify-center gap-4">
-            <Button href="/register" variant="gold" size="md">
+            <Button href="https://isf-test.vercel.app/" variant="gold" size="md">
               Browse Registration Categories
             </Button>
             <Button href="/programme" variant="outline" size="md" className="text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#143e30]">

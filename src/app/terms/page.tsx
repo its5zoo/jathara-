@@ -16,7 +16,7 @@ export default function TermsPage() {
       <Container size="narrow">
         <div className="mb-8">
           <Badge variant="draft" size="md" className="mb-3">
-            Draft Terms — Under Review
+            Draft Terms - Under Review
           </Badge>
 
           <h1 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#103327] tracking-tight">

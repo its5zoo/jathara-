@@ -158,7 +158,7 @@ export default function SpeakersPage() {
                 <Mail className="w-4 h-4 mr-2" />
                 <span>Submit Speaker Nomination</span>
               </Button>
-              <Button href="/register?category=speaker-mentor" variant="outline" size="md">
+              <Button href="https://isf-test.vercel.app/" variant="outline" size="md">
                 <span>Mentor Category Details</span>
               </Button>
             </div>

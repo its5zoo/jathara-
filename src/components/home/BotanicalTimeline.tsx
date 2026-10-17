@@ -31,7 +31,7 @@ export function BotanicalTimeline() {
       dates: "Summit Foundation",
       venue: "Gunupur & Eastern Ghats Heartlands",
       botanicalConcept: "Roots & Soil",
-      description: "Grounding the summit in Dandakaranya's historic soil — drawing strength from centuries of indigenous knowledge, medicinal biodiversity, tribal self-help collectives, and GIET University's 28-year engineering foundation.",
+      description: "Grounding the summit in Dandakaranya's historic soil - drawing strength from centuries of indigenous knowledge, medicinal biodiversity, tribal self-help collectives, and GIET University's 28-year engineering foundation.",
       highlights: [
         "Centuries of indigenous botanical & sustainable seed preservation",
         "GIET University School of Engineering & Technology academic base",

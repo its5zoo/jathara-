@@ -112,20 +112,20 @@ export function SiteFooter() {
               </h4>
               <ul className="space-y-2 text-xs text-[#a8a29e]">
                 <li>
-                  <Link href="/register" className="hover:text-white transition-colors inline-flex items-center gap-1.5">
+                  <a href="https://isf-test.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-1.5">
                     <span>Register (Free Entry)</span>
                     <span className="text-[9px] bg-emerald-900/70 text-emerald-300 px-1 py-0.2 rounded border border-emerald-500/30">Free</span>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/register?category=startup-founder" className="hover:text-white transition-colors">
+                  <a href="https://isf-test.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     Founder Pitch Application
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/register?category=investor-fund" className="hover:text-white transition-colors">
+                  <a href="https://isf-test.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     Investor Delegation Seat
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <Link href="/partners" className="hover:text-white transition-colors">

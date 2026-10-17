@@ -25,6 +25,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/register",
+        destination: "https://isf-test.vercel.app/",
+        permanent: false,
+      },
+      {
         source: "/leadership",
         destination: "/about",
         permanent: false,
