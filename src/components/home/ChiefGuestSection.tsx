@@ -1,75 +1,114 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, Calendar, MapPin, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, ArrowRight, HeartHandshake, GraduationCap, Utensils } from "lucide-react";
 import { Container } from "../common/Container";
 
 export function ChiefGuestSection() {
   return (
     <section 
       aria-label="Chief Guest of Honour"
-      className="py-12 sm:py-16 bg-[#faf8f4] border-b border-[#e6dfd1] relative overflow-hidden"
+      className="py-14 sm:py-20 bg-[#faf8f4] border-b border-[#e6dfd1] relative overflow-hidden"
     >
       <Container size="default">
-        {/* Clean, compact card on cream background */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#e6dfd1] p-5 sm:p-7 md:p-8 shadow-xs flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-7 md:gap-8">
+        {/* Open, unboxed editorial layout without enclosing box */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
           
-          {/* Photo: Clean portrait without heavy boxes or dark borders */}
-          <div className="relative w-36 h-48 sm:w-44 sm:h-56 md:w-48 md:h-60 rounded-2xl overflow-hidden shrink-0 shadow-sm border border-[#ede7db] bg-[#f7f4ec]">
-            <Image
-              src="/images/sadguru-sri-madhusudan-sai.jpg"
-              alt="Sadguru Sri Madhusudan Sai - Chief Guest of Honour"
-              fill
-              sizes="(max-width: 640px) 144px, 192px"
-              className="object-cover object-top"
-            />
+          {/* Left: Clean Dignitary Portrait (No box, natural rounded shape with gentle depth) */}
+          <div className="md:col-span-5 lg:col-span-4 flex justify-center md:justify-start">
+            <div className="relative w-52 sm:w-60 md:w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden shadow-lg shadow-[#1c1917]/8 group">
+              <Image
+                src="/images/sadguru-sri-madhusudan-sai.jpg"
+                alt="Sadguru Sri Madhusudan Sai - Chief Guest of Honour at ISF Startup Jathara 2026"
+                fill
+                priority
+                sizes="(max-width: 640px) 220px, (max-width: 768px) 260px, 280px"
+                className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-102"
+              />
+            </div>
           </div>
 
-          {/* Text Details beside Photo */}
-          <div className="flex-1 min-w-0 space-y-3 text-left">
-            {/* Tag / Category */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fdf2ea] border border-[#fcd5b5] text-[#c25022] text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-[#e87042]" />
-              <span>Chief Guest of Honour • Plenary Inauguration</span>
+          {/* Right: Narrative & Verified Details (Proper typography & spacing) */}
+          <div className="md:col-span-7 lg:col-span-8 space-y-4 text-left">
+            
+            {/* Header Eyebrow (Zero AI icons) */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#c25022]">
+                Chief Guest of Honour
+              </span>
+              <span className="text-[#d6c7b2]">•</span>
+              <span className="text-xs font-semibold text-[#8c671b] uppercase tracking-wider">
+                Plenary Inauguration
+              </span>
             </div>
 
-            {/* Name */}
-            <div>
-              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#1c1917] tracking-tight leading-snug">
+            {/* Title & Organization */}
+            <div className="space-y-1">
+              <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl text-[#1c1917] tracking-tight leading-tight">
                 Sadguru Sri Madhusudan Sai
-              </h3>
-              <p className="text-xs sm:text-sm font-semibold text-[#8c671b] mt-0.5 leading-tight">
+              </h2>
+              <p className="text-xs sm:text-sm md:text-base font-semibold text-[#8c671b] leading-snug">
                 Global Humanitarian, Spiritual Leader &amp; Founder, Sri Madhusudan Sai Global Humanitarian Mission
               </p>
             </div>
 
-            {/* Relevant concise context */}
-            <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
-              Revered globally for transforming millions of lives by providing completely free healthcare, values-based education, and morning nutrition across 30+ nations — including the Sri Sathya Sai Sanjeevani Hospitals (performing thousands of free pediatric cardiac surgeries) and the Annapoorna Morning Nutrition programme serving over 3 million children daily.
+            {/* Detailed Humanitarian Context */}
+            <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed">
+              Revered internationally for spearheading transformative selfless service across 30+ nations based on the timeless philosophy of <em>Vasudhaiva Kutumbakam</em> (The World is One Family). Under his visionary guidance, massive humanitarian institutions deliver world-class healthcare, values-based higher education, and morning nutrition completely free of charge to millions of underserved families.
             </p>
 
-            {/* Quick Timing & Venue */}
-            <div className="flex flex-wrap items-center gap-4 text-xs text-[#44403c] pt-1 border-t border-[#ede7db]">
-              <div className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
-                <span><strong>Inauguration:</strong> Friday, 18 Dec 2026 (09:00 – 11:00 AM)</span>
+            {/* 3 Core Humanitarian Pillars */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs">
+                <HeartHandshake className="w-4 h-4 text-[#c25022] shrink-0 mt-0.5" />
+                <div className="text-xs">
+                  <strong className="block text-[#1c1917] font-bold">Free Pediatric Care</strong>
+                  <span className="text-[11px] text-[#6b7280] leading-tight">Sri Sathya Sai Sanjeevani</span>
+                </div>
               </div>
-              <div className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
-                <span>Mega Auditorium, GIET University</span>
+
+              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs">
+                <GraduationCap className="w-4 h-4 text-[#8c671b] shrink-0 mt-0.5" />
+                <div className="text-xs">
+                  <strong className="block text-[#1c1917] font-bold">Free Education</strong>
+                  <span className="text-[11px] text-[#6b7280] leading-tight">Human Excellence Univ</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs">
+                <Utensils className="w-4 h-4 text-[#256f57] shrink-0 mt-0.5" />
+                <div className="text-xs">
+                  <strong className="block text-[#1c1917] font-bold">3M+ Daily Meals</strong>
+                  <span className="text-[11px] text-[#6b7280] leading-tight">Annapoorna Nutrition</span>
+                </div>
               </div>
             </div>
 
-            {/* Direct action link */}
+            {/* Verified Ceremony Timing & Venue */}
+            <div className="pt-3 border-t border-[#e6dfd1] flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-[#2b2521]">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-[#e87042] shrink-0" />
+                <span>
+                  <strong>Inauguration Ceremony:</strong> Friday, 18 December 2026 (09:00 – 11:00 AM)
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-[#e87042] shrink-0" />
+                <span>Mega Auditorium, GIET University Campus, Gunupur</span>
+              </div>
+            </div>
+
+            {/* Direct Link to Programme */}
             <div className="pt-1">
               <Link
                 href="/programme"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#c25022] hover:text-[#e87042] transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#c25022] hover:text-[#e87042] transition-colors group"
               >
-                <span>View Inaugural Schedule &amp; Day 1 Timings</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span>View Full Inauguration Ceremony Protocol</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
+
           </div>
 
         </div>
