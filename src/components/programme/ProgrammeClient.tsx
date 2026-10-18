@@ -190,7 +190,6 @@ function SessionRow({
   isTentativeDay: boolean;
 }) {
   const cfg = getSessionCfg(session.sessionType);
-  const Icon = cfg.icon;
 
   return (
     <div className="group relative grid grid-cols-[1.5rem_1fr] sm:grid-cols-[9rem_1fr] gap-0">
