@@ -82,20 +82,19 @@ export default function StartupsPage() {
 
       <section className="startup-reveal border-b border-[#ddd5c8] bg-[#fcfbf8] py-20 sm:py-24" aria-labelledby="junicorn-heading">
         <Container size="default">
-          <div className="mb-10 grid items-end gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:gap-14">
-            <div className="flex items-center gap-3">
-              <span className="font-serif text-4xl font-bold text-[#b65531]">01</span>
-              <div className="h-px flex-1 bg-[#d8cfc1]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7a746b]">Junicorn pathway</span>
+          <div className="mb-12">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="font-serif text-base font-bold text-[#b65531]">01</span>
+              <span className="h-px w-6 bg-[#c8bfb0]" aria-hidden="true" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#7a746b]">Junicorn Pathway</span>
             </div>
-            <div>
-              <h2 id="junicorn-heading" className="font-serif text-3xl font-black leading-[1.07] tracking-[-0.035em] text-[#1b1b18] sm:text-4xl lg:text-5xl">
-                From classroom insight to <span className="text-[#ad4e2c]">credible enterprise.</span>
-              </h2>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#656158] sm:text-base">
-                Empowering young student innovators, school inventors, and grassroots youth across Odisha and neighboring states.
-              </p>
-            </div>
+            <h2 id="junicorn-heading" className="max-w-2xl font-serif text-3xl font-black leading-[1.1] tracking-tight text-[#1b1b18] sm:text-4xl lg:text-[2.75rem]">
+              From classroom insight to{" "}
+              <span className="text-[#ad4e2c]">credible enterprise.</span>
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-[1.75] text-[#656158] sm:text-[15px]">
+              Empowering young student innovators, school inventors, and grassroots youth across Odisha and neighboring states.
+            </p>
           </div>
 
           <div className="overflow-hidden rounded-[30px] border border-[#d9d0c3] bg-[#f4efe6] shadow-[0_24px_70px_rgba(45,38,28,0.1)]">
@@ -156,20 +155,19 @@ export default function StartupsPage() {
 
       <section className="startup-reveal border-b border-[#d8d0c2] bg-[#f2ede3] py-20 sm:py-24" aria-labelledby="sectors-heading">
         <Container size="wide">
-          <div className="mb-10 grid items-end gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:gap-14">
-            <div className="flex items-center gap-3">
-              <span className="font-serif text-4xl font-bold text-[#1c6651]">02</span>
-              <div className="h-px flex-1 bg-[#cfc5b6]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#706a61]">Startup portfolio</span>
+          <div className="mb-12">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="font-serif text-base font-bold text-[#1c6651]">02</span>
+              <span className="h-px w-6 bg-[#cfc5b6]" aria-hidden="true" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#706a61]">Startup Portfolio</span>
             </div>
-            <div>
-              <h2 id="sectors-heading" className="font-serif text-3xl font-black leading-[1.07] tracking-[-0.035em] text-[#1b1b18] sm:text-4xl lg:text-5xl">
-                Eight sectors. <span className="text-[#24634f]">One innovation ecosystem.</span>
-              </h2>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#625e56] sm:text-base">
-                Startups with active prototypes, MVPs, or operational traction in these eight official domains are invited to exhibit. Explore each sector to review its complete focus areas.
-              </p>
-            </div>
+            <h2 id="sectors-heading" className="max-w-2xl font-serif text-3xl font-black leading-[1.1] tracking-tight text-[#1b1b18] sm:text-4xl lg:text-[2.75rem]">
+              Eight sectors.{" "}
+              <span className="text-[#24634f]">One innovation ecosystem.</span>
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-[1.75] text-[#625e56] sm:text-[15px]">
+              Startups with active prototypes, MVPs, or operational traction in these eight official domains are invited to exhibit. Explore each sector to review its complete focus areas.
+            </p>
           </div>
 
           <StartupVerticalsGrid />
@@ -178,20 +176,19 @@ export default function StartupsPage() {
 
       <section className="startup-reveal border-b border-[#e0d8ca] bg-[#fcfbf8] py-20 sm:py-24" aria-labelledby="showcase-heading">
         <Container size="default">
-          <div className="mb-10 grid items-end gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:gap-14">
-            <div className="flex items-center gap-3">
-              <span className="font-serif text-4xl font-bold text-[#9a7022]">03</span>
-              <div className="h-px flex-1 bg-[#d8cfc1]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7a746b]">Showcase arena</span>
+          <div className="mb-12">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="font-serif text-base font-bold text-[#9a7022]">03</span>
+              <span className="h-px w-6 bg-[#d8cfc1]" aria-hidden="true" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#7a746b]">Showcase Arena</span>
             </div>
-            <div>
-              <h2 id="showcase-heading" className="font-serif text-3xl font-black leading-[1.07] tracking-[-0.035em] text-[#1b1b18] sm:text-4xl lg:text-5xl">
-                Built for ideas people can <span className="text-[#9a7022]">see, question and test.</span>
-              </h2>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#656158] sm:text-base">
-                An energetic, purpose-built exhibition arena inside the GIET campus where founders present physical prototypes, software demonstrations, and native produce.
-              </p>
-            </div>
+            <h2 id="showcase-heading" className="max-w-2xl font-serif text-3xl font-black leading-[1.1] tracking-tight text-[#1b1b18] sm:text-4xl lg:text-[2.75rem]">
+              Built for ideas people can{" "}
+              <span className="text-[#9a7022]">see, question and test.</span>
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-[1.75] text-[#656158] sm:text-[15px]">
+              An energetic, purpose-built exhibition arena inside the GIET campus where founders present physical prototypes, software demonstrations, and native produce.
+            </p>
           </div>
 
           <div className="grid overflow-hidden rounded-[30px] border border-[#d8d0c3] bg-[#112d24] shadow-[0_24px_70px_rgba(30,38,31,0.12)] lg:grid-cols-[1fr_1.05fr]">
