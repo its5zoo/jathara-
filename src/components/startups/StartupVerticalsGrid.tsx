@@ -85,7 +85,7 @@ export function StartupVerticalsGrid() {
         </button>
       </div>
 
-      <div className="grid min-w-0 lg:grid-cols-2 lg:items-start">
+      <div className="grid min-w-0 lg:grid-cols-2">
         {STARTUP_VERTICALS.map((vertical, index) => {
           const Icon = iconMap[vertical.iconName] || Sparkles;
           const isExpanded = Boolean(expandedIds[vertical.id]);
