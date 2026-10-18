@@ -193,68 +193,69 @@ function SessionRow({
   const Icon = cfg.icon;
 
   return (
-    <div className="group relative grid grid-cols-[7rem_1fr] sm:grid-cols-[9rem_1fr] gap-0">
-      {/* Time column */}
-      <div className="pr-4 pt-5 text-right">
-        <span className="inline-block font-mono font-bold text-[10px] sm:text-xs text-[#78716c] leading-tight tracking-tight">
+    <div className="group relative grid grid-cols-[1.5rem_1fr] sm:grid-cols-[9rem_1fr] gap-0">
+      {/* Time column — desktop only */}
+      <div className="hidden sm:block pr-4 pt-5 text-right">
+        <span className="inline-block font-mono font-bold text-xs text-[#78716c] leading-tight tracking-tight">
           {session.timeSlot}
         </span>
       </div>
 
+      {/* Mobile: empty lane for spine alignment */}
+      <div className="sm:hidden" />
+
       {/* Spine connector */}
-      <div className="absolute left-[7rem] sm:left-36 top-0 bottom-0 flex flex-col items-center pointer-events-none z-10">
+      <div className="absolute left-[0.65rem] sm:left-36 top-0 bottom-0 flex flex-col items-center pointer-events-none z-10">
         <div className="w-px flex-1 bg-[#e6dfd1]" />
         <div
           className={cn(
-            "relative flex items-center justify-center w-6 h-6 rounded-full border-2 bg-white transition-all duration-200 shrink-0 my-1 group-hover:scale-110 group-hover:border-[#e87042]",
+            "relative flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 bg-white transition-all duration-200 shrink-0 my-1 group-hover:scale-110 group-hover:border-[#e87042]",
             isTentativeDay || session.isTentative ? "border-[#d4c9b8]" : "border-[#ccc1ab]"
           )}
         >
-          <span className={cn("w-2.5 h-2.5 rounded-full", cfg.dot)} />
+          <span className={cn("w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full", cfg.dot)} />
         </div>
         <div className="w-px flex-1 bg-[#e6dfd1]" />
       </div>
 
       {/* Card */}
-      <div className="pl-7 sm:pl-9 py-3 pb-5">
+      <div className="pl-5 sm:pl-9 py-2.5 pb-4 sm:py-3 sm:pb-5">
+        {/* Time badge — mobile only */}
+        <div className="sm:hidden flex items-center gap-1.5 mb-2">
+          <Clock className="w-3 h-3 text-[#e87042] shrink-0" />
+          <span className="font-mono font-bold text-[10px] text-[#78716c] leading-tight tracking-tight">
+            {session.timeSlot}
+          </span>
+        </div>
+
         <div
           className={cn(
-            "rounded-2xl border bg-white p-4 sm:p-5 transition-all duration-200 shadow-[0_1px_4px_rgba(0,0,0,0.05)] border-[#eee8de]",
+            "rounded-xl sm:rounded-2xl border bg-white p-3.5 sm:p-5 transition-all duration-200 shadow-[0_1px_4px_rgba(0,0,0,0.05)] border-[#eee8de]",
             "group-hover:shadow-md group-hover:-translate-y-0.5 group-hover:border-[#e8dfd3]"
           )}
         >
           {/* Top meta row */}
-          <div className="flex flex-wrap items-center gap-2 mb-2.5">
-            <span
-              className={cn(
-                "inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border",
-                cfg.color, cfg.bg, cfg.border
+          {((session.isTentative || isTentativeDay) || session.location) && (
+            <div className="flex items-center justify-between gap-1.5 sm:gap-2 mb-2 sm:mb-2.5">
+              {(session.isTentative || isTentativeDay) ? (
+                <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 rounded-md text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 uppercase tracking-wider">
+                  Tentative
+                </span>
+              ) : (
+                <div />
               )}
-            >
-              <Icon className="w-3 h-3 shrink-0" />
-              {cfg.label}
-            </span>
 
-            {session.track && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold text-[#78716c] bg-[#f7f4ec] border border-[#ede7db] uppercase tracking-wider">
-                {session.track}
-              </span>
-            )}
-
-            {(session.isTentative || isTentativeDay) && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 uppercase tracking-wider">
-                Tentative
-              </span>
-            )}
-
-            <div className="flex items-center gap-1 ml-auto text-[11px] text-[#78716c] font-medium">
-              <MapPin className="w-3 h-3 text-[#e87042] shrink-0" />
-              <span>{session.location}</span>
+              {session.location && (
+                <div className="flex items-center gap-1 ml-auto text-[10px] sm:text-[11px] text-[#78716c] font-medium">
+                  <MapPin className="w-3 h-3 text-[#e87042] shrink-0" />
+                  <span className="truncate max-w-[150px] sm:max-w-none">{session.location}</span>
+                </div>
+              )}
             </div>
-          </div>
+          )}
 
           {/* Title */}
-          <h3 className="font-serif font-bold text-base sm:text-lg text-[#1c1917] leading-snug group-hover:text-[#c25022] transition-colors duration-200 mb-1.5">
+          <h3 className="font-serif font-bold text-sm sm:text-lg text-[#1c1917] leading-snug group-hover:text-[#c25022] transition-colors duration-200 mb-1 sm:mb-1.5">
             {session.title}
           </h3>
 
@@ -526,7 +527,7 @@ export function ProgrammeClient() {
                   </div>
 
                   {/* End cap */}
-                  <div className="flex items-center gap-3 mt-4 pl-[9.5rem] sm:pl-[10.5rem]">
+                  <div className="flex items-center gap-3 mt-4 pl-8 sm:pl-[10.5rem]">
                     <div className="w-3 h-3 rounded-full border-2 border-[#dfd6c4] bg-[#f7f4ec]" />
                     <span className="text-xs text-[#a8a29e] font-medium italic">
                       End of {activeDay.dateFormatted} schedule
