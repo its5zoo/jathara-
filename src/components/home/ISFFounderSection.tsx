@@ -37,12 +37,6 @@ export function ISFFounderSection() {
                 </p>
               </div>
             </div>
-
-            {/* Floating badge */}
-            <div className="absolute -right-3 top-6 sm:-right-5 sm:top-8 bg-white border border-[#e6dfd1] rounded-xl px-3 py-2.5 shadow-md text-center min-w-[88px]">
-              <p className="font-serif text-2xl font-black text-[#b65531] leading-none">ISF</p>
-              <p className="text-[9px] font-bold uppercase tracking-wider text-[#78716c] mt-0.5">Network</p>
-            </div>
           </div>
 
           {/* Content */}
