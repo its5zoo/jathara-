@@ -32,7 +32,7 @@ const EXPLORE_CARDS = [
     heading: "3 Days of Engagement",
     body: "A curated agenda of keynotes, investor roundtables, workshops, networking sessions, and the Dandakaranya forest trek.",
     image: "/images/summit-timetable-display.jpg",
-    imageAlt: "Event programme schedule displayed at ISF Startup Jathara",
+    imageAlt: "Executive roundtable and panel discussion at ISF Startup Jathara",
     href: "/programme",
     cta: "Explore Programme",
     accent: "#1c6651",
