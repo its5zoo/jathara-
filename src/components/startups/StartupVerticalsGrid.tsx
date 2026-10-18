@@ -34,8 +34,21 @@ export function StartupVerticalsGrid() {
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({});
   const isAllExpanded = STARTUP_VERTICALS.every((vertical) => expandedIds[vertical.id]);
 
-  const toggleExpand = (id: string) => {
-    setExpandedIds((current) => ({ ...current, [id]: !current[id] }));
+  const toggleExpand = (id: string, index: number) => {
+    // On lg (2-col grid), sync the row partner so neither side looks empty
+    const isLg = typeof window !== "undefined" && window.innerWidth >= 1024;
+    if (isLg) {
+      const partnerIndex = index % 2 === 0 ? index + 1 : index - 1;
+      const partnerId = STARTUP_VERTICALS[partnerIndex]?.id;
+      const next = !expandedIds[id];
+      setExpandedIds((cur) => ({
+        ...cur,
+        [id]: next,
+        ...(partnerId ? { [partnerId]: next } : {}),
+      }));
+    } else {
+      setExpandedIds((cur) => ({ ...cur, [id]: !cur[id] }));
+    }
   };
 
   const toggleAll = () => {
@@ -112,7 +125,7 @@ export function StartupVerticalsGrid() {
                   <div className="mt-6 flex min-w-0 flex-col items-start gap-3 border-t border-[#e2dbd0] pt-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
                     <button
                       type="button"
-                      onClick={() => toggleExpand(vertical.id)}
+                      onClick={() => toggleExpand(vertical.id, index)}
                       aria-expanded={isExpanded}
                       aria-controls={panelId}
                       className="inline-flex items-center gap-2 text-xs font-bold text-[#a84e2d] transition-colors hover:text-[#77341f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a84e2d]/40"
