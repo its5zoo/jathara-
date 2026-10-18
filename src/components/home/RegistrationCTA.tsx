@@ -14,13 +14,7 @@ export function RegistrationCTA() {
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#d6b25e]/30 to-transparent" />
 
       <Container size="default" className="relative z-10 text-center">
-        {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#e87042]/35 bg-[#e87042]/10 mb-5">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#e87042] animate-pulse" />
-          <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#ffedd5]">
-            Registration Now Open · Free Entry
-          </span>
-        </div>
+
 
         {/* Heading */}
         <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-[1.08] max-w-3xl mx-auto">
