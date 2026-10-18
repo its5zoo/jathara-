@@ -1,11 +1,28 @@
 import Image from "next/image";
+import { Building2, Cpu, ShieldCheck, Users } from "lucide-react";
 import { Container } from "../common/Container";
 
 const credentials = [
-  { label: "Founding Director", detail: "STPI — Built India's IT Corridor" },
-  { label: "Co-Founder", detail: "PortalPlayer · Acquired by NVIDIA" },
-  { label: "IT Advisor", detail: "Special Chief Secretary, Govt. of AP" },
-  { label: "Co-Founder", detail: "Hyderabad Angels Network" },
+  {
+    icon: Building2,
+    label: "Founding Director",
+    detail: "STPI — Built India's IT Corridor",
+  },
+  {
+    icon: Cpu,
+    label: "Co-Founder",
+    detail: "PortalPlayer · Acquired by NVIDIA",
+  },
+  {
+    icon: ShieldCheck,
+    label: "IT Advisor",
+    detail: "Special Chief Secretary, Govt. of AP",
+  },
+  {
+    icon: Users,
+    label: "Co-Founder",
+    detail: "Hyderabad Angels Network",
+  },
 ];
 
 export function ISFFounderSection() {
@@ -69,22 +86,27 @@ export function ISFFounderSection() {
 
             {/* Credential row */}
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {credentials.map((c) => (
-                <div
-                  key={c.label + c.detail}
-                  className="flex items-start gap-3 rounded-xl border border-[#e3d9cc] bg-white px-4 py-3.5"
-                >
-                  <span className="mt-0.5 w-1.5 h-1.5 rounded-full bg-[#c25e38] shrink-0" aria-hidden="true" />
-                  <div>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#c25e38] block">
-                      {c.label}
-                    </span>
-                    <span className="text-xs font-medium text-[#3a3630] mt-0.5 block leading-snug">
-                      {c.detail}
-                    </span>
+              {credentials.map((c) => {
+                const IconComponent = c.icon;
+                return (
+                  <div
+                    key={c.label + c.detail}
+                    className="flex items-center gap-3.5 rounded-xl border border-[#e3d9cc] bg-white px-4 py-3 shadow-[0_2px_8px_rgba(43,37,28,0.04)] hover:border-[#c25e38]/35 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#faf3ea] border border-[#ecdccb] flex items-center justify-center shrink-0 text-[#c25e38]">
+                      <IconComponent className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#c25e38] block">
+                        {c.label}
+                      </span>
+                      <span className="text-xs font-semibold text-[#2b251c] mt-0.5 block leading-snug">
+                        {c.detail}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <p className="mt-5 text-xs text-[#78716c] leading-relaxed">
