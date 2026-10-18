@@ -22,8 +22,8 @@ const STATS = [
     bg: "#f0f7f4",
   },
   {
-    value: "100+",
-    label: "Founders Pitching",
+    value: "300+",
+    label: "Founders & Pitches",
     sub: "Rural · Tribal · Student",
     icon: Users,
     accent: "#8c671b",

@@ -104,15 +104,6 @@ export function SiteHeader() {
               })}
             </nav>
 
-            {/* Desktop CTA: Register Free */}
-            <a
-              href="https://isf-test.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#e87042] to-[#d06030] text-white font-bold text-xs xl:text-[13px] shadow-[0_4px_14px_rgba(232,112,66,0.35)] hover:shadow-[0_6px_20px_rgba(232,112,66,0.50)] hover:from-[#f07846] hover:to-[#d96a38] active:scale-95 transition-all duration-200 whitespace-nowrap shrink-0"
-            >
-              Register Free
-            </a>
 
             {/* Mobile / Tablet Navigation Trigger */}
             <MobileNavigation />

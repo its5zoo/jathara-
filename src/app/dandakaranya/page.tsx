@@ -26,18 +26,19 @@ const chapters = [
 export default function DandakaranyaPage() {
   return (
     <article className="bg-[#fcfbf8]">
-      <header className="relative isolate flex min-h-[620px] items-end overflow-hidden bg-[#081a14] sm:min-h-[720px] lg:min-h-[780px]">
+      <header className="relative isolate flex min-h-[580px] items-center overflow-hidden bg-[#081a14] sm:min-h-[660px] lg:min-h-[720px] pt-24 pb-14 sm:pt-28 sm:pb-16">
         <Image src="/images/dandakaranya/koraput-deomali-panorama.jpg" alt="The open Deomali ridgeline in Koraput district, part of the Eastern Ghats highlands of southern Odisha" fill priority sizes="100vw" className="-z-20 object-cover object-center" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#081a14]/95 via-[#081a14]/35 to-[#081a14]/10" />
-        <Container size="wide" className="pb-16 pt-36 text-white sm:pb-20 lg:pb-24">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#e1c77f]">An editorial guide · Southern Odisha & the wider region</p>
-          <h1 className="font-serif text-[clamp(2.5rem,10vw,7.75rem)] font-bold leading-[0.95] tracking-[-0.055em]">Dandakaranya</h1>
-          <p className="mt-5 max-w-2xl font-serif text-2xl leading-tight text-white sm:text-4xl">A Land of Legends, Life &amp; Legacy</p>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">Dandakaranya is a historical and culturally significant region remembered through the forest landscapes of central-eastern India. Its name carries epic memory; its present belongs to many communities, places and histories.</p>
-          <a href="#chapter-01" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white/85 transition-colors hover:text-[#e1c77f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6b25e]">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#081a14]/95 via-[#081a14]/50 to-[#081a14]/20" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#081a14]/75 via-[#081a14]/35 to-transparent" />
+        <Container size="wide" className="py-6 text-white">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#e1c77f] drop-shadow-sm">An editorial guide · Southern Odisha &amp; the wider region</p>
+          <h1 className="font-serif text-[clamp(2.5rem,10vw,7.75rem)] font-bold leading-[0.95] tracking-[-0.055em] drop-shadow-[0_2px_14px_rgba(0,0,0,0.6)]">Dandakaranya</h1>
+          <p className="mt-5 max-w-2xl font-serif text-2xl leading-tight text-white drop-shadow-sm sm:text-4xl">A Land of Legends, Life &amp; Legacy</p>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-white/90 drop-shadow-sm sm:text-lg sm:leading-8">Dandakaranya is a historical and culturally significant region remembered through the forest landscapes of central-eastern India. Its name carries epic memory; its present belongs to many communities, places and histories.</p>
+          <a href="#chapter-01" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition-colors hover:text-[#e1c77f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6b25e]">
             Begin the story <ArrowDown className="h-4 w-4" aria-hidden="true" />
           </a>
-          <p className="mt-7 text-xs text-white/65">Deomali, Koraput district · Eastern Ghats, Odisha</p>
+          <p className="mt-7 text-xs text-white/70">Deomali, Koraput district · Eastern Ghats, Odisha</p>
         </Container>
       </header>
 
@@ -162,26 +163,6 @@ export default function DandakaranyaPage() {
         </Container>
       </section>
 
-      <section className="bg-[#f5efe6] py-12">
-        <Container size="wide">
-          <h2 className="font-serif text-xl font-bold text-[#1c1917]">Sources &amp; image credits</h2>
-          <ul className="mt-4 grid gap-x-8 gap-y-2 text-sm leading-6 text-[#4a5752] sm:grid-cols-2">
-            <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://www.valmiki.iitk.ac.in/sloka?field_kanda_tid=3&field_sarga_value=1&language=en" target="_blank" rel="noreferrer">Vālmīki Rāmāyaṇa · IIT Kanpur translation project</a></li>
-            <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://koraput.odisha.gov.in/en/documents/district-gazetteer" target="_blank" rel="noreferrer">Koraput District Gazetteer · Government of Odisha</a></li>
-            <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://publicationsdivision.nic.in/Journalarchives/Yojana/Yojana-English/1968/November/Yojana_1968_November_pdf.pdf" target="_blank" rel="noreferrer">Yojana, November 1968 · Dandakaranya Development Project</a></li>
-            <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://www.arfjournals.com/image/catalog/Journals%20Papers/JCSA/2025/No%201%20%282025%29/5-S.%20N.%20Tripathy-12.pdf" target="_blank" rel="noreferrer">Tripathy, Journal of Contemporary South Asia, 2025 · project impacts</a></li>
-            <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://koraput.odisha.gov.in/en/more/tribal-communities" target="_blank" rel="noreferrer">Koraput District · Tribal communities</a></li>
-            <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://odishatourism.gov.in/en/places/deomali-hills" target="_blank" rel="noreferrer">Odisha Tourism · Deomali Hills</a></li>
-            <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://search.ipindia.gov.in/GIRPublicSearch/Application/Details/10" target="_blank" rel="noreferrer">IP India · Kotpad Handloom Fabric GI registration</a></li>
-            <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://odisha.gov.in/en/odisha-tourism/paintings" target="_blank" rel="noreferrer">Government of Odisha · Painting traditions</a></li>
-          </ul>
-          <div className="mt-8 space-y-2 border-t border-[#dfd6c4] pt-5 text-xs leading-5 text-[#6b6257]">
-            <p>Landscape images: “Koraput.jpg” and “Deomali hill top Koraput India.jpg” by BubunTalk; “View from table mountain Koraput.jpg” by Asmit Kumar Panigrahi; and “Sunrise at Koraput forest silhouette.jpg” by Shiv’s fotografia. All are from Wikimedia Commons under CC BY-SA 4.0 and resized for web display.</p>
-            <p>Cultural images: “A gadaba couple, Koraput Odisha” by the Government of Odisha, CC BY 4.0; “Saura painting of Odisha” by Sumita Roy Dutta, CC BY-SA 4.0; both via Wikimedia Commons and displayed with contextual captions.</p>
-            <p><a className="underline underline-offset-2" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0 license</a> · <a className="underline underline-offset-2" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0 license</a></p>
-          </div>
-        </Container>
-      </section>
     </article>
   );
 }

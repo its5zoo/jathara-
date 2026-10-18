@@ -7,7 +7,7 @@ import { Container } from "../common/Container";
 const EXPLORE_CARDS = [
   {
     label: "Startups & Junicorns",
-    heading: "100+ Founders Pitching",
+    heading: "300+ Founders & Pitches",
     body: "Early-stage startups and student innovators (Junicorns) from across India compete before investors across eight high-growth sectors.",
     image: "/images/summit-pitch-stage.jpg",
     imageAlt: "Startup founder pitching on stage at ISF Jathara",

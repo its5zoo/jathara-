@@ -25,7 +25,7 @@ export interface OfficialPanelist {
 export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
   "prof-reddenna": {
     id: "prof-reddenna",
-    name: "Prof Reddenna",
+    name: "Prof. Reddenna",
     initials: "PR",
     initialsBg: "bg-[#6929c4]",
     designation: "Senior Researcher & Academician",
@@ -43,7 +43,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
   },
   "dr-nagendra-vishnuvardhan-manyam": {
     id: "dr-nagendra-vishnuvardhan-manyam",
-    name: "Dr Nagendra Vishnuvardhan Manyam",
+    name: "Dr. Nagendra Vishnuvardhan Manyam",
     initials: "DM",
     initialsBg: "bg-[#6929c4]",
     designation: "Medical Specialist & Innovator",

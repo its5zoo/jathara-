@@ -362,14 +362,8 @@ export function ProgrammeClient() {
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[280px] bg-[#e87042]/12 rounded-full blur-[160px] pointer-events-none z-10" />
         </div>
 
-        <Container size="wide" className="relative z-20 text-center">
-          <div className="inline-flex items-center gap-2 mb-5 px-3.5 py-1.5 rounded-full border border-[#e87042]/40 bg-[#e87042]/10 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#e87042] animate-pulse" />
-            <span className="text-xs font-bold text-[#ffedd5] uppercase tracking-[0.12em]">
-              Official Programme · GIET University · Gunupur
-            </span>
-          </div>
 
+        <Container size="wide" className="relative z-20 text-center">
           <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
             Summit Programme &amp;{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a87a] via-[#e87042] to-[#d68c45]">
@@ -385,25 +379,7 @@ export function ProgrammeClient() {
             Verified official schedule for 17–20 December 2026 at GIET University, Gunupur.
           </p>
 
-          {/* Quick-jump day pills */}
-          <div className="mt-8 inline-flex flex-wrap justify-center gap-2">
-            {PROGRAMME_DAYS.map((day) => (
-              <button
-                key={day.id}
-                type="button"
-                onClick={() => handleDayChange(day.id)}
-                className={cn(
-                  "px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer border",
-                  selectedDayId === day.id
-                    ? "bg-[#e87042] text-white border-[#e87042] shadow-lg shadow-[#e87042]/30"
-                    : "bg-white/10 text-[#ffedd5] border-white/20 hover:bg-white/20"
-                )}
-              >
-                {day.dayNumber === 0 ? "Pre-Summit" : `Day ${day.dayNumber}`} ·{" "}
-                {day.dateFormatted.split(" ")[0]} Dec
-              </button>
-            ))}
-          </div>
+
         </Container>
       </section>
 

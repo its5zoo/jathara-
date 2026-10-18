@@ -26,7 +26,7 @@ export function VenueTravelClient() {
         <Container size="default" className="relative z-10 px-4 text-center sm:px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#f7c89f]">Venue &amp; Travel</p>
           <h1 className="mx-auto mt-3 max-w-4xl font-serif text-3xl font-black leading-tight tracking-tight text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] sm:text-5xl lg:text-6xl">
-            GIET University, <span className="text-[#ef9a72]">Gunupur, Odisha</span>
+            GIET University, Gunupur, Odisha
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-sm font-medium leading-7 text-white/90 sm:text-lg">
             The practical visitor guide for reaching the summit venue and planning your stay in Gunupur.

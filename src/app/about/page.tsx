@@ -16,7 +16,6 @@ import {
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { Badge } from "@/components/common/Badge";
-import { Button } from "@/components/common/Button";
 import { 
   GIET_LEADERSHIP_PROFILES, 
   GIET_VERIFIED_MILESTONES, 
@@ -137,11 +136,6 @@ export default function AboutPage() {
                   </li>
                 </ul>
 
-                <div className="pt-2">
-                  <Button href="/programme" variant="primary" size="sm" className="w-full justify-center">
-                    Review 3-Day Draft Timetable
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
