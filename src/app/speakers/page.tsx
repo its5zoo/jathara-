@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { 
   Mic2, 
-  ArrowRight, 
   Mail,
   HeartHandshake,
   GraduationCap,
@@ -14,6 +12,7 @@ import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { Button } from "@/components/common/Button";
 import { EmptyState } from "@/components/common/EmptyState";
+import { RoundtableShowcase } from "@/components/speakers/RoundtableShowcase";
 
 export const metadata: Metadata = {
   title: "Speakers & Dignitaries",
@@ -22,7 +21,6 @@ export const metadata: Metadata = {
 
 export default function SpeakersPage() {
   const chiefGuest = INITIAL_SPEAKERS.find((s) => s.id === "spk-chief-guest");
-  const trackPanels = INITIAL_SPEAKERS.filter((s) => s.id !== "spk-chief-guest");
 
   return (
     <div className="w-full">
@@ -60,110 +58,101 @@ export default function SpeakersPage() {
       </section>
 
       {/* Main Speakers Section */}
-      <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
+      <section className="section-reveal py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
         <Container size="default">
           <SectionHeading
             title="Official Speaker & Dignitary Announcements"
             subtitle="In accordance with our strict data integrity policy, verified dignitaries and plenary leaders are formally presented below."
           />
 
-          {/* Chief Guest Spotlight Feature - Prestigious Editorial Presentation */}
+          {/* Chief guest editorial feature */}
           {chiefGuest && (
-            <div className="mb-20 max-w-5xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-                {/* Photo Column - Dignified & High-Resolution */}
-                <div className="md:col-span-5 flex justify-center md:justify-start">
-                  <div className="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden shadow-xl shadow-[#1c1917]/10 group">
+            <article className="group relative mx-auto mb-20 max-w-6xl overflow-hidden rounded-[28px] border border-[#d9d1c3] bg-[#f7f3ea] shadow-[0_24px_70px_rgba(43,37,28,0.1)]">
+              <div className="grid md:grid-cols-[minmax(280px,0.82fr)_1.5fr]">
+                <div className="relative min-h-[390px] overflow-hidden sm:min-h-[460px] md:min-h-full">
+                  <div className="absolute inset-0 bg-[#d8d1c5]">
                     <Image
                       src={chiefGuest.photoUrl || "/images/sadguru-sri-madhusudan-sai.jpg"}
                       alt={chiefGuest.name}
                       fill
                       priority
-                      sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 400px"
-                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-102"
+                      sizes="(max-width: 767px) 100vw, 38vw"
+                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none"
                     />
+                    <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#101f1a]/85 to-transparent" />
+                  </div>
+                  <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4 text-white sm:inset-x-8 sm:bottom-8">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f2c8a8]">
+                        Chief Guest of Honour
+                      </span>
+                      <p className="mt-1 font-serif text-xl font-bold">Plenary Inauguration</p>
+                    </div>
+                    <span className="font-serif text-3xl text-white/45" aria-hidden="true">01</span>
                   </div>
                 </div>
 
-                {/* Details Column */}
-                <div className="md:col-span-7 space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
-                  {/* Eyebrow */}
-                  <div className="flex items-center justify-center md:justify-start gap-2 w-full">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#c25022]">
-                      Chief Guest of Honour
-                    </span>
-                    <span className="text-[#d6c7b2]">•</span>
-                    <span className="text-xs font-semibold text-[#8c671b] uppercase tracking-wider">
-                      Plenary Keynote
-                    </span>
-                  </div>
-
-                  {/* Title & Organization */}
-                  <div className="space-y-1 w-full text-center md:text-left">
-                    <h3 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl text-[#1c1917] tracking-tight leading-tight">
+                <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#a94e2d]">
+                    Plenary Inauguration Keynote
+                  </span>
+                  <div>
+                    <h3 className="mt-3 font-serif text-3xl font-black leading-[1.04] tracking-[-0.035em] text-[#1b1b18] sm:text-4xl lg:text-[2.8rem]">
                       {chiefGuest.name}
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base font-semibold text-[#8c671b] leading-snug">
-                      Global Humanitarian, Spiritual Leader &amp; Founder, Sri Madhusudan Sai Global Humanitarian Mission
+                    <p className="mt-3 text-sm font-semibold leading-relaxed text-[#815f22] sm:text-[15px]">
+                      Global Humanitarian &amp; Spiritual Leader · Founder, Sri Madhusudan Sai Global Humanitarian Mission
                     </p>
                   </div>
 
-                  {/* Detailed Humanitarian Context */}
-                  <p className="text-xs sm:text-sm text-[#4a5550] leading-relaxed text-center md:text-left">
-                    Revered internationally for spearheading transformative selfless service across 30+ nations based on the timeless philosophy of <em>Vasudhaiva Kutumbakam</em> (The World is One Family). Under his visionary guidance, massive humanitarian institutions deliver world-class healthcare, values-based higher education, and morning nutrition completely free of charge to millions of underserved families.
+                  <div className="my-6 h-px w-full bg-[#d8d0c2]" />
+                  <p className="text-sm leading-7 text-[#53564f] sm:text-[15px]">
+                    Revered internationally for establishing transformative selfless institutions across 30+ nations based on <em>Vasudhaiva Kutumbakam</em>. Under his stewardship, free healthcare, values-based higher education, and daily morning nutrition reach millions of underserved families.
                   </p>
 
-                  {/* 3 Core Humanitarian Pillars */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 w-full">
-                    <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs text-left">
-                      <HeartHandshake className="w-4 h-4 text-[#c25022] shrink-0 mt-0.5" />
-                      <div className="text-xs">
-                        <strong className="block text-[#1c1917] font-bold">Free Pediatric Care</strong>
-                        <span className="text-[11px] text-[#6b7280] leading-tight">Sri Sathya Sai Sanjeevani</span>
+                  <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                    <div className="border-l-2 border-[#b45532] py-1 pl-3.5 text-left">
+                      <HeartHandshake className="mb-2 h-4 w-4 text-[#b45532]" aria-hidden="true" />
+                      <div className="text-xs leading-snug">
+                        <strong className="block font-bold text-[#1c1917]">Free Pediatric Care</strong>
+                        <span className="mt-1 block text-[10px] leading-4 text-stone-500">Sai Sanjeevani Hospitals</span>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs text-left">
-                      <GraduationCap className="w-4 h-4 text-[#8c671b] shrink-0 mt-0.5" />
-                      <div className="text-xs">
-                        <strong className="block text-[#1c1917] font-bold">Free Education</strong>
-                        <span className="text-[11px] text-[#6b7280] leading-tight">Human Excellence Univ</span>
+                    <div className="border-l-2 border-[#9a7022] py-1 pl-3.5 text-left">
+                      <GraduationCap className="mb-2 h-4 w-4 text-[#8c671b]" aria-hidden="true" />
+                      <div className="text-xs leading-snug">
+                        <strong className="block font-bold text-[#1c1917]">Free Education</strong>
+                        <span className="mt-1 block text-[10px] leading-4 text-stone-500">SSSUHE University</span>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-2 p-2.5 rounded-xl bg-white border border-[#e6dfd1]/80 shadow-2xs text-left">
-                      <Utensils className="w-4 h-4 text-[#256f57] shrink-0 mt-0.5" />
-                      <div className="text-xs">
-                        <strong className="block text-[#1c1917] font-bold">3M+ Daily Meals</strong>
-                        <span className="text-[11px] text-[#6b7280] leading-tight">Annapoorna Nutrition</span>
+                    <div className="border-l-2 border-[#277059] py-1 pl-3.5 text-left">
+                      <Utensils className="mb-2 h-4 w-4 text-[#256f57]" aria-hidden="true" />
+                      <div className="text-xs leading-snug">
+                        <strong className="block font-bold text-[#1c1917]">3M+ Daily Meals</strong>
+                        <span className="mt-1 block text-[10px] leading-4 text-stone-500">Annapoorna Nutrition</span>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Link to Programme */}
-                  <div className="pt-2 w-full flex justify-center md:justify-start">
-                    <Link
-                      href="/programme"
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#c25022] hover:text-[#e87042] transition-colors group"
-                    >
-                      <span>View Plenary Session Schedule</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           )}
 
 
-          {/* Sector Panel Chairs Outline */}
-          <div className="mt-16">
+          {/* Official Sector Roundtables & Panelists Showcase */}
+          <div className="mt-20">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#fff4ed] text-[#c25022] border border-[#fbd4c0] mb-3">
+                <Mic2 className="w-3.5 h-3.5" />
+                <span>Sectoral Deliberations</span>
+              </div>
               <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight">
-                Roundtable Tracks &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Panel Formats</span>
+                Official Sector Roundtables &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Panelists</span>
               </h3>
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
-                Curated discussion tracks convening leaders, policy champions, and innovators across focus domains.
+                Official speaker roster transcribed from ISF Network, convening leaders across life sciences, agriculture, global venture syndicates, and scaling policy.
               </p>
               <div className="mt-4 flex items-center justify-center gap-2" aria-hidden="true">
                 <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
@@ -172,45 +161,13 @@ export default function SpeakersPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {trackPanels.map((spk) => (
-                <div
-                  key={spk.id}
-                  className="bg-[#ffffff] rounded-3xl p-6 sm:p-7 border border-[#e6dfd1] hover:border-[#143e30]/30 transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    <h4 className="font-serif font-bold text-lg sm:text-xl text-[#103327]">
-                      {spk.name}
-                    </h4>
-
-                    <div className="text-xs font-semibold text-[#8c671b] uppercase tracking-wider mt-1">
-                      {spk.designation}
-                    </div>
-
-                    <p className="text-xs sm:text-sm text-[#4a5752] mt-3 leading-relaxed">
-                      {spk.bio}
-                    </p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-[#ede7db] flex items-center justify-between text-xs text-[#7e8d87]">
-                    <span>Host Track: {spk.track}</span>
-                    <Link
-                      href="/programme"
-                      className="text-[#143e30] font-semibold hover:underline inline-flex items-center gap-1"
-                    >
-                      <span>View Session</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <RoundtableShowcase />
           </div>
         </Container>
       </section>
 
       {/* Speaker Nominations & Applications */}
-      <section className="py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
+      <section className="section-reveal py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
         <Container size="default">
           <div className="bg-[#ffffff] rounded-3xl p-8 sm:p-12 border border-[#e6dfd1] shadow-xs max-w-4xl mx-auto text-center space-y-6">
             <div className="w-12 h-12 rounded-2xl bg-[#f7f4ec] border border-[#dfd6c4] flex items-center justify-center text-[#143e30] mx-auto">

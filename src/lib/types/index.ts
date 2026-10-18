@@ -147,6 +147,7 @@ export interface EventMetadata {
     start: string;
     end: string;
   };
+  registrationUrl?: string;
   venueName: string;
   venueCampus: string;
   venueCity: string;

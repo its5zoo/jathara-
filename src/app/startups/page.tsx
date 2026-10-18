@@ -1,58 +1,57 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { 
-  Sparkles, 
-  Activity, 
-  Wheat, 
-  Cpu, 
-  Shield, 
-  Users, 
-  Building2, 
-  Zap, 
-  Coins, 
-  Leaf, 
-  Globe2, 
-  ArrowRight, 
-  CheckCircle2, 
-  ShieldAlert, 
-  Compass, 
-  Layers,
-  Rocket 
+import {
+  Compass,
+  Layers3,
+  Presentation,
+  ShieldAlert,
+  Users,
 } from "lucide-react";
-import { STARTUP_VERTICALS } from "@/data/eventData";
 import { Container } from "@/components/common/Container";
-import { SectionHeading } from "@/components/common/SectionHeading";
-import { Badge } from "@/components/common/Badge";
-import { Button } from "@/components/common/Button";
 import { StartupVerticalsGrid } from "@/components/startups/StartupVerticalsGrid";
 
 export const metadata: Metadata = {
   title: "Startups & Junicorn Initiative",
-  description: "Explore the Junicorn grassroots movement, startup exhibition arena, and thematic verticals at ISF Startup Jathara 2026 @ Dandakaranya, GIET University, Gunupur.",
+  description:
+    "Explore the Junicorn grassroots movement, startup exhibition arena, and thematic verticals at ISF Startup Jathara 2026 @ Dandakaranya, GIET University, Gunupur.",
 };
 
-export default function StartupsPage() {
-  const iconMap: Record<string, React.ElementType> = {
-    Wheat,
-    Cpu,
-    Activity,
-    Shield,
-    Users,
-    Building2,
-    Zap,
-    Coins,
-    Sparkles,
-    Leaf,
-    Globe2,
-  };
+const teamBenefits = [
+  "Free exhibition demo kiosk in the Exhibition Arena",
+  "One-on-one pairing with industry domain mentors",
+  "Participation in Day 2 Dandakaranya Forest Trekking",
+  "Summit certification and innovation recognition awards",
+];
 
+const showcaseFeatures = [
+  {
+    icon: Layers3,
+    number: "01",
+    title: "Dedicated Demo Kiosks",
+    description:
+      "Standardized modular display kiosks equipped with power, connectivity, and branding displays for hands-on product interaction.",
+  },
+  {
+    icon: Users,
+    number: "02",
+    title: "Investor Walkthroughs",
+    description:
+      "Structured exhibition walkthroughs for venture partners, angel networks, and GCC strategy executives during Araku coffee breaks.",
+  },
+  {
+    icon: Compass,
+    number: "03",
+    title: "Tribal Craft & Agro Pavilion",
+    description:
+      "A showcase pavilion dedicated to organic tribal farm goods, minor millets processing, natural textiles, and indigenous value chains.",
+  },
+];
+
+export default function StartupsPage() {
   return (
     <div className="w-full">
-      {/* Header Banner */}
-      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
-        {/* Topic-matching Dedicated Static Hero Image */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+      <section className="relative overflow-hidden border-b border-[#232733] bg-[#0c0d12] py-16 text-[#fcfbf8] sm:py-24">
+        <div className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden">
           <Image
             src="/images/summit-pitch-stage.jpg"
             alt="Founders Pitching on Stage to Investor Jury"
@@ -61,191 +60,185 @@ export default function StartupsPage() {
             sizes="100vw"
             className="object-cover object-[center_35%] brightness-95"
           />
-          {/* Obsidian-Peach scrim & vignette */}
           <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
         </div>
 
         <Container size="default" className="relative z-20 text-center">
-          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
+          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#f2b58f] sm:text-xs">
+            Startups · Student Innovators · Grassroots Enterprise
+          </p>
+          <h1 className="font-serif text-4xl font-black leading-[1.04] tracking-[-0.035em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl">
             Nurturing Rural &amp; Tribal Innovators
           </h1>
-
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+          <p className="mx-auto mt-5 max-w-2xl font-serif text-lg font-medium text-[#ffedd5] drop-shadow-sm sm:text-xl">
             Bridging Grassroots Founders directly with Top Venture Capital.
           </p>
-
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#d6d0c7] sm:text-base">
             The platform where collegiate makers, grassroots problem solvers, and early-stage enterprises connect with national venture capital and industry mentors.
           </p>
-
-
         </Container>
       </section>
 
-      {/* Junicorn Initiative Spotlight */}
-      <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
+      <section className="startup-reveal border-b border-[#ddd5c8] bg-[#fcfbf8] py-20 sm:py-24" aria-labelledby="junicorn-heading">
         <Container size="default">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#1c1917] tracking-tight leading-[1.12]">
-              The Junicorn Initiative: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">From Classroom to Enterprise</span>
-            </h2>
-            <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
-              Empowering young student innovators, school inventors, and grassroots youth across Odisha and neighboring states.
-            </p>
-            <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
-              <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
-              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-              <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
+          <div className="mb-10 grid items-end gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:gap-14">
+            <div className="flex items-center gap-3">
+              <span className="font-serif text-4xl font-bold text-[#b65531]">01</span>
+              <div className="h-px flex-1 bg-[#d8cfc1]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7a746b]">Junicorn pathway</span>
+            </div>
+            <div>
+              <h2 id="junicorn-heading" className="font-serif text-3xl font-black leading-[1.07] tracking-[-0.035em] text-[#1b1b18] sm:text-4xl lg:text-5xl">
+                From classroom insight to <span className="text-[#ad4e2c]">credible enterprise.</span>
+              </h2>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#656158] sm:text-base">
+                Empowering young student innovators, school inventors, and grassroots youth across Odisha and neighboring states.
+              </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6">
-              <p className="text-base text-[#4a5752] leading-relaxed">
-                The <strong>Junicorn Initiative</strong> is a nationwide movement pioneered by ISF to cultivate &apos;Junior Unicorns&apos; - young student innovators, school inventors, and rural youth who demonstrate ingenuity in solving everyday challenges in their local communities.
-              </p>
-
-              <p className="text-base text-[#4a5752] leading-relaxed">
-                At Dandakaranya, Junicorn places particular emphasis on indigenous and tribal youth from districts across Odisha and neighboring states, providing them the formal stage, presentation coaching, and industry linkages normally confined to metropolitan premier institutes.
-              </p>
-
-              <div className="space-y-3 pt-2">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#256f57] flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-[#333e3a]">
-                    <strong>Curated Pitch Stage:</strong> On Day 1 (Friday 18 Dec, 2:30–3:30 PM), selected Tribal & Rural Junicorn teams will pitch before a panel of angels and sector leaders.
+          <div className="overflow-hidden rounded-[30px] border border-[#d9d0c3] bg-[#f4efe6] shadow-[0_24px_70px_rgba(45,38,28,0.1)]">
+            <div className="grid lg:grid-cols-[1.04fr_0.96fr]">
+              <div className="relative min-h-[390px] overflow-hidden sm:min-h-[520px] lg:min-h-full">
+                <Image
+                  src="/images/junicorn-innovators.jpg"
+                  alt="Indian Student Innovators Showcasing Prototypes with Mentors"
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 52vw"
+                  className="object-cover transition-transform duration-700 ease-out hover:scale-[1.025] motion-reduce:transition-none"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#10271f]/90 to-transparent" />
+                <div className="absolute inset-x-7 bottom-7 text-white sm:inset-x-10 sm:bottom-9">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f3c39f]">Junior Unicorns</span>
+                  <p className="mt-2 max-w-md font-serif text-2xl font-bold leading-tight sm:text-3xl">
+                    Local ingenuity, prepared for a national stage.
                   </p>
                 </div>
+              </div>
 
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#256f57] flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-[#333e3a]">
-                    <strong>Incubation Bridge:</strong> Top projects receive incubation facilitation and advisory support in association with IncubateX and GIET University Incubation Center.
-                  </p>
+              <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
+                <p className="text-sm leading-7 text-[#4f554f] sm:text-[15px]">
+                  The <strong className="font-bold text-[#20241f]">Junicorn Initiative</strong> is a nationwide movement pioneered by ISF to cultivate &apos;Junior Unicorns&apos; - young student innovators, school inventors, and rural youth who demonstrate ingenuity in solving everyday challenges in their local communities.
+                </p>
+                <p className="mt-5 text-sm leading-7 text-[#4f554f] sm:text-[15px]">
+                  At Dandakaranya, Junicorn places particular emphasis on indigenous and tribal youth from districts across Odisha and neighboring states, providing them the formal stage, presentation coaching, and industry linkages normally confined to metropolitan premier institutes.
+                </p>
+
+                <div className="mt-8 divide-y divide-[#d8d0c4] border-y border-[#d8d0c4]">
+                  <div className="grid gap-2 py-5 sm:grid-cols-[9rem_1fr]">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#ad4e2c]">Curated Pitch Stage</span>
+                    <p className="text-xs leading-5 text-[#454943]">
+                      On Day 1 (Friday 18 Dec, 2:30–3:30 PM), selected Tribal &amp; Rural Junicorn teams will pitch before a panel of angels and sector leaders.
+                    </p>
+                  </div>
+                  <div className="grid gap-2 py-5 sm:grid-cols-[9rem_1fr]">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#276b55]">Incubation Bridge</span>
+                    <p className="text-xs leading-5 text-[#454943]">
+                      Top projects receive incubation facilitation and advisory support in association with IncubateX and GIET University Incubation Center.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-5">
-              <div className="bg-[#ffffff] rounded-3xl p-6 sm:p-7 border border-[#e6dfd1] shadow-lg space-y-5 overflow-hidden">
-                {/* Photo preview of Junicorn Student Innovators - Clean & Unobstructed */}
-                <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden border border-[#dfd6c4] shadow-xs group">
-                  <Image
-                    src="/images/junicorn-innovators.jpg"
-                    alt="Indian Student Innovators Showcasing Prototypes with Mentors"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 400px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+            <div className="grid border-t border-white/10 bg-[#113c30] text-white sm:grid-cols-2 lg:grid-cols-4">
+              {teamBenefits.map((benefit, index) => (
+                <div key={benefit} className="flex gap-3 border-b border-white/10 px-6 py-5 last:border-b-0 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0">
+                  <span className="font-serif text-sm font-bold text-[#e8ae80]">0{index + 1}</span>
+                  <p className="text-xs leading-5 text-white/85">{benefit}</p>
                 </div>
-
-                <div>
-                  <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1c1917]">
-                    What Junicorn Teams Receive
-                  </h3>
-                  <p className="mt-1 text-xs text-[#7e8d87]">
-                    Complete grassroots incubation and mentorship package for selected youth teams.
-                  </p>
-                </div>
-
-                <ul className="space-y-3 text-xs sm:text-sm text-[#333e3a]">
-                  <li className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                    <span>Free exhibition demo kiosk in the Exhibition Arena</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                    <span>One-on-one pairing with industry domain mentors</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                    <span>Participation in Day 2 Dandakaranya Forest Trekking</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                    <span>Summit certification and innovation recognition awards</span>
-                  </li>
-                </ul>
-
-
-              </div>
+              ))}
             </div>
           </div>
         </Container>
       </section>
 
-      {/* The 8 Official Summit Tracks */}
-      <section className="py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
+      <section className="startup-reveal border-b border-[#d8d0c2] bg-[#f2ede3] py-20 sm:py-24" aria-labelledby="sectors-heading">
         <Container size="wide">
-          <SectionHeading
-            title="Thematic Sectors for Showcases & Roundtables"
-            subtitle="Startups with active prototypes, MVPs, or operational traction in these eight official domains are invited to exhibit."
-          />
+          <div className="mb-10 grid items-end gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:gap-14">
+            <div className="flex items-center gap-3">
+              <span className="font-serif text-4xl font-bold text-[#1c6651]">02</span>
+              <div className="h-px flex-1 bg-[#cfc5b6]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#706a61]">Startup portfolio</span>
+            </div>
+            <div>
+              <h2 id="sectors-heading" className="font-serif text-3xl font-black leading-[1.07] tracking-[-0.035em] text-[#1b1b18] sm:text-4xl lg:text-5xl">
+                Eight sectors. <span className="text-[#24634f]">One innovation ecosystem.</span>
+              </h2>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#625e56] sm:text-base">
+                Startups with active prototypes, MVPs, or operational traction in these eight official domains are invited to exhibit. Explore each sector to review its complete focus areas.
+              </p>
+            </div>
+          </div>
 
           <StartupVerticalsGrid />
         </Container>
       </section>
 
-      {/* Exhibition Showcase Concept */}
-      <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
+      <section className="startup-reveal border-b border-[#e0d8ca] bg-[#fcfbf8] py-20 sm:py-24" aria-labelledby="showcase-heading">
         <Container size="default">
-          <SectionHeading
-            title="The Startup Showcase Arena"
-            subtitle="An energetic, purpose-built exhibition arena inside the GIET campus where founders present physical prototypes, software demonstrations, and native produce."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#222b27]">
-            <div className="p-6 rounded-2xl bg-[#ffffff] border border-[#e6dfd1]">
-              <div className="w-10 h-10 rounded-xl bg-[#f7f4ec] flex items-center justify-center text-[#143e30] mb-3">
-                <Layers className="w-5 h-5 text-[#143e30]" />
-              </div>
-              <h3 className="font-serif font-bold text-lg text-[#103327]">
-                Dedicated Demo Kiosks
-              </h3>
-              <p className="text-xs sm:text-sm text-[#4a5752] mt-2 leading-relaxed">
-                Standardized modular display kiosks equipped with power, connectivity, and branding displays for hands-on product interaction.
-              </p>
+          <div className="mb-10 grid items-end gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:gap-14">
+            <div className="flex items-center gap-3">
+              <span className="font-serif text-4xl font-bold text-[#9a7022]">03</span>
+              <div className="h-px flex-1 bg-[#d8cfc1]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7a746b]">Showcase arena</span>
             </div>
-
-            <div className="p-6 rounded-2xl bg-[#ffffff] border border-[#e6dfd1]">
-              <div className="w-10 h-10 rounded-xl bg-[#f7f4ec] flex items-center justify-center text-[#143e30] mb-3">
-                <Users className="w-5 h-5 text-[#c25e38]" />
-              </div>
-              <h3 className="font-serif font-bold text-lg text-[#103327]">
-                Investor Walkthroughs
-              </h3>
-              <p className="text-xs sm:text-sm text-[#4a5752] mt-2 leading-relaxed">
-                Structured exhibition walkthroughs for venture partners, angel networks, and GCC strategy executives during Araku coffee breaks.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-[#ffffff] border border-[#e6dfd1]">
-              <div className="w-10 h-10 rounded-xl bg-[#f7f4ec] flex items-center justify-center text-[#143e30] mb-3">
-                <Compass className="w-5 h-5 text-[#be9740]" />
-              </div>
-              <h3 className="font-serif font-bold text-lg text-[#103327]">
-                Tribal Craft & Agro Pavilion
-              </h3>
-              <p className="text-xs sm:text-sm text-[#4a5752] mt-2 leading-relaxed">
-                A showcase pavilion dedicated to organic tribal farm goods, minor millets processing, natural textiles, and indigenous value chains.
+            <div>
+              <h2 id="showcase-heading" className="font-serif text-3xl font-black leading-[1.07] tracking-[-0.035em] text-[#1b1b18] sm:text-4xl lg:text-5xl">
+                Built for ideas people can <span className="text-[#9a7022]">see, question and test.</span>
+              </h2>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#656158] sm:text-base">
+                An energetic, purpose-built exhibition arena inside the GIET campus where founders present physical prototypes, software demonstrations, and native produce.
               </p>
             </div>
           </div>
 
-          {/* Transparent Policy Notice */}
-          <div className="mt-10 p-5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm flex items-start gap-3">
-            <ShieldAlert className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
-            <div>
-              <strong className="font-bold">Official Application Notice:</strong> Formal selection criteria, booth dimension options, and evaluation panels will be announced when the registration portal opens. The event does not guarantee specific funding amounts; funding discussions occur directly between founders and participating investors.
+          <div className="grid overflow-hidden rounded-[30px] border border-[#d8d0c3] bg-[#112d24] shadow-[0_24px_70px_rgba(30,38,31,0.12)] lg:grid-cols-[1fr_1.05fr]">
+            <div className="relative min-h-[360px] lg:min-h-[590px]">
+              <Image
+                src="/images/startup-stage-backdrop.jpg"
+                alt="Startup founders presenting innovations on the summit stage"
+                fill
+                sizes="(max-width: 1023px) 100vw, 48vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c261e]/85 via-transparent to-black/10" />
+              <div className="absolute inset-x-7 bottom-7 sm:inset-x-10 sm:bottom-10">
+                <Presentation className="h-7 w-7 text-[#edb98f]" strokeWidth={1.5} aria-hidden="true" />
+                <p className="mt-4 max-w-sm font-serif text-2xl font-bold leading-tight text-white sm:text-3xl">
+                  From live demonstrations to direct investor conversations.
+                </p>
+              </div>
             </div>
+
+            <div className="divide-y divide-white/12 px-7 py-3 text-white sm:px-10 lg:px-12">
+              {showcaseFeatures.map((feature) => {
+                const Icon = feature.icon;
+                return (
+                  <article key={feature.title} className="group grid gap-4 py-8 sm:grid-cols-[3.25rem_1fr] sm:py-10">
+                    <div>
+                      <span className="font-serif text-sm font-bold text-[#e8ae80]">{feature.number}</span>
+                      <Icon className="mt-3 h-5 w-5 text-white/75 transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transition-none" strokeWidth={1.5} aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-xl font-bold text-white sm:text-2xl">{feature.title}</h3>
+                      <p className="mt-3 text-xs leading-6 text-white/68 sm:text-sm">{feature.description}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="mt-8 flex items-start gap-4 border-l-2 border-[#b9862f] bg-[#f7f1e5] px-5 py-5 text-[#614b21] sm:px-6">
+            <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-[#9a7022]" aria-hidden="true" />
+            <p className="text-xs leading-6 sm:text-sm">
+              <strong className="font-bold text-[#493716]">Official Application Notice:</strong> Formal selection criteria, booth dimension options, and evaluation panels will be announced when the registration portal opens. The event does not guarantee specific funding amounts; funding discussions occur directly between founders and participating investors.
+            </p>
           </div>
         </Container>
       </section>
-
-
     </div>
   );
 }
-

@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Calendar, ArrowRight } from "lucide-react";
 import { NAV_LINKS } from "@/data/eventData";
 import { cn } from "@/lib/utils";
 import { MobileNavigation } from "./MobileNavigation";
@@ -105,16 +104,14 @@ export function SiteHeader() {
               })}
             </nav>
 
-            {/* Primary Registration Call to Action */}
+            {/* Desktop CTA: Register Free */}
             <a
               href="https://isf-test.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center px-2.5 min-[360px]:px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] min-[360px]:text-xs sm:text-sm font-bold bg-[#e87042] text-white hover:bg-[#d95d2c] shadow-xs hover:shadow-sm transition-all duration-200 active:scale-95 shrink-0 min-h-[32px] min-[360px]:min-h-[36px] sm:min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]"
-              aria-label="Register for ISF Startup Jathara 2026 (Opens in new tab)"
+              className="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#e87042] to-[#d06030] text-white font-bold text-xs xl:text-[13px] shadow-[0_4px_14px_rgba(232,112,66,0.35)] hover:shadow-[0_6px_20px_rgba(232,112,66,0.50)] hover:from-[#f07846] hover:to-[#d96a38] active:scale-95 transition-all duration-200 whitespace-nowrap shrink-0"
             >
-              <span>Register</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform duration-200 group-hover:translate-x-0.5 hidden min-[400px]:inline" />
+              Register Free
             </a>
 
             {/* Mobile / Tablet Navigation Trigger */}

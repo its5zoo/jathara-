@@ -1,34 +1,353 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
-import { 
-  Calendar, 
-  Clock, 
+import {
+  Clock,
   MapPin,
-  Sparkles,
   ArrowRight,
   ChevronDown,
   ChevronUp,
-  Tag
+  Users,
+  Mic2,
+  TreePine,
+  Trophy,
+  Globe,
+  Handshake,
+  BookOpen,
 } from "lucide-react";
 import { PROGRAMME_DAYS } from "@/data/eventData";
 import { Container } from "../common/Container";
 import { Button } from "../common/Button";
 import { cn } from "@/lib/utils";
 
+// ─── Session type visual config ────────────────────────────────────────────────
+type SessionTypeCfg = {
+  icon: React.ElementType;
+  label: string;
+  color: string;
+  bg: string;
+  border: string;
+  dot: string;
+};
+
+const SESSION_TYPE_MAP: Record<string, SessionTypeCfg> = {
+  ceremony: {
+    icon: Trophy,
+    label: "Ceremony",
+    color: "text-amber-700",
+    bg: "bg-amber-50",
+    border: "border-amber-200",
+    dot: "bg-amber-500",
+  },
+  roundtable: {
+    icon: Users,
+    label: "Roundtable",
+    color: "text-[#c25022]",
+    bg: "bg-[#fff5f0]",
+    border: "border-[#fbd4c3]",
+    dot: "bg-[#e87042]",
+  },
+  pitch: {
+    icon: Mic2,
+    label: "Pitch",
+    color: "text-violet-700",
+    bg: "bg-violet-50",
+    border: "border-violet-200",
+    dot: "bg-violet-500",
+  },
+  networking: {
+    icon: Handshake,
+    label: "Networking",
+    color: "text-emerald-700",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
+    dot: "bg-emerald-500",
+  },
+  cultural: {
+    icon: BookOpen,
+    label: "Cultural",
+    color: "text-rose-700",
+    bg: "bg-rose-50",
+    border: "border-rose-200",
+    dot: "bg-rose-500",
+  },
+  outdoor: {
+    icon: TreePine,
+    label: "Eco-Trek",
+    color: "text-teal-700",
+    bg: "bg-teal-50",
+    border: "border-teal-200",
+    dot: "bg-teal-500",
+  },
+};
+
+function getSessionCfg(type: string): SessionTypeCfg {
+  return (
+    SESSION_TYPE_MAP[type] || {
+      icon: Globe,
+      label: "Session",
+      color: "text-slate-600",
+      bg: "bg-slate-50",
+      border: "border-slate-200",
+      dot: "bg-slate-400",
+    }
+  );
+}
+
+// ─── Day stats bar ─────────────────────────────────────────────────────────────
+function DayStatsBar({ day }: { day: (typeof PROGRAMME_DAYS)[0] }) {
+  const counts: Record<string, number> = {};
+  for (const s of day.sessions) {
+    counts[s.sessionType] = (counts[s.sessionType] || 0) + 1;
+  }
+  const items: { label: string; count: number; color: string }[] = [];
+  if (counts.roundtable) items.push({ label: counts.roundtable > 1 ? "Roundtables" : "Roundtable", count: counts.roundtable, color: "text-[#c25022]" });
+  if (counts.pitch) items.push({ label: counts.pitch > 1 ? "Pitch Sessions" : "Pitch Session", count: counts.pitch, color: "text-violet-700" });
+  if (counts.networking) items.push({ label: "Networking", count: counts.networking, color: "text-emerald-700" });
+  if (counts.ceremony) items.push({ label: "Ceremony", count: counts.ceremony, color: "text-amber-700" });
+  if (counts.cultural) items.push({ label: "Cultural", count: counts.cultural, color: "text-rose-700" });
+  if (counts.outdoor) items.push({ label: "Eco-Trek", count: counts.outdoor, color: "text-teal-700" });
+
+  return (
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-2 py-4 px-1 border-b border-[#ede7db] mb-6">
+      <span className="text-xs font-bold text-[#78716c] uppercase tracking-wider">
+        {day.sessions.length} Sessions
+      </span>
+      <span className="hidden sm:block w-px h-4 bg-[#dfd6c4]" />
+      {items.map((it, i) => (
+        <span key={i} className={cn("text-xs font-semibold", it.color)}>
+          {it.count} {it.label}
+        </span>
+      ))}
+      {day.status === "Tentative" && (
+        <>
+          <span className="hidden sm:block w-px h-4 bg-[#dfd6c4]" />
+          <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200 uppercase tracking-wider">
+            Tentative Schedule
+          </span>
+        </>
+      )}
+    </div>
+  );
+}
+
+// ─── Ceremony accordion ────────────────────────────────────────────────────────
+function CeremonyAccordion({
+  subEvents,
+}: {
+  subEvents: { time: string; title: string; speaker?: string }[];
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="mt-4 border-t border-[#ede7db] pt-3.5">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="inline-flex items-center gap-2 text-xs font-semibold text-[#c25022] hover:text-[#e87042] transition-colors cursor-pointer"
+      >
+        <span className="flex items-center justify-center w-5 h-5 rounded-full border border-current shrink-0">
+          {open ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+        </span>
+        {open
+          ? "Collapse Ceremony Protocol"
+          : "View Minute-by-Minute Ceremony Protocol (09:30 – 11:25 AM)"}
+      </button>
+
+      <div
+        className={cn(
+          "overflow-hidden transition-all duration-300 ease-in-out",
+          open ? "max-h-[500px] opacity-100 mt-3" : "max-h-0 opacity-0"
+        )}
+      >
+        <div className="bg-[#faf8f5] rounded-xl border border-[#ede7db] divide-y divide-[#ede7db]/60 overflow-hidden">
+          {subEvents.map((evt, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-3 px-4 py-2.5 text-xs hover:bg-[#fdf9f6] transition-colors"
+            >
+              <span className="font-mono font-bold text-[#c25022] shrink-0 w-24 pt-px">
+                {evt.time}
+              </span>
+              <span className="text-[#44403c] font-medium leading-snug flex-1">
+                {evt.title}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Timeline Session Row ──────────────────────────────────────────────────────
+function SessionRow({
+  session,
+  isTentativeDay,
+}: {
+  session: (typeof PROGRAMME_DAYS)[0]["sessions"][0];
+  isTentativeDay: boolean;
+}) {
+  const cfg = getSessionCfg(session.sessionType);
+  const Icon = cfg.icon;
+
+  return (
+    <div className="group relative grid grid-cols-[7rem_1fr] sm:grid-cols-[9rem_1fr] gap-0">
+      {/* Time column */}
+      <div className="pr-4 pt-5 text-right">
+        <span className="inline-block font-mono font-bold text-[10px] sm:text-xs text-[#78716c] leading-tight tracking-tight">
+          {session.timeSlot}
+        </span>
+      </div>
+
+      {/* Spine connector */}
+      <div className="absolute left-[7rem] sm:left-36 top-0 bottom-0 flex flex-col items-center pointer-events-none z-10">
+        <div className="w-px flex-1 bg-[#e6dfd1]" />
+        <div
+          className={cn(
+            "relative flex items-center justify-center w-6 h-6 rounded-full border-2 bg-white transition-all duration-200 shrink-0 my-1 group-hover:scale-110 group-hover:border-[#e87042]",
+            isTentativeDay || session.isTentative ? "border-[#d4c9b8]" : "border-[#ccc1ab]"
+          )}
+        >
+          <span className={cn("w-2.5 h-2.5 rounded-full", cfg.dot)} />
+        </div>
+        <div className="w-px flex-1 bg-[#e6dfd1]" />
+      </div>
+
+      {/* Card */}
+      <div className="pl-7 sm:pl-9 py-3 pb-5">
+        <div
+          className={cn(
+            "rounded-2xl border bg-white p-4 sm:p-5 transition-all duration-200 shadow-[0_1px_4px_rgba(0,0,0,0.05)] border-[#eee8de]",
+            "group-hover:shadow-md group-hover:-translate-y-0.5 group-hover:border-[#e8dfd3]"
+          )}
+        >
+          {/* Top meta row */}
+          <div className="flex flex-wrap items-center gap-2 mb-2.5">
+            <span
+              className={cn(
+                "inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border",
+                cfg.color, cfg.bg, cfg.border
+              )}
+            >
+              <Icon className="w-3 h-3 shrink-0" />
+              {cfg.label}
+            </span>
+
+            {session.track && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold text-[#78716c] bg-[#f7f4ec] border border-[#ede7db] uppercase tracking-wider">
+                {session.track}
+              </span>
+            )}
+
+            {(session.isTentative || isTentativeDay) && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 uppercase tracking-wider">
+                Tentative
+              </span>
+            )}
+
+            <div className="flex items-center gap-1 ml-auto text-[11px] text-[#78716c] font-medium">
+              <MapPin className="w-3 h-3 text-[#e87042] shrink-0" />
+              <span>{session.location}</span>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h3 className="font-serif font-bold text-base sm:text-lg text-[#1c1917] leading-snug group-hover:text-[#c25022] transition-colors duration-200 mb-1.5">
+            {session.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
+            {session.description}
+          </p>
+
+          {/* Sub-event accordion */}
+          {session.subEvents && session.subEvents.length > 0 && (
+            <CeremonyAccordion subEvents={session.subEvents} />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Pre-Summit parallel grid ──────────────────────────────────────────────────
+function ParallelSessionsGrid({
+  sessions,
+}: {
+  sessions: (typeof PROGRAMME_DAYS)[0]["sessions"];
+}) {
+  return (
+    <div>
+      <div className="flex flex-wrap items-center gap-3 mb-5">
+        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-50 border border-violet-200">
+          <Clock className="w-4 h-4 text-violet-600 shrink-0" />
+          <span className="font-mono font-bold text-sm text-violet-700">
+            1:30 PM – 5:30 PM
+          </span>
+        </div>
+        <span className="text-sm text-[#57534e] font-medium">
+          9 parallel sectoral breakouts across campus venues
+        </span>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {sessions.map((session, i) => (
+          <div
+            key={session.id}
+            className={cn(
+              "group rounded-xl border bg-white p-4 transition-all duration-200",
+              "hover:shadow-md hover:-translate-y-0.5 hover:border-violet-300",
+              "shadow-[0_1px_4px_rgba(0,0,0,0.05)] border-[#eee8de]"
+            )}
+          >
+            <div className="flex items-center justify-between mb-2.5">
+              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-violet-600 text-white text-[10px] font-bold shrink-0">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div className="flex items-center gap-1 text-[10px] text-[#78716c] font-medium">
+                <MapPin className="w-2.5 h-2.5 text-[#e87042] shrink-0" />
+                <span>{session.location}</span>
+              </div>
+            </div>
+            <h4 className="font-serif font-bold text-sm text-[#1c1917] leading-snug group-hover:text-violet-700 transition-colors">
+              {session.title}
+            </h4>
+            <p className="mt-1.5 text-[11px] text-[#78716c] leading-relaxed line-clamp-2">
+              {session.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── Main export ───────────────────────────────────────────────────────────────
 export function ProgrammeClient() {
   const [selectedDayId, setSelectedDayId] = useState(PROGRAMME_DAYS[1].id);
-  const [hoveredSessionId, setHoveredSessionId] = useState<string | null>(null);
-  const [expandedCeremony, setExpandedCeremony] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  const activeDay = PROGRAMME_DAYS.find((d) => d.id === selectedDayId) || PROGRAMME_DAYS[1];
+  const activeDay =
+    PROGRAMME_DAYS.find((d) => d.id === selectedDayId) || PROGRAMME_DAYS[1];
+  const isPreSummit = activeDay.dayNumber === 0;
+
+  function handleDayChange(id: string) {
+    if (id === selectedDayId) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setSelectedDayId(id);
+      setIsTransitioning(false);
+    }, 160);
+  }
 
   return (
     <div className="w-full">
-      {/* Editorial Header */}
-      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
-        {/* Real Static Backdrop */}
+      {/* ── Hero Header ──────────────────────────────────────────────────────── */}
+      <section className="relative text-[#fcfbf8] py-20 sm:py-28 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
             src="/images/summit-timetable-display.jpg"
@@ -36,88 +355,141 @@ export function ProgrammeClient() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_35%] brightness-95"
+            className="object-cover object-[center_35%] brightness-90"
           />
-          {/* Obsidian-Peach scrim & vignette */}
-          <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+          <div className="absolute inset-0 z-10 bg-black/50" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/40 to-[#0c0d12]/55" />
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[280px] bg-[#e87042]/12 rounded-full blur-[160px] pointer-events-none z-10" />
         </div>
 
         <Container size="wide" className="relative z-20 text-center">
-          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
-            Summit Programme &amp; Timetable
+          <div className="inline-flex items-center gap-2 mb-5 px-3.5 py-1.5 rounded-full border border-[#e87042]/40 bg-[#e87042]/10 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#e87042] animate-pulse" />
+            <span className="text-xs font-bold text-[#ffedd5] uppercase tracking-[0.12em]">
+              Official Programme · GIET University · Gunupur
+            </span>
+          </div>
+
+          <h1 className="font-serif font-black text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
+            Summit Programme &amp;{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a87a] via-[#e87042] to-[#d68c45]">
+              Event Timeline
+            </span>
           </h1>
 
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm leading-relaxed">
             Four Days of Sectoral Breakouts, Venture Pitching, Forest Exploration &amp; Grassroots Ecosystem Building.
           </p>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm text-[#b5b0a8] max-w-xl mx-auto">
             Verified official schedule for 17–20 December 2026 at GIET University, Gunupur.
           </p>
+
+          {/* Quick-jump day pills */}
+          <div className="mt-8 inline-flex flex-wrap justify-center gap-2">
+            {PROGRAMME_DAYS.map((day) => (
+              <button
+                key={day.id}
+                type="button"
+                onClick={() => handleDayChange(day.id)}
+                className={cn(
+                  "px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer border",
+                  selectedDayId === day.id
+                    ? "bg-[#e87042] text-white border-[#e87042] shadow-lg shadow-[#e87042]/30"
+                    : "bg-white/10 text-[#ffedd5] border-white/20 hover:bg-white/20"
+                )}
+              >
+                {day.dayNumber === 0 ? "Pre-Summit" : `Day ${day.dayNumber}`} ·{" "}
+                {day.dateFormatted.split(" ")[0]} Dec
+              </button>
+            ))}
+          </div>
         </Container>
       </section>
 
-      {/* Interactive Main Area */}
-      <section className="py-12 sm:py-16 bg-[#fcfbf8]">
+      {/* ── Main Programme Section ────────────────────────────────────────────── */}
+      <section className="section-reveal py-12 sm:py-16 bg-[#fcfbf8]">
         <Container size="default">
           <div className="max-w-5xl mx-auto">
-            {/* Centered Section Heading */}
-            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-              <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl lg:text-[2.65rem] text-[#1c1917] tracking-tight leading-[1.15]">
-                Explore the Summit <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Agenda &amp; Timetable</span>
+
+            {/* Section heading */}
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <h2 className="font-serif font-black text-2xl sm:text-3xl md:text-[2.5rem] text-[#1c1917] tracking-tight leading-[1.15]">
+                Explore the{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">
+                  Summit Agenda
+                </span>
               </h2>
-              <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
-                Pre-summit domain breakouts, plenary inaugurations, sector roundtables, Junicorn pitches, and forest immersion across all days.
+              <p className="mt-3 text-sm sm:text-base text-[#57534e] max-w-2xl mx-auto leading-relaxed">
+                Select a day to explore the full schedule — what&apos;s happening, at what time, where, and who is involved.
               </p>
               <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
-                <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
-                <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-                <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
+                <div className="h-px w-10 rounded-full bg-[#e87042]/25" />
+                <div className="h-1 w-14 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
+                <div className="h-px w-10 rounded-full bg-[#d68c45]/25" />
               </div>
             </div>
 
-            {/* Day Navigation Tabs */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-8">
+            {/* ── Day Selector Tabs ─────────────────────────────────────────────── */}
+            <div
+              role="tablist"
+              aria-label="Select summit day"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8 p-1.5 rounded-2xl bg-[#f0ece4] border border-[#e6dfd1]"
+            >
               {PROGRAMME_DAYS.map((day) => {
                 const isSelected = day.id === selectedDayId;
                 return (
                   <button
                     key={day.id}
                     type="button"
-                    onClick={() => setSelectedDayId(day.id)}
+                    role="tab"
+                    aria-selected={isSelected}
+                    onClick={() => handleDayChange(day.id)}
                     className={cn(
-                      "p-4 sm:p-5 rounded-2xl border text-left transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] relative overflow-hidden group",
+                      "relative px-3 py-3.5 rounded-xl text-left transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] overflow-hidden",
                       isSelected
-                        ? "bg-[#1c1917] text-[#fcfbf8] border-[#1c1917] shadow-lg ring-1 ring-[#1c1917]"
-                        : "bg-[#ffffff] text-[#222b27] border-[#e6dfd1] hover:bg-[#ede7db]/50 hover:border-[#dfd6c4]"
+                        ? "bg-white shadow-md border border-[#e6dfd1]"
+                        : "hover:bg-white/60"
                     )}
                   >
-                    {/* Top indicator line */}
                     {isSelected && (
-                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e87042] via-[#d68c45] to-[#c25022]" />
+                      <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#e87042] to-[#d68c45] rounded-t-xl" />
                     )}
-
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-1.5 mb-1.5">
                       <span
                         className={cn(
-                          "text-xs font-semibold px-2.5 py-0.5 rounded-md uppercase tracking-wider",
-                          isSelected ? "bg-[#e87042] text-white" : "bg-[#f7f4ec] text-[#e87042]"
+                          "text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md",
+                          isSelected ? "bg-[#e87042] text-white" : "bg-[#ede7db] text-[#78716c]"
                         )}
                       >
-                        {day.dayNumber === 0 ? "Pre-Summit" : `Day 0${day.dayNumber}`}
+                        {day.dayNumber === 0 ? "Pre" : `D${day.dayNumber}`}
                       </span>
+                      {day.status === "Tentative" && !isSelected && (
+                        <span className="text-[9px] font-semibold text-amber-600 uppercase tracking-wider">
+                          Draft
+                        </span>
+                      )}
                     </div>
-
-                    <div className="font-serif font-bold text-base sm:text-lg">
-                      {day.dayName}, {day.dateFormatted}
+                    <div
+                      className={cn(
+                        "font-serif font-bold text-sm leading-tight",
+                        isSelected ? "text-[#1c1917]" : "text-[#44403c]"
+                      )}
+                    >
+                      {day.dayName}
                     </div>
-
+                    <div
+                      className={cn(
+                        "text-xs font-semibold mt-0.5",
+                        isSelected ? "text-[#e87042]" : "text-[#78716c]"
+                      )}
+                    >
+                      {day.dateFormatted}
+                    </div>
                     <p
                       className={cn(
-                        "text-xs mt-1.5 line-clamp-2",
-                        isSelected ? "text-[#dfd6c4]" : "text-[#7e8d87]"
+                        "text-[10px] mt-1 leading-snug line-clamp-2",
+                        isSelected ? "text-[#57534e]" : "text-[#a8a29e]"
                       )}
                     >
                       {day.theme}
@@ -127,182 +499,98 @@ export function ProgrammeClient() {
               })}
             </div>
 
-            {/* Clean Executive Vertical Timeline (No AI thumbnail clutter) */}
-            <div className="relative pl-7 min-[380px]:pl-8 sm:pl-10 md:pl-14">
-              {/* Continuous Vertical Graph Spine Line */}
-              <div 
-                className="absolute left-3 sm:left-4 md:left-6 top-3 bottom-8 w-[3px] bg-gradient-to-b from-[#e87042] via-[#d68c45] to-[#c25022]/40 rounded-full"
-                style={{
-                  boxShadow: "0 0 12px rgba(232, 112, 66, 0.35)"
-                }}
-              >
-                {/* Dynamic light pulse flowing down the spine */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-transparent w-full h-32 animate-[pulse_3s_ease-in-out_infinite]" />
+            {/* ── Active Day Content ────────────────────────────────────────────── */}
+            <div
+              ref={contentRef}
+              className={cn(
+                "transition-all duration-200",
+                isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+              )}
+            >
+              {/* Day header */}
+              <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
+                <div>
+                  <div className="flex items-center gap-2.5 mb-1">
+                    <h3 className="font-serif font-black text-xl sm:text-2xl text-[#1c1917]">
+                      {activeDay.dayName},{" "}
+                      <span className="text-[#e87042]">{activeDay.dateFormatted}</span>
+                    </h3>
+                    {activeDay.status === "Tentative" && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200 uppercase tracking-wider">
+                        Tentative
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm text-[#57534e] font-medium">{activeDay.theme}</p>
+                  {activeDay.statusNote && (
+                    <p className="mt-1 text-xs text-[#78716c] italic">{activeDay.statusNote}</p>
+                  )}
+                </div>
               </div>
 
-              {/* Sessions Stack */}
-              <div className="space-y-4">
-                {activeDay.sessions.map((session, index) => {
-                  const isHovered = hoveredSessionId === session.id;
+              {/* Stats bar */}
+              <DayStatsBar day={activeDay} />
 
-                  return (
-                    <div
-                      key={session.id}
-                      onMouseEnter={() => setHoveredSessionId(session.id)}
-                      onMouseLeave={() => setHoveredSessionId(null)}
-                      className="relative group"
-                    >
-                      {/* Timeline Graph Node on Spine */}
-                      <div 
-                        className={cn(
-                          "absolute -left-[28px] sm:-left-[39px] md:-left-[47px] top-6 -translate-y-1/2 flex items-center justify-center transition-all duration-300 z-10",
-                          isHovered ? "scale-115" : "scale-100"
-                        )}
-                      >
-                        {/* Pulse halo ring */}
-                        <span className={cn(
-                          "absolute -inset-1 rounded-full bg-[#e87042]/25 transition-opacity",
-                          isHovered ? "opacity-100 animate-ping" : "opacity-0 group-hover:opacity-100"
-                        )} />
+              {/* Pre-summit: parallel grid; regular: vertical timeline */}
+              {isPreSummit ? (
+                <ParallelSessionsGrid sessions={activeDay.sessions} />
+              ) : (
+                <div className="relative">
+                  {/* Spine line */}
+                  <div className="absolute hidden sm:block left-36 top-6 bottom-6 w-px bg-gradient-to-b from-[#e87042]/60 via-[#dfd6c4] to-[#e87042]/20" />
 
-                        {/* Main Node Badge */}
-                        <div className={cn(
-                          "w-6.5 h-6.5 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-[10px] sm:text-[11px] transition-colors duration-300 shadow-sm border-2",
-                          isHovered
-                            ? "bg-[#e87042] text-white border-white ring-2 ring-[#e87042]"
-                            : "bg-[#1c1917] text-[#ffedd5] border-[#e87042]"
-                        )}>
-                          {String(index + 1).padStart(2, "0")}
-                        </div>
+                  <div className="space-y-0">
+                    {activeDay.sessions.map((session) => (
+                      <SessionRow
+                        key={session.id}
+                        session={session}
+                        isTentativeDay={activeDay.status === "Tentative"}
+                      />
+                    ))}
+                  </div>
 
-                        {/* Horizontal Connector Branch to Card */}
-                        <div className={cn(
-                          "hidden sm:block absolute left-full w-3 sm:w-5 h-[2px] transition-all duration-300",
-                          isHovered 
-                            ? "bg-gradient-to-r from-[#e87042] to-[#d68c45]" 
-                            : "bg-gradient-to-r from-[#e87042]/60 to-transparent"
-                        )} />
-                      </div>
-
-                      {/* Clean Executive Session Card (Pure content, no AI thumbnails) */}
-                      <div
-                        className={cn(
-                          "rounded-2xl border p-5 sm:p-6 transition-all duration-300 bg-white shadow-2xs",
-                          isHovered
-                            ? "shadow-md -translate-y-0.5 border-[#e87042] ring-1 ring-[#e87042]/30"
-                            : "border-[#e6dfd1] hover:border-[#dfd6c4]"
-                        )}
-                      >
-                        <div className="space-y-2.5">
-                          {/* Timing & Track Row */}
-                          <div className="flex flex-wrap items-center justify-between gap-2.5">
-                            <div className="flex flex-wrap items-center gap-2">
-                              {/* Time Pill */}
-                              <div className="px-3 py-1 rounded-lg bg-[#faf7f2] border border-[#e8dfd3] text-[#1c1917] inline-flex items-center gap-1.5 shadow-2xs">
-                                <Clock className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
-                                <span className="font-bold text-xs sm:text-sm text-[#161e1b] tracking-tight">
-                                  {session.timeSlot}
-                                </span>
-                              </div>
-
-                              {/* Track Badge */}
-                              {session.track && (
-                                <span className="px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-[#e87042]/10 text-[#c25022]">
-                                  {session.track}
-                                </span>
-                              )}
-                            </div>
-
-                            {/* Location Chip */}
-                            <div className="inline-flex items-center gap-1.5 text-xs text-[#78716c]">
-                              <MapPin className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
-                              <span className="font-semibold text-[#57534e]">{session.location}</span>
-                            </div>
-                          </div>
-
-                          {/* Session Title */}
-                          <h3 className="font-serif font-black text-lg sm:text-xl text-[#1c1917] leading-snug group-hover:text-[#c25022] transition-colors">
-                            {session.title}
-                          </h3>
-
-                          {/* Session Description */}
-                          <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
-                            {session.description}
-                          </p>
-
-                          {/* Optional Sub-events timeline (e.g. Inauguration Ceremony Breakdown) */}
-                          {session.subEvents && session.subEvents.length > 0 && (
-                            <div className="mt-3.5 pt-3 border-t border-[#ede7db]">
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setExpandedCeremony(!expandedCeremony);
-                                }}
-                                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#c25022] hover:text-[#e87042] transition-colors cursor-pointer py-1"
-                              >
-                                <span>
-                                  {expandedCeremony 
-                                    ? "Hide Minute-by-Minute Ceremony Protocol" 
-                                    : "View Minute-by-Minute Ceremony Protocol (09:30 – 11:25 AM)"}
-                                </span>
-                                {expandedCeremony ? (
-                                  <ChevronUp className="w-3.5 h-3.5" />
-                                ) : (
-                                  <ChevronDown className="w-3.5 h-3.5" />
-                                )}
-                              </button>
-
-                              {expandedCeremony && (
-                                <div className="mt-2.5 space-y-1 bg-[#faf8f5] p-3.5 sm:p-4 rounded-xl border border-[#ede7db] max-h-80 overflow-y-auto">
-                                  {session.subEvents.map((evt, eIdx) => (
-                                    <div 
-                                      key={eIdx} 
-                                      className="flex items-start gap-2.5 sm:gap-3 text-xs text-[#292524] py-1.5 border-b border-[#ede7db]/50 last:border-0"
-                                    >
-                                      <span className="font-mono font-semibold text-[#c25022] shrink-0 text-[11px] w-24">
-                                        {evt.time}
-                                      </span>
-                                      <span className="leading-snug text-[#44403c] font-medium text-xs">{evt.title}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              )}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+                  {/* End cap */}
+                  <div className="flex items-center gap-3 mt-4 pl-[9.5rem] sm:pl-[10.5rem]">
+                    <div className="w-3 h-3 rounded-full border-2 border-[#dfd6c4] bg-[#f7f4ec]" />
+                    <span className="text-xs text-[#a8a29e] font-medium italic">
+                      End of {activeDay.dateFormatted} schedule
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Bottom Callout Bar */}
-            <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-[#faf7f2] border border-[#e8dfd3] flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
-              <div>
-                <span className="text-[11px] font-mono font-bold tracking-wider text-[#e87042] uppercase block">
+            {/* ── Callout Banner ────────────────────────────────────────────────── */}
+            <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#1c1917] to-[#2c2420] flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left relative overflow-hidden">
+              <div className="absolute -right-16 -top-16 w-52 h-52 rounded-full bg-[#e87042]/10 blur-3xl pointer-events-none" />
+              <div className="relative z-10">
+                <span className="text-[11px] font-mono font-bold tracking-wider text-[#e87042] uppercase block mb-1">
                   Delegate Protocol &amp; Pre-Registration
                 </span>
-                <h4 className="font-serif font-black text-xl sm:text-2xl text-[#1c1917] mt-1">
-                  Have Questions Regarding Session Allocation?
+                <h4 className="font-serif font-black text-xl sm:text-2xl text-white mt-1">
+                  Questions About Session Allocation?
                 </h4>
-                <p className="text-xs sm:text-sm text-[#57534e] mt-1 max-w-xl">
-                  Connect with the Summit Secretariat for stage schedules, jury presentation rooms, or sectoral breakout slot confirmations.
+                <p className="text-xs sm:text-sm text-[#b5b0a8] mt-1.5 max-w-xl">
+                  Connect with the Summit Secretariat for stage schedules, jury
+                  presentation rooms, or sectoral breakout slot confirmations.
                 </p>
               </div>
-
               <Button
                 href="/contact"
                 variant="primary"
                 size="md"
-                className="shrink-0 w-full sm:w-auto"
+                className="shrink-0 w-full sm:w-auto relative z-10"
               >
                 <span>Contact Secretariat</span>
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </div>
 
+            {/* Disclaimer */}
+            <p className="mt-6 text-center text-[11px] text-[#a8a29e] italic max-w-2xl mx-auto leading-relaxed">
+              &#9432;&nbsp; This schedule is based on the official draft brochure of ISF Startup Jathara 2026.
+              Session timings, speakers, and arrangements are tentative and subject to final confirmation by the organizing committee.
+            </p>
           </div>
         </Container>
       </section>

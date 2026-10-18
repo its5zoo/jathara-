@@ -1,43 +1,22 @@
 import React from "react";
 import { HeroSection } from "@/components/home/HeroSection";
-import { VerticalsSection } from "@/components/home/VerticalsSection";
-import { VenueBridgeCard } from "@/components/home/VenueBridgeCard";
-import { FounderVisionSection } from "@/components/home/FounderVisionSection";
-import { ChiefGuestSection } from "@/components/home/ChiefGuestSection";
-import { InstitutionalLeadershipSection } from "@/components/home/InstitutionalLeadershipSection";
-import { HomeFAQ } from "@/components/home/HomeFAQ";
-import { ProgrammePreview } from "@/components/home/ProgrammePreview";
-import { GatewayCTA } from "@/components/home/GatewayCTA";
+import { AboutJatharaSection } from "@/components/home/AboutJatharaSection";
+import { FourPillarsSection } from "@/components/home/FourPillarsSection";
+import { DandakaranyaHomeSection } from "@/components/home/DandakaranyaHomeSection";
+import { ExploreEventSection } from "@/components/home/ExploreEventSection";
+import { RegistrationCTA } from "@/components/home/RegistrationCTA";
+import { OrganizersPartnersSection } from "@/components/home/OrganizersPartnersSection";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Hero Section - Refined height, real campus backdrop, 4-stat telemetry */}
       <HeroSection />
-
-      {/* 2. Summit Tracks - 8 focus sectors, concise cards */}
-      <VerticalsSection />
-
-      {/* 3. Host Campus & Travel Bridge */}
-      <VenueBridgeCard />
-
-      {/* 4. Honouring the Vision Behind ISF (Founder & Chairman Dr. J. A. Chowdary) */}
-      <FounderVisionSection />
-
-      {/* 5. Chief Guest of Honour Spotlight - Sadguru Sri Madhusudan Sai */}
-      <ChiefGuestSection />
-
-      {/* 6. Institutional Leadership (GIET University Governance) */}
-      <InstitutionalLeadershipSection />
-
-      {/* 7. Three Days of Immersive Engagement - Curated Timeline Preview */}
-      <ProgrammePreview />
-
-      {/* 8. Frequently Asked Questions */}
-      <HomeFAQ />
-
-      {/* 9. Closing Call to Action */}
-      <GatewayCTA />
+      <AboutJatharaSection />
+      <FourPillarsSection />
+      <DandakaranyaHomeSection />
+      <ExploreEventSection />
+      <RegistrationCTA />
+      <OrganizersPartnersSection />
     </div>
   );
 }

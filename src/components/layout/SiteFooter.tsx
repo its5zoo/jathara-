@@ -150,11 +150,11 @@ export function SiteFooter() {
             {/* Column 4: Contact & Secretariat */}
             <div>
               <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
-                Helpline
+                Contact
               </h4>
               <div className="space-y-2.5 text-xs text-[#a8a29e]">
                 <p className="leading-relaxed">
-                  For inquiries, speaker nominations &amp; travel coordination:
+                  Speaker nominations, delegate inquiries &amp; travel coordination:
                 </p>
                 <div className="space-y-2 pt-1 text-xs">
                   <div className="flex items-center gap-2">
@@ -175,18 +175,15 @@ export function SiteFooter() {
                       {EVENT_METADATA.helplinePhone}
                     </a>
                   </div>
-                  <div className="flex items-start gap-2 pt-0.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#e87042] shrink-0 mt-0.5" />
-                    <span className="text-[11px] text-[#a8a29e] leading-snug">
-                      Goboriguda, Po-Kharling, Gunupur, Rayagada, Odisha - 765022
-                    </span>
-                  </div>
                 </div>
 
-                <div className="pt-2">
-                  <span className="inline-flex items-center text-[11px] font-semibold text-[#e87042] cursor-default select-none">
-                    Open Secretariat Helpdesk →
-                  </span>
+                <div className="pt-3 border-t border-[#232733]">
+                  <a
+                    href={`mailto:${EVENT_METADATA.contactEmail}?subject=Secretariat%20Inquiry`}
+                    className="inline-flex items-center text-[11px] font-semibold text-[#e87042] hover:text-[#f7a07a] transition-colors"
+                  >
+                    Contact Secretariat →
+                  </a>
                 </div>
               </div>
             </div>

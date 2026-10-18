@@ -74,7 +74,7 @@ export default function AboutPage() {
       {/* ========================================================
           2. THE CORE THESIS & WHAT JATHARA SIGNIFIES
          ======================================================== */}
-      <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
+      <section className="section-reveal py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
         <Container size="default">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl lg:text-[2.65rem] text-[#1c1917] tracking-tight leading-[1.15]">
@@ -160,7 +160,7 @@ export default function AboutPage() {
           3. MANDATORY SECTION: A LEGACY OF LEARNING, RESEARCH & INNOVATION
              (GIET UNIVERSITY INSTITUTIONAL PROFILE)
          ======================================================== */}
-      <section id="giet-legacy" className="py-20 sm:py-24 bg-[#ffffff] border-b border-[#e6dfd1]">
+      <section id="giet-legacy" className="section-reveal py-20 sm:py-24 bg-[#ffffff] border-b border-[#e6dfd1]">
         <Container size="default">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
@@ -615,7 +615,7 @@ export default function AboutPage() {
       {/* ========================================================
           4. THE DANDAKARANYA CONTEXT
          ======================================================== */}
-      <section className="py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
+      <section className="section-reveal py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
         <Container size="default">
           <SectionHeading
             title="The Dandakaranya Heritage"
@@ -665,7 +665,7 @@ export default function AboutPage() {
       {/* ========================================================
           5. INSTITUTIONAL COALITION: ISF, GIET & INCUBATEX
          ======================================================== */}
-      <section className="py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
+      <section className="section-reveal py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
         <Container size="default">
           <SectionHeading
             title="Convened by Trusted Institutions"

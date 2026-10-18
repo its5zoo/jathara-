@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { MapPin } from "lucide-react";
+import { ExternalLink, MapPin, Navigation } from "lucide-react";
 import { Container } from "../common/Container";
 import { EVENT_METADATA } from "@/data/eventData";
 
 export function GIETCampusMapSection() {
   const [copied, setCopied] = useState(false);
 
-  const fullAddress = "GIET University, Gunupur, Rayagada, Odisha - 765022";
+  const fullAddress = EVENT_METADATA.venueFullAddress ?? "GIET University, Gunupur, Rayagada, Odisha - 765022";
+  const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=GIET+University+Gunupur+Odisha+765022";
 
   const handleCopyAddress = async () => {
     try {
@@ -33,7 +34,7 @@ export function GIETCampusMapSection() {
                 GIET University Campus, Gunupur
               </h2>
               <p className="text-xs sm:text-sm text-[#57534e] mt-2 leading-relaxed">
-                Situated in the scenic Vansadhara Valley along NH-326 in South Odisha. The summit is hosted across the central convention auditoriums and campus facilities.
+                The confirmed summit venue is the GIET University campus at Gobriguda, Po-Kharling, in Gunupur. Use the complete address below for navigation.
               </p>
             </div>
 
@@ -56,29 +57,20 @@ export function GIETCampusMapSection() {
               </div>
             </div>
 
-            {/* Nearby Transit: Simple Clean List */}
-            <div className="pt-3 border-t border-[#e8dfd3]">
-              <p className="text-xs font-bold uppercase tracking-wider text-[#78716c] mb-2">
-                Nearby Transit
-              </p>
-              <ul className="text-xs sm:text-sm text-[#44403c] space-y-1.5">
-                <li>• Gunupur Railway Station: <strong className="text-[#1c1917]">4.5 km</strong> (~10 mins)</li>
-                <li>• Gunupur Bus Stand: <strong className="text-[#1c1917]">3.8 km</strong> (~8 mins)</li>
-                <li>• Rayagada Railway Junction: <strong className="text-[#1c1917]">72 km</strong> (~1h 45m)</li>
-                <li>• Palasa Railway Junction: <strong className="text-[#1c1917]">90 km</strong> (~2 hrs)</li>
-              </ul>
-            </div>
+            <a
+              href={directionsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#a74e2d] px-4 text-sm font-bold text-white transition hover:bg-[#8f4025]"
+            >
+              <Navigation className="h-4 w-4" aria-hidden="true" />
+              Get directions
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
 
-            {/* Helpline (No button needed) */}
-            <div className="pt-3 border-t border-[#e8dfd3] text-xs text-[#78716c]">
-              <span>Helpline: </span>
-              <a
-                href={`tel:${EVENT_METADATA.helplinePhone.replace(/\s+/g, "")}`}
-                className="font-semibold text-[#c25022] hover:underline"
-              >
-                {EVENT_METADATA.helplinePhone}
-              </a>
-            </div>
+            <p className="border-t border-[#e8dfd3] pt-4 text-xs leading-5 text-[#78716c]">
+              Map location and address are provided for navigation. Use the travel section below to choose an arrival route.
+            </p>
           </div>
 
           {/* Right: Clean Google Maps Embed (No buttons, no picture) */}
