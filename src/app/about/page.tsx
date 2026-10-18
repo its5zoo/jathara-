@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { 
   Target, 
-  Users, 
-  TreePine, 
   CheckCircle2, 
-  Coffee,
   Building2,
   GraduationCap,
   Lightbulb,
@@ -395,22 +392,24 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {GIET_ACADEMIC_SCHOOLS.map((school, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-3xl bg-[#faf8f4] border border-[#ede7db] space-y-3"
+                  className="p-5 sm:p-6 rounded-2xl bg-[#faf8f4] border border-[#ede7db] hover:border-[#d6b25e] hover:shadow-sm transition-all duration-200 flex flex-col justify-between"
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white border border-[#dfd6c4] text-[#8c671b]">
-                      {school.badge}
-                    </span>
-                    <GraduationCap className="w-4 h-4 text-[#be9740]" />
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white border border-[#dfd6c4] text-[#8c671b]">
+                        {school.badge}
+                      </span>
+                      <GraduationCap className="w-4 h-4 text-[#be9740]" />
+                    </div>
+                    <h4 className="font-serif font-bold text-base sm:text-lg text-[#103327] leading-snug">
+                      {school.name}
+                    </h4>
                   </div>
-                  <h4 className="font-serif font-bold text-lg text-[#103327]">
-                    {school.name}
-                  </h4>
-                  <p className="text-xs text-[#4a5752] leading-relaxed">
+                  <p className="mt-3 text-xs text-[#57534e] leading-relaxed">
                     {school.desc}
                   </p>
                 </div>
@@ -452,79 +451,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Social Responsibility & Tribal Community Commitment - Architecturally Aligned Border Grid */}
-          <div className="rounded-2xl sm:rounded-3xl border border-[#e6dfd1] bg-white shadow-xs overflow-hidden mb-16">
-            {/* Header Bar with Proper Dividing Border */}
-            <div className="px-6 sm:px-8 py-4.5 border-b border-[#e6dfd1] bg-[#faf8f5]/80 flex flex-wrap items-center justify-between gap-3">
-              <div className="inline-flex items-center px-3 py-1 rounded-full border border-[#e87042]/30 bg-[#e87042]/5 text-[#c25022] text-xs font-semibold">
-                Official Mission Mandate
-              </div>
-              <span className="text-xs uppercase tracking-wider text-[#78716c] font-medium">
-                Social Responsibility &amp; Regional Inclusion
-              </span>
-            </div>
-
-            {/* Main Content Area: Title & Framed Quote */}
-            <div className="p-6 sm:p-8 md:p-10 space-y-6 sm:space-y-7">
-              <div className="space-y-2.5 max-w-3xl">
-                <h3 className="font-serif font-black text-2xl sm:text-3.5xl text-[#1c1917] tracking-tight leading-snug">
-                  Empowering the Meritorious Youth of Dandakaranya
-                </h3>
-                <p className="text-sm sm:text-[15px] text-[#57534e] leading-relaxed">
-                  Located in the tribal corridor of Rayagada, GIET University prioritizes grassroots community empowerment - ensuring talented rural and indigenous youth become confident leaders, scientists, and entrepreneurs.
-                </p>
-              </div>
-
-              {/* Featured Quote with Clean Border Framing */}
-              <div className="p-5 sm:p-6 rounded-xl bg-[#faf8f5] border border-[#e6dfd1] border-l-4 border-l-[#e87042]">
-                <p className="font-serif italic text-base sm:text-lg md:text-xl text-[#1c1917] leading-relaxed">
-                  &ldquo;To support and uplift the meritorious students of this Tribal Area to represent as an Ambassador in all forums as a part of our social responsibility.&rdquo;
-                </p>
-              </div>
-            </div>
-
-            {/* 3 Key Action Pillars (Crisp 3-Column Grid with Full-Height Borders) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#e6dfd1] border-t border-[#e6dfd1] bg-[#faf8f5]/30">
-              <div className="p-6 sm:p-7 space-y-2">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#e87042]/10 flex items-center justify-center text-[#e87042] shrink-0">
-                    <GraduationCap className="w-4.5 h-4.5" />
-                  </div>
-                  <h4 className="font-serif font-bold text-base sm:text-lg text-[#1c1917]">Full Fee Waivers</h4>
-                </div>
-                <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
-                  Merit scholarship endowments and complete tuition assistance for indigenous tribal students.
-                </p>
-              </div>
-
-              <div className="p-6 sm:p-7 space-y-2">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#c25022]/10 flex items-center justify-center text-[#c25022] shrink-0">
-                    <Building2 className="w-4.5 h-4.5" />
-                  </div>
-                  <h4 className="font-serif font-bold text-base sm:text-lg text-[#1c1917]">Gandhi Public School</h4>
-                </div>
-                <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
-                  Free foundational primary education and modern learning resources for local rural children.
-                </p>
-              </div>
-
-              <div className="p-6 sm:p-7 space-y-2">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#d68c45]/10 flex items-center justify-center text-[#d68c45] shrink-0">
-                    <Lightbulb className="w-4.5 h-4.5" />
-                  </div>
-                  <h4 className="font-serif font-bold text-base sm:text-lg text-[#1c1917]">Grassroots Incubation</h4>
-                </div>
-                <p className="text-xs sm:text-sm text-[#57534e] leading-relaxed">
-                  Hands-on mentorship, seed funding, and incubation through Atal (ACIC) &amp; BIRAC biotechnology labs.
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Leadership Preview Section (5 Verified Leaders) */}
-          <div className="space-y-8">
+          <div className="space-y-8 mb-16">
             <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
               <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight">
                 GIET University <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Leadership Council</span>
@@ -572,204 +500,90 @@ export default function AboutPage() {
                     </div>
                   </div>
 
-                  <p className="mt-3 text-[11px] text-[#5c6e64] line-clamp-3 leading-relaxed">
+                  <p className="mt-3 text-[11px] text-[#5c6e64] leading-relaxed">
                     {leader.summaryBio}
                   </p>
                 </div>
               ))}
             </div>
           </div>
-        </Container>
-      </section>
 
-      {/* ========================================================
-          4. THE DANDAKARANYA CONTEXT
-         ======================================================== */}
-      <section className="section-reveal py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
-        <Container size="default">
-          <SectionHeading
-            title="The Dandakaranya Heritage"
-            subtitle="Deep historical roots, extraordinary bio-diversity, and an untapped economic frontier in South Odisha."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#ffffff] rounded-2xl p-6 border border-[#e6dfd1] shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-[#f7f4ec] flex items-center justify-center text-[#143e30] mb-4">
-                <TreePine className="w-5 h-5 text-[#256f57]" />
-              </div>
-              <h3 className="font-serif font-bold text-lg text-[#103327]">
-                Ecological Heartland
-              </h3>
-              <p className="mt-2 text-xs sm:text-sm text-[#4a5752] leading-relaxed">
-                Spanning parts of Odisha, Andhra Pradesh, Chhattisgarh, and Telangana, Dandakaranya is celebrated for its dense Eastern Ghats flora, medicinal herbs, and water catchments.
-              </p>
-            </div>
-
-            <div className="bg-[#ffffff] rounded-2xl p-6 border border-[#e6dfd1] shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-[#f7f4ec] flex items-center justify-center text-[#143e30] mb-4">
-                <Users className="w-5 h-5 text-[#c25e38]" />
-              </div>
-              <h3 className="font-serif font-bold text-lg text-[#103327]">
-                Indigenous Innovation
-              </h3>
-              <p className="mt-2 text-xs sm:text-sm text-[#4a5752] leading-relaxed">
-                Indigenous communities possess centuries of sophisticated botanical knowledge, seed preservation practices, natural dyeing arts, and cooperative social structures.
-              </p>
-            </div>
-
-            <div className="bg-[#ffffff] rounded-2xl p-6 border border-[#e6dfd1] shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-[#f7f4ec] flex items-center justify-center text-[#143e30] mb-4">
-                <Coffee className="w-5 h-5 text-[#be9740]" />
-              </div>
-              <h3 className="font-serif font-bold text-lg text-[#103327]">
-                Signature Agro-Produce
-              </h3>
-              <p className="mt-2 text-xs sm:text-sm text-[#4a5752] leading-relaxed">
-                From Araku Valley organic coffee to Koraput indigenous millets and organic turmeric, the region is ripe for high-value agricultural branding and direct consumer market channels.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ========================================================
-          5. INSTITUTIONAL COALITION: ISF, GIET & INCUBATEX
-         ======================================================== */}
-      <section className="section-reveal py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
-        <Container size="default">
-          <SectionHeading
-            title="Convened by Trusted Institutions"
-            subtitle="Combining international startup foundation networks with premier higher education and grassroots incubation leadership."
-          />
-
-          <div className="space-y-6">
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#ffffff] border border-[#e6dfd1] shadow-xs flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-16 h-16 rounded-2xl bg-[#f7f4ec] border border-[#dfd6c4] p-2 flex items-center justify-center shrink-0">
-                <Image
-                  src="/logos/isf-logo.webp"
-                  alt="International Startup Foundation (ISF) Official Logo"
-                  width={56}
-                  height={56}
-                  className="max-h-12 max-w-12 object-contain"
-                />
-              </div>
-              <div className="space-y-2 flex-1">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#103327]">
-                    International Startup Foundation (ISF)
-                  </h3>
-                  <Badge variant="forest" size="sm">Organizer</Badge>
-                </div>
-                <p className="text-xs sm:text-sm text-[#4a5752] leading-relaxed">
-                  ISF is a global non-profit enterprise movement that builds vibrant startup ecosystems across tier-2, tier-3, and rural regions. ISF brings international investor delegations, structured mentorship curriculums, and national recognition to the event.
-                </p>
-                <a
-                  href="https://www.isfnetwork.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-[#256f57] font-semibold hover:underline inline-flex items-center gap-1 pt-1"
-                >
-                  Visit Official ISF Network Website →
-                </a>
-              </div>
-            </div>
-
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#ffffff] border border-[#e6dfd1] shadow-xs flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-16 h-16 rounded-2xl bg-[#f7f4ec] border border-[#dfd6c4] p-2 flex items-center justify-center shrink-0">
-                <Image
-                  src="/logos/giet-logo.png"
-                  alt="GIET University Official Logo"
-                  width={56}
-                  height={56}
-                  className="max-h-12 max-w-12 object-contain"
-                />
-              </div>
-              <div className="space-y-2 flex-1">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#103327]">
-                    GIET University, Gunupur
-                  </h3>
-                  <Badge variant="ivory" size="sm">Host Institution</Badge>
-                  <span className="text-[11px] font-semibold text-[#8c671b] bg-[#f7f4ec] px-2 py-0.5 rounded border border-[#dfd6c4]">
-                    State Private University (Act of 2018) • UGC 2(f)
+          {/* Social Responsibility & Tribal Community Commitment */}
+          <div className="rounded-2xl sm:rounded-3xl border border-[#e6dfd1] bg-white overflow-hidden">
+            {/* Top content area */}
+            <div className="p-6 sm:p-8 md:p-10 grid gap-8 md:grid-cols-[1fr_auto] md:items-start">
+              <div className="space-y-4 max-w-2xl">
+                {/* Eyebrow */}
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-px bg-[#c25e38]" aria-hidden="true" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
+                    Social Responsibility
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#4a5752] leading-relaxed">
-                  Established in Gunupur, Rayagada, Odisha with over 28 years of academic distinction, GIET University is a pioneer in engineering research, agricultural sciences, biotechnology, and rural innovation. Its 113.03-acre green residential campus provides premier laboratory infrastructure, active incubation facilities through its Technology Business Incubator (TBI), ACICGIETU, and BIRAC E-YUVA Centre for Startup Jathara 2026.
+
+                <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#1c1917] tracking-tight leading-[1.1]">
+                  Empowering Tribal Youth<br className="hidden sm:block" /> of Dandakaranya
+                </h3>
+
+                <p className="text-sm text-[#57534e] leading-[1.7]">
+                  GIET University, located in Rayagada&apos;s tribal corridor, is committed to elevating indigenous and rural youth into confident leaders, scientists, and entrepreneurs.
                 </p>
-                <div className="flex flex-wrap items-center gap-4 pt-1">
-                  <a
-                    href="https://www.giet.edu/leadership/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-[#256f57] font-semibold hover:underline inline-flex items-center gap-1"
-                  >
-                    GIET University Leadership Directory →
-                  </a>
-                  <a
-                    href="https://www.giet.edu/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-[#7e8d87] hover:text-[#103327] hover:underline inline-flex items-center gap-1"
-                  >
-                    GIET University Main Portal →
-                  </a>
-                </div>
+              </div>
+
+              {/* Badge */}
+              <div className="hidden md:flex items-center justify-end shrink-0">
+                <span className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-[#e87042]/25 bg-[#fff5f0] text-[#c25022] text-[11px] font-semibold tracking-wide">
+                  Official Mission Mandate
+                </span>
               </div>
             </div>
 
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#ffffff] border border-[#e6dfd1] shadow-xs flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-16 h-16 rounded-2xl bg-[#f7f4ec] border border-[#dfd6c4] p-2 flex items-center justify-center shrink-0">
-                <Image
-                  src="/logos/incubatex-logo.png"
-                  alt="IncubateX Innovation Foundation Official Logo"
-                  width={56}
-                  height={56}
-                  className="max-h-12 max-w-12 object-contain"
-                />
-              </div>
-              <div className="space-y-2 flex-1">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#103327]">
-                    IncubateX Innovation Foundation
-                  </h3>
-                  <Badge variant="terracotta" size="sm">Associated Foundation</Badge>
+            {/* Quote block */}
+            <div className="mx-6 sm:mx-8 md:mx-10 mb-8 flex gap-3 sm:gap-4">
+              <div className="w-1 rounded-full bg-[#e87042] shrink-0" aria-hidden="true" />
+              <p className="font-serif italic text-base sm:text-lg text-[#2d2926] leading-relaxed">
+                &ldquo;To support and uplift the meritorious students of this Tribal Area to represent as an Ambassador in all forums as a part of our social responsibility.&rdquo;
+              </p>
+            </div>
+
+            {/* 3 pillars */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 border-t border-[#e6dfd1] divide-y sm:divide-y-0 sm:divide-x divide-[#e6dfd1] bg-[#faf8f5]">
+              <div className="flex items-start gap-3.5 p-6 sm:p-7">
+                <div className="w-9 h-9 rounded-xl bg-[#fff0eb] flex items-center justify-center text-[#c25022] shrink-0 mt-0.5">
+                  <GraduationCap className="w-4 h-4" />
                 </div>
-                <p className="text-xs sm:text-sm text-[#4a5752] leading-relaxed">
-                  IncubateX specializes in incubation frameworks, design thinking bootcamps, and early-stage acceleration. IncubateX ensures participating startups receive structured pre-event pitch preparation and post-event investment tracking.
-                </p>
-                <a
-                  href="https://www.incubationx.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-[#256f57] font-semibold hover:underline inline-flex items-center gap-1 pt-1"
-                >
-                  Visit Official IncubateX Website →
-                </a>
+                <div>
+                  <h4 className="font-semibold text-sm text-[#1c1917]">Full Fee Waivers</h4>
+                  <p className="mt-1 text-xs text-[#6b6560] leading-[1.65]">
+                    Merit scholarships &amp; complete tuition assistance for indigenous tribal students.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3.5 p-6 sm:p-7">
+                <div className="w-9 h-9 rounded-xl bg-[#fff5eb] flex items-center justify-center text-[#a0620c] shrink-0 mt-0.5">
+                  <Building2 className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm text-[#1c1917]">Gandhi Public School</h4>
+                  <p className="mt-1 text-xs text-[#6b6560] leading-[1.65]">
+                    Free primary education &amp; modern learning resources for rural children.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3.5 p-6 sm:p-7">
+                <div className="w-9 h-9 rounded-xl bg-[#f0f7f4] flex items-center justify-center text-[#256f57] shrink-0 mt-0.5">
+                  <Lightbulb className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm text-[#1c1917]">Grassroots Incubation</h4>
+                  <p className="mt-1 text-xs text-[#6b6560] leading-[1.65]">
+                    Mentorship &amp; seed funding via Atal (ACIC) &amp; BIRAC biotech labs.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ========================================================
-          6. CTA BOTTOM BANNER
-         ======================================================== */}
-      <section className="py-16 bg-[#081a14] text-[#fcfbf8] text-center">
-        <Container size="default">
-          <h2 className="font-serif font-bold text-2xl sm:text-3xl">
-            Explore the Announced Programme and Pathways
-          </h2>
-          <p className="mt-3 text-sm text-[#c8d1cd] max-w-xl mx-auto">
-            Inspect the tentative three-day timetable or register your interest across founder, investor, and delegate categories.
-          </p>
-          <div className="mt-6 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
-            <Button href="/programme" variant="outline" size="md" className="w-full min-[420px]:w-auto justify-center border-white/20 text-white hover:bg-white/10">
-              View Draft Schedule
-            </Button>
-            <Button href="https://isf-test.vercel.app/" variant="terracotta" size="md" className="w-full min-[420px]:w-auto justify-center">
-              Registration Gateway
-            </Button>
           </div>
         </Container>
       </section>
