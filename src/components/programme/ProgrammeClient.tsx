@@ -370,7 +370,7 @@ export function ProgrammeClient() {
             </span>
           </div>
 
-          <h1 className="font-serif font-black text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
+          <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
             Summit Programme &amp;{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a87a] via-[#e87042] to-[#d68c45]">
               Event Timeline

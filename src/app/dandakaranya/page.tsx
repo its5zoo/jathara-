@@ -49,7 +49,7 @@ export default function DandakaranyaPage() {
                 <span className="font-serif text-4xl text-[#8c671b]">01</span>
                 <p className="text-[11px] font-bold tracking-[0.2em] text-[#78716c]">THE LAND</p>
               </div>
-              <h2 id="chapter-01" className="mt-5 font-serif text-3xl font-bold leading-tight text-[#103327] sm:text-4xl">A region, not a line on today’s map</h2>
+              <h2 id="chapter-01" className="mt-5 font-serif text-3xl font-bold leading-tight text-[#1c1917] sm:text-4xl">A region, not a line on today’s map</h2>
               <p className="mt-5 text-base leading-8 text-[#4a5752] sm:text-lg">{chapters[0].text}</p>
             </div>
             <figure className="overflow-hidden rounded-[1.5rem] border border-[#dfd6c4] bg-white shadow-xl">
@@ -70,7 +70,7 @@ export default function DandakaranyaPage() {
           </div>
           <div className="order-1 max-w-xl lg:order-2">
             <p className="text-xs font-bold tracking-[0.2em] text-[#8c671b]">02 · EPIC MEMORY</p>
-            <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#103327] sm:text-4xl">A forest in the Ramayana</h2>
+            <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#1c1917] sm:text-4xl">A forest in the Ramayana</h2>
             <p className="mt-5 text-base leading-8 text-[#4a5752]">{chapters[1].text}</p>
             <a href="https://www.valmiki.iitk.ac.in/sloka?field_kanda_tid=3&field_sarga_value=1&language=en" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#143e30] underline decoration-[#c9b879] underline-offset-4 hover:text-[#a74e2d]">Read the opening of Araṇya Kāṇḍa <BookOpen className="h-4 w-4" aria-hidden="true" /></a>
           </div>
@@ -82,7 +82,7 @@ export default function DandakaranyaPage() {
           <div className="grid gap-7 md:grid-cols-[220px_1fr] lg:gap-16">
             <div><span className="font-serif text-4xl text-[#8c671b]">03</span><p className="mt-2 text-[11px] font-bold tracking-[0.2em] text-[#78716c]">HISTORICAL CHANGE</p></div>
             <div className="max-w-4xl">
-              <h2 className="font-serif text-3xl font-bold leading-tight text-[#103327] sm:text-4xl">Many histories in one highland region</h2>
+              <h2 className="font-serif text-3xl font-bold leading-tight text-[#1c1917] sm:text-4xl">Many histories in one highland region</h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-[#4a5752]">{chapters[2].text}</p>
               <ol className="mt-8 grid gap-5 border-l border-[#c5b68c] pl-5 sm:grid-cols-3 sm:border-l-0 sm:border-t sm:pl-0 sm:pt-5">
                 <li><span className="text-xs font-bold uppercase tracking-widest text-[#8c671b]">Earlier regional history</span><p className="mt-2 text-sm leading-6 text-[#4a5752]">Nandapur and the later Jeypore state appear in the recorded history of Koraput.</p></li>
@@ -138,7 +138,7 @@ export default function DandakaranyaPage() {
                 <span className="font-serif text-4xl text-[#8c671b]">06</span>
                 <p className="text-[11px] font-bold tracking-[0.2em] text-[#78716c]">CRAFT &amp; POSSIBILITY</p>
               </div>
-              <h2 id="chapter-06" className="mt-5 font-serif text-3xl font-bold leading-tight text-[#103327] sm:text-4xl">Where heritage inspires new possibilities</h2>
+              <h2 id="chapter-06" className="mt-5 font-serif text-3xl font-bold leading-tight text-[#1c1917] sm:text-4xl">Where heritage inspires new possibilities</h2>
               <p className="mt-5 text-base leading-8 text-[#4a5752] sm:text-lg">{chapters[5].text}</p>
             </div>
             <figure className="relative mx-auto w-full max-w-md overflow-hidden rounded-[1.5rem] border border-[#dfd6c4] bg-white shadow-xl lg:mx-0 lg:ml-auto">
@@ -164,7 +164,7 @@ export default function DandakaranyaPage() {
 
       <section className="bg-[#f5efe6] py-12">
         <Container size="wide">
-          <h2 className="font-serif text-xl font-bold text-[#103327]">Sources &amp; image credits</h2>
+          <h2 className="font-serif text-xl font-bold text-[#1c1917]">Sources &amp; image credits</h2>
           <ul className="mt-4 grid gap-x-8 gap-y-2 text-sm leading-6 text-[#4a5752] sm:grid-cols-2">
             <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://www.valmiki.iitk.ac.in/sloka?field_kanda_tid=3&field_sarga_value=1&language=en" target="_blank" rel="noreferrer">Vālmīki Rāmāyaṇa · IIT Kanpur translation project</a></li>
             <li><a className="underline underline-offset-4 hover:text-[#a74e2d]" href="https://koraput.odisha.gov.in/en/documents/district-gazetteer" target="_blank" rel="noreferrer">Koraput District Gazetteer · Government of Odisha</a></li>

@@ -1,6 +1,5 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Badge } from "./Badge";
 
 interface SectionHeadingProps {
   eyebrow?: string;
@@ -22,49 +21,55 @@ export function SectionHeading({
   action,
 }: SectionHeadingProps) {
   const isDark = theme === "dark";
+  const isCenter = align === "center";
 
   return (
     <div
       className={cn(
-        "mb-12 sm:mb-16 text-center max-w-3xl mx-auto",
+        "mb-12 sm:mb-14",
+        isCenter ? "text-center max-w-3xl mx-auto" : "text-left max-w-2xl",
         className
       )}
     >
+      {eyebrow && (
+        <div className={cn("flex items-center gap-2.5 mb-4", isCenter && "justify-center")}>
+          <span className="w-4 h-px" style={{ backgroundColor: isDark ? "#e87042" : "#c25e38" }} aria-hidden="true" />
+          <p className={cn(
+            "text-[10px] font-bold uppercase tracking-[0.22em]",
+            isDark ? "text-[#f2b58f]" : "text-[#c25e38]"
+          )}>
+            {eyebrow}
+          </p>
+        </div>
+      )}
 
-      <div>
-        <h2
+      <h2
+        className={cn(
+          "font-serif font-black tracking-tight leading-[1.1]",
+          "text-2xl sm:text-3xl md:text-[2.4rem]",
+          isDark ? "text-white" : "text-[#1c1917]"
+        )}
+      >
+        {title}
+      </h2>
+
+      {subtitle && (
+        <p
           className={cn(
-            "text-2.5xl sm:text-3.5xl md:text-4xl lg:text-[2.75rem] font-serif font-black tracking-tight leading-[1.15]",
-            isDark ? "text-white" : "text-[#1c1917]"
+            "mt-3 text-sm sm:text-base leading-relaxed font-normal",
+            isCenter ? "max-w-2xl mx-auto" : "max-w-xl",
+            isDark ? "text-[#c8d1cd]" : "text-[#57534e]"
           )}
         >
-          {title}
-        </h2>
+          {subtitle}
+        </p>
+      )}
 
-        {subtitle && (
-          <p
-            className={cn(
-              "mt-3.5 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-2xl mx-auto",
-              isDark ? "text-[#d6d0c7]" : "text-[#57534e]"
-            )}
-          >
-            {subtitle}
-          </p>
-        )}
-
-        {/* Elegant Centered Design Accent Divider */}
-        <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
-          <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
-          <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-          <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
+      {action && (
+        <div className={cn("mt-6", isCenter && "flex justify-center")}>
+          {action}
         </div>
-
-        {action && (
-          <div className="mt-6 flex justify-center">
-            {action}
-          </div>
-        )}
-      </div>
+      )}
     </div>
   );
 }

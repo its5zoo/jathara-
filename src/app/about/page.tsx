@@ -83,11 +83,6 @@ export default function AboutPage() {
             <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
               Grounding national investment dialogue in rural realities, tribal wisdom, and grassroots engineering.
             </p>
-            <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
-              <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
-              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-              <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
-            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -170,11 +165,6 @@ export default function AboutPage() {
             <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto leading-relaxed">
               Founded in 1997 in Gunupur, Odisha - fostering multidisciplinary scholarship, advanced research, and grassroots empowerment.
             </p>
-            <div className="mt-3.5 flex items-center justify-center gap-2" aria-hidden="true">
-              <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
-              <div className="h-1 w-10 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-              <div className="h-0.5 w-6 rounded-full bg-[#d68c45]/25" />
-            </div>
           </div>
 
           {/* Institutional Overview & Founding Story - Completely Open & Unboxed Editorial Design */}
@@ -317,11 +307,6 @@ export default function AboutPage() {
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 Verified historical chronology sourced from published university records &amp; government gazettes.
               </p>
-              <div className="mt-4 flex items-center justify-center gap-2" aria-hidden="true">
-                <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
-                <div className="h-1 w-10 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-                <div className="h-0.5 w-6 rounded-full bg-[#d68c45]/25" />
-              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -408,11 +393,6 @@ export default function AboutPage() {
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 A multi-disciplinary spectrum spanning engineering, agricultural research, life sciences, healthcare, and business administration.
               </p>
-              <div className="mt-4 flex items-center justify-center gap-2" aria-hidden="true">
-                <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
-                <div className="h-1 w-10 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-                <div className="h-0.5 w-6 rounded-full bg-[#d68c45]/25" />
-              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -447,11 +427,6 @@ export default function AboutPage() {
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 Officially documented innovation centers connecting student innovators and community entrepreneurs with national funding and testbeds.
               </p>
-              <div className="mt-4 flex items-center justify-center gap-2" aria-hidden="true">
-                <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
-                <div className="h-1 w-10 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-                <div className="h-0.5 w-6 rounded-full bg-[#d68c45]/25" />
-              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -557,11 +532,6 @@ export default function AboutPage() {
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 Meet the visionaries, academic officers, and executive leaders guiding the institution.
               </p>
-              <div className="mt-4 flex items-center justify-center gap-2" aria-hidden="true">
-                <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
-                <div className="h-1 w-10 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-                <div className="h-0.5 w-6 rounded-full bg-[#d68c45]/25" />
-              </div>
               <div className="mt-4">
                 <a
                   href="https://www.giet.edu/leadership/"

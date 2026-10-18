@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Calendar, MapPin, Ticket } from "lucide-react";
+import { ArrowRight, Calendar, MapPin } from "lucide-react";
 import { Container } from "../common/Container";
 
 export function RegistrationCTA() {
@@ -23,7 +23,7 @@ export function RegistrationCTA() {
         </div>
 
         {/* Heading */}
-        <h2 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.08] max-w-3xl mx-auto">
+        <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-[1.08] max-w-3xl mx-auto">
           Be Part of the{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f7c89f] via-[#e87042] to-[#d68c45]">
             Jathara
@@ -31,21 +31,20 @@ export function RegistrationCTA() {
         </h2>
 
         {/* Supporting line */}
-        <p className="mt-5 text-sm sm:text-lg text-[#c8d1cd] max-w-xl mx-auto leading-relaxed font-normal">
+        <p className="mt-4 text-sm sm:text-base text-[#b8c8be] max-w-lg mx-auto leading-relaxed font-normal">
           Whether you are a founder, investor, or ecosystem builder, the
           Jathara awaits you. Join India&apos;s grassroots entrepreneurship gathering
           this December in Dandakaranya, Odisha.
         </p>
 
         {/* CTA Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
             href="https://isf-test.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#e87042] to-[#d06030] text-white font-bold text-sm sm:text-base shadow-[0_8px_28px_rgba(232,112,66,0.40)] hover:shadow-[0_12px_36px_rgba(232,112,66,0.60)] hover:from-[#f07846] hover:to-[#d96a38] active:scale-95 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#e87042] to-[#d06030] text-white font-bold text-sm shadow-[0_6px_24px_rgba(232,112,66,0.40)] hover:shadow-[0_10px_32px_rgba(232,112,66,0.60)] hover:from-[#f07846] hover:to-[#d96a38] active:scale-95 transition-all duration-200"
           >
-            <Ticket className="w-4 h-4" />
             <span>Register for the Summit</span>
             <ArrowRight className="w-4 h-4" />
           </a>

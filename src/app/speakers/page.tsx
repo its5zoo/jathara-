@@ -61,8 +61,9 @@ export default function SpeakersPage() {
       <section className="section-reveal py-20 bg-[#fcfbf8] border-b border-[#e6dfd1]">
         <Container size="default">
           <SectionHeading
-            title="Official Speaker & Dignitary Announcements"
-            subtitle="In accordance with our strict data integrity policy, verified dignitaries and plenary leaders are formally presented below."
+            eyebrow="Speakers & Dignitaries"
+            title="Official Speakers & Dignitary Announcements"
+            subtitle="Verified dignitaries and plenary leaders are formally presented below. Additional speakers will be announced as confirmations are received."
           />
 
           {/* Chief guest editorial feature */}
@@ -154,11 +155,6 @@ export default function SpeakersPage() {
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 Official speaker roster transcribed from ISF Network, convening leaders across life sciences, agriculture, global venture syndicates, and scaling policy.
               </p>
-              <div className="mt-4 flex items-center justify-center gap-2" aria-hidden="true">
-                <div className="h-0.5 w-6 rounded-full bg-[#e87042]/25" />
-                <div className="h-1 w-10 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-                <div className="h-0.5 w-6 rounded-full bg-[#d68c45]/25" />
-              </div>
             </div>
 
             <RoundtableShowcase />

@@ -29,13 +29,16 @@ export function DandakaranyaHomeSection() {
 
           {/* Text */}
           <div className="order-1 max-w-xl lg:order-2 space-y-5">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8c671b]">
-              The place behind the gathering
-            </p>
-            <h2 id="dandakaranya-preview-title" className="font-serif text-3xl font-bold leading-tight text-[#103327] sm:text-4xl lg:text-[2.4rem]">
+            <div className="flex items-center gap-2.5">
+              <span className="w-4 h-px bg-[#9e792c]" aria-hidden="true" />
+              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#9e792c]">
+                The place behind the gathering
+              </p>
+            </div>
+            <h2 id="dandakaranya-preview-title" className="font-serif font-black text-3xl sm:text-4xl md:text-[2.4rem] leading-[1.1] tracking-tight text-[#1c1917]">
               A region shaped by forest, memory and living culture.
             </h2>
-            <p className="text-base leading-7 text-[#4a5752]">
+            <p className="text-sm sm:text-base leading-[1.75] text-[#57534e]">
               Dandakaranya belongs to both epic imagination and a changing regional history. Explore the forested highlands, layered stories, and communities of southern Odisha in our dedicated editorial guide.
             </p>
             <div className="pt-1">

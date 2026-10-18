@@ -30,20 +30,24 @@ export function OrganizersPartnersSection() {
   return (
     <section
       aria-label="Organizers, Host & Partners"
-      className="section-reveal py-16 sm:py-20 bg-[#f7f5ee]"
+      className="section-reveal py-14 sm:py-20 bg-[#fcfbf8] border-t border-[#e6dfd1]"
     >
       <Container size="default">
         <div className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-[0.20em] text-[#c25e38] mb-2">
-            Convened Under the Aegis Of
-          </p>
+          <div className="flex items-center justify-center gap-2.5 mb-4">
+            <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
+              Convened Under the Aegis Of
+            </p>
+            <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
+          </div>
           <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#1c1917] tracking-tight">
             Organizers, Host &amp; Partners
           </h2>
         </div>
 
-        {/* Logo strip with dividers */}
-        <div className="flex flex-wrap items-stretch justify-center gap-0 divide-x divide-[#e0d9ce]">
+        {/* Logo grid — wraps gracefully on mobile */}
+        <div className="flex flex-wrap items-stretch justify-center gap-4 sm:gap-0 sm:divide-x sm:divide-[#e0d9ce]">
           {ORGANIZERS.map((org, idx) => (
             <a
               key={org.name}
@@ -51,9 +55,9 @@ export function OrganizersPartnersSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${org.fullName}, ${org.role}`}
-              className={`flex flex-col items-center gap-4 group px-8 sm:px-12 py-6 hover:bg-[#f0ece4] transition-colors duration-200 ${idx === 0 ? "rounded-l-2xl" : ""} ${idx === ORGANIZERS.length - 1 ? "rounded-r-2xl" : ""}`}
+              className={`flex flex-col items-center gap-4 group px-8 sm:px-10 md:px-14 py-6 rounded-2xl sm:rounded-none hover:bg-[#f5f0e8] transition-colors duration-200 w-full max-w-[200px] sm:max-w-none sm:flex-1 ${idx === 0 ? "sm:rounded-l-2xl" : ""} ${idx === ORGANIZERS.length - 1 ? "sm:rounded-r-2xl" : ""}`}
             >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white border border-[#e6dfd1] group-hover:border-[#c25e38]/35 shadow-xs group-hover:shadow-sm flex items-center justify-center p-3 transition-all duration-200 group-hover:-translate-y-1">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-xl bg-white border border-[#e6dfd1] group-hover:border-[#c25e38]/30 shadow-sm group-hover:shadow-md flex items-center justify-center p-3 transition-all duration-200 group-hover:-translate-y-0.5">
                 <Image
                   src={org.logo}
                   alt={org.name}
