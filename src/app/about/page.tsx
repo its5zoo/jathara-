@@ -467,34 +467,38 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* 5 Leaders Preview Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {GIET_LEADERSHIP_PROFILES.map((leader) => (
+            {/* 5 Leaders Preview Cards (2 per row on phone, last centered) */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 min-[380px]:gap-3 sm:gap-4">
+              {GIET_LEADERSHIP_PROFILES.map((leader, index) => (
                 <div
                   key={leader.id}
-                  className="bg-[#faf8f4] p-5 rounded-2xl border border-[#ede7db] transition-all flex flex-col justify-between group shadow-xs"
+                  className={`bg-[#faf8f4] p-3 sm:p-5 rounded-2xl border border-[#ede7db] transition-all flex flex-col justify-between group shadow-xs ${
+                    index === 4
+                      ? "col-span-2 sm:col-span-1 w-[calc(50%-5px)] min-[380px]:w-[calc(50%-6px)] sm:w-full mx-auto"
+                      : ""
+                  }`}
                 >
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-white border border-[#ede7db]">
                       <Image
                         src={leader.imageSrc}
                         alt={`Portrait of ${leader.name}`}
                         fill
-                        sizes="(max-width: 640px) 50vw, 20vw"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                         className="object-cover object-top transition-transform duration-300"
                       />
                     </div>
                     <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#8c671b] block">
+                      <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#8c671b] block">
                         {leader.position}
                       </span>
-                      <strong className="font-serif text-sm text-[#103327] block leading-tight mt-0.5">
+                      <strong className="font-serif text-xs sm:text-sm text-[#103327] block leading-tight mt-0.5">
                         {leader.name}
                       </strong>
                     </div>
                   </div>
 
-                  <p className="mt-3 text-[11px] text-[#5c6e64] leading-relaxed">
+                  <p className="mt-2.5 sm:mt-3 text-[10px] sm:text-[11px] text-[#5c6e64] leading-relaxed">
                     {leader.summaryBio}
                   </p>
                 </div>
