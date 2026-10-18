@@ -72,7 +72,7 @@ export function StartupVerticalsGrid() {
         </button>
       </div>
 
-      <div className="grid min-w-0 lg:grid-cols-2">
+      <div className="grid min-w-0 lg:grid-cols-2 lg:items-start">
         {STARTUP_VERTICALS.map((vertical, index) => {
           const Icon = iconMap[vertical.iconName] || Sparkles;
           const isExpanded = Boolean(expandedIds[vertical.id]);
@@ -82,7 +82,7 @@ export function StartupVerticalsGrid() {
             <article
               key={vertical.id}
               className={cn(
-                "group relative min-w-0 border-b border-[#e3ddd3] px-5 py-6 transition-colors duration-300 hover:bg-[#faf6ef] sm:px-8 sm:py-8 lg:min-h-[320px]",
+                "group relative min-w-0 border-b border-[#e3ddd3] px-5 py-6 transition-colors duration-300 hover:bg-[#faf6ef] sm:px-8 sm:py-8",
                 index % 2 === 0 && "lg:border-r",
                 index >= STARTUP_VERTICALS.length - 2 && "lg:border-b-0",
                 isExpanded && "bg-[#faf6ef]"
