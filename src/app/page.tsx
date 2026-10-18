@@ -4,6 +4,7 @@ import { AboutJatharaSection } from "@/components/home/AboutJatharaSection";
 import { FourPillarsSection } from "@/components/home/FourPillarsSection";
 import { DandakaranyaHomeSection } from "@/components/home/DandakaranyaHomeSection";
 import { ExploreEventSection } from "@/components/home/ExploreEventSection";
+import { ISFFounderSection } from "@/components/home/ISFFounderSection";
 import { RegistrationCTA } from "@/components/home/RegistrationCTA";
 import { OrganizersPartnersSection } from "@/components/home/OrganizersPartnersSection";
 
@@ -15,6 +16,7 @@ export default function HomePage() {
       <FourPillarsSection />
       <DandakaranyaHomeSection />
       <ExploreEventSection />
+      <ISFFounderSection />
       <RegistrationCTA />
       <OrganizersPartnersSection />
     </div>
