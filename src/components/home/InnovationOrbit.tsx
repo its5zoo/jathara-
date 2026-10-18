@@ -147,7 +147,7 @@ export function InnovationOrbit() {
         aria-hidden="true" 
       />
       <div 
-        className="absolute top-10 right-10 w-80 h-80 bg-[#c25e38]/10 rounded-full blur-3xl pointer-events-none" 
+        className="absolute top-10 right-10 w-80 h-80 bg-[#15803d]/10 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true" 
       />
 
@@ -201,7 +201,7 @@ export function InnovationOrbit() {
                 {/* Visible connecting orbital filaments */}
                 <line x1="250" y1="250" x2="330" y2="170" stroke="#d6b25e" strokeWidth="1" strokeOpacity="0.45" strokeDasharray="3 3" />
                 <line x1="250" y1="250" x2="140" y2="280" stroke="#256f57" strokeWidth="1" strokeOpacity="0.45" strokeDasharray="3 3" />
-                <line x1="250" y1="250" x2="250" y2="60" stroke="#c25e38" strokeWidth="1" strokeOpacity="0.45" strokeDasharray="3 3" />
+                <line x1="250" y1="250" x2="250" y2="60" stroke="#15803d" strokeWidth="1" strokeOpacity="0.45" strokeDasharray="3 3" />
               </svg>
 
               {/* Central Nucleus Event Emblem */}
@@ -278,7 +278,7 @@ export function InnovationOrbit() {
             <div className="bg-[#103327]/90 rounded-2xl sm:rounded-3xl p-4 min-[380px]:p-6 sm:p-9 border border-[#256f57]/60 shadow-2xl backdrop-blur-md relative overflow-hidden transition-all duration-300">
               
               {/* Subtle top light bar */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#d6b25e] via-[#c25e38] to-[#256f57]" />
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#d6b25e] via-[#15803d] to-[#256f57]" />
 
               <div className="flex items-center justify-between gap-2 mb-4">
                 <Badge

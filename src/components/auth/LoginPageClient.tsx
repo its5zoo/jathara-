@@ -394,7 +394,7 @@ export function LoginPageClient() {
                           setIsResetMode(true);
                         }}
                         disabled={isSubmitting}
-                        className="text-xs font-medium text-[#c25e38] hover:text-[#a64e2d] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c25e38] rounded"
+                        className="text-xs font-medium text-[#15803d] hover:text-[#a64e2d] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15803d] rounded"
                       >
                         Forgot Password?
                       </button>

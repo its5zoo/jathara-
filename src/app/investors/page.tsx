@@ -39,7 +39,7 @@ export default function InvestorsPage() {
           {/* Obsidian-Peach scrim & vignette */}
           <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#16a34a]/15 rounded-full blur-[140px] pointer-events-none z-10" />
         </div>
 
         <Container size="default" className="relative z-20 text-center">
@@ -47,7 +47,7 @@ export default function InvestorsPage() {
             Discover Uncrowded Dealflow in Frontier India
           </h1>
 
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#dcfce7] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
             High-Moat Grassroots Startups with Untapped National Scale.
           </p>
 
@@ -58,7 +58,7 @@ export default function InvestorsPage() {
           <div className="mt-8 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <Link 
               href="https://isf-test.vercel.app/" 
-              className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-xs min-[360px]:text-sm shadow-md hover:shadow-lg transition-all w-full min-[420px]:w-auto text-center"
+              className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#16a34a] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#15803d] text-white font-bold text-xs min-[360px]:text-sm shadow-md hover:shadow-lg transition-all w-full min-[420px]:w-auto text-center"
             >
               <span>Register as Investor / Fund Delegate</span>
               <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
@@ -84,7 +84,7 @@ export default function InvestorsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-[#ffffff] rounded-3xl p-8 border border-[#e6dfd1] shadow-xs">
               <div className="w-12 h-12 rounded-2xl bg-[#f7f4ec] flex items-center justify-center text-[#143e30] mb-5">
-                <TrendingUp className="w-6 h-6 text-[#c25e38]" />
+                <TrendingUp className="w-6 h-6 text-[#15803d]" />
               </div>
               <h3 className="font-serif font-bold text-xl text-[#103327]">
                 Authentic Unit Economics
@@ -125,7 +125,7 @@ export default function InvestorsPage() {
       <section className="py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
         <Container size="default">
           <div className="bg-gradient-to-br from-[#103327] to-[#081a14] rounded-3xl p-8 sm:p-12 text-[#fcfbf8] border border-[#256f57]/50 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#c25e38]/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-80 h-80 bg-[#15803d]/15 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-3xl space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b5341] text-xs text-[#d6b25e] font-semibold">
@@ -174,7 +174,7 @@ export default function InvestorsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#222b27]">
             <div className="p-6 rounded-2xl bg-[#ffffff] border border-[#e6dfd1] space-y-3">
               <h3 className="font-serif font-bold text-lg text-[#103327] flex items-center gap-2">
-                <Building className="w-5 h-5 text-[#c25e38]" />
+                <Building className="w-5 h-5 text-[#15803d]" />
                 Campus Executive Accommodation
               </h3>
               <p className="text-sm text-[#4a5752] leading-relaxed">

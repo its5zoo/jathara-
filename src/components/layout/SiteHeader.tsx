@@ -37,7 +37,7 @@ export function SiteHeader() {
           <div className="flex items-center shrink min-w-0">
             <Link
               href="/"
-              className="group flex items-center gap-1.5 min-[360px]:gap-2 min-[400px]:gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] rounded-xl shrink min-w-0"
+              className="group flex items-center gap-1.5 min-[360px]:gap-2 min-[400px]:gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-xl shrink min-w-0"
               aria-label="ISF Startup Jathara 2026 Homepage"
             >
               {/* Official ISF Mark Container */}
@@ -54,10 +54,10 @@ export function SiteHeader() {
 
               {/* Event Typography Lockup */}
               <div className="flex flex-col text-left shrink min-w-0">
-                <span className="font-serif font-black text-[11px] min-[360px]:text-xs min-[400px]:text-sm sm:text-base lg:text-[16px] text-[#1c1917] tracking-tight leading-tight group-hover:text-[#e87042] transition-colors whitespace-nowrap">
+                <span className="font-serif font-black text-[11px] min-[360px]:text-xs min-[400px]:text-sm sm:text-base lg:text-[16px] text-[#1c1917] tracking-tight leading-tight group-hover:text-[#16a34a] transition-colors whitespace-nowrap">
                   ISF STARTUP JATHARA
                 </span>
-                <span className="text-[8px] min-[360px]:text-[9px] min-[400px]:text-[10px] sm:text-[11px] font-bold text-[#e87042] tracking-wider uppercase mt-0.5 leading-none whitespace-nowrap">
+                <span className="text-[8px] min-[360px]:text-[9px] min-[400px]:text-[10px] sm:text-[11px] font-bold text-[#16a34a] tracking-wider uppercase mt-0.5 leading-none whitespace-nowrap">
                   Dandakaranya 2026
                 </span>
               </div>
@@ -77,7 +77,7 @@ export function SiteHeader() {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      "px-3 py-1.5 rounded-xl text-xs xl:text-[13px] transition-all duration-200 ease-out whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]",
+                      "px-3 py-1.5 rounded-xl text-xs xl:text-[13px] transition-all duration-200 ease-out whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a]",
                       isActive
                         ? "text-[#1c1917] font-bold bg-white shadow-[0_2px_10px_rgba(28,25,23,0.08)] border border-[#e8dfd3]/70"
                         : "text-[#57534e] font-medium hover:text-[#1c1917] hover:bg-white/60 hover:shadow-xs"
@@ -91,8 +91,8 @@ export function SiteHeader() {
                           className={cn(
                             "text-[8px] xl:text-[9px] px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold leading-none",
                             isActive
-                              ? "bg-[#e87042] text-white"
-                              : "bg-[#ffedd5] text-[#9a3412] border border-[#fed7aa]"
+                              ? "bg-[#16a34a] text-white"
+                              : "bg-[#dcfce7] text-[#9a3412] border border-[#fed7aa]"
                           )}
                         >
                           {link.badge}

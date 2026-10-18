@@ -42,7 +42,7 @@ export function TravelPreviewSection() {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-2">
               <div className="flex flex-wrap items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#c25e38] shrink-0" />
+                <MapPin className="w-5 h-5 text-[#15803d] shrink-0" />
                 <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#103327]">
                   {EVENT_METADATA.venueName}
                 </h3>
@@ -76,7 +76,7 @@ export function TravelPreviewSection() {
                   <div className="flex items-center justify-between mb-3">
                     <span className="p-2 rounded-xl bg-[#f7f4ec] text-[#143e30] border border-[#dfd6c4]">
                       {isAirport ? (
-                        <Plane className="w-4 h-4 text-[#c25e38]" />
+                        <Plane className="w-4 h-4 text-[#15803d]" />
                       ) : (
                         <Train className="w-4 h-4 text-[#143e30]" />
                       )}

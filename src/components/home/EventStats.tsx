@@ -42,7 +42,7 @@ export function EventStats() {
                 className="bg-[#ffffff] rounded-2xl p-6 border border-[#ede7db] shadow-xs hover:border-[#143e30]/30 transition-all"
               >
                 <div className="w-10 h-10 rounded-xl bg-[#f7f4ec] border border-[#dfd6c4] flex items-center justify-center text-[#143e30] mb-4">
-                  <IconComponent className="w-5 h-5 text-[#c25e38]" />
+                  <IconComponent className="w-5 h-5 text-[#15803d]" />
                 </div>
                 <div className="text-2xl sm:text-3xl font-serif font-black text-[#103327]">
                   {stat.value}

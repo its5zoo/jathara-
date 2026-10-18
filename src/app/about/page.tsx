@@ -49,7 +49,7 @@ export default function AboutPage() {
           {/* Obsidian-Peach scrim & vignette */}
           <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#16a34a]/15 rounded-full blur-[140px] pointer-events-none z-10" />
         </div>
 
         <Container size="default" className="relative z-20 text-center">
@@ -57,7 +57,7 @@ export default function AboutPage() {
             Igniting Grassroots Potential in Dandakaranya
           </h1>
 
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#dcfce7] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
             Where Grassroots Youth, Tribal Knowledge &amp; Venture Capital Converge.
           </p>
 
@@ -74,7 +74,7 @@ export default function AboutPage() {
         <Container size="default">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl lg:text-[2.65rem] text-[#1c1917] tracking-tight leading-[1.15]">
-              Why Startup Jathara is Different From <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Conventional Summits</span>
+              Why Startup Jathara is Different From <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Conventional Summits</span>
             </h2>
             <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
               Grounding national investment dialogue in rural realities, tribal wisdom, and grassroots engineering.
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
               <div className="p-5 rounded-2xl bg-[#f7f4ec] border border-[#ede7db] space-y-3">
                 <h3 className="font-serif font-bold text-lg text-[#103327] flex items-center gap-2">
-                  <Target className="w-5 h-5 text-[#c25e38]" />
+                  <Target className="w-5 h-5 text-[#15803d]" />
                   What &apos;Jathara&apos; Signifies
                 </h3>
                 <p className="text-sm text-[#4a5752] leading-relaxed">
@@ -151,7 +151,7 @@ export default function AboutPage() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
             <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl text-[#1c1917] tracking-tight leading-[1.15]">
-              A Legacy of Learning, Research &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Innovation</span>
+              A Legacy of Learning, Research &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Innovation</span>
             </h2>
             <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto leading-relaxed">
               Founded in 1997 in Gunupur, Odisha - fostering multidisciplinary scholarship, advanced research, and grassroots empowerment.
@@ -164,7 +164,7 @@ export default function AboutPage() {
               {/* Left Column: Open Editorial Narrative */}
               <div className="lg:col-span-7 space-y-3">
                 <div className="inline-flex items-center">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#c25022]">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#15803d]">
                     Institutional Founding &amp; Evolution
                   </span>
                 </div>
@@ -198,14 +198,14 @@ export default function AboutPage() {
                     className="w-14 h-14 object-contain shrink-0"
                   />
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#c25022] block">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#15803d] block">
                       Host Academic Campus
                     </span>
                     <strong className="block font-serif font-bold text-lg text-[#1c1917] leading-tight">
                       GIET University
                     </strong>
                     <span className="text-xs text-[#78716c] flex items-center gap-1 mt-0.5">
-                      <MapPin className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
+                      <MapPin className="w-3.5 h-3.5 text-[#16a34a] shrink-0" />
                       Gunupur, Rayagada, Odisha
                     </span>
                   </div>
@@ -260,7 +260,7 @@ export default function AboutPage() {
                     href="https://www.giet.edu/about-giet/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#c25022] hover:text-[#e87042] transition-colors group"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#15803d] hover:text-[#16a34a] transition-colors group"
                   >
                     <span>Visit Official GIET Portal</span>
                     <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -293,7 +293,7 @@ export default function AboutPage() {
           <div className="space-y-8 mb-16">
             <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
               <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight">
-                Key Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Milestones</span>
+                Key Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Milestones</span>
               </h3>
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 Verified historical chronology sourced from published university records &amp; government gazettes.
@@ -346,21 +346,21 @@ export default function AboutPage() {
                 return (
                   <div
                     key={idx}
-                    className="p-6 sm:p-7 rounded-2xl bg-white border border-[#e6dfd1] hover:border-[#e87042] shadow-xs hover:shadow-md transition-all space-y-4 flex flex-col justify-between group"
+                    className="p-6 sm:p-7 rounded-2xl bg-white border border-[#e6dfd1] hover:border-[#16a34a] shadow-xs hover:shadow-md transition-all space-y-4 flex flex-col justify-between group"
                   >
                     <div className="space-y-3">
                       {/* Top Row: Large Visible Year + Simple Meaningful Tag */}
                       <div className="flex items-center justify-between gap-2">
-                        <span className="font-serif font-black text-3xl sm:text-4xl text-[#c25022] tracking-tight whitespace-nowrap shrink-0">
+                        <span className="font-serif font-black text-3xl sm:text-4xl text-[#15803d] tracking-tight whitespace-nowrap shrink-0">
                           {displayYear}
                         </span>
-                        <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#f7f4ec] text-[#e87042] border border-[#dfd6c4] whitespace-nowrap shrink-0">
+                        <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#f7f4ec] text-[#16a34a] border border-[#dfd6c4] whitespace-nowrap shrink-0">
                           {info.tag}
                         </span>
                       </div>
 
                       {/* Prominent High-Contrast Title */}
-                      <h4 className="font-serif font-bold text-lg sm:text-xl text-[#1c1917] leading-snug group-hover:text-[#c25022] transition-colors">
+                      <h4 className="font-serif font-bold text-lg sm:text-xl text-[#1c1917] leading-snug group-hover:text-[#15803d] transition-colors">
                         {info.shortTitle}
                       </h4>
 
@@ -379,7 +379,7 @@ export default function AboutPage() {
           <div className="space-y-8 mb-16">
             <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
               <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight">
-                Academic Schools &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Research Ecosystem</span>
+                Academic Schools &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Research Ecosystem</span>
               </h3>
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 A multi-disciplinary spectrum spanning engineering, agricultural research, life sciences, healthcare, and business administration.
@@ -415,7 +415,7 @@ export default function AboutPage() {
           <div className="space-y-8 mb-16">
             <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
               <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight">
-                Innovation, Incubation &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Technology Transfer</span>
+                Innovation, Incubation &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Technology Transfer</span>
               </h3>
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 Officially documented innovation centers connecting student innovators and community entrepreneurs with national funding and testbeds.
@@ -432,7 +432,7 @@ export default function AboutPage() {
                     <Badge variant="ivory" size="sm">
                       {center.tag}
                     </Badge>
-                    <Lightbulb className="w-5 h-5 text-[#c25e38]" />
+                    <Lightbulb className="w-5 h-5 text-[#15803d]" />
                   </div>
                   <h4 className="font-serif font-bold text-xl text-[#103327]">
                     {center.title}
@@ -449,7 +449,7 @@ export default function AboutPage() {
           <div className="space-y-8 mb-16">
             <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
               <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight">
-                GIET University <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Leadership Council</span>
+                GIET University <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Leadership Council</span>
               </h3>
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 Meet the visionaries, academic officers, and executive leaders guiding the institution.
@@ -462,7 +462,7 @@ export default function AboutPage() {
                   className="inline-flex items-center gap-2 text-xs font-bold text-[#1c1917] bg-[#f7f4ec] hover:bg-[#ede7db] border border-[#dfd6c4] px-4 py-2 rounded-xl transition-colors"
                 >
                   <span>Official GIET Leadership Directory</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#e87042]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#16a34a]" />
                 </a>
               </div>
             </div>
@@ -513,8 +513,8 @@ export default function AboutPage() {
               <div className="space-y-4 max-w-2xl">
                 {/* Eyebrow */}
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-px bg-[#c25e38]" aria-hidden="true" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
+                  <span className="w-3 h-px bg-[#15803d]" aria-hidden="true" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#15803d]">
                     Social Responsibility
                   </span>
                 </div>
@@ -530,7 +530,7 @@ export default function AboutPage() {
 
               {/* Badge */}
               <div className="hidden md:flex items-center justify-end shrink-0">
-                <span className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-[#e87042]/25 bg-[#fff5f0] text-[#c25022] text-[11px] font-semibold tracking-wide">
+                <span className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-[#16a34a]/25 bg-[#f0fdf4] text-[#15803d] text-[11px] font-semibold tracking-wide">
                   Official Mission Mandate
                 </span>
               </div>
@@ -538,7 +538,7 @@ export default function AboutPage() {
 
             {/* Quote block */}
             <div className="mx-6 sm:mx-8 md:mx-10 mb-8 flex gap-3 sm:gap-4">
-              <div className="w-1 rounded-full bg-[#e87042] shrink-0" aria-hidden="true" />
+              <div className="w-1 rounded-full bg-[#16a34a] shrink-0" aria-hidden="true" />
               <p className="font-serif italic text-base sm:text-lg text-[#2d2926] leading-relaxed">
                 &ldquo;To support and uplift the meritorious students of this Tribal Area to represent as an Ambassador in all forums as a part of our social responsibility.&rdquo;
               </p>
@@ -547,7 +547,7 @@ export default function AboutPage() {
             {/* 3 pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 border-t border-[#e6dfd1] divide-y sm:divide-y-0 sm:divide-x divide-[#e6dfd1] bg-[#faf8f5]">
               <div className="flex items-start gap-3.5 p-6 sm:p-7">
-                <div className="w-9 h-9 rounded-xl bg-[#fff0eb] flex items-center justify-center text-[#c25022] shrink-0 mt-0.5">
+                <div className="w-9 h-9 rounded-xl bg-[#fff0eb] flex items-center justify-center text-[#15803d] shrink-0 mt-0.5">
                   <GraduationCap className="w-4 h-4" />
                 </div>
                 <div>

@@ -151,7 +151,7 @@ export function BotanicalTimeline() {
 
                       <div className="flex flex-wrap items-center gap-2 text-xs text-[#7e8d87]">
                         <div className="flex items-center gap-1.5">
-                          <MapPin className="w-3.5 h-3.5 text-[#c25e38] shrink-0" />
+                          <MapPin className="w-3.5 h-3.5 text-[#15803d] shrink-0" />
                           <span className="font-medium text-[#4a5752]">{stage.venue}</span>
                         </div>
                         <span className="text-[10px] uppercase font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">

@@ -46,7 +46,7 @@ export function ISFFounderSection() {
               />
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0d1a14]/70 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
-                <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#f2c49a]">
+                <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#86efac]">
                   Founder & Chairman
                 </span>
                 <p className="mt-1 font-serif text-lg font-bold text-white leading-tight">
@@ -60,8 +60,8 @@ export function ISFFounderSection() {
           <div>
             {/* Eyebrow */}
             <div className="flex items-center gap-2.5 mb-5">
-              <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
+              <span className="w-4 h-px bg-[#15803d]" aria-hidden="true" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#15803d]">
                 The Visionary Behind the Jathara
               </span>
             </div>
@@ -91,13 +91,13 @@ export function ISFFounderSection() {
                 return (
                   <div
                     key={c.label + c.detail}
-                    className="flex items-center gap-3.5 rounded-xl border border-[#e3d9cc] bg-white px-4 py-3 shadow-[0_2px_8px_rgba(43,37,28,0.04)] hover:border-[#c25e38]/35 transition-colors"
+                    className="flex items-center gap-3.5 rounded-xl border border-[#e3d9cc] bg-white px-4 py-3 shadow-[0_2px_8px_rgba(43,37,28,0.04)] hover:border-[#15803d]/35 transition-colors"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#faf3ea] border border-[#ecdccb] flex items-center justify-center shrink-0 text-[#c25e38]">
+                    <div className="w-8 h-8 rounded-lg bg-[#f0fdf4] border border-[#ecdccb] flex items-center justify-center shrink-0 text-[#15803d]">
                       <IconComponent className="w-4 h-4" />
                     </div>
                     <div className="min-w-0">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#c25e38] block">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#15803d] block">
                         {c.label}
                       </span>
                       <span className="text-xs font-semibold text-[#2b251c] mt-0.5 block leading-snug">

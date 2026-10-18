@@ -70,7 +70,7 @@ export function HeroSection() {
 
         {/* Warm amber ambient glow */}
         <div
-          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#e87042]/12 rounded-full blur-[150px] pointer-events-none z-20"
+          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#16a34a]/12 rounded-full blur-[150px] pointer-events-none z-20"
           aria-hidden="true"
         />
       </div>
@@ -103,14 +103,14 @@ export function HeroSection() {
         {/* Event Name */}
         <h1 className="hero-enter hero-enter-delay-2 font-serif font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.06] drop-shadow-[0_2px_18px_rgba(0,0,0,0.85)]">
           ISF Startup{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffedd5] via-[#f7c89f] to-[#e87042]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#dcfce7] via-[#f7c89f] to-[#16a34a]">
             Jathara
           </span>{" "}
           2026
         </h1>
 
         {/* Tagline */}
-        <p className="hero-enter hero-enter-delay-3 mt-2.5 sm:mt-3 text-base sm:text-xl lg:text-2xl font-serif text-[#ffedd5]/95 font-semibold tracking-tight max-w-2xl mx-auto leading-snug drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)]">
+        <p className="hero-enter hero-enter-delay-3 mt-2.5 sm:mt-3 text-base sm:text-xl lg:text-2xl font-serif text-[#dcfce7]/95 font-semibold tracking-tight max-w-2xl mx-auto leading-snug drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)]">
           Where Grassroots Bharat Meets Global Capital.
         </p>
 
@@ -123,7 +123,7 @@ export function HeroSection() {
         {/* Date & Location Line */}
         <div className="hero-enter hero-enter-delay-4 mt-3.5 sm:mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-medium text-white/70">
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#e87042] inline-block animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] inline-block animate-pulse" />
             18–20 December 2026
           </span>
           <span className="text-white/35">•</span>
@@ -138,7 +138,7 @@ export function HeroSection() {
             href="https://isf-test.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#e87042] to-[#d06030] text-white font-bold text-sm sm:text-base shadow-[0_8px_28px_rgba(232,112,66,0.50)] hover:shadow-[0_12px_36px_rgba(232,112,66,0.65)] hover:from-[#f07846] hover:to-[#d96a38] active:scale-95 transition-all duration-200 tracking-wide"
+            className="inline-flex items-center gap-2.5 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#16a34a] to-[#22c55e] text-white font-bold text-sm sm:text-base shadow-[0_8px_28px_rgba(22,163,74,0.50)] hover:shadow-[0_12px_36px_rgba(22,163,74,0.65)] hover:from-[#15803d] hover:to-[#16a34a] active:scale-95 transition-all duration-200 tracking-wide"
           >
             <span>Register for the Summit</span>
             <ArrowRight className="w-4 h-4" />
@@ -159,7 +159,7 @@ export function HeroSection() {
               onClick={() => setActiveSlide(i)}
               className={`rounded-full transition-all duration-300 ${
                 i === activeSlide
-                  ? "w-6 h-1.5 bg-[#e87042]"
+                  ? "w-6 h-1.5 bg-[#16a34a]"
                   : "w-1.5 h-1.5 bg-white/30 hover:bg-white/60"
               }`}
               aria-label={`View slide ${i + 1}`}

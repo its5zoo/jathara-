@@ -44,7 +44,7 @@ export function EmptyState({
         className
       )}
     >
-      <div className="mx-auto w-14 h-14 rounded-2xl bg-[#fff7ed] border border-[#fed7aa] flex items-center justify-center text-[#c25022] mb-4 shadow-2xs">
+      <div className="mx-auto w-14 h-14 rounded-2xl bg-[#fff7ed] border border-[#fed7aa] flex items-center justify-center text-[#15803d] mb-4 shadow-2xs">
         <IconComponent className="w-7 h-7" aria-hidden="true" />
       </div>
 

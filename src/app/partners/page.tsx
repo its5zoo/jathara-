@@ -39,7 +39,7 @@ export default function PartnersPage() {
           {/* Obsidian-Peach scrim & vignette */}
           <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#16a34a]/15 rounded-full blur-[140px] pointer-events-none z-10" />
         </div>
 
         <Container size="default" className="relative z-20 text-center">
@@ -47,7 +47,7 @@ export default function PartnersPage() {
             Organizers &amp; Partner Coalition
           </h1>
 
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#dcfce7] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
             Global Enterprise Foundations, Premier Academic Campus &amp; Grassroots Ecosystems.
           </p>
 
@@ -147,7 +147,7 @@ export default function PartnersPage() {
                     href={org.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl bg-[#ffffff] border border-[#dfd6c4] text-xs font-bold text-[#143e30] hover:text-[#c25e38] hover:border-[#143e30] flex items-center justify-between shadow-2xs transition-colors"
+                    className="p-3 rounded-xl bg-[#ffffff] border border-[#dfd6c4] text-xs font-bold text-[#143e30] hover:text-[#15803d] hover:border-[#143e30] flex items-center justify-between shadow-2xs transition-colors"
                   >
                     <span>Visit {org.schoolName ? "School of Engineering" : org.abbreviation} Portal</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -174,7 +174,7 @@ export default function PartnersPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-[#ffffff] rounded-2xl p-6 sm:p-7 border border-[#e6dfd1] shadow-xs hover:shadow-md transition-shadow">
               <div className="w-11 h-11 rounded-xl bg-[#f7f4ec] flex items-center justify-center text-[#143e30] mb-4">
-                <Handshake className="w-5 h-5 text-[#c25e38]" />
+                <Handshake className="w-5 h-5 text-[#15803d]" />
               </div>
               <h3 className="font-serif font-bold text-lg text-[#103327]">
                 Track & Roundtable Sponsors
@@ -211,7 +211,7 @@ export default function PartnersPage() {
 
           <div className="mt-12 p-8 rounded-3xl bg-[#ffffff] border border-[#e6dfd1] text-center max-w-xl mx-auto space-y-4 shadow-xs">
             <h3 className="font-serif font-black text-xl sm:text-2xl text-[#1c1917] tracking-tight">
-              Request Partnership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Proposal</span>
+              Request Partnership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Proposal</span>
             </h3>
             <p className="text-xs sm:text-sm text-[#4a5752] leading-relaxed">
               Formal sponsor brochures, roundtable lead frameworks, and bilateral collaboration agreements can be requested through our secretariat desk.

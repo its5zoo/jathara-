@@ -38,7 +38,7 @@ export function VerticalsSection() {
         aria-hidden="true" 
       />
       <div 
-        className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#c25e38]/8 rounded-full blur-3xl pointer-events-none" 
+        className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#15803d]/8 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true" 
       />
 
@@ -48,7 +48,7 @@ export function VerticalsSection() {
 
           {/* Main Title with Gradient Accent */}
           <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#1c1917] tracking-tight leading-[1.12]">
-            Eight Focus <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Sectors</span>
+            Eight Focus <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Sectors</span>
           </h2>
 
           {/* Subtitle */}
@@ -58,9 +58,9 @@ export function VerticalsSection() {
 
           {/* Decorative Divider */}
           <div className="mt-5 flex items-center justify-center gap-2">
-            <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
-            <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-            <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
+            <div className="h-0.5 w-8 rounded-full bg-[#16a34a]/25" />
+            <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#16a34a] to-[#22c55e]" />
+            <div className="h-0.5 w-8 rounded-full bg-[#22c55e]/25" />
           </div>
         </div>
 
@@ -75,7 +75,7 @@ export function VerticalsSection() {
                 href="https://isf-test.vercel.app/"
                 className={cn(
                   "group relative rounded-3xl p-6 bg-white/90 backdrop-blur-sm border border-[#e4dcce] hover:border-[#be9740]/70",
-                  "shadow-[0_4px_20px_-4px_rgba(20,62,48,0.06)] hover:shadow-[0_24px_48px_-12px_rgba(20,62,48,0.18),0_8px_20px_-4px_rgba(194,94,56,0.10)]",
+                  "shadow-[0_4px_20px_-4px_rgba(20,62,48,0.06)] hover:shadow-[0_24px_48px_-12px_rgba(20,62,48,0.18),0_8px_20px_-4px_rgba(21,128,61,0.10)]",
                   "transform hover:-translate-y-2 transition-all duration-300 ease-out flex flex-col justify-between overflow-hidden cursor-pointer"
                 )}
               >
@@ -87,7 +87,7 @@ export function VerticalsSection() {
 
                 {/* Ambient radial color bloom on hover */}
                 <div
-                  className="absolute -top-10 -right-10 w-36 h-36 bg-gradient-to-br from-[#d6b25e]/25 via-[#c25e38]/15 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  className="absolute -top-10 -right-10 w-36 h-36 bg-gradient-to-br from-[#d6b25e]/25 via-[#15803d]/15 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   aria-hidden="true"
                 />
 
@@ -121,7 +121,7 @@ export function VerticalsSection() {
 
                 {/* Footer Action Bar */}
                 <div className="relative z-10 mt-6 pt-3.5 border-t border-[#ede7db] flex items-center justify-end">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#103327] group-hover:text-[#c25e38] transition-colors">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#103327] group-hover:text-[#15803d] transition-colors">
                     <span>Apply in Track</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1.5" />
                   </span>

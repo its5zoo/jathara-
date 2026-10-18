@@ -15,12 +15,12 @@ export function RoundtablesShowcaseSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#fff4ed] text-[#c25022] border border-[#fbd4c0] mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#fff4ed] text-[#15803d] border border-[#fbd4c0] mb-3">
               <Mic2 className="w-3.5 h-3.5" />
               <span>Official ISF Deliberations</span>
             </div>
             <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl text-[#1c1917] tracking-tight leading-tight">
-              Sector Roundtables &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Confirmed Panelists</span>
+              Sector Roundtables &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Confirmed Panelists</span>
             </h2>
             <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] leading-relaxed">
               Leading researchers, clinicians, venture investors, and policy shapers convening across 4 strategic roundtables at GIET University.
@@ -30,7 +30,7 @@ export function RoundtablesShowcaseSection() {
           <div className="shrink-0">
             <Link
               href="/speakers"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[#d6cfc4] text-xs font-bold text-[#1c1917] hover:border-[#c25022] hover:text-[#c25022] transition-all shadow-2xs group"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[#d6cfc4] text-xs font-bold text-[#1c1917] hover:border-[#15803d] hover:text-[#15803d] transition-all shadow-2xs group"
             >
               <span>View Full Speakers Roster</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />

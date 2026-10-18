@@ -7,7 +7,7 @@ export function GatewayCTA() {
   return (
     <section className="py-14 sm:py-20 bg-gradient-to-br from-[#0c0d12] via-[#141620] to-[#090a0e] text-[#fcfbf8] relative overflow-hidden border-t border-[#232733]">
       <div 
-        className="absolute top-0 right-0 w-96 h-96 bg-[#e87042]/15 rounded-full blur-3xl pointer-events-none" 
+        className="absolute top-0 right-0 w-96 h-96 bg-[#16a34a]/15 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true" 
       />
       <div 

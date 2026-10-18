@@ -22,7 +22,7 @@ export function AnnouncementBanner() {
           </span>
           <span className="hidden sm:inline text-[#7e8d87]">•</span>
           <span className="inline-flex items-center gap-1 text-[#ede7db]">
-            <MapPin className="w-3.5 h-3.5 text-[#c25e38]" aria-hidden="true" />
+            <MapPin className="w-3.5 h-3.5 text-[#15803d]" aria-hidden="true" />
             GIET University, Gunupur, Odisha
           </span>
         </div>

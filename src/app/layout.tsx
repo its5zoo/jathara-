@@ -78,7 +78,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${libreBaskerville.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#fcfbf8] text-[#161e1b] selection:bg-[#c25e38]/20 selection:text-[#a74e2d]">
+      <body className="min-h-full flex flex-col bg-[#fcfbf8] text-[#161e1b] selection:bg-[#15803d]/20 selection:text-[#a74e2d]">
         {/* Global Butter-Smooth Scrolling Engine (Lenis) */}
         <SmoothScroll />
 

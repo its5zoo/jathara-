@@ -10,8 +10,8 @@ const STATS = [
     label: "Immersive Days",
     sub: "18–20 Dec 2026",
     icon: CalendarDays,
-    accent: "#c25e38",
-    bg: "#fff5f0",
+    accent: "#15803d",
+    bg: "#f0fdf4",
   },
   {
     value: "8",
@@ -54,8 +54,8 @@ export function AboutJatharaSection() {
             {/* Eyebrow + heading */}
             <div>
               <div className="flex items-center gap-3 mb-5">
-                <span className="w-5 h-px bg-[#c25e38]" aria-hidden="true" />
-                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
+                <span className="w-5 h-px bg-[#15803d]" aria-hidden="true" />
+                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#15803d]">
                   About the Jathara
                 </p>
               </div>
@@ -74,7 +74,7 @@ export function AboutJatharaSection() {
                   >
                     <path
                       d="M2 5.5 C40 2, 90 7, 140 4 S200 2, 218 5"
-                      stroke="#e87042"
+                      stroke="#16a34a"
                       strokeWidth="2.5"
                       strokeLinecap="round"
                     />
@@ -135,7 +135,7 @@ export function AboutJatharaSection() {
             {/* CTA link */}
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-sm font-bold text-[#103327] hover:text-[#c25e38] transition-colors duration-200 group w-fit border-b border-[#103327]/20 hover:border-[#c25e38]/30 pb-0.5"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[#103327] hover:text-[#15803d] transition-colors duration-200 group w-fit border-b border-[#103327]/20 hover:border-[#15803d]/30 pb-0.5"
             >
               <span>Learn more about the summit</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -146,7 +146,7 @@ export function AboutJatharaSection() {
           <div className="relative md:pt-4">
             {/* Decorative offset shadow block */}
             <div
-              className="absolute -bottom-3 -right-3 w-full h-full rounded-3xl bg-[#e87042]/10 border border-[#e87042]/15"
+              className="absolute -bottom-3 -right-3 w-full h-full rounded-3xl bg-[#16a34a]/10 border border-[#16a34a]/15"
               aria-hidden="true"
             />
 
@@ -172,7 +172,7 @@ export function AboutJatharaSection() {
                   </p>
                 </div>
                 {/* Year badge */}
-                <div className="shrink-0 flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-[#e87042] text-white shadow-lg">
+                <div className="shrink-0 flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-[#16a34a] text-white shadow-lg">
                   <span className="font-serif font-black text-lg leading-none">2026</span>
                   <span className="text-[8px] font-bold uppercase tracking-wider mt-0.5 opacity-85">Edition</span>
                 </div>
@@ -184,7 +184,7 @@ export function AboutJatharaSection() {
               <p className="font-serif text-xs font-bold text-[#1c1917] leading-snug">
                 &ldquo;Where Grassroots Bharat Meets Global Capital&rdquo;
               </p>
-              <p className="mt-1.5 text-[9px] font-bold uppercase tracking-wider text-[#c25e38]">
+              <p className="mt-1.5 text-[9px] font-bold uppercase tracking-wider text-[#15803d]">
                 ISF Network
               </p>
             </div>

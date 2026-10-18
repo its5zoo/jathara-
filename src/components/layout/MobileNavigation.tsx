@@ -52,7 +52,7 @@ export function MobileNavigation() {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="p-1.5 min-[380px]:p-2 sm:p-2.5 rounded-xl border border-[#dfd6c4] bg-[#f7f4ec] text-[#1c1917] hover:bg-[#ede7db] active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] shadow-2xs flex items-center justify-center gap-1.5 shrink-0 min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] touch-manipulation cursor-pointer"
+        className="p-1.5 min-[380px]:p-2 sm:p-2.5 rounded-xl border border-[#dfd6c4] bg-[#f7f4ec] text-[#1c1917] hover:bg-[#ede7db] active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] shadow-2xs flex items-center justify-center gap-1.5 shrink-0 min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] touch-manipulation cursor-pointer"
         aria-expanded={isOpen}
         aria-controls="mobile-navigation-drawer"
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -107,7 +107,7 @@ export function MobileNavigation() {
               <div className="font-serif font-black text-[#1c1917] text-xs min-[380px]:text-sm leading-tight truncate">
                 ISF Startup Jathara
               </div>
-              <div className="text-[10px] min-[380px]:text-[11px] text-[#e87042] font-bold tracking-tight uppercase">
+              <div className="text-[10px] min-[380px]:text-[11px] text-[#16a34a] font-bold tracking-tight uppercase">
                 Dandakaranya 2026
               </div>
             </div>
@@ -117,7 +117,7 @@ export function MobileNavigation() {
             ref={closeButtonRef}
             type="button"
             onClick={() => setIsOpen(false)}
-            className="p-2 sm:p-2.5 rounded-xl text-[#1c1917] hover:bg-[#ede7db] active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] min-w-[38px] min-h-[38px] flex items-center justify-center shrink-0 touch-manipulation cursor-pointer"
+            className="p-2 sm:p-2.5 rounded-xl text-[#1c1917] hover:bg-[#ede7db] active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] min-w-[38px] min-h-[38px] flex items-center justify-center shrink-0 touch-manipulation cursor-pointer"
             aria-label="Close navigation menu"
           >
             <X className="w-5 h-5" />
@@ -193,7 +193,7 @@ export function MobileNavigation() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
-            className="w-full inline-flex items-center justify-between px-4 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white shadow-xs hover:shadow-sm active:scale-98 transition-all"
+            className="w-full inline-flex items-center justify-between px-4 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-[#16a34a] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#15803d] text-white shadow-xs hover:shadow-sm active:scale-98 transition-all"
           >
             <span>Register Now (Free Entry)</span>
             <ArrowRight className="w-4 h-4" />
@@ -201,7 +201,7 @@ export function MobileNavigation() {
 
           <div className="p-2.5 rounded-xl bg-white border border-[#e8dfd3] flex items-center justify-between text-xs text-[#57534e]">
             <div className="flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-[#16a34a] shrink-0" />
               <span className="font-semibold text-[#1c1917] text-[11px] min-[360px]:text-xs">
                 GIET University • Host Campus
               </span>
@@ -210,7 +210,7 @@ export function MobileNavigation() {
               href="https://www.giet.edu/schools/school-of-engineering/"
               target="_blank"
               rel="noreferrer"
-              className="text-[#c25022] font-bold hover:underline flex items-center gap-1 text-[11px] min-[360px]:text-xs shrink-0"
+              className="text-[#15803d] font-bold hover:underline flex items-center gap-1 text-[11px] min-[360px]:text-xs shrink-0"
             >
               <span>Portal</span>
               <ExternalLink className="w-3 h-3" />

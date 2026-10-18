@@ -25,7 +25,7 @@ export default function NotFound() {
 
         {/* Central Icon */}
         <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-[#f7f4ec] border border-[#dfd6c4] flex items-center justify-center text-[#143e30] mx-auto mb-6 shadow-sm">
-          <Compass className="w-8 h-8 sm:w-10 sm:h-10 text-[#c25e38] stroke-[1.5]" />
+          <Compass className="w-8 h-8 sm:w-10 sm:h-10 text-[#15803d] stroke-[1.5]" />
         </div>
 
         {/* Heading */}
@@ -71,7 +71,7 @@ export default function NotFound() {
                       <IconComp className="w-5 h-5 text-[#143e30]" />
                     </div>
                     <div className="min-w-0">
-                      <span className="font-serif font-bold text-sm text-[#103327] block group-hover:text-[#c25e38] transition-colors truncate">
+                      <span className="font-serif font-bold text-sm text-[#103327] block group-hover:text-[#15803d] transition-colors truncate">
                         {item.label}
                       </span>
                       <span className="text-[11px] text-[#7e8d87] block truncate">

@@ -43,10 +43,10 @@ const SESSION_TYPE_MAP: Record<string, SessionTypeCfg> = {
   roundtable: {
     icon: Users,
     label: "Roundtable",
-    color: "text-[#c25022]",
-    bg: "bg-[#fff5f0]",
-    border: "border-[#fbd4c3]",
-    dot: "bg-[#e87042]",
+    color: "text-[#15803d]",
+    bg: "bg-[#f0fdf4]",
+    border: "border-[#bbf7d0]",
+    dot: "bg-[#16a34a]",
   },
   pitch: {
     icon: Mic2,
@@ -102,7 +102,7 @@ function DayStatsBar({ day }: { day: (typeof PROGRAMME_DAYS)[0] }) {
     counts[s.sessionType] = (counts[s.sessionType] || 0) + 1;
   }
   const items: { label: string; count: number; color: string }[] = [];
-  if (counts.roundtable) items.push({ label: counts.roundtable > 1 ? "Roundtables" : "Roundtable", count: counts.roundtable, color: "text-[#c25022]" });
+  if (counts.roundtable) items.push({ label: counts.roundtable > 1 ? "Roundtables" : "Roundtable", count: counts.roundtable, color: "text-[#15803d]" });
   if (counts.pitch) items.push({ label: counts.pitch > 1 ? "Pitch Sessions" : "Pitch Session", count: counts.pitch, color: "text-violet-700" });
   if (counts.networking) items.push({ label: "Networking", count: counts.networking, color: "text-emerald-700" });
   if (counts.ceremony) items.push({ label: "Ceremony", count: counts.ceremony, color: "text-amber-700" });
@@ -145,7 +145,7 @@ function CeremonyAccordion({
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="inline-flex items-center gap-2 text-xs font-semibold text-[#c25022] hover:text-[#e87042] transition-colors cursor-pointer"
+        className="inline-flex items-center gap-2 text-xs font-semibold text-[#15803d] hover:text-[#16a34a] transition-colors cursor-pointer"
       >
         <span className="flex items-center justify-center w-5 h-5 rounded-full border border-current shrink-0">
           {open ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
@@ -167,7 +167,7 @@ function CeremonyAccordion({
               key={i}
               className="flex items-start gap-3 px-4 py-2.5 text-xs hover:bg-[#fdf9f6] transition-colors"
             >
-              <span className="font-mono font-bold text-[#c25022] shrink-0 w-24 pt-px">
+              <span className="font-mono font-bold text-[#15803d] shrink-0 w-24 pt-px">
                 {evt.time}
               </span>
               <span className="text-[#44403c] font-medium leading-snug flex-1">
@@ -208,7 +208,7 @@ function SessionRow({
         <div className="w-px flex-1 bg-[#e6dfd1]" />
         <div
           className={cn(
-            "relative flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 bg-white transition-all duration-200 shrink-0 my-1 group-hover:scale-110 group-hover:border-[#e87042]",
+            "relative flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 bg-white transition-all duration-200 shrink-0 my-1 group-hover:scale-110 group-hover:border-[#16a34a]",
             isTentativeDay || session.isTentative ? "border-[#d4c9b8]" : "border-[#ccc1ab]"
           )}
         >
@@ -221,7 +221,7 @@ function SessionRow({
       <div className="pl-5 sm:pl-9 py-2.5 pb-4 sm:py-3 sm:pb-5">
         {/* Time badge — mobile only */}
         <div className="sm:hidden flex items-center gap-1.5 mb-2">
-          <Clock className="w-3 h-3 text-[#e87042] shrink-0" />
+          <Clock className="w-3 h-3 text-[#16a34a] shrink-0" />
           <span className="font-mono font-bold text-[10px] text-[#78716c] leading-tight tracking-tight">
             {session.timeSlot}
           </span>
@@ -246,7 +246,7 @@ function SessionRow({
 
               {session.location && (
                 <div className="flex items-center gap-1 ml-auto text-[10px] sm:text-[11px] text-[#78716c] font-medium">
-                  <MapPin className="w-3 h-3 text-[#e87042] shrink-0" />
+                  <MapPin className="w-3 h-3 text-[#16a34a] shrink-0" />
                   <span className="truncate max-w-[150px] sm:max-w-none">{session.location}</span>
                 </div>
               )}
@@ -254,7 +254,7 @@ function SessionRow({
           )}
 
           {/* Title */}
-          <h3 className="font-serif font-bold text-sm sm:text-lg text-[#1c1917] leading-snug group-hover:text-[#c25022] transition-colors duration-200 mb-1 sm:mb-1.5">
+          <h3 className="font-serif font-bold text-sm sm:text-lg text-[#1c1917] leading-snug group-hover:text-[#15803d] transition-colors duration-200 mb-1 sm:mb-1.5">
             {session.title}
           </h3>
 
@@ -308,7 +308,7 @@ function ParallelSessionsGrid({
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="flex items-center gap-1 text-[10px] text-[#78716c] font-medium">
-                <MapPin className="w-2.5 h-2.5 text-[#e87042] shrink-0" />
+                <MapPin className="w-2.5 h-2.5 text-[#16a34a] shrink-0" />
                 <span>{session.location}</span>
               </div>
             </div>
@@ -359,19 +359,19 @@ export function ProgrammeClient() {
           />
           <div className="absolute inset-0 z-10 bg-black/50" />
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/40 to-[#0c0d12]/55" />
-          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[280px] bg-[#e87042]/12 rounded-full blur-[160px] pointer-events-none z-10" />
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[280px] bg-[#16a34a]/12 rounded-full blur-[160px] pointer-events-none z-10" />
         </div>
 
 
         <Container size="wide" className="relative z-20 text-center">
           <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
             Summit Programme &amp;{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a87a] via-[#e87042] to-[#d68c45]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#86efac] via-[#16a34a] to-[#22c55e]">
               Event Timeline
             </span>
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm leading-relaxed">
+          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#dcfce7] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm leading-relaxed">
             Four Days of Sectoral Breakouts, Venture Pitching, Forest Exploration &amp; Grassroots Ecosystem Building.
           </p>
 
@@ -392,7 +392,7 @@ export function ProgrammeClient() {
             <div className="text-center max-w-3xl mx-auto mb-10">
               <h2 className="font-serif font-black text-2xl sm:text-3xl md:text-[2.5rem] text-[#1c1917] tracking-tight leading-[1.15]">
                 Explore the{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">
                   Summit Agenda
                 </span>
               </h2>
@@ -400,9 +400,9 @@ export function ProgrammeClient() {
                 Select a day to explore the full schedule — what&apos;s happening, at what time, where, and who is involved.
               </p>
               <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
-                <div className="h-px w-10 rounded-full bg-[#e87042]/25" />
-                <div className="h-1 w-14 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
-                <div className="h-px w-10 rounded-full bg-[#d68c45]/25" />
+                <div className="h-px w-10 rounded-full bg-[#16a34a]/25" />
+                <div className="h-1 w-14 rounded-full bg-gradient-to-r from-[#16a34a] to-[#22c55e]" />
+                <div className="h-px w-10 rounded-full bg-[#22c55e]/25" />
               </div>
             </div>
 
@@ -422,20 +422,20 @@ export function ProgrammeClient() {
                     aria-selected={isSelected}
                     onClick={() => handleDayChange(day.id)}
                     className={cn(
-                      "relative px-3 py-3.5 rounded-xl text-left transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] overflow-hidden",
+                      "relative px-3 py-3.5 rounded-xl text-left transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] overflow-hidden",
                       isSelected
                         ? "bg-white shadow-md border border-[#e6dfd1]"
                         : "hover:bg-white/60"
                     )}
                   >
                     {isSelected && (
-                      <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#e87042] to-[#d68c45] rounded-t-xl" />
+                      <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#16a34a] to-[#22c55e] rounded-t-xl" />
                     )}
                     <div className="flex items-center gap-1.5 mb-1.5">
                       <span
                         className={cn(
                           "text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md",
-                          isSelected ? "bg-[#e87042] text-white" : "bg-[#ede7db] text-[#78716c]"
+                          isSelected ? "bg-[#16a34a] text-white" : "bg-[#ede7db] text-[#78716c]"
                         )}
                       >
                         {day.dayNumber === 0 ? "Pre" : `D${day.dayNumber}`}
@@ -457,7 +457,7 @@ export function ProgrammeClient() {
                     <div
                       className={cn(
                         "text-xs font-semibold mt-0.5",
-                        isSelected ? "text-[#e87042]" : "text-[#78716c]"
+                        isSelected ? "text-[#16a34a]" : "text-[#78716c]"
                       )}
                     >
                       {day.dateFormatted}
@@ -489,7 +489,7 @@ export function ProgrammeClient() {
                   <div className="flex items-center gap-2.5 mb-1">
                     <h3 className="font-serif font-black text-xl sm:text-2xl text-[#1c1917]">
                       {activeDay.dayName},{" "}
-                      <span className="text-[#e87042]">{activeDay.dateFormatted}</span>
+                      <span className="text-[#16a34a]">{activeDay.dateFormatted}</span>
                     </h3>
                     {activeDay.status === "Tentative" && (
                       <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200 uppercase tracking-wider">
@@ -513,7 +513,7 @@ export function ProgrammeClient() {
               ) : (
                 <div className="relative">
                   {/* Spine line */}
-                  <div className="absolute hidden sm:block left-36 top-6 bottom-6 w-px bg-gradient-to-b from-[#e87042]/60 via-[#dfd6c4] to-[#e87042]/20" />
+                  <div className="absolute hidden sm:block left-36 top-6 bottom-6 w-px bg-gradient-to-b from-[#16a34a]/60 via-[#dfd6c4] to-[#16a34a]/20" />
 
                   <div className="space-y-0">
                     {activeDay.sessions.map((session) => (
@@ -538,9 +538,9 @@ export function ProgrammeClient() {
 
             {/* ── Callout Banner ────────────────────────────────────────────────── */}
             <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#1c1917] to-[#2c2420] flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left relative overflow-hidden">
-              <div className="absolute -right-16 -top-16 w-52 h-52 rounded-full bg-[#e87042]/10 blur-3xl pointer-events-none" />
+              <div className="absolute -right-16 -top-16 w-52 h-52 rounded-full bg-[#16a34a]/10 blur-3xl pointer-events-none" />
               <div className="relative z-10">
-                <span className="text-[11px] font-mono font-bold tracking-wider text-[#e87042] uppercase block mb-1">
+                <span className="text-[11px] font-mono font-bold tracking-wider text-[#16a34a] uppercase block mb-1">
                   Delegate Protocol &amp; Pre-Registration
                 </span>
                 <h4 className="font-serif font-black text-xl sm:text-2xl text-white mt-1">

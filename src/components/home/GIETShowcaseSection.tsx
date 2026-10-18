@@ -86,7 +86,7 @@ export function GIETShowcaseSection() {
                     School of Engineering and Technology
                   </h4>
                   <div className="flex items-center gap-1.5 text-xs text-[#c8d1cd] mt-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#c25e38]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#15803d]" />
                     <span>GIET University, Gunupur, Rayagada, Odisha</span>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export function GIETShowcaseSection() {
                   <h4 className="font-serif font-bold text-lg sm:text-xl text-[#103327]">
                     GIET University, Gunupur
                   </h4>
-                  <p className="text-xs text-[#c25e38] font-bold uppercase tracking-wider mt-0.5">
+                  <p className="text-xs text-[#15803d] font-bold uppercase tracking-wider mt-0.5">
                     Premier Research Institution • State Private University
                   </p>
                   <p className="text-[11px] text-[#7e8d87] mt-1">
@@ -122,7 +122,7 @@ export function GIETShowcaseSection() {
                 href="https://www.giet.edu/schools/school-of-engineering/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#f7f4ec] hover:bg-[#ede7db] border border-[#dfd6c4] text-xs font-bold text-[#143e30] hover:text-[#c25e38] transition-colors shrink-0 shadow-2xs"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#f7f4ec] hover:bg-[#ede7db] border border-[#dfd6c4] text-xs font-bold text-[#143e30] hover:text-[#15803d] transition-colors shrink-0 shadow-2xs"
               >
                 <span>Visit School Portal</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -159,7 +159,7 @@ export function GIETShowcaseSection() {
                     className="p-4.5 rounded-2xl bg-white border border-[#e6dfd1] hover:border-[#143e30]/40 transition-all shadow-2xs"
                   >
                     <div className="w-9 h-9 rounded-xl bg-[#f7f4ec] flex items-center justify-center text-[#143e30] mb-3">
-                      <IconComponent className="w-4.5 h-4.5 text-[#c25e38]" />
+                      <IconComponent className="w-4.5 h-4.5 text-[#15803d]" />
                     </div>
                     <h3 className="font-serif font-bold text-base text-[#103327]">
                       {item.title}

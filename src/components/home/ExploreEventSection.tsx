@@ -13,8 +13,8 @@ const EXPLORE_CARDS = [
     imageAlt: "Confident startup founder presenting keynote pitch on stage before investors and audience",
     href: "/startups",
     cta: "Meet the Startups",
-    accent: "#e87042",
-    accentLight: "#fff5f0",
+    accent: "#16a34a",
+    accentLight: "#f0fdf4",
   },
   {
     label: "Speakers & Leaders",
@@ -50,8 +50,8 @@ export function ExploreEventSection() {
         {/* Heading */}
         <div className="mb-10 sm:mb-12">
           <div className="flex items-center gap-2.5 mb-4">
-            <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
+            <span className="w-4 h-px bg-[#15803d]" aria-hidden="true" />
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#15803d]">
               Explore the Event
             </p>
           </div>
@@ -97,7 +97,7 @@ export function ExploreEventSection() {
               <p className="text-sm text-[#57534e] leading-relaxed flex-1">
                 {EXPLORE_CARDS[0].body}
               </p>
-              <div className="flex items-center gap-1.5 text-xs font-bold text-[#103327] group-hover:text-[#c25e38] transition-colors pt-1">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-[#103327] group-hover:text-[#15803d] transition-colors pt-1">
                 <span>{EXPLORE_CARDS[0].cta}</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
               </div>
@@ -138,7 +138,7 @@ export function ExploreEventSection() {
                   <p className="text-xs text-[#78716c] leading-relaxed flex-1">
                     {card.body}
                   </p>
-                  <div className="flex items-center gap-1 text-xs font-bold text-[#103327] group-hover:text-[#c25e38] transition-colors mt-1">
+                  <div className="flex items-center gap-1 text-xs font-bold text-[#103327] group-hover:text-[#15803d] transition-colors mt-1">
                     <span>{card.cta}</span>
                     <ArrowRight className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-1" />
                   </div>

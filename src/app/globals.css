@@ -25,10 +25,10 @@
     --color-ivory-300: #dfd6c4;
     --color-ivory-400: #ccc1ab;
 
-    --color-terracotta-500: #c25e38;
-    --color-terracotta-600: #a74e2d;
-    --color-terracotta-700: #8b3e23;
-    --color-terracotta-100: #faeee8;
+    --color-terracotta-500: #15803d;
+    --color-terracotta-600: #166534;
+    --color-terracotta-700: #14532d;
+    --color-terracotta-100: #dcfce7;
 
     --color-gold-400: #d6b25e;
     --color-gold-500: #be9740;
@@ -52,17 +52,17 @@
   --card-foreground: #1c1917;
   --popover: #ffffff;
   --popover-foreground: #1c1917;
-  --primary: #e87042;
+  --primary: #16a34a;
   --primary-foreground: #ffffff;
   --secondary: #ede7db;
   --secondary-foreground: #1c1917;
-  --accent: #c25e38;
+  --accent: #15803d;
   --accent-foreground: #ffffff;
   --gold: #d97706;
   --gold-foreground: #ffffff;
   --border: #e6dfd1;
   --input: #e6dfd1;
-  --ring: #e87042;
+  --ring: #16a34a;
 }
 
 *,
@@ -136,7 +136,7 @@ html, body {
 .bg-forest-texture {
   background-color: #0d281e;
   background-image: radial-gradient(circle at 10% 20%, rgba(37, 111, 87, 0.25) 0%, transparent 40%),
-                    radial-gradient(circle at 90% 80%, rgba(194, 94, 56, 0.15) 0%, transparent 40%);
+                    radial-gradient(circle at 90% 80%, rgba(21, 128, 61, 0.15) 0%, transparent 40%);
 }
 
 .glass-nav {

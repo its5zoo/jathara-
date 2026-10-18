@@ -40,13 +40,13 @@ export function GIETCampusMapSection() {
 
             {/* Address */}
             <div className="flex items-start gap-2 text-xs sm:text-sm text-[#292524] pt-1">
-              <MapPin className="w-4 h-4 text-[#e87042] shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#16a34a] shrink-0 mt-0.5" />
               <div>
                 <span className="font-medium">{fullAddress}</span>
                 <button
                   type="button"
                   onClick={handleCopyAddress}
-                  className="ml-2.5 text-xs font-semibold text-[#c25022] hover:underline cursor-pointer"
+                  className="ml-2.5 text-xs font-semibold text-[#15803d] hover:underline cursor-pointer"
                 >
                   {copied ? (
                     <span className="text-emerald-700 font-bold">✓ Copied</span>

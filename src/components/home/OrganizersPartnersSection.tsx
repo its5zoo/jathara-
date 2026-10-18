@@ -35,11 +35,11 @@ export function OrganizersPartnersSection() {
       <Container size="default">
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2.5 mb-4">
-            <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
+            <span className="w-4 h-px bg-[#15803d]" aria-hidden="true" />
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#15803d]">
               Convened Under the Aegis Of
             </p>
-            <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
+            <span className="w-4 h-px bg-[#15803d]" aria-hidden="true" />
           </div>
           <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#1c1917] tracking-tight">
             Organizers, Host &amp; Partners
@@ -57,7 +57,7 @@ export function OrganizersPartnersSection() {
               aria-label={`${org.fullName}, ${org.role}`}
               className={`flex flex-col items-center gap-4 group px-8 sm:px-10 md:px-14 py-6 rounded-2xl sm:rounded-none hover:bg-[#f5f0e8] transition-colors duration-200 w-full max-w-[200px] sm:max-w-none sm:flex-1 ${idx === 0 ? "sm:rounded-l-2xl" : ""} ${idx === ORGANIZERS.length - 1 ? "sm:rounded-r-2xl" : ""}`}
             >
-              <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-xl bg-white border border-[#e6dfd1] group-hover:border-[#c25e38]/30 shadow-sm group-hover:shadow-md flex items-center justify-center p-3 transition-all duration-200 group-hover:-translate-y-0.5">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-xl bg-white border border-[#e6dfd1] group-hover:border-[#15803d]/30 shadow-sm group-hover:shadow-md flex items-center justify-center p-3 transition-all duration-200 group-hover:-translate-y-0.5">
                 <Image
                   src={org.logo}
                   alt={org.name}
@@ -68,10 +68,10 @@ export function OrganizersPartnersSection() {
                 />
               </div>
               <div className="text-center">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#c25e38] block">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#15803d] block">
                   {org.role}
                 </span>
-                <span className="text-sm font-bold text-[#1c1917] group-hover:text-[#c25e38] transition-colors block mt-0.5">
+                <span className="text-sm font-bold text-[#1c1917] group-hover:text-[#15803d] transition-colors block mt-0.5">
                   {org.name}
                 </span>
                 <span className="text-[11px] text-[#78716c] block mt-0.5">

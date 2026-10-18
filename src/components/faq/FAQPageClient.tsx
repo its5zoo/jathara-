@@ -26,13 +26,13 @@ export function FAQPageClient() {
           />
           <div className="absolute inset-0 bg-black/45" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/40 to-[#0c0d12]/60" />
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#16a34a]/15 rounded-full blur-[140px] pointer-events-none" />
         </div>
 
         <Container size="default" className="relative z-10 text-center px-4 sm:px-6">
           <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-[#fcfbf8] tracking-tight leading-tight max-w-4xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
             Frequently Asked{" "}
-            <span className="bg-gradient-to-r from-[#e87042] via-[#f7c89f] to-[#e87042] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#16a34a] via-[#f7c89f] to-[#16a34a] bg-clip-text text-transparent">
               Questions
             </span>
           </h1>
