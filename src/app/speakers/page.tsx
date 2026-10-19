@@ -186,9 +186,6 @@ export default function SpeakersPage() {
                 <Mail className="w-4 h-4 mr-2" />
                 <span>Submit Speaker Nomination</span>
               </Button>
-              <Button variant="outline" size="md">
-                <span>Mentor Category Details</span>
-              </Button>
             </div>
           </div>
         </Container>
