@@ -57,7 +57,7 @@ export function FourPillarsSection() {
             </p>
           </div>
           <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-[2.5rem] text-[#1c1917] tracking-tight leading-[1.08]">
-            Built on Four Foundations
+            Built on Four Exceptional Experiences
           </h2>
           <p className="mt-3.5 text-sm sm:text-base text-[#57534e] max-w-xl leading-relaxed">
             Every element of ISF Startup Jathara is designed with purpose — centered
