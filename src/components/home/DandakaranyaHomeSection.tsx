@@ -39,7 +39,7 @@ export function DandakaranyaHomeSection() {
               A region shaped by forest, memory and living culture.
             </h2>
             <p className="text-sm sm:text-base leading-[1.75] text-[#57534e]">
-              Dandakaranya belongs to both epic imagination and a changing regional history. Explore the forested highlands, layered stories, and communities of southern Odisha in our dedicated editorial guide.
+              Experience a landscape where ancient epic memory breathes through pristine forests and rolling hills. Trek across timeless highland trails, discover indigenous artisanal crafts, and share ideas under ancient forest canopies with founders and mentors from across the globe. Curious to uncover what makes this historic valley so extraordinary?
             </p>
             <div className="pt-1">
               <Link

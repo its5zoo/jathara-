@@ -75,7 +75,7 @@ export default function StartupsPage() {
             Bridging Grassroots Founders directly with Top Venture Capital.
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#d6d0c7] sm:text-base">
-            The platform where collegiate makers, grassroots problem solvers, and early-stage enterprises connect with national venture capital and industry mentors.
+            Discover emerging startups, student innovations, and grassroots enterprises shaping the future. Explore opportunities to showcase your ideas, connect with industry leaders, and turn promising solutions into real-world impact.
           </p>
         </Container>
       </section>

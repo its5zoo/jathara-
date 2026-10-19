@@ -32,7 +32,7 @@ export function VenueTravelClient() {
             The practical visitor guide for reaching the summit venue and planning your stay in Gunupur.
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-white/90 sm:text-sm">
-            <span><strong className="text-white">18–20 December 2026</strong></span>
+            <span><strong className="text-white">17–20 December 2026</strong></span>
             <span className="hidden text-white/35 sm:inline">•</span>
             <span>Goboriguda, Po-Kharling</span>
             <span className="hidden text-white/35 sm:inline">•</span>

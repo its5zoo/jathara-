@@ -5,7 +5,6 @@ import Image from "next/image";
 import {
   Clock,
   MapPin,
-  ArrowRight,
   ChevronDown,
   ChevronUp,
   Users,
@@ -18,7 +17,6 @@ import {
 } from "lucide-react";
 import { PROGRAMME_DAYS } from "@/data/eventData";
 import { Container } from "../common/Container";
-import { Button } from "../common/Button";
 import { cn } from "@/lib/utils";
 
 // ─── Session type visual config ────────────────────────────────────────────────
@@ -365,14 +363,14 @@ export function ProgrammeClient() {
 
         <Container size="wide" className="relative z-20 text-center">
           <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
-            Summit Programme &amp;{" "}
+            The Journey of{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a87a] via-[#e87042] to-[#d68c45]">
-              Event Timeline
+              Innovation
             </span>
           </h1>
 
           <p className="mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm leading-relaxed">
-            Four Days of Sectoral Breakouts, Venture Pitching, Forest Exploration &amp; Grassroots Ecosystem Building.
+            From bold ideas to breakthrough ventures — explore the experiences, people, and opportunities that shape Startup Jathara.
           </p>
 
 
@@ -530,32 +528,6 @@ export function ProgrammeClient() {
                   </div>
                 </div>
               )}
-            </div>
-
-            {/* ── Callout Banner ────────────────────────────────────────────────── */}
-            <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#1c1917] to-[#2c2420] flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left relative overflow-hidden">
-              <div className="absolute -right-16 -top-16 w-52 h-52 rounded-full bg-[#e87042]/10 blur-3xl pointer-events-none" />
-              <div className="relative z-10">
-                <span className="text-[11px] font-mono font-bold tracking-wider text-[#e87042] uppercase block mb-1">
-                  Delegate Protocol &amp; Pre-Registration
-                </span>
-                <h4 className="font-serif font-black text-xl sm:text-2xl text-white mt-1">
-                  Questions About Session Allocation?
-                </h4>
-                <p className="text-xs sm:text-sm text-[#b5b0a8] mt-1.5 max-w-xl">
-                  Connect with the Summit Secretariat for stage schedules, jury
-                  presentation rooms, or sectoral breakout slot confirmations.
-                </p>
-              </div>
-              <Button
-                href="/contact"
-                variant="primary"
-                size="md"
-                className="shrink-0 w-full sm:w-auto relative z-10"
-              >
-                <span>Contact Secretariat</span>
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
             </div>
 
           </div>
