@@ -272,22 +272,26 @@ export const GIET_ACADEMIC_SCHOOLS = [
 export const GIET_INNOVATION_ECOSYSTEM = [
   {
     title: "Atal Community Innovation Centre (ACIC)",
-    desc: "NITI Aayog-supported ACICGIETU fostering grassroots innovation, community technology transfer, and youth enterprise across the unserved districts of Odisha.",
-    tag: "NITI Aayog / ACIC"
+    desc: "NITI Aayog-backed innovation centre fostering grassroots tech transfer, student prototypes, and youth enterprise across Odisha.",
+    tag: "NITI Aayog / ACIC",
+    image: "/images/innovation/acic-innovation-lab.jpg"
   },
   {
     title: "BIRAC E-YUVA Innovation Centre",
     desc: "Biotechnology Industry Research Assistance Council (BIRAC) supported centre empowering student entrepreneurs with biotech and life sciences testbeds.",
-    tag: "Biotechnology & Healthcare"
+    tag: "Biotech & Healthcare",
+    image: "/images/innovation/birac-biotech-centre.jpg"
   },
   {
     title: "Technology Business Incubator (TBI) & Incubatex",
-    desc: "Comprehensive pre-incubation and startup acceleration pipeline providing prototyping space, seed grants, intellectual property counseling, and investor connections.",
-    tag: "Startup Acceleration"
+    desc: "Pre-incubation & startup acceleration pipeline offering prototyping labs, seed grants, IP support, and investor access.",
+    tag: "Startup Acceleration",
+    image: "/images/innovation/tbi-startup-incubator.jpg"
   },
   {
     title: "DSIR Scientific & Industrial Research Facility",
-    desc: "Recognized as a Scientific and Industrial Research Organization (SIRO) by the Department of Scientific and Industrial Research, Ministry of Science & Technology.",
-    tag: "Government Recognized"
+    desc: "Officially recognized Scientific and Industrial Research Organization (SIRO) by the Ministry of Science & Technology, Govt. of India.",
+    tag: "Govt. Recognized (SIRO)",
+    image: "/images/innovation/dsir-research-facility.jpg"
   }
 ];
