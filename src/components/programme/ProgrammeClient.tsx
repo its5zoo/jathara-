@@ -562,11 +562,6 @@ export function ProgrammeClient() {
               </Button>
             </div>
 
-            {/* Disclaimer */}
-            <p className="mt-6 text-center text-[11px] text-[#a8a29e] italic max-w-2xl mx-auto leading-relaxed">
-              &#9432;&nbsp; This schedule is based on the official draft brochure of ISF Startup Jathara 2026.
-              Session timings, speakers, and arrangements are tentative and subject to final confirmation by the organizing committee.
-            </p>
           </div>
         </Container>
       </section>

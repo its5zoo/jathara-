@@ -6,22 +6,22 @@ const credentials = [
   {
     icon: Building2,
     label: "Founding Director",
-    detail: "STPI — Built India's IT Corridor",
+    detail: "STPI — Built India's First IT Parks",
   },
   {
     icon: Cpu,
-    label: "Co-Founder",
-    detail: "PortalPlayer · Acquired by NVIDIA",
+    label: "Deep-Tech Founder",
+    detail: "PortalPlayer — Chips for Apple iPod (NVIDIA)",
   },
   {
     icon: ShieldCheck,
-    label: "IT Advisor",
-    detail: "Special Chief Secretary, Govt. of AP",
+    label: "Government IT Advisor",
+    detail: "Special Chief Secretary to CM, Andhra Pradesh",
   },
   {
     icon: Users,
-    label: "Co-Founder",
-    detail: "Hyderabad Angels Network",
+    label: "Startup Patron",
+    detail: "Co-Founder, Hyderabad Angels Network",
   },
 ];
 
@@ -35,24 +35,28 @@ export function ISFFounderSection() {
         <div className="grid gap-10 lg:grid-cols-[380px_1fr] lg:gap-16 items-center">
 
           {/* Photo */}
-          <div className="relative mx-auto w-64 sm:w-72 lg:w-full max-w-[380px]">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl sm:rounded-3xl shadow-[0_24px_60px_rgba(43,37,28,0.14)]">
+          <div className="relative mx-auto w-56 sm:w-64 lg:w-full max-w-[320px] lg:max-w-[360px] mb-4 sm:mb-0">
+            {/* Decorative background accent block */}
+            <div
+              className="absolute -bottom-2.5 -right-2.5 sm:-bottom-3 sm:-right-3 w-full h-full rounded-3xl bg-[#c25e38]/12 border border-[#c25e38]/25 -z-10"
+              aria-hidden="true"
+            />
+
+            <div className="relative aspect-[4/5] sm:aspect-[4/5] lg:aspect-[4/5] overflow-hidden rounded-3xl border-4 border-white bg-white shadow-[0_20px_50px_rgba(43,37,28,0.18)]">
               <Image
-                src="/images/leadership/ja-chowdary.jpg"
-                alt="J.A. Chowdary — Founder & Chairman, International Startup Foundation"
+                src="/images/speakers/dr-ja-chowdary.jpg"
+                alt="Shri J.A. Chowdary — Founder & Chairman, International Startup Foundation"
                 fill
-                sizes="(max-width: 1023px) 288px, 380px"
-                className="object-cover object-top"
+                sizes="(max-width: 640px) 240px, (max-width: 1023px) 260px, 360px"
+                className="object-cover object-center"
               />
-              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0d1a14]/70 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5">
-                <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#f2c49a]">
-                  Founder & Chairman
-                </span>
-                <p className="mt-1 font-serif text-lg font-bold text-white leading-tight">
-                  International Startup Foundation
-                </p>
-              </div>
+            </div>
+
+            {/* Elegant hanging VIP plaque badge below photo frame (never covers face) */}
+            <div className="absolute -bottom-3 inset-x-0 flex justify-center z-10 pointer-events-none">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1c1917] text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-wider shadow-lg border border-[#e87042]/35">
+                Founder &amp; Chairman · ISF
+              </span>
             </div>
           </div>
 
@@ -74,14 +78,10 @@ export function ISFFounderSection() {
             </p>
 
             <p className="mt-5 text-sm sm:text-[15px] leading-[1.8] text-[#4a4540] max-w-xl">
-              A pioneer of India&apos;s technology revolution, J.A. Chowdary built the
-              foundations of India&apos;s IT corridor as the Founding Director of STPI
-              and co-architect of HITEC City. His co-founded startup PortalPlayer
-              powered the first-generation iPod and was acquired by NVIDIA.
-              He later served as Special Chief Secretary &amp; IT Advisor to the
-              Government of Andhra Pradesh, shaping state-level startup policy.
-              Today, through ISF, he is bridging venture capital with grassroots
-              founders across Bharat.
+              Widely recognized as a prime architect of Cyberabad and HITEC City,
+              Shri J.A. Chowdary has spent over three decades building India&apos;s technology
+              ecosystem. Through ISF, he is now leading the movement to connect grassroots
+              innovators across Bharat with global mentorship and venture capital.
             </p>
 
             {/* Credential row */}
@@ -108,10 +108,6 @@ export function ISFFounderSection() {
                 );
               })}
             </div>
-
-            <p className="mt-5 text-xs text-[#78716c] leading-relaxed">
-              Honorary Doctorate, Chitkara University (2025) · HYSEA Lifetime Achievement Award (2020) · IIT Madras
-            </p>
           </div>
 
         </div>

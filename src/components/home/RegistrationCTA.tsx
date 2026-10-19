@@ -28,7 +28,7 @@ export function RegistrationCTA() {
         <p className="mt-4 text-sm sm:text-base text-[#b8c8be] max-w-lg mx-auto leading-relaxed font-normal">
           Whether you are a founder, investor, or ecosystem builder, the
           Jathara awaits you. Join India&apos;s grassroots entrepreneurship gathering
-          this December in Dandakaranya, Odisha.
+          this December in Dandakaranya forest, Odisha.
         </p>
 
         {/* CTA Buttons */}
