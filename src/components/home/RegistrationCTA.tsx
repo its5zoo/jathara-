@@ -42,12 +42,6 @@ export function RegistrationCTA() {
             <span>Register for the Summit</span>
             <ArrowRight className="w-4 h-4" />
           </a>
-          <a
-            href="/about"
-            className="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-white/20 text-white/80 font-semibold text-sm hover:border-white/40 hover:text-white hover:bg-white/8 active:scale-95 transition-all duration-200"
-          >
-            Learn About the Summit
-          </a>
         </div>
 
         {/* Meta info bar */}

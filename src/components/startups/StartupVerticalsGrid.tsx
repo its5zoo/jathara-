@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import {
   Activity,
-  ArrowUpRight,
   Building2,
   Check,
   ChevronDown,
@@ -139,15 +138,6 @@ export function StartupVerticalsGrid() {
                         aria-hidden="true"
                       />
                     </button>
-                    <a
-                      href="https://isf-test.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#245f4d] transition-colors hover:text-[#153e32] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#245f4d]/40"
-                    >
-                      Express Founder Interest
-                      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                    </a>
                   </div>
 
                   {isExpanded && (

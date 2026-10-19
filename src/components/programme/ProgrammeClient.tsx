@@ -118,14 +118,6 @@ function DayStatsBar({ day }: { day: (typeof PROGRAMME_DAYS)[0] }) {
           {it.count} {it.label}
         </span>
       ))}
-      {day.status === "Tentative" && (
-        <>
-          <span className="hidden sm:block w-px h-4 bg-[#dfd6c4]" />
-          <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200 uppercase tracking-wider">
-            Tentative Schedule
-          </span>
-        </>
-      )}
     </div>
   );
 }

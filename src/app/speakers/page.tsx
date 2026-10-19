@@ -43,16 +43,20 @@ export default function SpeakersPage() {
         </div>
 
         <Container size="default" className="relative z-20 text-center">
+          <p className="mb-3 sm:mb-4 text-[10px] sm:text-xs font-bold uppercase tracking-[0.24em] text-[#f2b58f] drop-shadow-sm">
+            Voices of Innovation · Leadership · Mentorship
+          </p>
+
           <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
             Speakers, Mentors &amp; Dignitaries
           </h1>
 
           <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
-            Distinguished Voices from Industry, Policy &amp; Deep-Tech Venture Capital.
+            Meet the Minds Shaping Tomorrow
           </p>
 
           <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
-            Leading voices across government, venture capital, agriculture, healthcare, and higher education convening in Dandakaranya.
+            Meet the entrepreneurs, industry leaders, policymakers, and mentors sharing their knowledge and experience to inspire innovation, guide emerging founders, and strengthen the startup ecosystem at Startup Jathara 2026.
           </p>
         </Container>
       </section>
