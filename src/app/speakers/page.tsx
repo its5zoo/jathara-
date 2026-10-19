@@ -11,7 +11,6 @@ import { INITIAL_SPEAKERS, EVENT_METADATA } from "@/data/eventData";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { Button } from "@/components/common/Button";
-import { EmptyState } from "@/components/common/EmptyState";
 import { RoundtableShowcase } from "@/components/speakers/RoundtableShowcase";
 
 export const metadata: Metadata = {
@@ -192,18 +191,6 @@ export default function SpeakersPage() {
               </Button>
             </div>
           </div>
-
-          {/* Additional Plenary Keynotes Advisory Notice */}
-          <EmptyState
-            icon="mic"
-            badgeText="Announcements in Progress"
-            title="More Speakers & Mentors Coming Soon"
-            description="We are currently confirming distinguished founders, industry leaders, and domain experts. The complete lineup will be published as schedules are locked in."
-            note="All speaker profiles are verified directly with the speakers before being published."
-            actionLabel="Inquire About Speaking / Mentoring"
-            actionHref={`mailto:${EVENT_METADATA.contactEmail}?subject=Speaking%20or%20Mentoring%20Inquiry`}
-            className="mt-12"
-          />
         </Container>
       </section>
     </div>
