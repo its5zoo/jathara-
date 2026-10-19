@@ -54,7 +54,7 @@ export function RegistrationCTA() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#a8c4b8] font-medium">
           <span className="flex items-center gap-1.5">
             <Calendar className="w-3.5 h-3.5 text-[#e87042]" />
-            18–20 December 2026
+            17–20 December 2026
           </span>
           <span className="hidden sm:block text-white/20">|</span>
           <span className="flex items-center gap-1.5">

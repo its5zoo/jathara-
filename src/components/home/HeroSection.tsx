@@ -124,10 +124,8 @@ export function HeroSection() {
         <div className="hero-enter hero-enter-delay-4 mt-3.5 sm:mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-medium text-white/70">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#e87042] inline-block animate-pulse" />
-            18–20 December 2026
+            17–20 December 2026
           </span>
-          <span className="text-white/35">•</span>
-          <span>Dandakaranya, Odisha</span>
           <span className="text-white/35">•</span>
           <span>GIET University, Gunupur</span>
         </div>

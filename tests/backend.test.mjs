@@ -242,7 +242,7 @@ describe("Phase 3: Production Readiness Backend Audit", () => {
   // -------------------------------------------------------------
   // 6. Canonical Eight-Track Configuration Verification
   // -------------------------------------------------------------
-  test("Canonical Tracks: Exactly eight official tracks exist with unique IDs, slugs, titles and descriptions", () => {
+  test("Canonical Tracks: Exactly nine official tracks exist with unique IDs, slugs, titles and descriptions", () => {
     const OFFICIAL_TRACK_NAMES = [
       "Agritech & Food Safety",
       "AI & Quantum Technology",
@@ -252,6 +252,7 @@ describe("Phase 3: Production Readiness Backend Audit", () => {
       "Infrastructure",
       "Clean Energy & Water Safety",
       "Fintech/Edutech/Tribaltech",
+      "Innovative Ideas",
     ];
 
     const OFFICIAL_TRACK_SLUGS = [
@@ -263,20 +264,21 @@ describe("Phase 3: Production Readiness Backend Audit", () => {
       "infrastructure",
       "clean-energy-water-safety",
       "fintech-edutech-tribaltech",
+      "innovative-ideas",
     ];
 
-    assert.equal(OFFICIAL_TRACK_NAMES.length, 8);
-    assert.equal(OFFICIAL_TRACK_SLUGS.length, 8);
+    assert.equal(OFFICIAL_TRACK_NAMES.length, 9);
+    assert.equal(OFFICIAL_TRACK_SLUGS.length, 9);
 
     // Uniqueness
-    assert.equal(new Set(OFFICIAL_TRACK_NAMES).size, 8);
-    assert.equal(new Set(OFFICIAL_TRACK_SLUGS).size, 8);
+    assert.equal(new Set(OFFICIAL_TRACK_NAMES).size, 9);
+    assert.equal(new Set(OFFICIAL_TRACK_SLUGS).size, 9);
   });
 
   // -------------------------------------------------------------
   // 7. Track Input Validation: Rejects Obsolete & Unsupported Tracks
   // -------------------------------------------------------------
-  test("Track Validation: Accepts all 8 official tracks and rejects legacy 5-track labels for new submissions", () => {
+  test("Track Validation: Accepts all 9 official tracks and rejects legacy 5-track labels for new submissions", () => {
     const OFFICIAL_ALLOWED = new Set([
       "Agritech & Food Safety",
       "AI & Quantum Technology",
@@ -286,6 +288,7 @@ describe("Phase 3: Production Readiness Backend Audit", () => {
       "Infrastructure",
       "Clean Energy & Water Safety",
       "Fintech/Edutech/Tribaltech",
+      "Innovative Ideas",
       "agritech-food-safety",
       "ai-quantum-technology",
       "life-sciences-health-care",
@@ -294,12 +297,13 @@ describe("Phase 3: Production Readiness Backend Audit", () => {
       "infrastructure",
       "clean-energy-water-safety",
       "fintech-edutech-tribaltech",
+      "innovative-ideas",
       "",
     ]);
 
     function validatePreferredTrack(track) {
       if (!OFFICIAL_ALLOWED.has(track)) {
-        throw new Error("Invalid preferred track. Please select one of the eight official summit tracks.");
+        throw new Error("Invalid preferred track. Please select one of the nine official summit tracks.");
       }
       return true;
     }
@@ -500,6 +504,7 @@ describe("Phase 3: Production Readiness Backend Audit", () => {
       "Infrastructure",
       "Clean Energy & Water Safety",
       "Fintech/Edutech/Tribaltech",
+      "Innovative Ideas",
     ];
 
     const CATEGORIES = [

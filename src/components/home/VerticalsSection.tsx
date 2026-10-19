@@ -10,7 +10,8 @@ import {
   Zap, 
   Coins, 
   ArrowRight, 
-  Sparkles
+  Sparkles,
+  Lightbulb
 } from "lucide-react";
 import { OFFICIAL_TRACKS, SummitTrack } from "@/lib/config/tracks";
 import { Container } from "../common/Container";
@@ -27,6 +28,8 @@ const trackIconMap: Record<string, React.ElementType> = {
   Building2,
   Zap,
   Coins,
+  Sparkles,
+  Lightbulb,
 };
 
 export function VerticalsSection() {
@@ -48,7 +51,7 @@ export function VerticalsSection() {
 
           {/* Main Title with Gradient Accent */}
           <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#1c1917] tracking-tight leading-[1.12]">
-            Eight Focus <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Sectors</span>
+            Nine Focus <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Sectors</span>
           </h2>
 
           {/* Subtitle */}

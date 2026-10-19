@@ -6,16 +6,16 @@ import { Container } from "../common/Container";
 
 const STATS = [
   {
-    value: "3",
+    value: "4",
     label: "Immersive Days",
-    sub: "18–20 Dec 2026",
+    sub: "17–20 Dec 2026",
     accent: "#c25e38",
     href: "/programme",
     cta: "Programme",
     image: "/images/explore-roundtable-panel-2026.jpg",
   },
   {
-    value: "8",
+    value: "9+",
     label: "Sector Tracks",
     sub: "AgriTech · HealthTech · more",
     accent: "#1c6651",

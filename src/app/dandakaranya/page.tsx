@@ -73,7 +73,7 @@ export default function DandakaranyaPage() {
             <p className="text-xs font-bold tracking-[0.2em] text-[#8c671b]">02 · EPIC MEMORY</p>
             <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#1c1917] sm:text-4xl">A forest in the Ramayana</h2>
             <p className="mt-5 text-base leading-8 text-[#4a5752]">{chapters[1].text}</p>
-            <a href="https://www.valmiki.iitk.ac.in/sloka?field_kanda_tid=3&field_sarga_value=1&language=en" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#143e30] underline decoration-[#c9b879] underline-offset-4 hover:text-[#a74e2d]">Read the opening of Araṇya Kāṇḍa <BookOpen className="h-4 w-4" aria-hidden="true" /></a>
+            <a href="https://www.wisdomlib.org/hinduism/book/the-ramayana-of-valmiki/d/doc424098.html" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#143e30] underline decoration-[#c9b879] underline-offset-4 hover:text-[#a74e2d]">Read the opening of Araṇya Kāṇḍa <BookOpen className="h-4 w-4" aria-hidden="true" /></a>
           </div>
         </Container>
       </section>

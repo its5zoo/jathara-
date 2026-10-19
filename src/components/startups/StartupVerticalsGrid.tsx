@@ -9,6 +9,7 @@ import {
   ChevronDown,
   Coins,
   Cpu,
+  Lightbulb,
   Shield,
   Sparkles,
   Users,
@@ -28,6 +29,7 @@ const iconMap: Record<string, React.ElementType> = {
   Zap,
   Coins,
   Sparkles,
+  Lightbulb,
 };
 
 export function StartupVerticalsGrid() {
@@ -66,7 +68,7 @@ export function StartupVerticalsGrid() {
     <div className="min-w-0 overflow-hidden rounded-[28px] border border-[#d8d0c2] bg-[#fffdf9] shadow-[0_24px_60px_rgba(50,42,31,0.07)]">
       <div className="flex flex-col gap-4 border-b border-[#ded6c9] bg-[#f2ede3] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <div className="flex items-center gap-3">
-          <span className="font-serif text-3xl font-bold text-[#a84e2d]">08</span>
+          <span className="font-serif text-3xl font-bold text-[#a84e2d]">09</span>
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#363a35]">Official sectors</p>
             <p className="mt-0.5 text-xs text-[#777169]">One connected innovation portfolio</p>
@@ -96,8 +98,9 @@ export function StartupVerticalsGrid() {
               key={vertical.id}
               className={cn(
                 "group relative min-w-0 border-b border-[#e3ddd3] px-5 py-6 transition-colors duration-300 hover:bg-[#faf6ef] sm:px-8 sm:py-8",
-                index % 2 === 0 && "lg:border-r",
-                index >= STARTUP_VERTICALS.length - 2 && "lg:border-b-0",
+                index % 2 === 0 && (index === STARTUP_VERTICALS.length - 1 ? "" : "lg:border-r"),
+                index === STARTUP_VERTICALS.length - 1 && "lg:col-span-2 lg:border-b-0",
+                STARTUP_VERTICALS.length % 2 === 0 && index >= STARTUP_VERTICALS.length - 2 && "lg:border-b-0",
                 isExpanded && "bg-[#faf6ef]"
               )}
             >

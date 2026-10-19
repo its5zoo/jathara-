@@ -162,11 +162,11 @@ export default function StartupsPage() {
               <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#706a61]">Startup Portfolio</span>
             </div>
             <h2 id="sectors-heading" className="max-w-2xl font-serif text-3xl font-black leading-[1.1] tracking-tight text-[#1b1b18] sm:text-4xl lg:text-[2.75rem]">
-              Eight sectors.{" "}
+              Nine sectors.{" "}
               <span className="text-[#24634f]">One innovation ecosystem.</span>
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-[1.75] text-[#625e56] sm:text-[15px]">
-              Startups with active prototypes, MVPs, or operational traction in these eight official domains are invited to exhibit. Explore each sector to review its complete focus areas.
+              Startups with active prototypes, MVPs, or operational traction in these nine official domains are invited to exhibit. Explore each sector to review its complete focus areas.
             </p>
           </div>
 

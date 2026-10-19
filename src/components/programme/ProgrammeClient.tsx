@@ -375,10 +375,6 @@ export function ProgrammeClient() {
             Four Days of Sectoral Breakouts, Venture Pitching, Forest Exploration &amp; Grassroots Ecosystem Building.
           </p>
 
-          <p className="mt-3 text-xs sm:text-sm text-[#b5b0a8] max-w-xl mx-auto">
-            Verified official schedule for 17–20 December 2026 at GIET University, Gunupur.
-          </p>
-
 
         </Container>
       </section>

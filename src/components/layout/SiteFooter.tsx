@@ -57,7 +57,7 @@ export function SiteFooter() {
               <div className="space-y-2 text-xs text-[#d6d0c7] pt-1">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-3.5 h-3.5 text-[#e87042] flex-shrink-0" />
-                  <span>18–20 December 2026</span>
+                  <span>17–20 December 2026</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <MapPin className="w-3.5 h-3.5 text-[#d68c45] flex-shrink-0 mt-0.5" />

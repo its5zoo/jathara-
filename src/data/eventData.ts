@@ -16,9 +16,9 @@ export const EVENT_METADATA: EventMetadata = {
   subTitle: "Startup Jathara @ Dandakaranya",
   edition: "Annual Summit 2026",
   identity: "Grassroots Innovation • Tribal & Rural Entrepreneurship • Global Market Access",
-  dates: "18–20 December 2026",
+  dates: "17–20 December 2026",
   datesISO: {
-    start: "2026-12-18",
+    start: "2026-12-17",
     end: "2026-12-20",
   },
   registrationUrl: "https://isf-test.vercel.app/",
@@ -754,7 +754,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-6",
     category: "Startups & Junicorn",
     question: "What are the core thematic startup tracks for the summit?",
-    answer: "The eight official summit tracks include: (1) Agritech & Food Safety, (2) AI & Quantum Technology, (3) Life Sciences & Health Care, (4) Defence/Aerospace & Deep Tech, (5) Women Empowerment & Social Inclusion, (6) Infrastructure, (7) Clean Energy & Water Safety, and (8) Fintech/Edutech/Tribaltech.",
+    answer: "The nine official summit tracks include: (1) Agritech & Food Safety, (2) AI & Quantum Technology, (3) Life Sciences & Health Care, (4) Defence/Aerospace & Deep Tech, (5) Women Empowerment & Social Inclusion, (6) Infrastructure, (7) Clean Energy & Water Safety, (8) Fintech/Edutech/Tribaltech, and (9) Innovative Ideas.",
   },
   {
     id: "faq-7",

@@ -31,7 +31,8 @@ export type TrackSlug =
   | "women-empowerment-social-inclusion"
   | "infrastructure"
   | "clean-energy-water-safety"
-  | "fintech-edutech-tribaltech";
+  | "fintech-edutech-tribaltech"
+  | "innovative-ideas";
 
 export type OfficialTrackName =
   | "Agritech & Food Safety"
@@ -41,7 +42,8 @@ export type OfficialTrackName =
   | "Women Empowerment & Social Inclusion"
   | "Infrastructure"
   | "Clean Energy & Water Safety"
-  | "Fintech/Edutech/Tribaltech";
+  | "Fintech/Edutech/Tribaltech"
+  | "Innovative Ideas";
 
 export const OFFICIAL_TRACKS: readonly SummitTrack[] = [
   {
@@ -211,6 +213,27 @@ export const OFFICIAL_TRACKS: readonly SummitTrack[] = [
     iconBg: "bg-[#a64e2d] text-white",
     tagVariant: "terracotta",
     scheduleHint: "Day 1 • Grassroots Pitch Arena",
+  },
+  {
+    id: 9,
+    slug: "innovative-ideas",
+    title: "Innovative Ideas",
+    description:
+      "Cross-disciplinary inventions, disruptive prototypes, grassroots problem-solving models, and creative breakthrough concepts.",
+    subtitle: "Open Innovation, Disruptive Prototypes & Moonshots",
+    focusAreas: [
+      "Cross-disciplinary & open innovation concepts",
+      "Early-stage disruptive prototypes & proof-of-concepts",
+      "Grassroots moonshots & native community problem-solving",
+      "Frugal engineering & unconventional breakthrough ideas",
+    ],
+    targetParticipants: "Independent inventors, student innovators, multidisciplinary researchers, early-stage tinkerers",
+    iconName: "Lightbulb",
+    accentBg: "from-[#8c671b]/15 to-transparent",
+    accentBorder: "border-[#8c671b]/45",
+    iconBg: "bg-[#8c671b] text-white",
+    tagVariant: "gold",
+    scheduleHint: "Day 2 • Innovation Arena",
   },
 ] as const;
 
