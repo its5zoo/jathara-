@@ -51,10 +51,6 @@ export function VenueTravelClient() {
             subtitle="Review local options, then contact the property directly to confirm current availability, amenities, rates, and cancellation terms."
           />
 
-          <div className="mx-auto mt-7 max-w-4xl border-y border-[#ded5c7] py-4 text-center text-xs leading-6 text-[#6b625b] sm:text-sm">
-            On-campus accommodation is not guaranteed. Confirm any campus room allocation with the event team before making travel plans. No public hotel shuttle or preferential event tariff has been announced.
-          </div>
-
           <GunupurHotelsSection />
         </Container>
       </section>
