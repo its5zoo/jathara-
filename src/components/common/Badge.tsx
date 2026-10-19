@@ -16,7 +16,7 @@ export function Badge({
   const variantStyles = {
     forest: "bg-[#143e30] text-[#fcfbf8] border border-[#256f57]/30",
     ivory: "bg-[#ede7db] text-[#161e1b] border border-[#dfd6c4]",
-    terracotta: "bg-[#15803d]/10 text-[#a74e2d] border border-[#15803d]/30 font-medium",
+    terracotta: "bg-[#c25e38]/10 text-[#a74e2d] border border-[#c25e38]/30 font-medium",
     gold: "bg-[#be9740]/15 text-[#8c671b] border border-[#be9740]/30 font-medium",
     outline: "bg-transparent text-[#222b27] border border-[#c8d1cd]",
     draft: "bg-amber-50 text-amber-800 border border-amber-300 font-semibold tracking-wide uppercase",

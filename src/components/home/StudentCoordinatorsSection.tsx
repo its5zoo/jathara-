@@ -12,7 +12,7 @@ const AVATAR_STYLES: Record<StudentCoordinator["avatarColor"], { bg: string; tex
     border: "border-[#be9740]/40",
   },
   terracotta: {
-    bg: "bg-gradient-to-br from-[#15803d] to-[#994324]",
+    bg: "bg-gradient-to-br from-[#c25e38] to-[#994324]",
     text: "text-[#fcfbf8]",
     border: "border-[#e6a890]/40",
   },
@@ -81,7 +81,7 @@ export function StudentCoordinatorsSection() {
 
                 {/* Role Pill */}
                 <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#103327]/6 border border-[#103327]/12 text-[11px] font-bold text-[#103327] uppercase tracking-wider">
-                  <Users className="w-3 h-3 text-[#15803d]" />
+                  <Users className="w-3 h-3 text-[#c25e38]" />
                   <span>{coordinator.role}</span>
                 </div>
 

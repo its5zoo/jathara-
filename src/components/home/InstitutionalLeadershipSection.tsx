@@ -9,15 +9,15 @@ export function InstitutionalLeadershipSection() {
       <Container size="wide">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-[#1c1917] tracking-tight leading-[1.12]">
-            Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Leadership</span>
+            Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Leadership</span>
           </h2>
           <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#57534e] max-w-2xl mx-auto leading-relaxed">
             Guiding GIET University&apos;s 28-year legacy of academic and innovation excellence.
           </p>
           <div className="mt-5 flex items-center justify-center gap-2" aria-hidden="true">
-            <div className="h-0.5 w-8 rounded-full bg-[#16a34a]/25" />
-            <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#16a34a] to-[#22c55e]" />
-            <div className="h-0.5 w-8 rounded-full bg-[#22c55e]/25" />
+            <div className="h-0.5 w-8 rounded-full bg-[#e87042]/25" />
+            <div className="h-1 w-12 rounded-full bg-gradient-to-r from-[#e87042] to-[#d68c45]" />
+            <div className="h-0.5 w-8 rounded-full bg-[#d68c45]/25" />
           </div>
         </div>
 
@@ -26,7 +26,7 @@ export function InstitutionalLeadershipSection() {
           {GIET_LEADERSHIP_PROFILES.map((leader, index) => (
             <div
               key={leader.id}
-              className={`bg-white rounded-2xl border border-[#e8dfd3] overflow-hidden shadow-xs hover:shadow-md hover:border-[#16a34a]/40 transition-all flex flex-col group ${
+              className={`bg-white rounded-2xl border border-[#e8dfd3] overflow-hidden shadow-xs hover:shadow-md hover:border-[#e87042]/40 transition-all flex flex-col group ${
                 index === 4
                   ? "col-span-2 sm:col-span-1 w-[calc(50%-5px)] min-[380px]:w-[calc(50%-6px)] sm:w-full mx-auto"
                   : ""
@@ -47,7 +47,7 @@ export function InstitutionalLeadershipSection() {
                 <h4 className="font-serif font-bold text-xs sm:text-sm text-[#1c1917] line-clamp-1">
                   {leader.name}
                 </h4>
-                <p className="text-[10px] sm:text-[11px] text-[#15803d] font-semibold line-clamp-1 mt-0.5">
+                <p className="text-[10px] sm:text-[11px] text-[#c25e38] font-semibold line-clamp-1 mt-0.5">
                   {leader.position}
                 </p>
               </div>

@@ -12,7 +12,7 @@
     </linearGradient>
     <linearGradient id="terraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#e07a52" />
-      <stop offset="100%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#c25e38" />
     </linearGradient>
     <linearGradient id="leafGrad" x1="0%" y1="100%" x2="0%" y2="0%">
       <stop offset="0%" stop-color="#143e30" />

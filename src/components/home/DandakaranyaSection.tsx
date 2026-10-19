@@ -7,7 +7,7 @@ export function DandakaranyaSection() {
   return (
     <section className="py-20 bg-gradient-to-b from-[#0d281e] to-[#081a14] text-[#fcfbf8] border-b border-[#1b5341]/60 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#256f57]/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#15803d]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c25e38]/15 rounded-full blur-3xl pointer-events-none" />
 
       <Container size="wide" className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -39,7 +39,7 @@ export function DandakaranyaSection() {
               </div>
 
               <div className="p-4 rounded-2xl bg-[#103327]/80 border border-[#256f57]/40">
-                <div className="w-9 h-9 rounded-lg bg-[#081a14] flex items-center justify-center text-[#15803d] mb-3">
+                <div className="w-9 h-9 rounded-lg bg-[#081a14] flex items-center justify-center text-[#c25e38] mb-3">
                   <Mountain className="w-4 h-4" />
                 </div>
                 <h4 className="font-serif font-bold text-base text-[#fcfbf8]">

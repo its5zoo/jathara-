@@ -9,8 +9,8 @@ const FOUR_PILLARS = [
     description:
       "A dedicated stage for early-stage student and grassroots founders to pitch before investors, mentors, and industry leaders.",
     icon: Rocket,
-    accent: "#15803d",
-    accentBg: "#f0fdf4",
+    accent: "#c25e38",
+    accentBg: "#fff5f0",
   },
   {
     number: "02",
@@ -51,8 +51,8 @@ export function FourPillarsSection() {
         {/* Section heading */}
         <div className="max-w-2xl mb-12 sm:mb-16">
           <div className="flex items-center gap-2.5 mb-4">
-            <span className="w-4 h-px bg-[#15803d]" aria-hidden="true" />
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#15803d]">
+            <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
               The Four Pillars
             </p>
           </div>

@@ -97,7 +97,7 @@ export function EcosystemSection() {
                     href={org.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#143e30] hover:text-[#15803d] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#143e30] hover:text-[#c25e38] transition-colors"
                   >
                     <span>Visit {org.abbreviation} Online</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -111,7 +111,7 @@ export function EcosystemSection() {
         {/* Partnership Callout */}
         <div className="mt-14 bg-[#f7f4ec] rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#dfd6c4] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-1.5 text-center md:text-left">
-            <span className="text-[11px] font-bold text-[#15803d] uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-[#c25e38] uppercase tracking-wider">
               Collaborative Opportunities
             </span>
             <h4 className="font-serif font-bold text-xl sm:text-2xl text-[#103327]">

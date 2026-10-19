@@ -24,13 +24,13 @@ export function Button({
   const baseStyles = "inline-flex items-center justify-center font-sans font-medium rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer select-none";
 
   const variantStyles = {
-    primary: "bg-[#16a34a] text-white hover:bg-[#d95d2c] focus-visible:ring-[#16a34a] shadow-sm shadow-[#16a34a]/20 font-semibold",
-    forest: "bg-[#16a34a] text-white hover:bg-[#d95d2c] focus-visible:ring-[#16a34a] shadow-sm shadow-[#16a34a]/20 font-semibold",
-    secondary: "bg-[#ede7db] text-[#1c1917] hover:bg-[#dfd6c4] focus-visible:ring-[#16a34a] border border-[#dfd6c4]",
-    outline: "bg-transparent text-[#16a34a] border-2 border-[#16a34a] hover:bg-[#16a34a] hover:text-white focus-visible:ring-[#16a34a] font-semibold",
-    terracotta: "bg-[#15803d] text-white hover:bg-[#a74e2d] focus-visible:ring-[#15803d] shadow-sm shadow-[#15803d]/20 font-semibold",
+    primary: "bg-[#e87042] text-white hover:bg-[#d95d2c] focus-visible:ring-[#e87042] shadow-sm shadow-[#e87042]/20 font-semibold",
+    forest: "bg-[#e87042] text-white hover:bg-[#d95d2c] focus-visible:ring-[#e87042] shadow-sm shadow-[#e87042]/20 font-semibold",
+    secondary: "bg-[#ede7db] text-[#1c1917] hover:bg-[#dfd6c4] focus-visible:ring-[#e87042] border border-[#dfd6c4]",
+    outline: "bg-transparent text-[#e87042] border-2 border-[#e87042] hover:bg-[#e87042] hover:text-white focus-visible:ring-[#e87042] font-semibold",
+    terracotta: "bg-[#c25e38] text-white hover:bg-[#a74e2d] focus-visible:ring-[#c25e38] shadow-sm shadow-[#c25e38]/20 font-semibold",
     gold: "bg-[#be9740] text-white hover:bg-[#9e792c] focus-visible:ring-[#be9740] shadow-sm shadow-[#be9740]/20 font-semibold",
-    ghost: "bg-transparent text-[#222b27] hover:bg-[#ede7db]/50 focus-visible:ring-[#16a34a]",
+    ghost: "bg-transparent text-[#222b27] hover:bg-[#ede7db]/50 focus-visible:ring-[#e87042]",
   };
 
   const sizeStyles = {

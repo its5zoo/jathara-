@@ -17,7 +17,7 @@ export default function GlobalError({ error, reset }: ErrorProps) {
   return (
     <div className="min-h-[75vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <div className="max-w-xl w-full text-center space-y-8 p-8 sm:p-12 rounded-2xl bg-white border border-[#143e30]/10 shadow-xl shadow-[#143e30]/5">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#faeee8] text-[#15803d] mx-auto border border-[#15803d]/20">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#faeee8] text-[#c25e38] mx-auto border border-[#c25e38]/20">
           <svg
             className="w-8 h-8"
             fill="none"
@@ -35,7 +35,7 @@ export default function GlobalError({ error, reset }: ErrorProps) {
         </div>
 
         <div className="space-y-3">
-          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#15803d] bg-[#15803d]/10 rounded-full">
+          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#c25e38] bg-[#c25e38]/10 rounded-full">
             Application Recovery
           </span>
           <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#143e30]">
@@ -69,7 +69,7 @@ export default function GlobalError({ error, reset }: ErrorProps) {
           If this issue persists, please reach our technical helpdesk at{' '}
           <a
             href="mailto:startupjathara@giet.edu"
-            className="text-[#143e30] font-semibold underline hover:text-[#15803d]"
+            className="text-[#143e30] font-semibold underline hover:text-[#c25e38]"
           >
             startupjathara@giet.edu
           </a>

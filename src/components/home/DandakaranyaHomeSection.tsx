@@ -44,7 +44,7 @@ export function DandakaranyaHomeSection() {
             <div className="pt-1">
               <Link
                 href="/dandakaranya"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#143e30] transition-colors hover:text-[#a74e2d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15803d] group"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#143e30] transition-colors hover:text-[#a74e2d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c25e38] group"
               >
                 Discover Dandakaranya
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />

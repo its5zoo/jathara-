@@ -78,15 +78,15 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
 
                 <div className="grid shrink-0 gap-x-6 gap-y-2 text-xs font-semibold text-[#4e4a43] sm:grid-cols-2 lg:max-w-[26rem]">
                   <span className="flex items-center gap-2">
-                    <CalendarDays className="h-4 w-4 text-[#166534]" aria-hidden="true" />
+                    <CalendarDays className="h-4 w-4 text-[#b65531]" aria-hidden="true" />
                     {roundtable.date}
                   </span>
                   <span className="flex items-center gap-2">
-                    <Clock3 className="h-4 w-4 text-[#166534]" aria-hidden="true" />
+                    <Clock3 className="h-4 w-4 text-[#b65531]" aria-hidden="true" />
                     {roundtable.time}
                   </span>
                   <span className="flex items-start gap-2 sm:col-span-2">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#166534]" aria-hidden="true" />
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#b65531]" aria-hidden="true" />
                     {roundtable.location}
                   </span>
                 </div>

@@ -88,7 +88,7 @@ export function GunupurHotelsSection() {
               <p className="text-[11px] font-bold uppercase tracking-wider text-[#8c671b]">Amenities to confirm</p>
               <ul className="mt-3 grid gap-2 text-sm text-[#4a5752] sm:grid-cols-2">
                 {hotel.tags.map((tag) => (
-                  <li key={tag} className="flex items-center gap-2"><BedDouble className="h-4 w-4 shrink-0 text-[#15803d]" /> {tag}</li>
+                  <li key={tag} className="flex items-center gap-2"><BedDouble className="h-4 w-4 shrink-0 text-[#c25022]" /> {tag}</li>
                 ))}
               </ul>
             </div>

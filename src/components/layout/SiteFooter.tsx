@@ -16,7 +16,7 @@ export function SiteFooter() {
     <footer className="bg-[#0c0d12] text-[#d6d0c7] border-t border-[#232733] relative overflow-hidden">
       {/* Subtle warm decorative glow */}
       <div 
-        className="absolute top-0 right-1/4 w-80 h-40 bg-[#16a34a]/10 rounded-full blur-3xl pointer-events-none" 
+        className="absolute top-0 right-1/4 w-80 h-40 bg-[#e87042]/10 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true" 
       />
 
@@ -28,7 +28,7 @@ export function SiteFooter() {
             <div className="space-y-3 lg:col-span-1">
               <Link
                 href="/"
-                className="group flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-xl w-fit"
+                className="group flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] rounded-xl w-fit"
                 aria-label="ISF Startup Jathara 2026 Homepage"
               >
                 <div className="w-8 h-8 rounded-lg bg-white border border-[#dfd6c4] flex items-center justify-center p-1 shrink-0 shadow-2xs group-hover:scale-105 transition-transform duration-200">
@@ -41,10 +41,10 @@ export function SiteFooter() {
                   />
                 </div>
                 <div>
-                  <h3 className="font-serif font-black text-base text-[#fcfbf8] tracking-tight group-hover:text-[#16a34a] transition-colors leading-tight">
+                  <h3 className="font-serif font-black text-base text-[#fcfbf8] tracking-tight group-hover:text-[#e87042] transition-colors leading-tight">
                     ISF STARTUP JATHARA 2026
                   </h3>
-                  <p className="text-[11px] text-[#16a34a] font-semibold tracking-wide uppercase leading-tight">
+                  <p className="text-[11px] text-[#e87042] font-semibold tracking-wide uppercase leading-tight">
                     Startup Jathara @ Dandakaranya
                   </p>
                 </div>
@@ -56,16 +56,16 @@ export function SiteFooter() {
 
               <div className="space-y-2 text-xs text-[#d6d0c7] pt-1">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-[#16a34a] flex-shrink-0" />
+                  <Calendar className="w-3.5 h-3.5 text-[#e87042] flex-shrink-0" />
                   <span>18–20 December 2026</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-[#22c55e] flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-3.5 h-3.5 text-[#d68c45] flex-shrink-0 mt-0.5" />
                   <a
                     href="https://maps.google.com/?q=GIET+University+Gunupur+Odisha+765022"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#16a34a] transition-colors leading-relaxed"
+                    className="hover:text-[#e87042] transition-colors leading-relaxed"
                   >
                     GIET University Campus, Goboriguda, Po-Kharling, Gunupur, Dist-Rayagada, Odisha - 765022, India
                   </a>
@@ -75,7 +75,7 @@ export function SiteFooter() {
 
             {/* Column 2: Navigation */}
             <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#16a34a] font-bold mb-3">
+              <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
                 Explore
               </h4>
               <ul className="space-y-2 text-xs text-[#a8a29e]">
@@ -114,7 +114,7 @@ export function SiteFooter() {
 
             {/* Column 3: Participation */}
             <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#16a34a] font-bold mb-3">
+              <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
                 Participation
               </h4>
               <ul className="space-y-2 text-xs text-[#a8a29e]">
@@ -149,7 +149,7 @@ export function SiteFooter() {
 
             {/* Column 4: Contact & Secretariat */}
             <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#16a34a] font-bold mb-3">
+              <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
                 Contact
               </h4>
               <div className="space-y-2.5 text-xs text-[#a8a29e]">
@@ -158,19 +158,19 @@ export function SiteFooter() {
                 </p>
                 <div className="space-y-2 pt-1 text-xs">
                   <div className="flex items-center gap-2">
-                    <Mail className="w-3.5 h-3.5 text-[#16a34a] shrink-0" />
+                    <Mail className="w-3.5 h-3.5 text-[#e87042] shrink-0" />
                     <a
                       href={`mailto:${EVENT_METADATA.contactEmail}`}
-                      className="text-white hover:text-[#16a34a] transition-colors"
+                      className="text-white hover:text-[#e87042] transition-colors"
                     >
                       {EVENT_METADATA.contactEmail}
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Phone className="w-3.5 h-3.5 text-[#22c55e] shrink-0" />
+                    <Phone className="w-3.5 h-3.5 text-[#d68c45] shrink-0" />
                     <a
                       href={`tel:${EVENT_METADATA.helplinePhone.replace(/\s+/g, "")}`}
-                      className="text-white hover:text-[#16a34a] transition-colors"
+                      className="text-white hover:text-[#e87042] transition-colors"
                     >
                       {EVENT_METADATA.helplinePhone}
                     </a>
@@ -180,7 +180,7 @@ export function SiteFooter() {
                 <div className="pt-3 border-t border-[#232733]">
                   <a
                     href={`mailto:${EVENT_METADATA.contactEmail}?subject=Secretariat%20Inquiry`}
-                    className="inline-flex items-center text-[11px] font-semibold text-[#16a34a] hover:text-[#f7a07a] transition-colors"
+                    className="inline-flex items-center text-[11px] font-semibold text-[#e87042] hover:text-[#f7a07a] transition-colors"
                   >
                     Contact Secretariat →
                   </a>

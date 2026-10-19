@@ -66,7 +66,7 @@ export function StartupVerticalsGrid() {
     <div className="min-w-0 overflow-hidden rounded-[28px] border border-[#d8d0c2] bg-[#fffdf9] shadow-[0_24px_60px_rgba(50,42,31,0.07)]">
       <div className="flex flex-col gap-4 border-b border-[#ded6c9] bg-[#f2ede3] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <div className="flex items-center gap-3">
-          <span className="font-serif text-3xl font-bold text-[#166534]">08</span>
+          <span className="font-serif text-3xl font-bold text-[#a84e2d]">08</span>
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#363a35]">Official sectors</p>
             <p className="mt-0.5 text-xs text-[#777169]">One connected innovation portfolio</p>
@@ -75,7 +75,7 @@ export function StartupVerticalsGrid() {
         <button
           onClick={toggleAll}
           type="button"
-          className="inline-flex w-fit items-center gap-2 rounded-full border border-[#cbc1b2] bg-white px-4 py-2 text-xs font-bold text-[#38352f] transition-colors hover:border-[#166534] hover:text-[#166534] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#166534]/40"
+          className="inline-flex w-fit items-center gap-2 rounded-full border border-[#cbc1b2] bg-white px-4 py-2 text-xs font-bold text-[#38352f] transition-colors hover:border-[#a84e2d] hover:text-[#a84e2d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a84e2d]/40"
         >
           {isAllExpanded ? "Collapse all focus areas" : "Explore all focus areas"}
           <ChevronDown
@@ -103,7 +103,7 @@ export function StartupVerticalsGrid() {
             >
               <div className="flex items-start gap-4 sm:gap-5">
                 <div className="flex shrink-0 flex-col items-center gap-3">
-                  <span className="font-serif text-sm font-bold text-[#166534]">
+                  <span className="font-serif text-sm font-bold text-[#a84e2d]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d8cec0] bg-white text-[#1b5947] shadow-sm transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transition-none">
@@ -128,7 +128,7 @@ export function StartupVerticalsGrid() {
                       onClick={() => toggleExpand(vertical.id, index)}
                       aria-expanded={isExpanded}
                       aria-controls={panelId}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-[#166534] transition-colors hover:text-[#77341f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#166534]/40"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#a84e2d] transition-colors hover:text-[#77341f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a84e2d]/40"
                     >
                       {isExpanded ? "Hide focus areas" : "View focus areas"}
                       <ChevronDown

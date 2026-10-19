@@ -36,7 +36,7 @@ export function FounderTributeSection() {
         {/* Section Milestone Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20 px-2">
           <div className="inline-flex items-center gap-2 mb-3.5 sm:mb-4">
-            <span className="w-5 sm:w-6 h-px bg-[#15803d]" />
+            <span className="w-5 sm:w-6 h-px bg-[#c25e38]" />
             <Badge 
               variant="terracotta" 
               size="md" 
@@ -44,17 +44,17 @@ export function FounderTributeSection() {
             >
               A VISION THAT INSPIRES
             </Badge>
-            <span className="w-5 sm:w-6 h-px bg-[#15803d]" />
+            <span className="w-5 sm:w-6 h-px bg-[#c25e38]" />
           </div>
 
           <h2 className="text-2.5xl sm:text-4xl md:text-4.5xl lg:text-5xl font-serif font-bold text-[#103327] tracking-tight leading-[1.18]">
             Honouring the Vision Behind ISF
           </h2>
 
-          <div className="flex items-center justify-center gap-3 mt-3.5 sm:mt-4 text-[#15803d]">
-            <span className="h-px w-10 sm:w-12 bg-gradient-to-r from-transparent to-[#15803d]/40" />
-            <Sparkles className="w-4 h-4 text-[#15803d]" />
-            <span className="h-px w-10 sm:w-12 bg-gradient-to-l from-transparent to-[#15803d]/40" />
+          <div className="flex items-center justify-center gap-3 mt-3.5 sm:mt-4 text-[#c25e38]">
+            <span className="h-px w-10 sm:w-12 bg-gradient-to-r from-transparent to-[#c25e38]/40" />
+            <Sparkles className="w-4 h-4 text-[#c25e38]" />
+            <span className="h-px w-10 sm:w-12 bg-gradient-to-l from-transparent to-[#c25e38]/40" />
           </div>
         </div>
 
@@ -74,13 +74,13 @@ export function FounderTributeSection() {
                 
                 {/* Decorative Offset Backdrop Frame */}
                 <div 
-                  className="absolute -inset-2.5 sm:-inset-3 bg-gradient-to-tr from-[#103327]/10 via-[#15803d]/15 to-[#dfd6c4]/40 rounded-3xl -rotate-1 group-hover:rotate-0 transition-transform duration-500 pointer-events-none" 
+                  className="absolute -inset-2.5 sm:-inset-3 bg-gradient-to-tr from-[#103327]/10 via-[#c25e38]/15 to-[#dfd6c4]/40 rounded-3xl -rotate-1 group-hover:rotate-0 transition-transform duration-500 pointer-events-none" 
                   aria-hidden="true" 
                 />
 
                 {/* Primary Portrait Card */}
                 <div className="relative bg-[#f7f4ec] p-4 sm:p-5 rounded-2xl border border-[#dfd6c4] shadow-md overflow-hidden flex flex-col items-center">
-                  <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-tr from-[#103327] via-[#15803d] to-[#dfd6c4] shadow-lg">
+                  <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-tr from-[#103327] via-[#c25e38] to-[#dfd6c4] shadow-lg">
                     <div className="w-full h-full rounded-full p-1.5 bg-white shadow-inner">
                       <div className="relative w-full h-full rounded-full overflow-hidden bg-[#faf8f5]">
                         <Image
@@ -100,7 +100,7 @@ export function FounderTributeSection() {
                     <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#103327] tracking-tight">
                       Dr. J. A. Chowdary
                     </h3>
-                    <p className="text-xs sm:text-[13px] font-bold text-[#15803d] uppercase tracking-wider mt-1 leading-snug">
+                    <p className="text-xs sm:text-[13px] font-bold text-[#c25e38] uppercase tracking-wider mt-1 leading-snug">
                       Founder &amp; Chairman, International Startup Foundation
                     </p>
                   </div>
@@ -136,9 +136,9 @@ export function FounderTributeSection() {
               </div>
 
               {/* Prominent Pull Quote Treatment */}
-              <div className="relative mt-6 sm:mt-8 p-6 sm:p-7 rounded-2xl bg-[#f5f0e4] border-l-4 border-[#15803d] border-t border-r border-b border-[#dfd6c4] shadow-xs">
+              <div className="relative mt-6 sm:mt-8 p-6 sm:p-7 rounded-2xl bg-[#f5f0e4] border-l-4 border-[#c25e38] border-t border-r border-b border-[#dfd6c4] shadow-xs">
                 <Quote 
-                  className="absolute top-3.5 right-4 w-8 h-8 text-[#15803d]/20 pointer-events-none" 
+                  className="absolute top-3.5 right-4 w-8 h-8 text-[#c25e38]/20 pointer-events-none" 
                   aria-hidden="true" 
                 />
 
@@ -151,7 +151,7 @@ export function FounderTributeSection() {
                     <span className="font-semibold text-[#103327]">
                       ISF Startup Jathara 2026 Milestone Tribute
                     </span>
-                    <span className="flex items-center gap-1.5 text-[#15803d] font-medium">
+                    <span className="flex items-center gap-1.5 text-[#c25e38] font-medium">
                       <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
                       <span>Gratitude &amp; Respect</span>
                     </span>

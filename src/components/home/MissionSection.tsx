@@ -19,7 +19,7 @@ export function MissionSection() {
           <div className="space-y-6 text-[#222b27]">
             <div className="p-6 rounded-2xl bg-[#f7f4ec] border border-[#ede7db]">
               <h3 className="font-serif font-bold text-xl text-[#103327] flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-[#15803d]" />
+                <Sparkles className="w-5 h-5 text-[#c25e38]" />
                 The Dandakaranya Imperative
               </h3>
               <p className="mt-3 text-sm sm:text-base text-[#4a5752] leading-relaxed">
@@ -66,7 +66,7 @@ export function MissionSection() {
 
           {/* Institutional Pillars Card */}
           <div className="bg-gradient-to-br from-[#103327] to-[#081a14] rounded-3xl p-8 text-[#fcfbf8] border border-[#256f57]/40 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#15803d]/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#c25e38]/10 rounded-full blur-2xl pointer-events-none" />
 
             <div className="relative z-10 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b5341] border border-[#256f57]/50 text-xs text-[#d6b25e] font-medium">

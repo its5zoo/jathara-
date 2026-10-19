@@ -35,11 +35,11 @@ export function VenueBridgeCard() {
           {/* Right Column: Clean Editorial Content (No Box wrapper) */}
           <div className="lg:col-span-6 space-y-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#16a34a] block mb-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#e87042] block mb-2">
                 Campus &amp; Destination
               </span>
               <h2 className="font-serif font-black text-2xl sm:text-3.5xl md:text-4xl text-[#1c1917] tracking-tight leading-[1.18]">
-                Join Us in the Serene Hills of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Dandakaranya</span>
+                Join Us in the Serene Hills of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Dandakaranya</span>
               </h2>
             </div>
 
@@ -50,8 +50,8 @@ export function VenueBridgeCard() {
             {/* Clean Information Points (Pure content, no boxes) */}
             <div className="space-y-4 pt-2 border-t border-[#e8dfd3]">
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-full bg-[#16a34a]/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <Plane className="w-4 h-4 text-[#16a34a]" />
+                <div className="w-8 h-8 rounded-full bg-[#e87042]/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <Plane className="w-4 h-4 text-[#e87042]" />
                 </div>
                 <div>
                   <strong className="block text-sm text-[#1c1917] font-bold">
@@ -64,8 +64,8 @@ export function VenueBridgeCard() {
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-full bg-[#22c55e]/15 flex items-center justify-center shrink-0 mt-0.5">
-                  <Train className="w-4 h-4 text-[#22c55e]" />
+                <div className="w-8 h-8 rounded-full bg-[#d68c45]/15 flex items-center justify-center shrink-0 mt-0.5">
+                  <Train className="w-4 h-4 text-[#d68c45]" />
                 </div>
                 <div>
                   <strong className="block text-sm text-[#1c1917] font-bold">
@@ -78,8 +78,8 @@ export function VenueBridgeCard() {
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-full bg-[#16a34a]/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <Hotel className="w-4 h-4 text-[#16a34a]" />
+                <div className="w-8 h-8 rounded-full bg-[#e87042]/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <Hotel className="w-4 h-4 text-[#e87042]" />
                 </div>
                 <div>
                   <strong className="block text-sm text-[#1c1917] font-bold">
@@ -96,7 +96,7 @@ export function VenueBridgeCard() {
             <div className="pt-2">
               <Link
                 href="/venue"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#16a34a] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#15803d] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
               >
                 <span>Explore Venue &amp; Travel Guide</span>
                 <ArrowRight className="w-4 h-4" />

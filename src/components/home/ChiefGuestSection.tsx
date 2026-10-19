@@ -26,7 +26,7 @@ export function ChiefGuestSection() {
                   className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-103"
                 />
               </div>
-              <span className="mt-3 inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#fff4ed] text-[#15803d] border border-[#fcd5b5]">
+              <span className="mt-3 inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#fff4ed] text-[#c25022] border border-[#fcd5b5]">
                 Chief Guest of Honour
               </span>
             </div>
@@ -36,7 +36,7 @@ export function ChiefGuestSection() {
 
               {/* Header Eyebrow */}
               <div className="flex items-center justify-center sm:justify-start">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#15803d]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#c25022]">
                   Plenary Inauguration Keynote
                 </span>
               </div>
@@ -59,7 +59,7 @@ export function ChiefGuestSection() {
               {/* 3 Core Humanitarian Pillars */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-stone-200/80 shadow-2xs text-left">
-                  <HeartHandshake className="w-4 h-4 text-[#15803d] shrink-0" />
+                  <HeartHandshake className="w-4 h-4 text-[#c25022] shrink-0" />
                   <div className="text-[11px] leading-tight">
                     <strong className="block text-[#1c1917] font-bold">Free Pediatric Care</strong>
                     <span className="text-[10px] text-stone-500">Sai Sanjeevani Hospitals</span>

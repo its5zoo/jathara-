@@ -95,7 +95,7 @@ export default function PrivacyPage() {
               <strong>ISF Secretariat Privacy Desk:</strong>{" "}
               <a
                 href={`mailto:${EVENT_METADATA.contactEmail}`}
-                className="text-[#143e30] font-semibold underline hover:text-[#15803d] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#143e30]"
+                className="text-[#143e30] font-semibold underline hover:text-[#c25e38] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#143e30]"
               >
                 {EVENT_METADATA.contactEmail}
               </a>

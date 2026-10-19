@@ -39,7 +39,7 @@ export default function SpeakersPage() {
           {/* Obsidian-Peach scrim & vignette */}
           <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#16a34a]/15 rounded-full blur-[140px] pointer-events-none z-10" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
         </div>
 
         <Container size="default" className="relative z-20 text-center">
@@ -47,7 +47,7 @@ export default function SpeakersPage() {
             Speakers, Mentors &amp; Dignitaries
           </h1>
 
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#dcfce7] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
             Distinguished Voices from Industry, Policy &amp; Deep-Tech Venture Capital.
           </p>
 
@@ -145,12 +145,12 @@ export default function SpeakersPage() {
           {/* Official Sector Roundtables & Panelists Showcase */}
           <div className="mt-20">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#fff4ed] text-[#15803d] border border-[#fbd4c0] mb-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#fff4ed] text-[#c25022] border border-[#fbd4c0] mb-3">
                 <Mic2 className="w-3.5 h-3.5" />
                 <span>Sectoral Deliberations</span>
               </div>
               <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight">
-                Official Sector Roundtables &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Panelists</span>
+                Official Sector Roundtables &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Panelists</span>
               </h3>
               <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl mx-auto">
                 Official speaker roster transcribed from ISF Network, convening leaders across life sciences, agriculture, global venture syndicates, and scaling policy.
@@ -167,11 +167,11 @@ export default function SpeakersPage() {
         <Container size="default">
           <div className="bg-[#ffffff] rounded-3xl p-8 sm:p-12 border border-[#e6dfd1] shadow-xs max-w-4xl mx-auto text-center space-y-6">
             <div className="w-12 h-12 rounded-2xl bg-[#f7f4ec] border border-[#dfd6c4] flex items-center justify-center text-[#143e30] mx-auto">
-              <Mic2 className="w-6 h-6 text-[#15803d]" />
+              <Mic2 className="w-6 h-6 text-[#c25e38]" />
             </div>
 
             <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight">
-              Recommend a Speaker or <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#22c55e]">Apply to Mentor</span>
+              Recommend a Speaker or <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Apply to Mentor</span>
             </h3>
 
             <p className="text-sm sm:text-base text-[#4a5752] max-w-2xl mx-auto leading-relaxed">

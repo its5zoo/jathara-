@@ -65,13 +65,13 @@ export default function StartupsPage() {
         </div>
 
         <Container size="default" className="relative z-20 text-center">
-          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#86efac] sm:text-xs">
+          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#f2b58f] sm:text-xs">
             Startups · Student Innovators · Grassroots Enterprise
           </p>
           <h1 className="font-serif text-4xl font-black leading-[1.04] tracking-[-0.035em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl">
             Nurturing Rural &amp; Tribal Innovators
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl font-serif text-lg font-medium text-[#dcfce7] drop-shadow-sm sm:text-xl">
+          <p className="mx-auto mt-5 max-w-2xl font-serif text-lg font-medium text-[#ffedd5] drop-shadow-sm sm:text-xl">
             Bridging Grassroots Founders directly with Top Venture Capital.
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#d6d0c7] sm:text-base">
@@ -84,13 +84,13 @@ export default function StartupsPage() {
         <Container size="default">
           <div className="mb-12">
             <div className="mb-5 flex items-center gap-3">
-              <span className="font-serif text-base font-bold text-[#166534]">01</span>
+              <span className="font-serif text-base font-bold text-[#b65531]">01</span>
               <span className="h-px w-6 bg-[#c8bfb0]" aria-hidden="true" />
               <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#7a746b]">Junicorn Pathway</span>
             </div>
             <h2 id="junicorn-heading" className="max-w-2xl font-serif text-3xl font-black leading-[1.1] tracking-tight text-[#1b1b18] sm:text-4xl lg:text-[2.75rem]">
               From classroom insight to{" "}
-              <span className="text-[#166534]">credible enterprise.</span>
+              <span className="text-[#ad4e2c]">credible enterprise.</span>
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-[1.75] text-[#656158] sm:text-[15px]">
               Empowering young student innovators, school inventors, and grassroots youth across Odisha and neighboring states.
@@ -126,7 +126,7 @@ export default function StartupsPage() {
 
                 <div className="mt-8 divide-y divide-[#d8d0c4] border-y border-[#d8d0c4]">
                   <div className="grid gap-2 py-5 sm:grid-cols-[9rem_1fr]">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#166534]">Curated Pitch Stage</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#ad4e2c]">Curated Pitch Stage</span>
                     <p className="text-xs leading-5 text-[#454943]">
                       On Day 1 (Friday 18 Dec, 2:30–3:30 PM), selected Tribal &amp; Rural Junicorn teams will pitch before a panel of angels and sector leaders.
                     </p>
@@ -144,7 +144,7 @@ export default function StartupsPage() {
             <div className="grid border-t border-white/10 bg-[#113c30] text-white sm:grid-cols-2 lg:grid-cols-4">
               {teamBenefits.map((benefit, index) => (
                 <div key={benefit} className="flex gap-3 border-b border-white/10 px-6 py-5 last:border-b-0 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0">
-                  <span className="font-serif text-sm font-bold text-[#86efac]">0{index + 1}</span>
+                  <span className="font-serif text-sm font-bold text-[#e8ae80]">0{index + 1}</span>
                   <p className="text-xs leading-5 text-white/85">{benefit}</p>
                 </div>
               ))}
@@ -202,7 +202,7 @@ export default function StartupsPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0c261e]/85 via-transparent to-black/10" />
               <div className="absolute inset-x-7 bottom-7 sm:inset-x-10 sm:bottom-10">
-                <Presentation className="h-7 w-7 text-[#86efac]" strokeWidth={1.5} aria-hidden="true" />
+                <Presentation className="h-7 w-7 text-[#edb98f]" strokeWidth={1.5} aria-hidden="true" />
                 <p className="mt-4 max-w-sm font-serif text-2xl font-bold leading-tight text-white sm:text-3xl">
                   From live demonstrations to direct investor conversations.
                 </p>
@@ -215,7 +215,7 @@ export default function StartupsPage() {
                 return (
                   <article key={feature.title} className="group grid gap-4 py-8 sm:grid-cols-[3.25rem_1fr] sm:py-10">
                     <div>
-                      <span className="font-serif text-sm font-bold text-[#86efac]">{feature.number}</span>
+                      <span className="font-serif text-sm font-bold text-[#e8ae80]">{feature.number}</span>
                       <Icon className="mt-3 h-5 w-5 text-white/75 transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transition-none" strokeWidth={1.5} aria-hidden="true" />
                     </div>
                     <div>

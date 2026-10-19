@@ -27,7 +27,7 @@ export function InstitutionalLogos({
               href={org.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-3.5 p-3 rounded-2xl bg-[#13151d]/90 border border-[#2b303e] hover:border-[#16a34a]/70 hover:bg-[#1a1d28] transition-all duration-200 shadow-md backdrop-blur-sm"
+              className="group relative flex items-center gap-3.5 p-3 rounded-2xl bg-[#13151d]/90 border border-[#2b303e] hover:border-[#e87042]/70 hover:bg-[#1a1d28] transition-all duration-200 shadow-md backdrop-blur-sm"
               aria-label={`Visit official portal of ${org.name}`}
             >
               {/* Logo Well with crisp contrast & unclipped aspect ratio */}
@@ -54,7 +54,7 @@ export function InstitutionalLogos({
                     {org.role}
                   </span>
                   {org.id === "org-giet" && (
-                    <span className="text-[9px] font-bold bg-[#16a34a] text-white px-1.5 py-0.2 rounded uppercase">
+                    <span className="text-[9px] font-bold bg-[#e87042] text-white px-1.5 py-0.2 rounded uppercase">
                       Gunupur
                     </span>
                   )}

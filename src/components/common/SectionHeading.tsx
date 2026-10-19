@@ -33,10 +33,10 @@ export function SectionHeading({
     >
       {eyebrow && (
         <div className={cn("flex items-center gap-2.5 mb-4", isCenter && "justify-center")}>
-          <span className="w-4 h-px" style={{ backgroundColor: isDark ? "#16a34a" : "#15803d" }} aria-hidden="true" />
+          <span className="w-4 h-px" style={{ backgroundColor: isDark ? "#e87042" : "#c25e38" }} aria-hidden="true" />
           <p className={cn(
             "text-[10px] font-bold uppercase tracking-[0.22em]",
-            isDark ? "text-[#86efac]" : "text-[#15803d]"
+            isDark ? "text-[#f2b58f]" : "text-[#c25e38]"
           )}>
             {eyebrow}
           </p>

@@ -43,7 +43,7 @@ export function FAQAccordion({
             className={cn(
               "rounded-2xl border transition-all duration-200 overflow-hidden",
               isOpen
-                ? "bg-[#ffffff] border-[#16a34a]/40 shadow-sm"
+                ? "bg-[#ffffff] border-[#e87042]/40 shadow-sm"
                 : "bg-[#fcfbf8] border-[#e6dfd1] hover:border-[#dfd6c4]"
             )}
           >
@@ -53,7 +53,7 @@ export function FAQAccordion({
               onClick={() => toggleItem(item.id)}
               aria-expanded={isOpen}
               aria-controls={panelId}
-              className="w-full py-4.5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-2xl"
+              className="w-full py-4.5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] rounded-2xl"
             >
               <span className="font-serif font-bold text-base sm:text-lg text-[#1c1917] pr-2">
                 {item.question}
@@ -63,7 +63,7 @@ export function FAQAccordion({
                 className={cn(
                   "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-200",
                   isOpen
-                    ? "bg-[#16a34a] text-[#fcfbf8] rotate-180"
+                    ? "bg-[#e87042] text-[#fcfbf8] rotate-180"
                     : "bg-[#f7f4ec] text-[#4a5752]"
                 )}
                 aria-hidden="true"
