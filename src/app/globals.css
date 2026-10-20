@@ -253,6 +253,72 @@ html, body {
   }
 }
 
+/* Startups page: subtle depth cues that follow the scroll without adding JS. */
+@keyframes startupHeroParallax {
+  from { transform: scale(1.04) translateY(0); }
+  to { transform: scale(1.12) translateY(9%); }
+}
+
+@keyframes startupOrbDrift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-28px, 34px, 0) scale(1.08); }
+}
+
+.startup-hero-media {
+  transform: scale(1.04);
+  transform-origin: center center;
+}
+
+.startup-depth-card,
+.startup-tilt-card,
+.startup-glass-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .startup-orb {
+    animation: startupOrbDrift 9s ease-in-out infinite;
+  }
+
+  .startup-tilt-card,
+  .startup-glass-card,
+  .startup-depth-card {
+    transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 450ms cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 300ms ease;
+  }
+
+  .startup-tilt-card:hover {
+    transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-5px);
+    box-shadow: 0 24px 60px rgba(40, 34, 25, 0.12);
+  }
+
+  .startup-glass-card:hover {
+    transform: perspective(900px) rotateX(1.5deg) rotateY(1.5deg) translateZ(8px);
+    border-color: rgba(255, 255, 255, 0.24);
+  }
+
+  .startup-depth-card:hover {
+    transform: perspective(1000px) rotateX(1deg) rotateY(-1.5deg) scale(1.01);
+  }
+
+  @supports (animation-timeline: view()) {
+    .startup-hero-media {
+      animation: startupHeroParallax linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .startup-tilt-card,
+  .startup-glass-card {
+    scroll-snap-stop: always;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
@@ -260,4 +326,56 @@ html, body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ─── 3-D scroll-reveal for cards ───────────────────────────────────────────
+   Visible by default; enhanced animation fires only where supported.        */
+
+@keyframes card3dReveal {
+  from {
+    opacity: 0;
+    transform: perspective(700px) rotateX(10deg) translateY(36px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(700px) rotateX(0deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes card3dRevealLeft {
+  from {
+    opacity: 0;
+    transform: perspective(700px) rotateY(14deg) translateX(-28px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(700px) rotateY(0deg) translateX(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .card-3d-reveal {
+      animation: card3dReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+    .card-3d-reveal-left {
+      animation: card3dRevealLeft 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+    .card-3d-reveal:nth-child(2) { animation-delay: 0.08s; }
+    .card-3d-reveal:nth-child(3) { animation-delay: 0.16s; }
+    .card-3d-reveal:nth-child(4) { animation-delay: 0.24s; }
+  }
+}
+
+/* Hover 3-D tilt on milestone / feature cards */
+.card-hover-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease;
+}
+.card-hover-3d:hover {
+  transform: perspective(700px) rotateX(3deg) translateY(-5px);
 }

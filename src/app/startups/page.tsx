@@ -1,241 +1,314 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUpRight,
+  BadgeCheck,
+  CircleDollarSign,
   Compass,
-  Layers3,
-  Presentation,
-  ShieldAlert,
+  GraduationCap,
+  Rocket,
+  Store,
+  UserRoundCheck,
   Users,
+  Wheat,
 } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { StartupVerticalsGrid } from "@/components/startups/StartupVerticalsGrid";
+import { JourneyTimelineTracker } from "@/components/startups/JourneyTimelineTracker";
 
 export const metadata: Metadata = {
-  title: "Startups & Junicorn Initiative",
+  title: "Startups & Junicorns",
   description:
-    "Explore the Junicorn grassroots movement, startup exhibition arena, and thematic verticals at ISF Startup Jathara 2026 @ Dandakaranya, GIET University, Gunupur.",
+    "Discover the ISF Junicorn Tribal & Rural Innovation Challenge Cohort 3.0 at Startup Jathara 2026, GIET University, Gunupur.",
 };
 
-const teamBenefits = [
-  "Free exhibition demo kiosk in the Exhibition Arena",
-  "One-on-one pairing with industry domain mentors",
-  "Participation in Day 2 Dandakaranya Forest Trekking",
-  "Summit certification and innovation recognition awards",
-];
+const applyUrl = "https://match.myanatomy.in/sc/69eaf7b184db4d003436f748/n";
 
-const showcaseFeatures = [
+const supportPillars = [
   {
-    icon: Layers3,
+    icon: UserRoundCheck,
     number: "01",
-    title: "Dedicated Demo Kiosks",
-    description:
-      "Standardized modular display kiosks equipped with power, connectivity, and branding displays for hands-on product interaction.",
-  },
-  {
-    icon: Users,
-    number: "02",
-    title: "Investor Walkthroughs",
-    description:
-      "Structured exhibition walkthroughs for venture partners, angel networks, and GCC strategy executives during Araku coffee breaks.",
+    title: "Mentorship",
+    description: "1-on-1 guidance from founders and domain experts.",
   },
   {
     icon: Compass,
+    number: "02",
+    title: "Market Access",
+    description: "State, national, and global showcase opportunities.",
+  },
+  {
+    icon: CircleDollarSign,
     number: "03",
-    title: "Tribal Craft & Agro Pavilion",
-    description:
-      "A showcase pavilion dedicated to organic tribal farm goods, minor millets processing, natural textiles, and indigenous value chains.",
+    title: "Money",
+    description: "Access to relevant investors, grants, and pre-seed networks.",
   },
 ];
 
 export default function StartupsPage() {
   return (
-    <div className="w-full">
-      <section className="relative overflow-hidden border-b border-[#232733] bg-[#0c0d12] py-16 text-[#fcfbf8] sm:py-24">
-        <div className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden">
+    <div className="w-full overflow-clip bg-[#f5efe5]">
+      {/* Editorial Header — Consistent with Speakers, About & Partners */}
+      <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
+        {/* Background Media */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
             src="/images/summit-pitch-stage.jpg"
-            alt="Founders Pitching on Stage to Investor Jury"
+            alt="A young founder presenting an innovation to an investor jury"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_35%] brightness-95"
+            className="object-cover object-[center_35%] brightness-90"
           />
-          <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute inset-0 z-10 bg-black/50 sm:bg-black/45" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/40 to-[#0c0d12]/70" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
         </div>
 
         <Container size="default" className="relative z-20 text-center">
-          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#f2b58f] sm:text-xs">
-            Startups · Student Innovators · Grassroots Enterprise
-          </p>
-          <h1 className="font-serif text-4xl font-black leading-[1.04] tracking-[-0.035em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl">
-            Nurturing Rural &amp; Tribal Innovators
+          <h1 className="font-serif font-black text-3.5xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] max-w-4xl mx-auto">
+            Rural Ideas. Global Ambition.
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl font-serif text-lg font-medium text-[#ffedd5] drop-shadow-sm sm:text-xl">
-            Bridging Grassroots Founders directly with Top Venture Capital.
+
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-[#ffedd5] font-serif font-medium max-w-2xl mx-auto drop-shadow-sm">
+            Empowering Grassroots Innovators &amp; Student Builders
           </p>
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#d6d0c7] sm:text-base">
-            Discover emerging startups, student innovations, and grassroots enterprises shaping the future. Explore opportunities to showcase your ideas, connect with industry leaders, and turn promising solutions into real-world impact.
+
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-[#d6d0c7] max-w-2xl mx-auto leading-relaxed">
+            Transforming India&apos;s rural innovation story by connecting young builders with the mentorship, markets, and capital that move ideas forward.
           </p>
+
+          <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={applyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#ed7446] px-6 text-sm font-bold text-white shadow-[0_12px_38px_rgba(232,112,66,.32)] transition hover:-translate-y-0.5 hover:bg-[#f08257] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+            >
+              Apply for Cohort 3.0
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <a
+              href="#qualification"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 text-sm font-bold text-white backdrop-blur-md transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+            >
+              Check eligibility
+              <ArrowDown className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
         </Container>
       </section>
 
-      <section className="startup-reveal border-b border-[#ddd5c8] bg-[#fcfbf8] py-20 sm:py-24" aria-labelledby="junicorn-heading">
-        <Container size="default">
-          <div className="mb-12">
-            <div className="mb-5 flex items-center gap-3">
-              <span className="font-serif text-base font-bold text-[#b65531]">01</span>
-              <span className="h-px w-6 bg-[#c8bfb0]" aria-hidden="true" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#7a746b]">Junicorn Pathway</span>
-            </div>
-            <h2 id="junicorn-heading" className="max-w-2xl font-serif text-3xl font-black leading-[1.1] tracking-tight text-[#1b1b18] sm:text-4xl lg:text-[2.75rem]">
-              From classroom insight to{" "}
-              <span className="text-[#ad4e2c]">credible enterprise.</span>
-            </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-[1.75] text-[#656158] sm:text-[15px]">
-              Empowering young student innovators, school inventors, and grassroots youth across Odisha and neighboring states.
-            </p>
+      <section id="qualification" className="startup-reveal scroll-mt-24 border-b border-[#dfd5c7] bg-[#f8f4ed] py-10 sm:py-16" aria-labelledby="qualification-heading">
+        <Container size="wide">
+
+          {/* Section label */}
+          <div className="mb-6 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#a95131]">
+            <span className="font-serif text-base">01</span>
+            <span className="h-px w-7 bg-[#c8b7a3]" />
+            Qualification check
           </div>
 
-          <div className="overflow-hidden rounded-[30px] border border-[#d9d0c3] bg-[#f4efe6] shadow-[0_24px_70px_rgba(45,38,28,0.1)]">
-            <div className="grid lg:grid-cols-[1.04fr_0.96fr]">
-              <div className="relative min-h-[390px] overflow-hidden sm:min-h-[520px] lg:min-h-full">
-                <Image
-                  src="/images/junicorn-innovators.jpg"
-                  alt="Indian Student Innovators Showcasing Prototypes with Mentors"
-                  fill
-                  sizes="(max-width: 1023px) 100vw, 52vw"
-                  className="object-cover transition-transform duration-700 ease-out hover:scale-[1.025] motion-reduce:transition-none"
-                />
-                <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#10271f]/90 to-transparent" />
-                <div className="absolute inset-x-7 bottom-7 text-white sm:inset-x-10 sm:bottom-9">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f3c39f]">Junior Unicorns</span>
-                  <p className="mt-2 max-w-md font-serif text-2xl font-bold leading-tight sm:text-3xl">
-                    Local ingenuity, prepared for a national stage.
+          <div className="mx-auto grid max-w-6xl gap-4 lg:grid-cols-2 lg:gap-5">
+            <article className="card-3d-reveal overflow-hidden rounded-[22px] border border-[#ded7cd] bg-[#fffdfa] shadow-[0_18px_45px_rgba(50,42,32,0.08)]">
+              <div className="flex items-start justify-between gap-4 px-5 py-5 sm:px-6">
+                <div>
+                  <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[#b15836]">Who can apply</p>
+                  <h2 id="qualification-heading" className="mt-1.5 font-serif text-2xl font-bold leading-tight text-[#252621] sm:text-3xl">Are you a Junicorn?</h2>
+                  <p className="mt-1 text-[11px] leading-5 text-[#6b6861]">An idea, prototype, or real problem is enough to begin.</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 border-y border-[#e7e0d7]">
+                <div className="border-r border-[#e7e0d7] px-5 py-5 sm:px-6">
+                  <GraduationCap className="h-5 w-5 text-[#bd5b39]" aria-hidden="true" />
+                  <p className="mt-3 font-serif text-3xl font-bold leading-none text-[#252621] sm:text-4xl">8–18</p>
+                  <p className="mt-2 text-[9px] font-black uppercase tracking-[0.16em] text-[#9c543a]">Junior Track</p>
+                  <p className="mt-2 text-[10px] leading-4 text-[#6b6861]">Idea stage welcome. No prototype required.</p>
+                </div>
+                <div className="px-5 py-5 sm:px-6">
+                  <Rocket className="h-5 w-5 text-[#bd5b39]" aria-hidden="true" />
+                  <p className="mt-3 font-serif text-3xl font-bold leading-none text-[#252621] sm:text-4xl">18–25</p>
+                  <p className="mt-2 text-[9px] font-black uppercase tracking-[0.16em] text-[#9c543a]">Senior Track</p>
+                  <p className="mt-2 text-[10px] leading-4 text-[#6b6861]">Idea, prototype, or early venture.</p>
+                </div>
+              </div>
+
+              <div className="px-5 py-5 sm:px-6">
+                <p className="text-[9px] font-black uppercase tracking-[0.16em] text-[#77736c]">Eligibility</p>
+                <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                  {["Independent or incubator-linked", "Rural or community-focused", "Open across 20+ states", "Company registration not required"].map((item) => (
+                    <div key={item} className="flex items-center gap-2 text-[10px] leading-4 text-[#504e49]">
+                      <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-[#bd5b39]" aria-hidden="true" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+
+            <article className="card-3d-reveal group relative overflow-hidden rounded-[22px] border-2 border-[#d97c55]/40 bg-gradient-to-b from-[#fbf5ed] via-[#fffcf9] to-[#f7eedf] shadow-[0_20px_50px_rgba(180,85,50,0.09)]">
+              {/* Top Accent Gradient Bar */}
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#b15836] via-[#e87042] to-[#d68c45]" />
+
+              <div className="flex items-end justify-between gap-4 px-5 pt-6 pb-4 sm:px-6">
+                <div>
+                  <h3 className="font-serif text-2xl font-bold leading-tight text-[#1c1917] sm:text-3xl">
+                    The 3M advantage.
+                  </h3>
+                  <p className="mt-1 text-[11px] leading-5 text-[#6e685f]">
+                    Practical support—not just another certificate.
                   </p>
                 </div>
+                <span className="font-serif text-4xl sm:text-5xl font-black leading-none text-[#b15836]/12 select-none">
+                  3M
+                </span>
               </div>
 
-              <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
-                <p className="text-sm leading-7 text-[#4f554f] sm:text-[15px]">
-                  The <strong className="font-bold text-[#20241f]">Junicorn Initiative</strong> is a nationwide movement pioneered by ISF to cultivate &apos;Junior Unicorns&apos; - young student innovators, school inventors, and rural youth who demonstrate ingenuity in solving everyday challenges in their local communities.
-                </p>
-                <p className="mt-5 text-sm leading-7 text-[#4f554f] sm:text-[15px]">
-                  At Dandakaranya, Junicorn places particular emphasis on indigenous and tribal youth from districts across Odisha and neighboring states, providing them the formal stage, presentation coaching, and industry linkages normally confined to metropolitan premier institutes.
-                </p>
+              {/* Elevated Floating Pillar Tiles */}
+              <div className="border-y border-[#ebdccf] bg-[#f7f0e6]/60 p-3.5 sm:p-5 space-y-2">
+                {supportPillars.map((pillar) => {
+                  const Icon = pillar.icon;
+                  return (
+                    <div
+                      key={pillar.title}
+                      className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#ebdccf] shadow-2xs hover:border-[#b15836]/40 transition-all"
+                    >
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#faebe1] border border-[#f5cfbd] text-[#b15836]">
+                        <Icon className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5">
+                          <span className="font-serif text-xs font-black text-[#b15836]">{pillar.number}</span>
+                          <h4 className="text-sm font-bold text-[#1c1917] leading-none">{pillar.title}</h4>
+                        </div>
+                        <p className="mt-1 text-[11px] leading-4 text-[#69635a]">{pillar.description}</p>
+                      </div>
+                      <ArrowRight className="hidden sm:block h-3.5 w-3.5 text-[#c4b5a5] shrink-0" aria-hidden="true" />
+                    </div>
+                  );
+                })}
+              </div>
 
-                <div className="mt-8 divide-y divide-[#d8d0c4] border-y border-[#d8d0c4]">
-                  <div className="grid gap-2 py-5 sm:grid-cols-[9rem_1fr]">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#ad4e2c]">Curated Pitch Stage</span>
-                    <p className="text-xs leading-5 text-[#454943]">
-                      On Day 1 (Friday 18 Dec, 2:30–3:30 PM), selected Tribal &amp; Rural Junicorn teams will pitch before a panel of angels and sector leaders.
-                    </p>
-                  </div>
-                  <div className="grid gap-2 py-5 sm:grid-cols-[9rem_1fr]">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#276b55]">Incubation Bridge</span>
-                    <p className="text-xs leading-5 text-[#454943]">
-                      Top projects receive incubation facilitation and advisory support in association with IncubateX and GIET University Incubation Center.
-                    </p>
-                  </div>
+              {/* Bottom Stats Grid */}
+              <div className="grid grid-cols-2 divide-x divide-[#e8d8ca] bg-[#fbf5ed]/90">
+                <div className="px-5 py-3.5 sm:px-6">
+                  <p className="font-serif text-2xl sm:text-3xl font-black text-[#a84e2d] leading-none">Top 200</p>
+                  <p className="mt-1.5 text-[9px] font-black uppercase tracking-[0.14em] text-[#7a6f64]">Mentorship Track</p>
+                </div>
+                <div className="px-5 py-3.5 sm:px-6">
+                  <p className="font-serif text-2xl sm:text-3xl font-black text-[#a84e2d] leading-none">Top 100</p>
+                  <p className="mt-1.5 text-[9px] font-black uppercase tracking-[0.14em] text-[#7a6f64]">Investor Ready</p>
                 </div>
               </div>
-            </div>
-
-            <div className="grid border-t border-white/10 bg-[#113c30] text-white sm:grid-cols-2 lg:grid-cols-4">
-              {teamBenefits.map((benefit, index) => (
-                <div key={benefit} className="flex gap-3 border-b border-white/10 px-6 py-5 last:border-b-0 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0">
-                  <span className="font-serif text-sm font-bold text-[#e8ae80]">0{index + 1}</span>
-                  <p className="text-xs leading-5 text-white/85">{benefit}</p>
-                </div>
-              ))}
-            </div>
+            </article>
           </div>
         </Container>
       </section>
 
-      <section className="startup-reveal border-b border-[#d8d0c2] bg-[#f2ede3] py-20 sm:py-24" aria-labelledby="sectors-heading">
+      <section className="startup-reveal border-b border-[#d8d0c2] bg-[#eee7db] py-12 sm:py-20" aria-labelledby="sectors-heading">
         <Container size="wide">
-          <div className="mb-12">
-            <div className="mb-5 flex items-center gap-3">
-              <span className="font-serif text-base font-bold text-[#1c6651]">02</span>
-              <span className="h-px w-6 bg-[#cfc5b6]" aria-hidden="true" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#706a61]">Startup Portfolio</span>
+          <div className="mb-7 sm:mb-10 sm:flex sm:items-end sm:justify-between sm:gap-8">
+            <div>
+              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#1d6852]"><span className="font-serif text-base">02</span><span className="h-px w-7 bg-[#bcb4a6]" />Areas of impact</div>
+              <h2 id="sectors-heading" className="mt-4 max-w-2xl text-3xl font-bold leading-[1.04] tracking-[-0.04em] text-[#18231f] sm:text-5xl">Choose the problem you want to solve.</h2>
             </div>
-            <h2 id="sectors-heading" className="max-w-2xl font-serif text-3xl font-black leading-[1.1] tracking-tight text-[#1b1b18] sm:text-4xl lg:text-[2.75rem]">
-              Nine sectors.{" "}
-              <span className="text-[#24634f]">One innovation ecosystem.</span>
-            </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-[1.75] text-[#625e56] sm:text-[15px]">
-              Startups with active prototypes, MVPs, or operational traction in these nine official domains are invited to exhibit. Explore each sector to review its complete focus areas.
-            </p>
+            <p className="mt-4 max-w-md text-sm leading-6 text-[#645f57] sm:mt-0">Eight priority arenas from the Cohort 3 challenge—plus an open route for ideas that do not fit a box.</p>
           </div>
-
           <StartupVerticalsGrid />
         </Container>
       </section>
 
-      <section className="startup-reveal border-b border-[#e0d8ca] bg-[#fcfbf8] py-20 sm:py-24" aria-labelledby="showcase-heading">
-        <Container size="default">
-          <div className="mb-12">
-            <div className="mb-5 flex items-center gap-3">
-              <span className="font-serif text-base font-bold text-[#9a7022]">03</span>
-              <span className="h-px w-6 bg-[#d8cfc1]" aria-hidden="true" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#7a746b]">Showcase Arena</span>
+      <section className="startup-reveal border-b border-[#dfd5c7] bg-[#f8f4ed] py-12 sm:py-20" aria-labelledby="journey-heading">
+        <Container size="wide">
+          {/* Section Header */}
+          <div className="mb-8 sm:mb-10">
+            <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#a95131]">
+              <span className="font-serif text-base">03</span>
+              <span className="h-px w-7 bg-[#c8b7a3]" />
+              The expedition
             </div>
-            <h2 id="showcase-heading" className="max-w-2xl font-serif text-3xl font-black leading-[1.1] tracking-tight text-[#1b1b18] sm:text-4xl lg:text-[2.75rem]">
-              Built for ideas people can{" "}
-              <span className="text-[#9a7022]">see, question and test.</span>
+            <h2 id="journey-heading" className="mt-4 max-w-2xl font-serif text-3xl font-bold leading-[1.04] tracking-[-0.035em] text-[#18231f] sm:text-5xl">
+              Four milestones. One transformational destination.
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-[1.75] text-[#656158] sm:text-[15px]">
-              An energetic, purpose-built exhibition arena inside the GIET campus where founders present physical prototypes, software demonstrations, and native produce.
+          </div>
+
+          {/* Connected Interactive Timeline Tracker */}
+          <JourneyTimelineTracker />
+        </Container>
+      </section>
+
+      {/* ── Section 04: Showcase Arena ── */}
+      <section className="startup-reveal border-b border-[#dfd5c7] bg-[#eee7dc] py-12 sm:py-16" aria-labelledby="showcase-heading">
+        <Container size="wide">
+          {/* Section Header */}
+          <div className="mb-7 sm:mb-9 sm:flex sm:items-end sm:justify-between sm:gap-8">
+            <div>
+              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#1b6952]">
+                <span className="font-serif text-base">04</span>
+                <span className="h-px w-7 bg-[#bcb4a6]" />
+                Showcase arena
+              </div>
+              <h2 id="showcase-heading" className="mt-3 max-w-2xl font-serif text-3xl font-bold leading-[1.04] tracking-[-0.035em] text-[#18231f] sm:text-4xl">
+                Showcase Arena.
+              </h2>
+              <p className="mt-1.5 font-serif text-base sm:text-lg font-medium text-[#7d4e38]">
+                Built for ideas people can see, question, and test.
+              </p>
+            </div>
+            <p className="mt-3 max-w-md text-xs sm:text-sm leading-relaxed text-[#5c574f] sm:mt-0">
+              A purpose-built exhibition floor inside GIET campus for live hardware demos, working prototypes, and direct investor walkthroughs.
             </p>
           </div>
 
-          <div className="grid overflow-hidden rounded-[30px] border border-[#d8d0c3] bg-[#112d24] shadow-[0_24px_70px_rgba(30,38,31,0.12)] lg:grid-cols-[1fr_1.05fr]">
-            <div className="relative min-h-[360px] lg:min-h-[590px]">
-              <Image
-                src="/images/startup-stage-backdrop.jpg"
-                alt="Startup founders presenting innovations on the summit stage"
-                fill
-                sizes="(max-width: 1023px) 100vw, 48vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c261e]/85 via-transparent to-black/10" />
-              <div className="absolute inset-x-7 bottom-7 sm:inset-x-10 sm:bottom-10">
-                <Presentation className="h-7 w-7 text-[#edb98f]" strokeWidth={1.5} aria-hidden="true" />
-                <p className="mt-4 max-w-sm font-serif text-2xl font-bold leading-tight text-white sm:text-3xl">
-                  From live demonstrations to direct investor conversations.
+          {/* Clean Architectural Showcase Tri-Panel without numbers */}
+          <div className="overflow-hidden rounded-2xl border border-[#d8cfc0] bg-white shadow-[0_8px_30px_rgba(40,35,27,0.04)]">
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#ede4d8]">
+              {/* Showcase 1: Dedicated Demo Kiosks */}
+              <div className="group flex flex-col p-5 sm:p-6 md:p-7 transition-colors hover:bg-[#faf7f2]/60">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#faebe4] text-[#b45532] border border-[#f5cfbf] transition group-hover:scale-105 mb-4">
+                  <Store className="h-5 w-5" strokeWidth={2} />
+                </div>
+                <h4 className="font-serif text-lg sm:text-xl font-bold text-[#1c1917] tracking-tight">
+                  Dedicated Demo Kiosks
+                </h4>
+                <p className="mt-2 text-xs sm:text-sm text-[#57534e] leading-relaxed">
+                  Plug-and-play modular display booths equipped with continuous power, high-speed Wi-Fi, and display setup for hands-on software trials and hardware interaction.
+                </p>
+              </div>
+
+              {/* Showcase 2: Investor Walkthroughs */}
+              <div className="group flex flex-col p-5 sm:p-6 md:p-7 transition-colors hover:bg-[#faf7f2]/60">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#e8f4ef] text-[#1b6952] border border-[#c6dfd4] transition group-hover:scale-105 mb-4">
+                  <Users className="h-5 w-5" strokeWidth={2} />
+                </div>
+                <h4 className="font-serif text-lg sm:text-xl font-bold text-[#1c1917] tracking-tight">
+                  Investor Walkthroughs
+                </h4>
+                <p className="mt-2 text-xs sm:text-sm text-[#57534e] leading-relaxed">
+                  Scheduled exhibition walkthroughs where visiting VCs, angel investors, and jury panels review kiosks for direct 1-on-1 founder conversations during coffee breaks.
+                </p>
+              </div>
+
+              {/* Showcase 3: Tribal Craft & Agro Pavilion */}
+              <div className="group flex flex-col p-5 sm:p-6 md:p-7 transition-colors hover:bg-[#faf7f2]/60">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#fdf5e6] text-[#8c671b] border border-[#fae2ab] transition group-hover:scale-105 mb-4">
+                  <Wheat className="h-5 w-5" strokeWidth={2} />
+                </div>
+                <h4 className="font-serif text-lg sm:text-xl font-bold text-[#1c1917] tracking-tight">
+                  Tribal Craft &amp; Agro Pavilion
+                </h4>
+                <p className="mt-2 text-xs sm:text-sm text-[#57534e] leading-relaxed">
+                  A dedicated showcase for organic farm produce, minor millet processing, natural textiles, and indigenous value chains to connect directly with institutional buyers.
                 </p>
               </div>
             </div>
-
-            <div className="divide-y divide-white/12 px-7 py-3 text-white sm:px-10 lg:px-12">
-              {showcaseFeatures.map((feature) => {
-                const Icon = feature.icon;
-                return (
-                  <article key={feature.title} className="group grid gap-4 py-8 sm:grid-cols-[3.25rem_1fr] sm:py-10">
-                    <div>
-                      <span className="font-serif text-sm font-bold text-[#e8ae80]">{feature.number}</span>
-                      <Icon className="mt-3 h-5 w-5 text-white/75 transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transition-none" strokeWidth={1.5} aria-hidden="true" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-xl font-bold text-white sm:text-2xl">{feature.title}</h3>
-                      <p className="mt-3 text-xs leading-6 text-white/68 sm:text-sm">{feature.description}</p>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="mt-8 flex items-start gap-4 border-l-2 border-[#b9862f] bg-[#f7f1e5] px-5 py-5 text-[#614b21] sm:px-6">
-            <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-[#9a7022]" aria-hidden="true" />
-            <p className="text-xs leading-6 sm:text-sm">
-              <strong className="font-bold text-[#493716]">Official Application Notice:</strong> Formal selection criteria, booth dimension options, and evaluation panels will be announced when the registration portal opens. The event does not guarantee specific funding amounts; funding discussions occur directly between founders and participating investors.
-            </p>
           </div>
         </Container>
       </section>
+
     </div>
   );
 }

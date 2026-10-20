@@ -70,72 +70,82 @@ export default function SpeakersPage() {
           />
 
           {/* Chief guest editorial feature */}
+          {/* Chief guest editorial feature */}
           {chiefGuest && (
-            <article className="group relative mx-auto mb-20 max-w-6xl overflow-hidden rounded-[28px] border border-[#d9d1c3] bg-[#f7f3ea] shadow-[0_24px_70px_rgba(43,37,28,0.1)]">
-              <div className="grid md:grid-cols-[minmax(280px,0.82fr)_1.5fr]">
-                <div className="relative min-h-[390px] overflow-hidden sm:min-h-[460px] md:min-h-full">
-                  <div className="absolute inset-0 bg-[#d8d1c5]">
+            <article className="group relative mx-auto mb-20 max-w-6xl overflow-hidden rounded-[28px] border border-[#d9d1c3] bg-[#f7f3ea] p-6 sm:p-10 lg:p-14 shadow-[0_24px_70px_rgba(43,37,28,0.1)]">
+              <div className="grid gap-8 lg:grid-cols-[340px_1fr] lg:gap-14 items-center">
+                {/* Photo in JA Chowdary frame style */}
+                <div className="relative mx-auto w-56 sm:w-64 lg:w-full max-w-[300px] lg:max-w-[340px] mb-4 lg:mb-0">
+                  {/* Decorative background accent block */}
+                  <div
+                    className="absolute -bottom-2.5 -right-2.5 sm:-bottom-3 sm:-right-3 w-full h-full rounded-3xl bg-[#c25e38]/12 border border-[#c25e38]/25 -z-10"
+                    aria-hidden="true"
+                  />
+
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border-4 border-white bg-white shadow-[0_20px_50px_rgba(43,37,28,0.18)]">
                     <Image
                       src={chiefGuest.photoUrl || "/images/sadguru-sri-madhusudan-sai.jpg"}
                       alt={chiefGuest.name}
                       fill
                       priority
-                      sizes="(max-width: 767px) 100vw, 38vw"
-                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 240px, (max-width: 1023px) 260px, 340px"
+                      className="object-cover object-top"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#101f1a]/85 to-transparent" />
                   </div>
-                  <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4 text-white sm:inset-x-8 sm:bottom-8">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f2c8a8]">
-                        Chief Guest of Honour
-                      </span>
-                      <p className="mt-1 font-serif text-xl font-bold">Plenary Inauguration</p>
-                    </div>
-                    <span className="font-serif text-3xl text-white/45" aria-hidden="true">01</span>
+
+                  {/* Elegant hanging VIP plaque badge below photo frame */}
+                  <div className="absolute -bottom-3 inset-x-0 flex justify-center z-10 pointer-events-none">
+                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1c1917] text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-wider shadow-lg border border-[#e87042]/35">
+                      Chief Guest of Honour
+                    </span>
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#a94e2d]">
-                    Plenary Inauguration Keynote
-                  </span>
-                  <div>
-                    <h3 className="mt-3 font-serif text-3xl font-black leading-[1.04] tracking-[-0.035em] text-[#1b1b18] sm:text-4xl lg:text-[2.8rem]">
-                      {chiefGuest.name}
-                    </h3>
-                    <p className="mt-3 text-sm font-semibold leading-relaxed text-[#815f22] sm:text-[15px]">
-                      Global Humanitarian &amp; Spiritual Leader · Founder, Sri Madhusudan Sai Global Humanitarian Mission
-                    </p>
+                {/* Content */}
+                <div className="flex flex-col justify-center text-center sm:text-left pt-2 sm:pt-0">
+                  <div className="flex items-center justify-center sm:justify-start gap-2.5 mb-3">
+                    <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
+                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#a94e2d]">
+                      Plenary Inauguration Keynote
+                    </span>
                   </div>
 
-                  <div className="my-6 h-px w-full bg-[#d8d0c2]" />
-                  <p className="text-sm leading-7 text-[#53564f] sm:text-[15px]">
+                  <h3 className="font-serif text-2.5xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-[-0.03em] text-[#1b1b18]">
+                    {chiefGuest.name}
+                  </h3>
+
+                  <p className="mt-2.5 text-xs sm:text-sm font-semibold leading-relaxed text-[#815f22] sm:text-[15px]">
+                    Global Humanitarian &amp; Spiritual Leader · Founder, Sri Madhusudan Sai Global Humanitarian Mission
+                  </p>
+
+                  <div className="my-5 h-px w-full bg-[#d8d0c2]" />
+
+                  <p className="text-xs sm:text-sm leading-6 sm:leading-7 text-[#53564f]">
                     Revered internationally for establishing transformative selfless institutions across 30+ nations based on <em>Vasudhaiva Kutumbakam</em>. Under his stewardship, free healthcare, values-based higher education, and daily morning nutrition reach millions of underserved families.
                   </p>
 
-                  <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-3">
-                    <div className="border-l-2 border-[#b45532] py-1 pl-3.5 text-left">
-                      <HeartHandshake className="mb-2 h-4 w-4 text-[#b45532]" aria-hidden="true" />
+                  <div className="mt-6 grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-3">
+                    <div className="border-l-2 border-[#b45532] pl-3.5 py-0.5 text-left">
+                      <HeartHandshake className="mb-1.5 h-4 w-4 text-[#b45532]" aria-hidden="true" />
                       <div className="text-xs leading-snug">
-                        <strong className="block font-bold text-[#1c1917]">Free Pediatric Care</strong>
-                        <span className="mt-1 block text-[10px] leading-4 text-stone-500">Sai Sanjeevani Hospitals</span>
+                        <strong className="block text-xs sm:text-[13px] font-bold text-[#1c1917]">Free Pediatric Care</strong>
+                        <span className="mt-0.5 block text-[11px] leading-4 text-stone-500">Sai Sanjeevani Hospitals</span>
                       </div>
                     </div>
 
-                    <div className="border-l-2 border-[#9a7022] py-1 pl-3.5 text-left">
-                      <GraduationCap className="mb-2 h-4 w-4 text-[#8c671b]" aria-hidden="true" />
+                    <div className="border-l-2 border-[#9a7022] pl-3.5 py-0.5 text-left">
+                      <GraduationCap className="mb-1.5 h-4 w-4 text-[#8c671b]" aria-hidden="true" />
                       <div className="text-xs leading-snug">
-                        <strong className="block font-bold text-[#1c1917]">Free Education</strong>
-                        <span className="mt-1 block text-[10px] leading-4 text-stone-500">SSSUHE University</span>
+                        <strong className="block text-xs sm:text-[13px] font-bold text-[#1c1917]">Free Education</strong>
+                        <span className="mt-0.5 block text-[11px] leading-4 text-stone-500">SSSUHE University</span>
                       </div>
                     </div>
 
-                    <div className="border-l-2 border-[#277059] py-1 pl-3.5 text-left">
-                      <Utensils className="mb-2 h-4 w-4 text-[#256f57]" aria-hidden="true" />
+                    <div className="border-l-2 border-[#1f6651] pl-3.5 py-0.5 text-left">
+                      <Utensils className="mb-1.5 h-4 w-4 text-[#1f6651]" aria-hidden="true" />
                       <div className="text-xs leading-snug">
-                        <strong className="block font-bold text-[#1c1917]">3M+ Daily Meals</strong>
-                        <span className="mt-1 block text-[10px] leading-4 text-stone-500">Annapoorna Nutrition</span>
+                        <strong className="block text-xs sm:text-[13px] font-bold text-[#1c1917]">3M+ Daily Meals</strong>
+                        <span className="mt-0.5 block text-[11px] leading-4 text-stone-500">Annapoorna Nutrition</span>
                       </div>
                     </div>
                   </div>

@@ -1,19 +1,27 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, ExternalLink, Calendar, MapPin } from "lucide-react";
+import { Menu, X, ArrowRight, ExternalLink, MapPin } from "lucide-react";
 import { MOBILE_NAV_GROUPS } from "@/data/eventData";
 import { cn } from "@/lib/utils";
 import { Badge } from "../common/Badge";
 
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const touchStartPos = useRef<{ x: number; y: number } | null>(null);
+
+  // Mount check for React Portal
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close drawer automatically when route changes
   const [prevPathname, setPrevPathname] = useState(pathname);
@@ -22,16 +30,43 @@ export function MobileNavigation() {
     setIsOpen(false);
   }
 
-  // Prevent background body scroll when drawer is open
+  // Robust Mobile Body Scroll Lock (Prevents background page from scrolling or closing drawer)
   useEffect(() => {
     if (isOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
       closeButtonRef.current?.focus();
     } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+      }
     }
     return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+      }
     };
   }, [isOpen]);
 
@@ -46,34 +81,41 @@ export function MobileNavigation() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
 
-  return (
-    <div className="xl:hidden">
-      {/* Mobile Menu Trigger Button */}
-      <button
-        type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="p-1.5 min-[380px]:p-2 sm:p-2.5 rounded-xl border border-[#dfd6c4] bg-[#f7f4ec] text-[#1c1917] hover:bg-[#ede7db] active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] shadow-2xs flex items-center justify-center gap-1.5 shrink-0 min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] touch-manipulation cursor-pointer"
-        aria-expanded={isOpen}
-        aria-controls="mobile-navigation-drawer"
-        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-      >
-        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        <span className="text-xs font-bold uppercase tracking-wider hidden sm:inline">
-          Menu
-        </span>
-      </button>
+  // Backdrop Touch handling: Do NOT close if user is dragging / scrolling
+  const handleBackdropTouchStart = (e: React.TouchEvent) => {
+    touchStartPos.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    };
+  };
 
-      {/* Accessible Scrim / Backdrop */}
+  const handleBackdropTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStartPos.current) return;
+    const deltaX = Math.abs(e.changedTouches[0].clientX - touchStartPos.current.x);
+    const deltaY = Math.abs(e.changedTouches[0].clientY - touchStartPos.current.y);
+    // Only close if it was a true deliberate tap (finger didn't move more than 8px)
+    if (deltaX < 8 && deltaY < 8) {
+      setIsOpen(false);
+    }
+    touchStartPos.current = null;
+  };
+
+  const drawerContent = (
+    <>
+      {/* Accessible Scrim / Backdrop with scroll-lock & tap detection */}
       <div
         className={cn(
-          "fixed inset-0 bg-black/40 z-50 backdrop-blur-xs transition-opacity duration-300",
+          "fixed inset-0 bg-black/50 z-[9998] backdrop-blur-xs transition-opacity duration-300",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
         onClick={() => setIsOpen(false)}
+        onTouchStart={handleBackdropTouchStart}
+        onTouchEnd={handleBackdropTouchEnd}
+        onTouchMove={(e) => e.preventDefault()}
         aria-hidden="true"
       />
 
-      {/* Full-Height Slide-Over Drawer - Light Cream Editorial UI (Zero Green) */}
+      {/* Full-Height Slide-Over Drawer - Portalled to body to prevent sticky/scroll clipping */}
       <div
         id="mobile-navigation-drawer"
         ref={drawerRef}
@@ -82,7 +124,7 @@ export function MobileNavigation() {
         aria-label="Summit Navigation Menu"
         aria-hidden={!isOpen}
         className={cn(
-          "fixed top-0 right-0 bottom-0 w-[88%] sm:w-[380px] md:w-[420px] max-w-full bg-[#faf7f2] border-l border-[#e8dfd3] z-50 shadow-2xl flex flex-col justify-between transform transition-all duration-300 ease-in-out",
+          "fixed top-0 right-0 h-full h-[100dvh] w-[88%] sm:w-[380px] md:w-[420px] max-w-full bg-[#faf7f2] border-l border-[#e8dfd3] z-[9999] shadow-2xl flex flex-col justify-between transform transition-transform duration-300 ease-in-out select-none",
           isOpen
             ? "translate-x-0 opacity-100 visible pointer-events-auto"
             : "translate-x-full opacity-0 invisible pointer-events-none"
@@ -101,7 +143,6 @@ export function MobileNavigation() {
                 className="max-h-6 max-w-6 sm:max-h-7 sm:max-w-7 w-auto h-auto object-contain"
               />
             </div>
-
 
             <div className="min-w-0 text-left">
               <div className="font-serif font-black text-[#1c1917] text-xs min-[380px]:text-sm leading-tight truncate">
@@ -124,9 +165,9 @@ export function MobileNavigation() {
           </button>
         </div>
 
-        {/* Scrollable Content Area - Clean, Light, Relevant Links */}
-        <div className="flex-1 overflow-y-auto px-3.5 min-[380px]:px-4 sm:px-6 py-4 space-y-5">
-          {/* Categorized Link Groups (Directly Mirrored from Navbar) */}
+        {/* Scrollable Content Area - Over-scroll contained to prevent page background scrolling */}
+        <div className="flex-1 overflow-y-auto overscroll-contain px-3.5 min-[380px]:px-4 sm:px-6 py-4 space-y-5 touch-pan-y">
+          {/* Categorized Link Groups */}
           {MOBILE_NAV_GROUPS.map((group, groupIdx) => (
             <div key={groupIdx} className="space-y-1">
               <div className="space-y-1">
@@ -183,10 +224,9 @@ export function MobileNavigation() {
               </div>
             </div>
           ))}
-
         </div>
 
-        {/* Drawer Footer - Clean Light Actions */}
+        {/* Drawer Footer */}
         <div className="p-3.5 min-[380px]:p-4 sm:p-5 border-t border-[#e8dfd3] bg-[#f5efe6] space-y-2.5 shrink-0 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <a
             href="https://isf-test.vercel.app/"
@@ -217,8 +257,31 @@ export function MobileNavigation() {
             </a>
           </div>
         </div>
-
       </div>
+    </>
+  );
+
+  return (
+    <div className="xl:hidden">
+      {/* Mobile Menu Trigger Button */}
+      <button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="p-1.5 min-[380px]:p-2 sm:p-2.5 rounded-xl border border-[#dfd6c4] bg-[#f7f4ec] text-[#1c1917] hover:bg-[#ede7db] active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] shadow-2xs flex items-center justify-center gap-1.5 shrink-0 min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] touch-manipulation cursor-pointer"
+        aria-expanded={isOpen}
+        aria-controls="mobile-navigation-drawer"
+        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+      >
+        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        <span className="text-xs font-bold uppercase tracking-wider hidden sm:inline">
+          Menu
+        </span>
+      </button>
+
+      {/* Render Drawer & Backdrop in document.body via Portal to prevent scroll clipping */}
+      {mounted && typeof document !== "undefined"
+        ? createPortal(drawerContent, document.body)
+        : null}
     </div>
   );
 }

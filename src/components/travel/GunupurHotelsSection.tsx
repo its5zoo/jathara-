@@ -22,22 +22,59 @@ export function GunupurHotelsSection() {
 
   return (
     <div className="mt-8">
-      <div className="flex gap-2 overflow-x-auto pb-2" role="tablist" aria-label="Gunupur accommodation options">
-        {GUNUPUR_HOTELS.map((item) => {
-          const active = item.id === selectedHotelId;
-          return (
-            <button
-              key={item.id}
-              type="button"
-              role="tab"
-              aria-selected={active}
-              onClick={() => selectHotel(item.id)}
-              className={`min-w-max rounded-full border px-4 py-2.5 text-sm font-bold transition ${active ? "border-[#a74e2d] bg-[#a74e2d] text-white" : "border-[#d8cebe] bg-white text-[#57534e] hover:border-[#a74e2d]/60"}`}
-            >
-              {item.name}
-            </button>
-          );
-        })}
+      {/* Hotel Tab Selector with Clear Mobile Visibility */}
+      <div>
+        <div
+          className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3"
+          role="tablist"
+          aria-label="Gunupur accommodation options"
+        >
+          {GUNUPUR_HOTELS.map((item) => {
+            const active = item.id === selectedHotelId;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                onClick={() => selectHotel(item.id)}
+                className={`relative flex flex-col justify-between rounded-2xl border p-2.5 sm:p-3 text-left transition-all duration-200 active:scale-[0.98] ${
+                  active
+                    ? "border-[#a74e2d] bg-[#a74e2d] text-white shadow-md ring-2 ring-[#a74e2d]/25"
+                    : "border-[#ded5c7] bg-white text-[#57534e] hover:border-[#a74e2d]/60 hover:bg-[#faf7f2] shadow-2xs"
+                }`}
+              >
+                <div className="flex items-center justify-between w-full gap-1 mb-1">
+                  <span
+                    className={`text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${
+                      active
+                        ? "bg-white/20 text-white"
+                        : "bg-[#f4ece1] text-[#8c671b]"
+                    }`}
+                  >
+                    {item.distanceToCampus}
+                  </span>
+                  {active && (
+                    <span className="h-2 w-2 rounded-full bg-white shrink-0 shadow-xs animate-pulse" />
+                  )}
+                </div>
+
+                <div className="min-w-0 w-full">
+                  <span className="block font-bold text-xs sm:text-sm leading-tight truncate">
+                    {item.name}
+                  </span>
+                  <span
+                    className={`mt-0.5 block text-[10px] sm:text-[11px] truncate ${
+                      active ? "text-white/80" : "text-[#78716c]"
+                    }`}
+                  >
+                    {item.badge}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="mt-4 overflow-hidden rounded-3xl border border-[#ded5c7] bg-white shadow-sm">

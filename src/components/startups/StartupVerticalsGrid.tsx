@@ -31,136 +31,134 @@ const iconMap: Record<string, React.ElementType> = {
   Lightbulb,
 };
 
+const rows = [
+  { id: "row-1", indices: [0, 1, 2], label: "01 – 03" },
+  { id: "row-2", indices: [3, 4, 5], label: "04 – 06" },
+  { id: "row-3", indices: [6, 7, 8], label: "07 – 09" },
+];
+
 export function StartupVerticalsGrid() {
-  const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({});
-  const isAllExpanded = STARTUP_VERTICALS.every((vertical) => expandedIds[vertical.id]);
+  const [expandedRows, setExpandedRows] = useState<Record<number, boolean>>({});
+  const [expandedMobileIds, setExpandedMobileIds] = useState<Record<string, boolean>>({});
 
-  const toggleExpand = (id: string, index: number) => {
-    // On lg (2-col grid), sync the row partner so neither side looks empty
-    const isLg = typeof window !== "undefined" && window.innerWidth >= 1024;
-    if (isLg) {
-      const partnerIndex = index % 2 === 0 ? index + 1 : index - 1;
-      const partnerId = STARTUP_VERTICALS[partnerIndex]?.id;
-      const next = !expandedIds[id];
-      setExpandedIds((cur) => ({
-        ...cur,
-        [id]: next,
-        ...(partnerId ? { [partnerId]: next } : {}),
-      }));
-    } else {
-      setExpandedIds((cur) => ({ ...cur, [id]: !cur[id] }));
-    }
-  };
-
-  const toggleAll = () => {
-    if (isAllExpanded) {
-      setExpandedIds({});
-      return;
-    }
-
-    setExpandedIds(
-      Object.fromEntries(STARTUP_VERTICALS.map((vertical) => [vertical.id, true]))
-    );
+  const toggleCard = (id: string, rowIndex: number) => {
+    // Expand/collapse the row so all 3 cards in this row show their focus areas together
+    // This fills all 3 neighboring boxes with their respective content with zero empty white gap
+    setExpandedRows((cur) => ({ ...cur, [rowIndex]: !cur[rowIndex] }));
+    setExpandedMobileIds((cur) => ({ ...cur, [id]: !cur[id] }));
   };
 
   return (
-    <div className="min-w-0 overflow-hidden rounded-[28px] border border-[#d8d0c2] bg-[#fffdf9] shadow-[0_24px_60px_rgba(50,42,31,0.07)]">
-      <div className="flex flex-col gap-4 border-b border-[#ded6c9] bg-[#f2ede3] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <div className="flex items-center gap-3">
-          <span className="font-serif text-3xl font-bold text-[#a84e2d]">09</span>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#363a35]">Official sectors</p>
-            <p className="mt-0.5 text-xs text-[#777169]">One connected innovation portfolio</p>
-          </div>
+    <div className="min-w-0 overflow-hidden rounded-[24px] border border-[#d8d0c2] bg-[#fffdf9] shadow-[0_16px_45px_rgba(50,42,31,0.06)]">
+      {/* Top Header */}
+      <div className="flex items-center gap-3 border-b border-[#ded6c9] bg-[#f2ede3] px-4 py-3 sm:px-6">
+        <span className="font-serif text-2xl sm:text-3xl font-black text-[#a84e2d]">09</span>
+        <div>
+          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-[#363a35]">Official Sectors</p>
+          <p className="text-[10px] sm:text-xs text-[#777169]">8 Priority Areas + Open Innovation Track</p>
         </div>
-        <button
-          onClick={toggleAll}
-          type="button"
-          className="inline-flex w-fit items-center gap-2 rounded-full border border-[#cbc1b2] bg-white px-4 py-2 text-xs font-bold text-[#38352f] transition-colors hover:border-[#a84e2d] hover:text-[#a84e2d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a84e2d]/40"
-        >
-          {isAllExpanded ? "Collapse all focus areas" : "Explore all focus areas"}
-          <ChevronDown
-            className={cn("h-3.5 w-3.5 transition-transform duration-300", isAllExpanded && "rotate-180")}
-            aria-hidden="true"
-          />
-        </button>
       </div>
 
-      <div className="grid min-w-0 lg:grid-cols-2">
-        {STARTUP_VERTICALS.map((vertical, index) => {
-          const Icon = iconMap[vertical.iconName] || Sparkles;
-          const isExpanded = Boolean(expandedIds[vertical.id]);
-          const panelId = `${vertical.id}-focus-areas`;
+      {/* Rows Container */}
+      <div className="divide-y divide-[#e2dbce]">
+        {rows.map((row, rowIndex) => {
+          const isRowExpanded = Boolean(expandedRows[rowIndex]);
+          const verticalsInRow = row.indices.map((i) => ({
+            vertical: STARTUP_VERTICALS[i],
+            index: i,
+          }));
 
           return (
-            <article
-              key={vertical.id}
-              className={cn(
-                "group relative min-w-0 border-b border-[#e3ddd3] px-5 py-6 transition-colors duration-300 hover:bg-[#faf6ef] sm:px-8 sm:py-8",
-                index % 2 === 0 && (index === STARTUP_VERTICALS.length - 1 ? "" : "lg:border-r"),
-                index === STARTUP_VERTICALS.length - 1 && "lg:col-span-2 lg:border-b-0",
-                STARTUP_VERTICALS.length % 2 === 0 && index >= STARTUP_VERTICALS.length - 2 && "lg:border-b-0",
-                isExpanded && "bg-[#faf6ef]"
-              )}
-            >
-              <div className="flex items-start gap-4 sm:gap-5">
-                <div className="flex shrink-0 flex-col items-center gap-3">
-                  <span className="font-serif text-sm font-bold text-[#a84e2d]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d8cec0] bg-white text-[#1b5947] shadow-sm transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transition-none">
-                    <Icon className="h-5 w-5" strokeWidth={1.7} aria-hidden="true" />
-                  </span>
-                </div>
+            <div key={row.id} className="min-w-0">
+              {/* 3 Cards Grid for this row */}
+              <div className="grid min-w-0 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#e2dbce]">
+                {verticalsInRow.map(({ vertical, index }) => {
+                  const Icon = iconMap[vertical.iconName] || Sparkles;
+                  const isMobileExpanded = Boolean(expandedMobileIds[vertical.id]);
+                  // On desktop, row expands all 3 cards so all boxes are filled with their respective content (no empty gap)
+                  // On mobile, card expands with its content
+                  const isExpanded = isRowExpanded || isMobileExpanded;
+                  const panelId = `${vertical.id}-focus-areas`;
 
-                <div className="min-w-0 flex-1">
-                  <p className="break-words text-[10px] font-bold uppercase leading-4 tracking-[0.13em] text-[#8a6729] [overflow-wrap:anywhere]">
-                    {vertical.subtitle}
-                  </p>
-                  <h3 className="mt-2 break-words font-serif text-2xl font-bold leading-[1.08] tracking-[-0.025em] text-[#1e211e] [overflow-wrap:anywhere] sm:text-[1.7rem]">
-                    {vertical.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-6 text-[#666158]">
-                    {vertical.description}
-                  </p>
-
-                  <div className="mt-6 flex min-w-0 flex-col items-start gap-3 border-t border-[#e2dbd0] pt-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
-                    <button
-                      type="button"
-                      onClick={() => toggleExpand(vertical.id, index)}
-                      aria-expanded={isExpanded}
-                      aria-controls={panelId}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-[#a84e2d] transition-colors hover:text-[#77341f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a84e2d]/40"
+                  return (
+                    <article
+                      key={vertical.id}
+                      className={cn(
+                        "group relative flex flex-col justify-between bg-[#fffdf9] p-4 sm:p-5 transition-colors duration-200 hover:bg-[#faf6ef]",
+                        isExpanded && "bg-[#faf6ef]"
+                      )}
                     >
-                      {isExpanded ? "Hide focus areas" : "View focus areas"}
-                      <ChevronDown
-                        className={cn("h-3.5 w-3.5 transition-transform duration-300", isExpanded && "rotate-180")}
-                        aria-hidden="true"
-                      />
-                    </button>
-                  </div>
+                      <div>
+                        {/* Top bar inside card: number badge, subtitle, and icon */}
+                        <div className="flex items-center justify-between gap-2 mb-2.5">
+                          <div className="flex items-center gap-1.5 min-w-0">
+                            <span className="font-serif text-[11px] font-bold text-[#a84e2d] bg-[#f5ede3] px-2 py-0.5 rounded-md shrink-0">
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+                            <span className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#8a6729] truncate">
+                              {vertical.subtitle}
+                            </span>
+                          </div>
+                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#d8cec0] bg-white text-[#1b5947] shadow-2xs transition-transform group-hover:scale-105">
+                            <Icon className="h-4 w-4 text-[#245f4d]" strokeWidth={1.8} aria-hidden="true" />
+                          </span>
+                        </div>
 
-                  {isExpanded && (
-                    <div id={panelId} className="animate-in fade-in slide-in-from-top-1 duration-300 motion-reduce:animate-none">
-                      <div className="mt-5 border-l-2 border-[#b85b38] pl-4">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#817a70]">Sub-domain focus</p>
-                        <ul className="mt-3 grid gap-2 text-xs leading-5 text-[#494740]">
-                          {vertical.focusAreas.map((area) => (
-                            <li key={area} className="flex items-start gap-2">
-                              <Check className="mt-1 h-3 w-3 shrink-0 text-[#1b6952]" strokeWidth={2.5} aria-hidden="true" />
-                              <span>{area}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        <p className="mt-4 text-[11px] leading-5 text-[#777168]">
-                          <strong className="font-bold text-[#514e47]">Built for:</strong> {vertical.targetParticipants}
+                        {/* Title */}
+                        <h3 className="font-serif text-base sm:text-lg font-bold leading-snug tracking-[-0.015em] text-[#1e211e]">
+                          {vertical.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="mt-2 text-xs leading-relaxed text-[#666158]">
+                          {vertical.description}
                         </p>
                       </div>
-                    </div>
-                  )}
-                </div>
+
+                      {/* Individual Toggle Button directly inside each Card */}
+                      <div className="mt-4 pt-3 border-t border-[#eae3d8]">
+                        <button
+                          type="button"
+                          onClick={() => toggleCard(vertical.id, rowIndex)}
+                          aria-expanded={isExpanded}
+                          aria-controls={panelId}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#a84e2d] hover:text-[#77341f] transition-colors cursor-pointer"
+                        >
+                          <span>{isExpanded ? "Hide Focus Areas" : "View Focus Areas"}</span>
+                          <ChevronDown
+                            className={cn(
+                              "h-3.5 w-3.5 transition-transform duration-200 text-[#a84e2d]",
+                              isExpanded && "rotate-180"
+                            )}
+                            aria-hidden="true"
+                          />
+                        </button>
+                      </div>
+
+                      {/* Focus Areas Content: Fills the box completely so zero empty space */}
+                      {isExpanded && (
+                        <div
+                          id={panelId}
+                          className="mt-3 pt-3 border-t border-[#ebd8cb] animate-in fade-in slide-in-from-top-1 duration-200"
+                        >
+                          <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-[#817a70] mb-2">
+                            Sub-Domain Focus
+                          </p>
+                          <ul className="space-y-1.5 text-xs text-[#494740]">
+                            {vertical.focusAreas.map((area) => (
+                              <li key={area} className="flex items-start gap-1.5 text-[11px] leading-tight">
+                                <Check className="mt-0.5 h-3 w-3 shrink-0 text-[#1b6952]" strokeWidth={2.5} aria-hidden="true" />
+                                <span>{area}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </article>
+                  );
+                })}
               </div>
-            </article>
+            </div>
           );
         })}
       </div>
