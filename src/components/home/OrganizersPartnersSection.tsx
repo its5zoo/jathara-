@@ -19,7 +19,7 @@ const ORGANIZERS = [
   },
   {
     name: "IncubateX",
-    fullName: "Incubation Foundation",
+    fullName: "Innovation Foundation",
     role: "Innovation Partner",
     logo: "/logos/incubatex-logo.png",
     href: "https://www.incubationx.com",
